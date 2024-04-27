@@ -14,7 +14,7 @@
             </nav>
           </nav>
         </div>
-      </div>
+      </div>  
     </div>
   </div>
   <div class="row">
