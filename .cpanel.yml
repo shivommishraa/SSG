@@ -1,5 +1,9 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/ulb240vrlzic/public_html/
-    - /bin/cp * $DEPLOYPATH
+    - export DEPLOYPATH=public_html
+    - /bin/cp -R * $DEPLOYPATH
+    - /bin/rm $DEPLOYPATH/{.htaccess,.cpanel.yml}
+    - /bin/mv $DEPLOYPATH/application/config/{config.prod.php,config.php}
+    - /bin/mv $DEPLOYPATH/application/config/{database.prod.php,database.php}
+    - /bin/mv $DEPLOYPATH/application/config/{routes.prod.php,routes.php}
