@@ -1,6 +1,6 @@
 # Logs
-/application/logs/*
-/system/logs/*
+/application/logs/*.log
+/system/logs/*.log
 
 # Cache
 /application/cache/*
@@ -12,12 +12,9 @@
 # Config files
 /application/config/config.php
 /application/config/database.php
-/system/core/*
 
 # User-specific config files
 /application/config/*_config.php
-/application/config/config.php
-/application/config/database.php
 
 # Composer
 /vendor/
