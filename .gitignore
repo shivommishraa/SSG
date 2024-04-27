@@ -1,36 +1,31 @@
-.DS_Store
+# Logs
+/application/logs/*
+/system/logs/*
 
-application/cache/*
-!application/cache/index.html
+# Cache
+/application/cache/*
+/system/cache/*
 
-application/logs/*
-!application/logs/index.html
+# Session files
+/application/session/*
 
-!application/*/.htaccess
+# Config files
+/application/config/config.php
+/application/config/database.php
+/system/core/*
 
-composer.lock
+# User-specific config files
+/application/config/*_config.php
+/application/config/config.php
+/application/config/database.php
 
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
+# Composer
 /vendor/
 
-# IDE Files
-#-------------------------
-/nbproject/
-.idea/*
+# IDE files
+.idea/
+.vscode/
 
-## Sublime Text cache files
-*.tmlanguage.cache
-*.tmPreferences.cache
-*.stTheme.cache
-*.sublime-workspace
-*.sublime-project
-/tests/tests/
-/tests/results/
-
-# Ignore database and config files
-/application/config/database.php
-/application/config/config.php
-
+# Misc
+Thumbs.db
+.DS_Store
