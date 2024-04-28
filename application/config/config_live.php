@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config['base_url'] = 'http://ssghypermart.com/';*/
 
 /*$config['base_url'] = 'https://ssghypermart.com/';*/
-$config['base_url'] = 'http://localhost/SSG_New/';
+$config['base_url'] = 'https://ssghypermart.com/';
 
 /*
 |--------------------------------------------------------------------------
