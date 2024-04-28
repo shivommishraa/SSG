@@ -185,4 +185,11 @@ class Website_controller extends CI_Controller {
 
   }
 
+
+  public function newoffers(){
+    $this->load->view('Ssgwebsite/website/header');
+    $this->load->view('Ssgwebsite/website/newoffers');
+    $this->load->view('Ssgwebsite/website/footer');
+  }
+
 }
