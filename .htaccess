@@ -1,3 +1,9 @@
+# After Free SSL Adding This Code for redirect http to https 
+RewriteEngine On 
+RewriteCond %{HTTPS} !=on 
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+
+# Before SSL Adding Only this code
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
