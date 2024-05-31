@@ -50,7 +50,7 @@
                             <span>FRESH PRODUCTS</span>
                             <h2>S.S.G <br />Hyper Mart</h2>
                             <p>*Free Delivery Available</p>
-                            <a href="#" class="primary-btn">VISIT NOW</a>
+                            <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="primary-btn">ORDER NOW</a>
                         </div>
                     </div>
                 </div>
