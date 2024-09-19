@@ -76,6 +76,38 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Animated Text */
+        .animated-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3498db;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .animated-text::before {
+            content: 'SSG HYPER MART';
+            position: absolute;
+            top: 0;
+            left: 100%;
+            white-space: nowrap;
+            animation: slideIn 5s ease-in-out infinite;
+        }
+
+        @keyframes slideIn {
+            0% {
+                left: 100%;
+            }
+            50% {
+                left: 0;
+            }
+            100% {
+                left: -100%;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 600px) {
             .message {
@@ -85,6 +117,10 @@
             .circle {
                 width: 80px;
                 height: 80px;
+            }
+
+            .animated-text {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -100,6 +136,7 @@
             </div>
         <?php endif; ?>
         <div class="circle"></div>
+        <div class="animated-text"></div>
     </div>
     <script>
         // Function to show the result message with animation
