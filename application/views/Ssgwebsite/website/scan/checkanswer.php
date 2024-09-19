@@ -94,7 +94,7 @@
         <h1>Your Result</h1>
         <?php if (isset($message)): ?>
             <div id="result" class="result">
-                <p class="message <?php echo htmlspecialchars($message_type); ?>">
+                <p class="message <?php echo htmlspecialchars($message); ?>">
                     <?php echo htmlspecialchars($message); ?>
                 </p>
             </div>
