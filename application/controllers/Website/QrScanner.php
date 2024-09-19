@@ -22,7 +22,7 @@ class QrScanner extends CI_Controller {
  	public function scan() {
         // This method will be called after QR code scanning
         $data['message'] = "Thanks for scanning";
-        /*$this->load->view('scan_result', $data);*/
+        /*$this->load->view('scan_result', $data);*/ 
         $this->load->view('Ssgwebsite/website/scan/scan_result', $data);
     }
  
