@@ -12,11 +12,7 @@
         <p>What is <?php echo $num1; ?> + <?php echo $num2; ?>?</p>
     <?php endif; ?>
 
-    <?php if (isset($message)): ?>
-        <p><?php echo $message; ?></p>
-    <?php endif; ?>
-
-    <form method="post" action="<?php echo base_url('Website/QrScanner/scan'); ?>">
+    <form method="post" action="<?php echo base_url('Website/QrScanner/checkanswer'); ?>">
         <input type="number" name="answer" required>
         <button type="submit" name="submit">Submit</button>
     </form>

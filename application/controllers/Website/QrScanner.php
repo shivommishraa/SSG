@@ -21,31 +21,27 @@ class QrScanner extends CI_Controller {
 
     public function scan() {
         $data = [];
-
-        // Check if form is submitted
-        if ($this->input->post('submit')) {
-            $answer = intval($this->input->post('answer'));
-            $correctAnswer = $this->session->userdata('correct_answer');
-
-            // Validate the answer
-            if ($answer === $correctAnswer) {
-                $data['message'] = 'Thank you! You passed the puzzle!';
-            } else {
-                $data['message'] = 'Sorry, that\'s not correct. Please try again.';
-            }
-        } else {
             // Generate a new puzzle
-            $num1 = rand(1, 100);
-            $num2 = rand(1, 100);
+        $num1 = rand(1, 100);
+        $num2 = rand(1, 100);
 
-            // Store the correct answer in session
-            $this->session->set_userdata('correct_answer', $num1 + $num2);
+        // Store the correct answer in session
+        $this->session->set_userdata('correct_answer', $num1 + $num2);
+        $data['num1'] = $num1;
+        $data['num2'] = $num2;
+        $this->load->view('Ssgwebsite/website/scan/scan_result', $data);
+    }
 
-            $data['num1'] = $num1;
-            $data['num2'] = $num2;
+    public function checkanswer(){
+        $answer = $this->input->post('answer');
+        $correctAnswer = $this->session->userdata('correct_answer');
+        // Validate the answer
+        if ($answer === $correctAnswer) {
+            $data['message'] = 'Thank you! You passed the puzzle!';
+        } else {
+            $data['message'] = 'Sorry, that\'s not correct. Please try again.';
         }
 
-        // Load the view with data
-        $this->load->view('Ssgwebsite/website/scan/scan_result', $data);
+        $this->load->view('Ssgwebsite/website/scan/checkanswer', $data);
     }
 }
