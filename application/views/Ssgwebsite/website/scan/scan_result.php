@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grocery Shop Puzzle</title>
+    <title>SSG Hyper Mart Puzzle</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -43,14 +43,49 @@
             width: 100%;
         }
 
-        .image-section {
-            margin-bottom: 20px;
+        /* Animation Section */
+        .animation-section {
+            margin-bottom: 30px;
+            position: relative;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ff6f61;
+            border-radius: 15px;
+            overflow: hidden;
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            animation: backgroundSlide 3s infinite alternate;
         }
 
-        .image-section img {
-            width: 100%;
-            border-radius: 10px;
-            animation: fadeIn 1.5s ease;
+        .animated-text {
+            position: absolute;
+            opacity: 0;
+            animation: textFadeIn 2s forwards;
+        }
+
+        /* Animations */
+        @keyframes backgroundSlide {
+            0% {
+                background-color: #ff6f61;
+            }
+            100% {
+                background-color: #ffb46b;
+            }
+        }
+
+        @keyframes textFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         p {
@@ -106,17 +141,10 @@
             input[type="number"], button {
                 font-size: 1rem;
             }
-        }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            0% { opacity: 0; transform: translateY(-20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+            .animation-section {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -124,9 +152,8 @@
     <div class="container">
         <h1>Grocery Puzzle</h1>
 
-        <div class="image-section">
-            <!-- Placeholder for grocery-themed animated image -->
-            <img src="https://via.placeholder.com/400x200?text=Grocery+Shop+Animation" alt="Grocery Shop Image">
+        <div class="animation-section">
+            <div class="animated-text" id="animatedText">SSG HYPER MART</div>
         </div>
 
         <?php if (isset($num1) && isset($num2)): ?>
@@ -138,5 +165,14 @@
             <button type="submit" name="submit">Submit</button>
         </form>
     </div>
+
+    <!-- JavaScript to trigger animation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Fade in text after page load
+            const textElement = document.getElementById("animatedText");
+            textElement.style.animationDelay = "1s";
+        });
+    </script>
 </body>
 </html>
