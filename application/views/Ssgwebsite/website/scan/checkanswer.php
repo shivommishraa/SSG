@@ -83,6 +83,7 @@
             color: #3498db;
             margin: 20px 0;
             position: relative;
+            display: inline-block;
             overflow: hidden;
             white-space: nowrap;
         }
@@ -90,21 +91,27 @@
         .animated-text::before {
             content: 'SSG HYPER MART';
             position: absolute;
-            top: 0;
-            left: 100%;
-            white-space: nowrap;
-            animation: slideIn 5s ease-in-out infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #3498db;
+            font-size: 2rem;
+            opacity: 0;
+            animation: fadeInScale 3s ease forwards;
         }
 
-        @keyframes slideIn {
+        @keyframes fadeInScale {
             0% {
-                left: 100%;
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
             }
             50% {
-                left: 0;
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.1);
             }
             100% {
-                left: -100%;
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
             }
         }
 
