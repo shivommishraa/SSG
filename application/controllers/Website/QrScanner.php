@@ -14,7 +14,7 @@ class QrScanner extends CI_Controller {
         $this->load->library("pagination");
         $this->load->library('session');
         $this->load->helper(array('url','form'));
-       
+        $this->load->library('session');
       
        
   }
@@ -24,8 +24,11 @@ class QrScanner extends CI_Controller {
     $data['message'] = "Thanks for scanning";
     $this->load->view('Ssgwebsite/website/scan/scan_result', $data);
   }*/
-  public function scan() {
-        // Check if the form is submitted
+ 
+    public function scan() {
+        $data = [];
+
+        // Check if form is submitted
         if ($this->input->post('submit')) {
             $answer = intval($this->input->post('answer'));
             $correctAnswer = $this->session->userdata('correct_answer');
@@ -40,17 +43,16 @@ class QrScanner extends CI_Controller {
             // Generate a new puzzle
             $num1 = rand(1, 100);
             $num2 = rand(1, 100);
+
+            // Store the correct answer in session
             $this->session->set_userdata('correct_answer', $num1 + $num2);
 
             $data['num1'] = $num1;
             $data['num2'] = $num2;
         }
 
-        //$data['message'] = "Thanks for scanning";
-        /*$this->load->view('scan_result', $data);*/ 
+        // Load the view with data
         $this->load->view('Ssgwebsite/website/scan/scan_result', $data);
     }
- 
-
 }
 
