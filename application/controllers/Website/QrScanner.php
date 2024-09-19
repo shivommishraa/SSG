@@ -34,8 +34,7 @@ class QrScanner extends CI_Controller {
 
     public function checkanswer(){
         $answer = $this->input->post('answer');
-        echo $correctAnswer = $this->session->userdata('correct_answer');
-        exit;
+        $correctAnswer = $this->session->userdata('correct_answer');
         // Validate the answer
         if ($answer == $correctAnswer) {
             $data['message'] = 'Thank you! You passed the puzzle!';
