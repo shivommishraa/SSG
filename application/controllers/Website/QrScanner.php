@@ -25,7 +25,7 @@ class QrScanner extends CI_Controller {
     /*$this->load->view('scan_result', $data);*/ 
     $this->load->view('Ssgwebsite/website/scan/scan_result', $data);
   }
-  public function index() {
+  public function submit() {
         // Check if the form is submitted
         if ($this->input->post('submit')) {
             $answer = intval($this->input->post('answer'));

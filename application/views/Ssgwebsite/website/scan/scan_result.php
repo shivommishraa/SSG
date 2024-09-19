@@ -13,7 +13,7 @@
         <p><?php echo $message; ?></p>
     <?php endif; ?>
 
-    <form method="post" action="">
+    <form method="post" action="<?php echo base_url(); ?>Website/QrScanner/submit">
         <input type="number" name="answer" required>
         <button type="submit" name="submit">Submit</button>
     </form>
