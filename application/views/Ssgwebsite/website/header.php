@@ -83,7 +83,10 @@
                 </li>
                 <li class="<?php if(!empty($page_active)){ if($page_active=='blog'){ ?> active <?php } } ?>"><a href="$">Blog</a></li>
                 <li class="<?php if(!empty($page_active)){ if($page_active=='contactus'){ ?> active <?php } } ?>"><a href="<?php echo base_url(); ?>/Website/Website_controller/contactus">Contact</a></li>
-                <li><a href="<?php echo base_url(); ?>Website/Website_controller/newoffers"><img src="<?php echo base_url(); ?>ssgassests/img/banner/new-gif-image.gif" height="50px" width="50px" alt=""></a></li>
+                <li>
+                    <!-- <a href="<?php echo base_url(); ?>Website/Website_controller/newoffers"> -->
+                        <a href="<?php echo base_url(); ?>Website/QrScanner/scan">
+                        <img src="<?php echo base_url(); ?>ssgassests/img/banner/new-gif-image.gif" height="50px" width="50px" alt=""></a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -167,7 +170,10 @@
                             </li>
                             <li class="<?php if(!empty($page_active)){ if($page_active=='blog'){ ?> active <?php } } ?>"><a href="#">Blog</a></li>
                             <li class="<?php if(!empty($page_active)){ if($page_active=='contactus'){ ?> active <?php } } ?>"><a href="<?php echo base_url(); ?>/Website/Website_controller/contactus">Contact</a></li>
-                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/newoffers"><img src="<?php echo base_url(); ?>ssgassests/img/banner/new-gif-image.gif" height="35px" width="60px" alt=""></a></li>
+                            <li>
+                                <!-- <a href="<?php //echo base_url(); ?>Website/Website_controller/newoffers"> -->
+                                <a href="<?php echo base_url(); ?>Website/QrScanner/scan">
+                                    <img src="<?php echo base_url(); ?>ssgassests/img/banner/new-gif-image.gif" height="35px" width="60px" alt=""></a></li>
                         </ul>
                     </nav>
                 </div>
