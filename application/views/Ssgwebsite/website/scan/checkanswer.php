@@ -18,7 +18,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            background-color: #e0e0e0;
             color: #333;
         }
 
@@ -28,45 +28,50 @@
             padding: 20px;
             background: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
             margin-bottom: 20px;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #333;
         }
 
         /* Result messages */
         .result {
             margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(-20px);
+            background: linear-gradient(45deg, #ff0081, #ff8c00, #4caf50, #00bcd4);
+            background-size: 400% 400%;
+            animation: gradientAnimation 5s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .message {
             font-size: 1.5rem;
-            padding: 15px;
-            border-radius: 8px;
-            color: #fff;
-            opacity: 0;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            transform: translateY(-20px);
-        }
-
-        .success {
-            background-color: #28a745;
-        }
-
-        .fail {
-            background-color: #dc3545;
+            color: #fff; /* White text for contrast */
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         /* Circular animation */
         .circle {
             width: 100px;
             height: 100px;
-            border: 10px solid #3498db;
+            border: 10px solid transparent;
             border-radius: 50%;
-            border-top-color: transparent;
+            border-top-color: #ff0081; /* Gradient color */
+            border-right-color: #ff8c00;
+            border-bottom-color: #4caf50;
+            border-left-color: #00bcd4;
             animation: spin 1s linear infinite;
             margin: 20px auto;
         }
@@ -78,14 +83,20 @@
 
         /* Animated Text */
         .animated-text {
-            font-size: 2rem;
+            font-size: 2.5rem; /* Increased size */
             font-weight: bold;
-            color: #fff;
             margin: 20px 0;
             position: relative;
             display: inline-block;
             overflow: hidden;
             white-space: nowrap;
+            color: #ff0081; /* Bright color */
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
         }
 
         .animated-text::before {
@@ -99,25 +110,8 @@
             background-size: 400% 400%;
             -webkit-background-clip: text;
             color: transparent;
-            opacity: 0;
-            animation: fadeIn 2s ease forwards, gradientAnimation 5s linear infinite;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
+            opacity: 1;
+            animation: gradientAnimation 5s linear infinite;
         }
 
         /* Responsive Design */
@@ -132,7 +126,7 @@
             }
 
             .animated-text {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
         }
     </style>
@@ -148,12 +142,12 @@
             </div>
         <?php endif; ?>
         <div class="circle"></div>
-        <div class="animated-text"></div>
+        <div class="animated-text">SSG HYPER MART</div>
     </div>
     <script>
         // Function to show the result message with animation
         function showMessage() {
-            const messageElement = document.querySelector('.message');
+            const messageElement = document.querySelector('.result');
             if (messageElement) {
                 messageElement.style.opacity = '1';
                 messageElement.style.transform = 'translateY(0)';
