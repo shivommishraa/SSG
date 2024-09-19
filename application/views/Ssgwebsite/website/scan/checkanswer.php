@@ -80,7 +80,7 @@
         .animated-text {
             font-size: 2rem;
             font-weight: bold;
-            color: #3498db;
+            color: #fff;
             margin: 20px 0;
             position: relative;
             display: inline-block;
@@ -94,16 +94,25 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #3498db;
             font-size: 2rem;
+            background: linear-gradient(45deg, #ff0081, #ff8c00, #4caf50, #00bcd4);
+            background-size: 600% 600%;
+            -webkit-background-clip: text;
+            color: transparent;
             opacity: 0;
-            animation: fadeInScale 3s ease forwards;
+            animation: gradientAnimation 5s ease-in-out infinite, fadeIn 2s ease forwards;
         }
 
-        @keyframes fadeInScale {
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        @keyframes fadeIn {
             0% {
                 opacity: 0;
-                transform: translate(-50%, -50%) scale(0.5);
+                transform: translate(-50%, -50%) scale(0.8);
             }
             50% {
                 opacity: 1;
