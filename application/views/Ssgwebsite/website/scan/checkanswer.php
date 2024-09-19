@@ -91,37 +91,33 @@
         .animated-text::before {
             content: 'SSG HYPER MART';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2rem;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(45deg, #ff0081, #ff8c00, #4caf50, #00bcd4);
-            background-size: 600% 600%;
+            background-size: 400% 400%;
             -webkit-background-clip: text;
             color: transparent;
             opacity: 0;
-            animation: gradientAnimation 5s ease-in-out infinite, fadeIn 2s ease forwards;
+            animation: fadeIn 2s ease forwards, gradientAnimation 5s linear infinite;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes gradientAnimation {
             0% { background-position: 0% 0%; }
             50% { background-position: 100% 100%; }
             100% { background-position: 0% 0%; }
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.8);
-            }
-            50% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1.1);
-            }
-            100% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
         }
 
         /* Responsive Design */
