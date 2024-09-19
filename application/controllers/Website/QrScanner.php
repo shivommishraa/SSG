@@ -52,7 +52,7 @@ class QrScanner extends CI_Controller {
         }
 
         // Load the view with data
-        $this->load->view('Ssgwebsite/website/scan/scan_result', $data);
+        $this->load->view('Ssgwebsite/website/scan', $data);
     }
 }
 
