@@ -70,12 +70,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Grocery Puzzle</h1>
+        <h1 style="color:black">Grocery Puzzle</h1>
 
         <p><?php echo $question; ?></p> <!-- Show the question here -->
 
         <form method="post" action="<?php echo base_url('Website/QrScanner/checkanswer'); ?>">
-            <?php if ($category === 'math'): ?>
+            <?php if ($category == 'math'): ?>
                 <input type="number" name="answer" required placeholder="Enter your answer">
             <?php else: ?>
                 <select name="answer" required>
