@@ -27,31 +27,29 @@ class Qacontroller extends CI_Controller {
     */
     public function ManageQuestionanswer()
     {
-     $id= $this->session->userdata('session_id');
-     $data['admin']=$this->Adminmodel->getadmin($id);
-     $data['menu_groups']=$this->Menu->getAllMenuGroup();
-     $data['menu_details']=$this->Menu->getAllMenu();
-     $data['admin_role']=$this->Menu->adminrole();
-            //============================ Start Pager Code ==============================
-     $name=($this->input->post('category_name')) ? $this->input->post('category_name') :0;
-     $name=($this->uri->segment(4)) ?  $this->uri->segment(4) :$name;
-     $this->load->config('bootstrap_pagination');
-     $config = $this->config->item('pagination_config');;
-     $config['base_url'] = base_url() ."Questionanswer/Qacontroller/ManageQuestionanswer"."/$name";
-     $config['total_rows'] = $this->Category_model->get_count($name);
-     $config['per_page'] = 20;
-     $config['uri_segment'] = 5;
-     $this->pagination->initialize($config);
-     $page = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
-     $data['links'] = $this->pagination->create_links();
-          //============================ End Pager Code ==============================
-     $data["tbl_brands"] = $this->Category_model->getAllcategory($config['per_page'],$page,$name);
-     $this->load->view('Dashboard/header.php',$data);
-     $this->load->view('Dashboard/side.php');
-     $data['getparent']=function($id){
-       return $this->Category_model->getparent($id);};
-       $this->load->view('Question_Answer/managequestionanswer', $data);
-       $this->load->view('Dashboard/footer.php');
+       $id= $this->session->userdata('session_id');
+       $data['admin']=$this->Adminmodel->getadmin($id);
+       $data['menu_groups']=$this->Menu->getAllMenuGroup();
+       $data['menu_details']=$this->Menu->getAllMenu();
+       $data['admin_role']=$this->Menu->adminrole();
+              //============================ Start Pager Code ==============================
+       $name=($this->input->post('question')) ? $this->input->post('question') :0;
+       $name=($this->uri->segment(4)) ?  $this->uri->segment(4) :$name;
+       $this->load->config('bootstrap_pagination');
+       $config = $this->config->item('pagination_config');;
+       $config['base_url'] = base_url() ."Questionanswer/Qacontroller/ManageQuestionanswer"."/$name";
+       $config['total_rows'] = $this->Qa_model->get_count($name);
+       $config['per_page'] = 20;
+       $config['uri_segment'] = 5;
+       $this->pagination->initialize($config);
+       $page = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
+       $data['links'] = $this->pagination->create_links();
+            //============================ End Pager Code ==============================
+       $data["tbl_brands"] = $this->Qa_model->getAllData($config['per_page'],$page,$name);
+       $this->load->view('Dashboard/header.php',$data);
+       $this->load->view('Dashboard/side.php');
+         $this->load->view('Question_Answer/managequestionanswer', $data);
+         $this->load->view('Dashboard/footer.php');
 
      }
      public function ManageText_status()
