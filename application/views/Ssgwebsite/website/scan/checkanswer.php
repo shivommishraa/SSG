@@ -29,6 +29,7 @@
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative; /* For absolute positioning of the button */
         }
 
         h1 {
@@ -117,20 +118,50 @@
         /* Home Button Styling */
         .home-button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
+            margin-top: 30px; /* Increased space for better centering */
+            padding: 12px 25px;
             font-size: 1.2rem;
             color: #fff;
             background-color: #4caf50; /* Green background */
             border: none;
             border-radius: 5px;
             text-decoration: none;
+            position: relative; /* For animation */
+            overflow: hidden; /* To hide overflow during animation */
             transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .home-button:hover {
             background-color: #388e3c; /* Darker green on hover */
             transform: translateY(-3px);
+        }
+
+        .home-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transition: width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease;
+            z-index: 0; /* Behind the text */
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        .home-button:hover::before {
+            width: 400%;
+            height: 400%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .home-button span {
+            position: relative; /* For text above the effect */
+            z-index: 1; /* Above the background circle */
         }
 
         /* Responsive Design */
@@ -162,7 +193,7 @@
         <?php endif; ?>
         <div class="circle"></div>
         <div class="animated-text">SSG HYPER MART</div>
-        <a href="<?php echo site_url(); ?>" class="home-button">Home</a> <!-- Updated Home button -->
+        <a href="<?php echo site_url(); ?>" class="home-button"><span>Home</span></a> <!-- Updated Home button -->
     </div>
     <script>
         // Function to show the result message with animation
