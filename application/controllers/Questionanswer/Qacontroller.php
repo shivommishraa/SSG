@@ -60,9 +60,32 @@ class Qacontroller extends CI_Controller {
     }
 
     public function changeStatus($tbl_id) {
-      $edit = $this->Category_model->changeStatus($tbl_id);
+      $edit = $this->Qa_model->changeStatus($tbl_id);
       $this->session->set_flashdata('success', 'Record '.$edit.' Successfully');
       redirect('Questionanswer/Qacontroller/ManageQuestionanswer');
+    }
+
+    public function addQa() {
+      $id= $this->session->userdata('session_id');
+      $data['admin']=$this->Adminmodel->getadmin($id);
+      $data['menu_groups']=$this->Menu->getAllMenuGroup();
+      $data['menu_details']=$this->Menu->getAllMenu();
+      $data['admin_role']=$this->Menu->adminrole();
+      $this->load->view('Dashboard/header.php',$data);
+      $this->load->view('Dashboard/side.php');
+      $this->load->view('Question_Answer/addquestionanswer',$data);
+      $this->load->view('Dashboard/footer.php');
+    }
+
+    public function addQuestionPost() {
+      $data['question'] = $this->input->post('question');
+      $data['status'] = $this->input->post('status');
+      $data['answer'] = $this->input->post('answer');
+      $data['options'] = $this->input->post('options');
+      $this->Qa_model->insert($data);
+      $this->session->set_flashdata('success', 'Question added Successfully');
+      redirect('Questionanswer/Qacontroller/ManageQuestionanswer');
+
     }
 
      public function ManageText_status()
@@ -99,32 +122,13 @@ class Qacontroller extends CI_Controller {
     created by your name
     created at 18-08-20.
     */
-    public function addTbl_category() {
-      $id= $this->session->userdata('session_id');
-      $data['admin']=$this->Adminmodel->getadmin($id);
-      $data['menu_groups']=$this->Menu->getAllMenuGroup();
-      $data['menu_details']=$this->Menu->getAllMenu();
-      $data['admin_role']=$this->Menu->adminrole();
-      $this->load->view('Dashboard/header.php',$data);
-      $this->load->view('Dashboard/side.php');
-      $data['categorydropdown'] = $this->Category_model->parent_zero_category();
-      $this->load->view('category/add-tbl_category',$data);
-      $this->load->view('Dashboard/footer.php');
-    }
+    
     /*
     function for add Tbl_brand post
     created by your name
     created at 18-08-20.
     */
-    public function addTbl_categoryPost() {
-      $data['category_name'] = $this->input->post('category_name');
-      $data['parent_id'] = $this->input->post('parent_id');
-      $this->Category_model->insert($data);
-      $this->session->set_flashdata('success', 'Category added Successfully');
-        //redirect('manage-tbl_category');
-      redirect('Category/Category_Controller/ManageTbl_category');
-
-    }
+    
      public function addText_categoryPost() {
       $data['cate_name'] = $this->input->post('category_name');
       $this->Category_model->textcategoryinsert($data);
