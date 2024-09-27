@@ -45,7 +45,7 @@ class Qacontroller extends CI_Controller {
        $page = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
        $data['links'] = $this->pagination->create_links();
             //============================ End Pager Code ==============================
-       $data["tbl_brands"] = $this->Qa_model->getAllData($config['per_page'],$page,$name);
+       $data["allData"] = $this->Qa_model->getAllData($config['per_page'],$page,$name);
        $this->load->view('Dashboard/header.php',$data);
        $this->load->view('Dashboard/side.php');
          $this->load->view('Question_Answer/managequestionanswer', $data);

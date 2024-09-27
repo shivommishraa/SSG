@@ -79,7 +79,7 @@
           </table>
         <?php } else {?>
           <div class="alert alert-info" role="alert">
-           <strong>No Category Record Found!</strong>
+           <strong>No Record Found!</strong>
          </div>
        <?php } ?>
 
