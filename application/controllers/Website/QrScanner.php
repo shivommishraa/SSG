@@ -18,37 +18,37 @@ class QrScanner extends CI_Controller {
         $this->load->library(array('session', 'pagination'));
         $this->load->helper(array('url', 'form'));
     }
-    
     public function scan() {
-        $data = [];
-        $allData = $this->Qa_model->getAll();
+    $data = [];
+    $allData = $this->Qa_model->getAll();
 
-        // Check if there are questions available
-        if (!empty($allData)) {
-            // Randomly select a question
-            $randomKey = array_rand($allData);
-            $selectedQuestion = $allData[$randomKey];
+    // Check if there are questions available
+    if (!empty($allData)) {
+        // Randomly select a question
+        $randomKey = array_rand($allData);
+        $selectedQuestion = $allData[$randomKey];
 
-            // Prepare the question, correct answer, and options
-            $data['question'] = $selectedQuestion['question'];
-            $data['correct_answer'] = $selectedQuestion['answer'];
-            $data['options'] = $selectedQuestion['options'];
+        // Prepare the question, correct answer, and options
+        $data['question'] = $selectedQuestion->question; // Access as object property
+        $data['correct_answer'] = $selectedQuestion->answer; // Access as object property
+        $data['options'] = $selectedQuestion->options; // Access as object property
 
-            // Ensure the correct answer is included in the options and shuffle
-            if (!in_array($data['correct_answer'], $data['options'])) {
-                $data['options'][] = $data['correct_answer'];
-            }
-            shuffle($data['options']);
-
-            // Store the correct answer in session
-            $this->session->set_userdata('correct_answer', $data['correct_answer']);
-        } else {
-            // Handle case where there are no questions
-            $data['error'] = "No questions available.";
+        // Ensure the correct answer is included in the options and shuffle
+        if (!in_array($data['correct_answer'], $data['options'])) {
+            $data['options'][] = $data['correct_answer'];
         }
+        shuffle($data['options']);
 
-        $this->load->view('Ssgwebsite/website/scan/scan_result', $data);
+        // Store the correct answer in session
+        $this->session->set_userdata('correct_answer', $data['correct_answer']);
+    } else {
+        // Handle case where there are no questions
+        $data['error'] = "No questions available.";
     }
+
+    $this->load->view('Ssgwebsite/website/scan/scan_result', $data);
+}
+
 
 
     public function checkanswer() {
