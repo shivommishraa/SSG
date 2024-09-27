@@ -8,6 +8,7 @@ class QrScanner extends CI_Controller {
         $this->load->model(array(
             'Admin_model/Adminmodel',
             'Warehouse/Warehouse_model',
+            'Qanswer_model/Qa_model',
             'Admin_model/Role_model',
             'Designation/Designation_model',
             'Nice_websitemodel/Nice_webmodel',
@@ -17,85 +18,38 @@ class QrScanner extends CI_Controller {
         $this->load->library(array('session', 'pagination'));
         $this->load->helper(array('url', 'form'));
     }
-
+    
     public function scan() {
         $data = [];
-        
-        // Define questions for Hindi, GK, and GS with four options each
-        $hindi_questions = [
-            ['question' => 'What is the capital of India?', 'correct_answer' => 'New Delhi', 'options' => ['New Delhi', 'Mumbai', 'Kolkata', 'Chennai']],
-            ['question' => 'What is the national language of India?', 'correct_answer' => 'Hindi', 'options' => ['Hindi', 'English', 'Bengali', 'Telugu']],
-            ['question' => 'What is the currency of India?', 'correct_answer' => 'Rupee', 'options' => ['Rupee', 'Dollar', 'Yen', 'Euro']]
-        ];
-        
-        $gk_questions = [
-            ['question' => 'What is the capital of France?', 'correct_answer' => 'Paris', 'options' => ['Paris', 'London', 'Berlin', 'Madrid']],
-            ['question' => 'What is the largest ocean?', 'correct_answer' => 'Pacific', 'options' => ['Atlantic', 'Indian', 'Pacific', 'Arctic']],
-            ['question' => 'What is the currency of Japan?', 'correct_answer' => 'Yen', 'options' => ['Yen', 'Won', 'Dollar', 'Euro']]
-        ];
-        
-        $gs_questions = [
-            ['question' => 'Which is the smallest continent?', 'correct_answer' => 'Australia', 'options' => ['Asia', 'Africa', 'Australia', 'Europe']],
-            ['question' => 'What is the currency of India?', 'correct_answer' => 'Rupee', 'options' => ['Dollar', 'Pound', 'Rupee', 'Yen']]
-        ];
+        $allData = $this->Qa_model->getAll();
 
-        // Add math category by generating random math questions
-        $math_questions = [];
+        // Check if there are questions available
+        if (!empty($allData)) {
+            // Randomly select a question
+            $randomKey = array_rand($allData);
+            $selectedQuestion = $allData[$randomKey];
 
-        // Randomly generate 3 math questions for demonstration
-        for ($i = 0; $i < 3; $i++) {
-            $num1 = rand(1, 10);
-            $num2 = rand(1, 10);
-            $operations = ['+', '-', '*'];
-            $operation = $operations[array_rand($operations)];
-            $question = "$num1 $operation $num2";
-
-            // Calculate the correct answer based on the operation
-            switch ($operation) {
-                case '+':
-                    $correct_answer = $num1 + $num2;
-                    break;
-                case '-':
-                    $correct_answer = $num1 - $num2;
-                    break;
-                case '*':
-                    $correct_answer = $num1 * $num2;
-                    break;
-            }
-
-            $math_questions[] = [
-                'question' => $question,
-                'correct_answer' => $correct_answer,
-                'options' => [$correct_answer, rand(1, 20), rand(1, 20), rand(1, 20)] // Provide random incorrect options
-            ];
-        }
-
-        // Randomly choose between Hindi, GK, GS, or Math questions
-        $categories = [$hindi_questions, $gk_questions, $gs_questions, $math_questions];
-        $selected_questions = $categories[array_rand($categories)];
-
-        // Randomly select a question from the selected category
-        $question_data = $selected_questions[array_rand($selected_questions)];
-
-        if (isset($question_data['correct_answer'])) {
-            // Prepare the question and correct answer
-            $data['question'] = $question_data['question'];
-            $data['correct_answer'] = $question_data['correct_answer'];
-            $data['options'] = $question_data['options'];
+            // Prepare the question, correct answer, and options
+            $data['question'] = $selectedQuestion['question'];
+            $data['correct_answer'] = $selectedQuestion['answer'];
+            $data['options'] = $selectedQuestion['options'];
 
             // Ensure the correct answer is included in the options and shuffle
             if (!in_array($data['correct_answer'], $data['options'])) {
                 $data['options'][] = $data['correct_answer'];
             }
             shuffle($data['options']);
-            $data['category'] = 'gk_or_gs_or_math';
-        }
 
-        // Store the correct answer in session
-        $this->session->set_userdata('correct_answer', $data['correct_answer']);
+            // Store the correct answer in session
+            $this->session->set_userdata('correct_answer', $data['correct_answer']);
+        } else {
+            // Handle case where there are no questions
+            $data['error'] = "No questions available.";
+        }
 
         $this->load->view('Ssgwebsite/website/scan/scan_result', $data);
     }
+
 
     public function checkanswer() {
         $answer = $this->input->post('answer');

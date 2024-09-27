@@ -3,6 +3,7 @@ class Qa_model extends CI_Model {
 
  
     public function getAll() {
+        $this->db->where('status', 1); 
         return $this->db->get('tbl_questionanswer')->result();
     }
 
