@@ -1,6 +1,6 @@
 <?php
 
-class Questionanswer extends CI_Model {
+class Qa_model extends CI_Model {
 
  
     public function getAll() {

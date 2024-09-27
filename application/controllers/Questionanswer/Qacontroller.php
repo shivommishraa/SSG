@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Questionanswer extends CI_Controller {
+class Qacontroller extends CI_Controller {
 
   public function __construct() {
     parent::__construct();
     $this->load->model('Category_model/Category_model');
-    $this->load->model('Questionanswer/Questionanswer');
+    $this->load->model('Qanswer_model/Qa_model');
     $this->load->model('Brand_model/tbl_brand');
     $this->load->helper('url');
     $this->load->library("pagination");
@@ -37,7 +37,7 @@ class Questionanswer extends CI_Controller {
      $name=($this->uri->segment(4)) ?  $this->uri->segment(4) :$name;
      $this->load->config('bootstrap_pagination');
      $config = $this->config->item('pagination_config');;
-     $config['base_url'] = base_url() ."Questionanswer/Questionanswer/ManageQuestionanswer"."/$name";
+     $config['base_url'] = base_url() ."Questionanswer/Qacontroller/ManageQuestionanswer"."/$name";
      $config['total_rows'] = $this->Category_model->get_count($name);
      $config['per_page'] = 20;
      $config['uri_segment'] = 5;
@@ -50,7 +50,7 @@ class Questionanswer extends CI_Controller {
      $this->load->view('Dashboard/side.php');
      $data['getparent']=function($id){
        return $this->Category_model->getparent($id);};
-       $this->load->view('Questionanswer/managequestionanswer', $data);
+       $this->load->view('Question_Answer/managequestionanswer', $data);
        $this->load->view('Dashboard/footer.php');
 
      }
