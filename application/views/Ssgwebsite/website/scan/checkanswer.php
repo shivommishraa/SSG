@@ -68,7 +68,7 @@
             height: 100px;
             border: 10px solid transparent;
             border-radius: 50%;
-            border-top-color: #ff0081;
+            border-top-color: #ff0081; /* Gradient color */
             border-right-color: #ff8c00;
             border-bottom-color: #4caf50;
             border-left-color: #00bcd4;
@@ -139,10 +139,6 @@
                 <p class="message <?php echo htmlspecialchars($message); ?>">
                     <?php echo htmlspecialchars($message); ?>
                 </p>
-            </div>
-        <?php else: ?>
-            <div id="result" class="result">
-                <p class="message">No message available.</p>
             </div>
         <?php endif; ?>
         <div class="circle"></div>

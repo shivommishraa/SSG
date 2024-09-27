@@ -75,16 +75,13 @@
         <p><?php echo $question; ?></p> <!-- Show the question here -->
 
         <form method="post" action="<?php echo base_url('Website/QrScanner/checkanswer'); ?>">
-            <?php if ($category == 'math'): ?>
-                <input type="number" name="answer" required placeholder="Enter your answer">
-            <?php else: ?>
+           
                 <select name="answer" required>
                     <option value="">Select your answer</option>
                     <?php foreach ($options as $option): ?>
                         <option value="<?php echo $option; ?>"><?php echo $option; ?></option>
                     <?php endforeach; ?>
                 </select>
-            <?php endif; ?>
             <button type="submit" name="submit">Submit</button>
         </form>
     </div>
