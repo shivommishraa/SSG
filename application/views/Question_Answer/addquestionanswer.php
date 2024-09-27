@@ -45,8 +45,7 @@
                                 Enter feature name.
                               </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                 
                               <label for="validationCustom02">Answer:</label>
                               <input type="text" placeholder="Enter Answer Here." class="form-control" required id="validationCustom01" name="answer" required="">
@@ -57,8 +56,7 @@
                                 Enter feature name.
                               </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                 
                               <label for="validationCustom03">Options:</label>
                               <input type="text" placeholder="Enter options in comma-separated format here." class="form-control" required id="validationCustom01" name="options" required="">
