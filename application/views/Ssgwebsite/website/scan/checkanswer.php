@@ -114,6 +114,25 @@
             animation: gradientAnimation 5s linear infinite;
         }
 
+        /* Home Button Styling */
+        .home-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #4caf50; /* Green background */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #388e3c; /* Darker green on hover */
+            transform: translateY(-3px);
+        }
+
         /* Responsive Design */
         @media (max-width: 600px) {
             .message {
@@ -143,6 +162,7 @@
         <?php endif; ?>
         <div class="circle"></div>
         <div class="animated-text">SSG HYPER MART</div>
+        <a href="<?php echo site_url(); ?>" class="home-button">Home</a> <!-- Updated Home button -->
     </div>
     <script>
         // Function to show the result message with animation
