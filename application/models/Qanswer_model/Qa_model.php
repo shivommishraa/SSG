@@ -43,6 +43,12 @@ class Qa_model extends CI_Model {
         }
     }
 
+    public function update($id,$data) {
+        $this->db->where('qa_id', $id);
+        $this->db->update('tbl_questionanswer', $data);
+        return true;
+    }
+
     public function getDataBydata_id($id) {
         $this->db->where('qa_id', $id);
         return $this->db->get('tbl_questionanswer')->result();
