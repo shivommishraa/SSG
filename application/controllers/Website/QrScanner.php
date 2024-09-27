@@ -51,7 +51,10 @@ class QrScanner extends CI_Controller {
             // Generate random numbers and a random operation
             $num1 = rand(1, 10);
             $num2 = rand(1, 10);
-            $operation = array_rand(['+', '-', '*']);
+            $operations = ['+', '-', '*']; // Corrected array
+            $operation = $operations[array_rand($operations)]; // Randomly select one operation
+            
+            // Create the question
             $question = "$num1 $operation $num2";
             
             // Calculate the correct answer based on the operation
