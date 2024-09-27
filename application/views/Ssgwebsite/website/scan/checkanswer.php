@@ -18,8 +18,9 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #e0e0e0;
+            background: linear-gradient(135deg, #e0e0e0, #ffffff);
             color: #333;
+            position: relative;
         }
 
         .container {
@@ -27,8 +28,10 @@
             max-width: 600px;
             padding: 20px;
             background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
@@ -48,13 +51,13 @@
         }
 
         .result.correct {
-            color: #4caf50; /* Green for correct */
-            background: rgba(76, 175, 80, 0.1); /* Light green background */
+            color: #4caf50;
+            background: rgba(76, 175, 80, 0.1);
         }
 
         .result.incorrect {
-            color: #f44336; /* Red for incorrect */
-            background: rgba(244, 67, 54, 0.1); /* Light red background */
+            color: #f44336;
+            background: rgba(244, 67, 54, 0.1);
         }
 
         .message {
@@ -74,6 +77,7 @@
             border-left-color: #00bcd4;
             animation: spin 1s linear infinite;
             margin: 20px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
         @keyframes spin {
@@ -109,14 +113,34 @@
             border: none;
             border-radius: 5px;
             text-decoration: none;
-            text-align: center; /* Centering the text */
+            text-align: center;
             transition: background-color 0.3s, transform 0.3s;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-left: auto; /* Centering */
+            margin-right: auto; /* Centering */
         }
 
         .home-button:hover {
             background-color: #388e3c; 
             transform: translateY(-3px);
+        }
+
+        /* Overlay for results */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            z-index: 0; /* Below the container */
+        }
+
+        .overlay.visible {
+            display: flex; /* Show when needed */
         }
 
         /* Responsive Design */
@@ -137,26 +161,31 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Your Result</h1>
-        <?php if (isset($message)): ?>
-            <div id="result" class="result <?php echo htmlspecialchars($isCorrect ? 'correct' : 'incorrect'); ?>">
-                <p class="message">
-                    <?php echo htmlspecialchars($message); ?>
-                </p>
-            </div>
-        <?php endif; ?>
-        <div class="circle"></div>
-        <div class="animated-text">SSG HYPER MART</div>
-        <a href="<?php echo site_url(); ?>" class="home-button">Home</a>
+    <div class="overlay <?php echo htmlspecialchars($isCorrect ? 'correct' : 'incorrect'); ?>">
+        <div class="container">
+            <h1>Your Result</h1>
+            <?php if (isset($message)): ?>
+                <div id="result" class="result <?php echo htmlspecialchars($isCorrect ? 'correct' : 'incorrect'); ?>">
+                    <p class="message">
+                        <?php echo htmlspecialchars($message); ?>
+                    </p>
+                </div>
+            <?php endif; ?>
+            <div class="circle"></div>
+            <div class="animated-text">SSG HYPER MART</div>
+            <a href="<?php echo site_url(); ?>" class="home-button">Home</a>
+        </div>
     </div>
+
     <script>
         // Function to show the result message with animation
         function showMessage() {
             const messageElement = document.querySelector('.result');
+            const overlay = document.querySelector('.overlay');
             if (messageElement) {
                 messageElement.style.opacity = '1';
                 messageElement.style.transform = 'translateY(0)';
+                overlay.classList.add('visible'); // Show overlay
             }
         }
 
