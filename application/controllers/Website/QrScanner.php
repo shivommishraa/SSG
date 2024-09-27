@@ -59,16 +59,23 @@ class QrScanner extends CI_Controller {
 
 
     public function checkanswer() {
-        $answer = $this->input->post('answer');
-        $correctAnswer = $this->session->userdata('correct_answer');
+    $answer = $this->input->post('answer');
+    $correctAnswer = $this->session->userdata('correct_answer');
 
-        // Validate the answer
-        if ($answer == $correctAnswer) {
-            $data['message'] = 'Thank you! You passed the puzzle!';
-        } else {
-            $data['message'] = 'Sorry, that\'s not correct. Please try again.';
-        }
+    // Initialize data array
+    $data = [];
 
-        $this->load->view('Ssgwebsite/website/scan/checkanswer', $data);
+    // Validate the answer
+    if ($answer == $correctAnswer) {
+        $data['message'] = 'Thank you! You passed the puzzle!';
+        $data['isCorrect'] = true; // Set a flag for correctness
+    } else {
+        $data['message'] = 'Sorry, that\'s not correct. Please try again.';
+        $data['isCorrect'] = false; // Set a flag for incorrectness
     }
+
+    // Load the view with the data
+    $this->load->view('Ssgwebsite/website/scan/checkanswer', $data);
+}
+
 }
