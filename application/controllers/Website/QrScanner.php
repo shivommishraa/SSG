@@ -18,7 +18,7 @@ class QrScanner extends CI_Controller {
         $this->load->library(array('session', 'pagination'));
         $this->load->helper(array('url', 'form'));
     }
-    public function scan() {
+   public function scan() {
     $data = [];
     $allData = $this->Qa_model->getAll();
 
@@ -28,10 +28,17 @@ class QrScanner extends CI_Controller {
         $randomKey = array_rand($allData);
         $selectedQuestion = $allData[$randomKey];
 
-        // Prepare the question, correct answer, and options
+        // Prepare the question and correct answer
         $data['question'] = $selectedQuestion->question; // Access as object property
         $data['correct_answer'] = $selectedQuestion->answer; // Access as object property
-        $data['options'] = $selectedQuestion->options; // Access as object property
+
+        // Ensure options are an array
+        if (is_string($selectedQuestion->options)) {
+            // Convert string to array (assuming options are comma-separated)
+            $data['options'] = explode(',', $selectedQuestion->options);
+        } else {
+            $data['options'] = $selectedQuestion->options; // Assuming it's already an array
+        }
 
         // Ensure the correct answer is included in the options and shuffle
         if (!in_array($data['correct_answer'], $data['options'])) {
