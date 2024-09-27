@@ -39,24 +39,17 @@ class QrScanner extends CI_Controller {
             ['question' => 'What is the currency of India?', 'correct_answer' => 'Rupee', 'options' => ['Dollar', 'Pound', 'Rupee', 'Yen']]
         ];
 
-        // Randomly choose a question category
-        $categories = [$hindi_questions, $gk_questions, $gs_questions];
-        $selected_questions = $categories[array_rand($categories)];
+        // Add math category by generating random math questions
+        $math_questions = [];
 
-        // Randomly select a question from the selected category
-        $question_data = $selected_questions[array_rand($selected_questions)];
-
-        // Check if it's a math question
-        if (strpos($question_data['question'], '+') !== false || strpos($question_data['question'], '-') !== false || strpos($question_data['question'], '*') !== false) {
-            // Generate random numbers and a random operation
+        // Randomly generate 3 math questions for demonstration
+        for ($i = 0; $i < 3; $i++) {
             $num1 = rand(1, 10);
             $num2 = rand(1, 10);
-            $operations = ['+', '-', '*']; // Corrected array
-            $operation = $operations[array_rand($operations)]; // Randomly select one operation
-            
-            // Create the question
+            $operations = ['+', '-', '*'];
+            $operation = $operations[array_rand($operations)];
             $question = "$num1 $operation $num2";
-            
+
             // Calculate the correct answer based on the operation
             switch ($operation) {
                 case '+':
@@ -70,10 +63,21 @@ class QrScanner extends CI_Controller {
                     break;
             }
 
-            $data['question'] = $question; // Math question
-            $data['correct_answer'] = $correct_answer;
-            $data['category'] = 'math';
-        } else {
+            $math_questions[] = [
+                'question' => $question,
+                'correct_answer' => $correct_answer,
+                'options' => [$correct_answer, rand(1, 20), rand(1, 20), rand(1, 20)] // Provide random incorrect options
+            ];
+        }
+
+        // Randomly choose between Hindi, GK, GS, or Math questions
+        $categories = [$hindi_questions, $gk_questions, $gs_questions, $math_questions];
+        $selected_questions = $categories[array_rand($categories)];
+
+        // Randomly select a question from the selected category
+        $question_data = $selected_questions[array_rand($selected_questions)];
+
+        if (isset($question_data['correct_answer'])) {
             // Prepare the question and correct answer
             $data['question'] = $question_data['question'];
             $data['correct_answer'] = $question_data['correct_answer'];
@@ -84,7 +88,7 @@ class QrScanner extends CI_Controller {
                 $data['options'][] = $data['correct_answer'];
             }
             shuffle($data['options']);
-            $data['category'] = 'gk_or_gs';
+            $data['category'] = 'gk_or_gs_or_math';
         }
 
         // Store the correct answer in session
