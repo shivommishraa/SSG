@@ -35,10 +35,10 @@ class Qa_model extends CI_Model {
         $table=$this->getDataBydata_id($id);
         if($table[0]->status==0)
         {
-            $this->update($qa_id,array('status' => '1'));
+            $this->update($id,array('status' => '1'));
             return "Activated";
         }else{
-            $this->update($qa_id,array('status' => '0'));
+            $this->update($id,array('status' => '0'));
             return "Deactivated";
         }
     }
