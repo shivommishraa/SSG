@@ -52,6 +52,19 @@ class Qacontroller extends CI_Controller {
          $this->load->view('Dashboard/footer.php');
 
      }
+
+     public function deleteQa($tbl_id) {
+      $delete = $this->Qa_model->delete($tbl_id);
+      $this->session->set_flashdata('success', 'Record deleted');
+      redirect('Questionanswer/Qacontroller/ManageQuestionanswer');
+    }
+
+    public function changeStatus($tbl_id) {
+      $edit = $this->Category_model->changeStatus($tbl_id);
+      $this->session->set_flashdata('success', 'Record '.$edit.' Successfully');
+      redirect('Questionanswer/Qacontroller/ManageQuestionanswer');
+    }
+
      public function ManageText_status()
      {
       
@@ -271,11 +284,7 @@ class Qacontroller extends CI_Controller {
     function for delete Tbl_brand    created by your name
     created at 18-08-20.
     */
-    public function deleteTbl_category($tbl_brand_category_id) {
-      $delete = $this->Category_model->delete($tbl_brand_category_id);
-      $this->session->set_flashdata('success', 'Category deleted');
-      redirect('Category/Category_Controller/ManageTbl_category');
-    }
+    
 
      public function textdeleteTbl_category($tbl_brand_category_id) {
       $delete = $this->Category_model->textdelete($tbl_brand_category_id);

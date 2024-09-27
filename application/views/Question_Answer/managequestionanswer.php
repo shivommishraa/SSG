@@ -66,13 +66,13 @@
                  //if(!empty($pname)){ echo $pname[0]->category_name;}  }else{ echo '--';}?>
                </td> -->
                
-              <!--  <td><span <?php //if($qa_data->status==0){?> class="badge badge-success"<?php //}else{ ?> class="badge badge-danger"<?php //}?>>
-                <a style="color:#fff;" href="<?php //echo site_url()?>Category/Category_Controller/changeStatusTbl_category/<?php //echo $qa_data->category_id ?>" > <?php //if($qa_data->status==0){ echo "Activate"; } else { echo "Deactivate"; } ?></a></span></td> -->
+               <td><span <?php if($qa_data->status==0){?> class="badge badge-success"<?php }else{ ?> class="badge badge-danger"<?php }?>>
+                <a style="color:#fff;" href="<?php echo site_url()?>Questionanswer/Qacontroller/changeStatus/<?php echo $qa_data->qa_id ?>" > <?php if($qa_data->status==0){ echo "Activate"; } else { echo "Deactivate"; } ?></a></span></td>
                 
 <!-- 
                 <td><a href="<?php echo site_url()?>Category/Category_Controller/editTbl_category/<?php echo $qa_data->category_id?>"><i class="fas fa-pencil-alt"style="color: blue;"></i></a></td> -->
 
-                <td><a href="<?php echo site_url()?>Questionanswer/Qacontroller/deleteQa/<?php echo $qa_data->category_id?>" onclick="return confirm('Are you sure to delete')"><i class="fa fa-trash"style="color: red;"></i></a></td>
+                <td><a href="<?php echo site_url()?>Questionanswer/Qacontroller/deleteQa/<?php echo $qa_data->qa_id?>" onclick="return confirm('Are you sure to delete')"><i class="fa fa-trash"style="color: red;"></i></a></td>
               </tr>
               <?php $i++; } ?>
             </tbody>

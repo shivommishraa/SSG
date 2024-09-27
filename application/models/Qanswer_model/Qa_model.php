@@ -24,6 +24,29 @@ class Qa_model extends CI_Model {
         }
         return $this->db->get('tbl_questionanswer')->num_rows();
     }
+
+    public function delete($id) {
+        $this->db->where('qa_id', $id);
+        $this->db->delete('tbl_questionanswer');
+        return true;
+    }
+
+    public function changeStatus($id) {
+        $table=$this->getDataBydata_id($id);
+        if($table[0]->status==0)
+        {
+            $this->update($category_id,array('status' => '1'));
+            return "Activated";
+        }else{
+            $this->update($category_id,array('status' => '0'));
+            return "Deactivated";
+        }
+    }
+
+    public function getDataBydata_id($id) {
+        $this->db->where('qa_id', $id);
+        return $this->db->get('tbl_questionanswer')->result();
+    }
        /* public function all_text_category()
         {
              return $this->db->get('tbl_textcategory')->result();
