@@ -9,7 +9,7 @@ class Qa_model extends CI_Model {
     public function getAllData($limit,$start,$question) {
         $this->db->select('*');
         $this->db->limit($limit, $start);
-        if($tbl_questionanswer!=''){
+        if($question!=''){
             $this->db->where('question',$question);
         }
         $this->db->from('tbl_questionanswer');   
