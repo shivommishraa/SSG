@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Puzzle</title>
+    <title>SSG HYPER MART</title>
     <style>
         /* Basic Reset */
         * {
@@ -116,7 +116,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
             font-weight: bold;
             font-size: 1.2rem;
             text-transform: uppercase;
@@ -127,9 +126,11 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Navy text color for "SSG HYPER MART" */
         .animated-text {
             position: absolute;
             z-index: 1;
+            color: navy;
         }
 
         /* Buttons Styling */
@@ -232,7 +233,7 @@
 
             <!-- Order Information -->
             <div class="order-info">
-                Add for order: Phone: +91 9310523943, Email: <a href="mailto:ssgmart9@gmail.com">ssgmart9@gmail.com</a>, Website: <a href="https://ssghypermart.com">ssghypermart.com</a>
+                Phone: +91 9310523943<br/> Email: <a href="mailto:ssgmart9@gmail.com">ssgmart9@gmail.com</a>, Website: <a href="https://ssghypermart.com">ssghypermart.com</a>
             </div>
         </div>
     </div>
