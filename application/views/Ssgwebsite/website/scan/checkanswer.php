@@ -165,7 +165,7 @@
 
         /* Add for Order Section */
         .order-info {
-            margin-top: 30px;
+            margin-top: 16px;
             padding: 10px;
             background: linear-gradient(135deg, #4caf50, #00bcd4);
             color: white;
@@ -233,7 +233,7 @@
             <!-- Buttons for Home and Quiz -->
             <div class="buttons">
                 <a href="<?php echo site_url(); ?>" class="home-button">Home</a>
-                <a href="<?php echo site_url(); ?>/Website/QrScanner/scan" class="quiz-button">Quiz</a>
+                <a href="<?php echo site_url(); ?>Website/QrScanner/scan" class="quiz-button">Quiz</a>
             </div>
 
             <!-- Order Information -->
