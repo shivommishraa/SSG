@@ -126,6 +126,11 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Stop rotation on hover */
+        .circle:hover {
+            animation-play-state: paused;
+        }
+
         /* Navy text color for "SSG HYPER MART" */
         .animated-text {
             position: absolute;
