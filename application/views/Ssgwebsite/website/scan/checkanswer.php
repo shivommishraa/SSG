@@ -18,17 +18,25 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #e0e0e0, #ffffff);
             color: #333;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, #ff0081, #ff8c00, #4caf50, #00bcd4);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .container {
             text-align: center;
             max-width: 600px;
             padding: 20px;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 12px;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
             position: relative;
@@ -74,8 +82,9 @@
             position: relative;
             text-transform: uppercase;
             animation: pulse 1s infinite;
-            background: url('https://images.unsplash.com/photo-1506784365847-bbad939e9335?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTcxNjB8MHwxfGFsbHwxfHx8fHx8fHwxNjE2MjUyMDM2&ixlib=rb-1.2.1&q=80&w=400') no-repeat center center; /* Public image URL */
-            background-size: cover;
+            background: linear-gradient(135deg, #ff0081, #4caf50);
+            background-clip: text;
+            color: transparent;
             padding: 20px;
             border-radius: 10px;
             margin-top: 10px;
