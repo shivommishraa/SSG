@@ -90,7 +90,7 @@ public function checkanswer() {
     // Validate the answer
     if ($answer == $correctAnswer) {
         // User answered correctly
-        $data['message1'] = 'Thank you so much! You passed the puzzle!'; // Acknowledgment message
+        $data['message1'] = 'Nice.. Correct answer!'; // Acknowledgment message
         $data['isCorrect'] = true;
         if ($attempts >= 2) {
             $randomNumber = rand(1, 100); // Generates a number between 1 and 100
@@ -110,7 +110,7 @@ public function checkanswer() {
             }
         } else {
             // If fewer than 2 attempts
-            $data['message2'] = ''; // No prize message for fewer than 2 attempts
+            $data['message2'] = 'Thank you for your efforts! Better luck next time!'; // No prize message for fewer than 2 attempts
         }
 
         $data['isCorrect'] = true; // Set a flag for correctness
