@@ -100,19 +100,26 @@
             animation: fadeInUp 1.5s ease forwards;
         }
 
-        /* Circular animation */
+        /* Circular animation with SSG Hyper Mart inside */
         .circle {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             border: 10px solid transparent;
             border-radius: 50%;
             border-top-color: #ff0081; 
             border-right-color: #ff8c00;
             border-bottom-color: #4caf50;
             border-left-color: #00bcd4;
-            animation: spin 1s linear infinite;
+            animation: spin 3s linear infinite;
             margin: 20px auto;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
         }
 
         @keyframes spin {
@@ -120,34 +127,19 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Animated Text with Color Transition */
         .animated-text {
-            font-size: 2.5rem; 
-            font-weight: bold;
-            margin: 20px 0;
-            position: relative;
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            background: linear-gradient(135deg, #ff0081, #ff8c00, #4caf50, #00bcd4);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            animation: colorChange 3s infinite alternate;
+            position: absolute;
+            z-index: 1;
         }
 
-        @keyframes colorChange {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
+        /* Buttons Styling */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
         }
 
-        .home-button {
-            display: inline-block;
-            margin-top: 30px; 
+        .home-button, .quiz-button {
             padding: 12px 25px;
             font-size: 1.2rem;
             color: #fff;
@@ -158,31 +150,29 @@
             text-align: center;
             transition: background-color 0.3s, transform 0.3s;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            margin-left: auto; /* Centering */
-            margin-right: auto; /* Centering */
         }
 
-        .home-button:hover {
+        .home-button:hover, .quiz-button:hover {
             background-color: #388e3c; 
             transform: translateY(-3px);
         }
 
-        /* Overlay for results */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: none; /* Initially hidden */
-            justify-content: center;
-            align-items: center;
-            z-index: 0; /* Below the container */
+        /* Add for Order Section */
+        .order-info {
+            margin-top: 30px;
+            padding: 10px;
+            background: linear-gradient(135deg, #4caf50, #00bcd4);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .overlay.visible {
-            display: flex; /* Show when needed */
+        .order-info a {
+            color: white;
+            text-decoration: underline;
+            margin-left: 5px;
         }
 
         /* Responsive Design */
@@ -192,16 +182,25 @@
             }
 
             .circle {
-                width: 80px;
-                height: 80px;
-            }
-
-            .animated-text {
-                font-size: 2rem;
+                width: 100px;
+                height: 100px;
             }
 
             .fantastic-message {
                 font-size: 1.5rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .home-button, .quiz-button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .order-info {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -220,9 +219,21 @@
                     </p>
                 </div>
             <?php endif; ?>
-            <div class="circle"></div>
-            <div class="animated-text">SSG HYPER MART</div>
-            <a href="<?php echo site_url(); ?>" class="home-button">Home</a>
+            <!-- Rotating Circle with SSG Hyper Mart Text -->
+            <div class="circle">
+                <div class="animated-text">SSG HYPER MART</div>
+            </div>
+
+            <!-- Buttons for Home and Quiz -->
+            <div class="buttons">
+                <a href="<?php echo site_url(); ?>" class="home-button">Home</a>
+                <a href="#" class="quiz-button">Quiz</a>
+            </div>
+
+            <!-- Order Information -->
+            <div class="order-info">
+                Add for order: Phone: +91 9310523943, Email: <a href="mailto:ssgmart9@gmail.com">ssgmart9@gmail.com</a>, Website: <a href="https://ssghypermart.com">ssghypermart.com</a>
+            </div>
         </div>
     </div>
 
