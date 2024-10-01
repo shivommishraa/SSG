@@ -89,7 +89,7 @@
 
         /* Emphasized "Message 2" styling */
         .fantastic-message {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: white;
             text-transform: uppercase;
@@ -206,7 +206,7 @@
             }
 
             .order-info {
-                font-size: 0.9rem;
+                font-size: -2.1rem;
             }
         }
     </style>
