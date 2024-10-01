@@ -21,6 +21,7 @@
             background: linear-gradient(135deg, #e0e0e0, #ffffff);
             color: #333;
             position: relative;
+            overflow: hidden;
         }
 
         .container {
@@ -63,6 +64,37 @@
         .message {
             font-size: 1.5rem;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Emphasized "Message 2" styling */
+        .fantastic-message {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff8c00;
+            position: relative;
+            text-transform: uppercase;
+            animation: pulse 1s infinite;
+            background: url('https://images.unsplash.com/photo-1506784365847-bbad939e9335?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxOTcxNjB8MHwxfGFsbHwxfHx8fHx8fHwxNjE2MjUyMDM2&ixlib=rb-1.2.1&q=80&w=400') no-repeat center center; /* Public image URL */
+            background-size: cover;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+            box-shadow: 0 4px 30px rgba(255, 140, 0, 0.4);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(255, 140, 0, 0.8);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 40px rgba(255, 140, 0, 1);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(255, 140, 0, 0.8);
+            }
         }
 
         /* Circular animation */
@@ -157,6 +189,10 @@
             .animated-text {
                 font-size: 2rem;
             }
+
+            .fantastic-message {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -169,7 +205,7 @@
                     <p class="message">
                         <?php echo htmlspecialchars($message1); ?>
                     </p>
-                    <p class="message">
+                    <p class="message fantastic-message">
                         <?php echo htmlspecialchars($message2); ?>
                     </p>
                 </div>
