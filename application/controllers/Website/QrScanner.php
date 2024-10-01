@@ -58,7 +58,7 @@ class QrScanner extends CI_Controller {
 
 
 
-    public function checkanswer() {
+   /* public function checkanswer() {
     $answer = $this->input->post('answer');
     $correctAnswer = $this->session->userdata('correct_answer');
 
@@ -76,6 +76,60 @@ class QrScanner extends CI_Controller {
 
     // Load the view with the data
     $this->load->view('Ssgwebsite/website/scan/checkanswer', $data);
+}*/
+public function checkanswer() {
+    $answer = $this->input->post('answer');
+    $correctAnswer = $this->session->userdata('correct_answer');
+
+    // Initialize data array
+    $data = [];
+    
+    // Get the number of attempts from the session
+    $attempts = $this->session->userdata('attempts') ?? 0;
+
+    // Validate the answer
+    if ($answer == $correctAnswer) {
+        // User answered correctly
+        $data['message1'] = 'Thank you so much! You passed the puzzle!'; // Acknowledgment message
+        
+        if ($attempts >= 2) {
+            $randomNumber = rand(1, 100); // Generates a number between 1 and 100
+            
+            switch ($randomNumber) {
+                case 5:
+                    $data['message2'] = 'Congratulations! Enjoy a delicious 5 rupee chocolate as a treat!';
+                    break;
+                case 1:
+                    $data['message2'] = 'Awesome! Here’s a lovely pack of 5 rupee chips for you!';
+                    break;
+                case 10:
+                    $data['message2'] = 'Fantastic! You’ve earned a 10 rupee discount on your total purchase!';
+                    break;
+                default:
+                    $data['message2'] = 'Thank you for your efforts! Better luck next time!';
+            }
+        } else {
+            // If fewer than 2 attempts
+            $data['message2'] = ''; // No prize message for fewer than 2 attempts
+        }
+
+        $data['isCorrect'] = true; // Set a flag for correctness
+
+        // Reset attempts since the answer is correct
+        $this->session->set_userdata('attempts', 0);
+    } else {
+        // User answered incorrectly
+        $data['message1'] = 'Sorry, that\'s not correct. Please try again!'; // Acknowledgment message
+        $data['message2'] = ''; // No prize message
+        
+        // Increment the attempt count
+        $attempts++;
+        $this->session->set_userdata('attempts', $attempts);
+    }
+
+    // Load the view with the data
+    $this->load->view('Ssgwebsite/website/scan/checkanswer', $data);
 }
+
 
 }

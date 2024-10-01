@@ -164,10 +164,13 @@
     <div class="overlay <?php echo htmlspecialchars($isCorrect ? 'correct' : 'incorrect'); ?>">
         <div class="container">
             <h1>Your Result</h1>
-            <?php if (isset($message)): ?>
+            <?php if (isset($message1)): ?>
                 <div id="result" class="result <?php echo htmlspecialchars($isCorrect ? 'correct' : 'incorrect'); ?>">
                     <p class="message">
-                        <?php echo htmlspecialchars($message); ?>
+                        <?php echo htmlspecialchars($message1); ?>
+                    </p>
+                    <p class="message">
+                        <?php echo htmlspecialchars($message2); ?>
                     </p>
                 </div>
             <?php endif; ?>
