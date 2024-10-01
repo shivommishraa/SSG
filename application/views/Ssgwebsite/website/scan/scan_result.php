@@ -23,7 +23,7 @@
             color: #333;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 1rem;
             color: #fff;
             margin-bottom: 20px;
         }
@@ -70,7 +70,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 style="color:black">Grocery Puzzle</h1>
+        <h1 style="color:black">Are You an SSG Super Shopper? Take the Quiz to Find Out!</h1>
 
         <p><?php echo $question; ?></p> <!-- Show the question here -->
 
