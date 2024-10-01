@@ -78,32 +78,12 @@
         .fantastic-message {
             font-size: 2rem;
             font-weight: bold;
-            color: #ff8c00;
-            position: relative;
+            color: white;
             text-transform: uppercase;
-            animation: pulse 1s infinite;
-            background: linear-gradient(135deg, #ff0081, #4caf50);
-            background-clip: text;
-            color: transparent;
+            background: transparent;
             padding: 20px;
+            margin-top: 30px;
             border-radius: 10px;
-            margin-top: 10px;
-            box-shadow: 0 4px 30px rgba(255, 140, 0, 0.4);
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 30px rgba(255, 140, 0, 0.8);
-            }
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 0 40px rgba(255, 140, 0, 1);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 30px rgba(255, 140, 0, 0.8);
-            }
         }
 
         /* Circular animation */
@@ -126,7 +106,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Animated Text */
+        /* Animated Text with Color Transition */
         .animated-text {
             font-size: 2.5rem; 
             font-weight: bold;
@@ -135,13 +115,20 @@
             display: inline-block;
             overflow: hidden;
             white-space: nowrap;
-            color: #ff0081; 
-            animation: bounce 1s infinite alternate;
+            background: linear-gradient(135deg, #ff0081, #ff8c00, #4caf50, #00bcd4);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: colorChange 3s infinite alternate;
         }
 
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-10px); }
+        @keyframes colorChange {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
         }
 
         .home-button {
