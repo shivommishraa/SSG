@@ -55,18 +55,31 @@
             padding: 15px;
             border-radius: 8px;
             opacity: 0;
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            transition: opacity 0.8s ease, transform 0.8s ease;
             transform: translateY(-20px);
+            background: linear-gradient(135deg, #4caf50, #00bcd4);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1.2s ease forwards;
         }
 
         .result.correct {
-            color: #4caf50;
-            background: rgba(76, 175, 80, 0.1);
+            background: linear-gradient(135deg, #4caf50, #ff8c00);
         }
 
         .result.incorrect {
-            color: #f44336;
-            background: rgba(244, 67, 54, 0.1);
+            background: linear-gradient(135deg, #f44336, #ff0081);
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .message {
@@ -80,10 +93,11 @@
             font-weight: bold;
             color: white;
             text-transform: uppercase;
-            background: transparent;
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             margin-top: 30px;
             border-radius: 10px;
+            animation: fadeInUp 1.5s ease forwards;
         }
 
         /* Circular animation */
