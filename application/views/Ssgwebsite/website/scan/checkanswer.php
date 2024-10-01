@@ -45,15 +45,66 @@
 
         h1 {
             margin-bottom: 20px;
-            font-size: 2rem; /* Reduced font size */
+            font-size: 2.5rem;
             color: #333;
+        }
+
+        /* Result messages */
+        .result {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(-20px);
+            background: linear-gradient(135deg, #4caf50, #00bcd4);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1.2s ease forwards;
+        }
+
+        .result.correct {
+            background: linear-gradient(135deg, #4caf50, #ff8c00);
+        }
+
+        .result.incorrect {
+            background: linear-gradient(135deg, #f44336, #ff0081);
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message {
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Emphasized "Message 2" styling */
+        .fantastic-message {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            animation: fadeInUp 1.5s ease forwards;
         }
 
         /* Circular animation with SSG Hyper Mart inside */
         .circle {
-            width: 120px; /* Smaller circle */
-            height: 120px;
-            border: 8px solid transparent;
+            width: 150px;
+            height: 150px;
+            border: 10px solid transparent;
             border-radius: 50%;
             border-top-color: #ff0081; 
             border-right-color: #ff8c00;
@@ -66,7 +117,7 @@
             justify-content: center;
             align-items: center;
             font-weight: bold;
-            font-size: 1rem; /* Reduced font size */
+            font-size: 1.2rem;
             text-transform: uppercase;
         }
 
@@ -75,17 +126,11 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Pause rotation on hover */
-        .circle:hover {
-            animation-play-state: paused;
-        }
-
         /* Navy text color for "SSG HYPER MART" */
         .animated-text {
             position: absolute;
             z-index: 1;
             color: navy;
-            font-size: 0.9rem; /* Reduced font size */
         }
 
         /* Buttons Styling */
@@ -96,8 +141,8 @@
         }
 
         .home-button, .quiz-button {
-            padding: 10px 20px;
-            font-size: 1rem; /* Reduced font size */
+            padding: 12px 25px;
+            font-size: 1.2rem;
             color: #fff;
             background-color: #4caf50; 
             border: none;
@@ -113,7 +158,7 @@
             transform: translateY(-3px);
         }
 
-        /* Order Info Section */
+        /* Add for Order Section */
         .order-info {
             margin-top: 30px;
             padding: 10px;
@@ -121,7 +166,7 @@
             color: white;
             text-align: center;
             border-radius: 8px;
-            font-size: 1rem; /* Reduced font size */
+            font-size: 1.1rem;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
@@ -133,18 +178,17 @@
 
         /* Responsive Design */
         @media (max-width: 600px) {
-            h1 {
-                font-size: 1.5rem; /* Smaller heading */
+            .message {
+                font-size: 1rem;
             }
 
             .circle {
                 width: 100px;
                 height: 100px;
-                font-size: 0.8rem; /* Smaller circle text */
             }
 
-            .animated-text {
-                font-size: 0.8rem; /* Smaller inside text */
+            .fantastic-message {
+                font-size: 1.5rem;
             }
 
             .buttons {
@@ -152,45 +196,30 @@
             }
 
             .home-button, .quiz-button {
-                font-size: 0.9rem; /* Smaller button text */
                 width: 100%;
                 margin-bottom: 10px;
             }
 
             .order-info {
-                font-size: 0.9rem; /* Smaller order info text */
-            }
-        }
-
-        @media (max-width: 400px) {
-            h1 {
-                font-size: 1.2rem; /* Even smaller heading */
-            }
-
-            .circle {
-                width: 80px;
-                height: 80px;
-                font-size: 0.7rem; /* Smaller circle text */
-            }
-
-            .buttons {
-                margin-top: 20px;
-            }
-
-            .home-button, .quiz-button {
-                font-size: 0.8rem; /* Smaller button text */
-            }
-
-            .order-info {
-                font-size: 0.8rem; /* Smaller order info text */
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="overlay">
+    <div class="overlay <?php echo htmlspecialchars($isCorrect ? 'correct' : 'incorrect'); ?>">
         <div class="container">
             <h1>Your Result</h1>
+            <?php if (isset($message1)): ?>
+                <div id="result" class="result <?php echo htmlspecialchars($isCorrect ? 'correct' : 'incorrect'); ?>">
+                    <p class="message">
+                        <?php echo htmlspecialchars($message1); ?>
+                    </p>
+                    <p class="message fantastic-message">
+                        <?php echo htmlspecialchars($message2); ?>
+                    </p>
+                </div>
+            <?php endif; ?>
             <!-- Rotating Circle with SSG Hyper Mart Text -->
             <div class="circle">
                 <div class="animated-text">SSG HYPER MART</div>
@@ -198,17 +227,31 @@
 
             <!-- Buttons for Home and Quiz -->
             <div class="buttons">
-                <a href="#" class="home-button">Home</a>
+                <a href="<?php echo site_url(); ?>" class="home-button">Home</a>
                 <a href="#" class="quiz-button">Quiz</a>
             </div>
 
             <!-- Order Information -->
             <div class="order-info">
-                Phone: +91 9310523943<br/> 
-                Email: <a href="mailto:ssgmart9@gmail.com">ssgmart9@gmail.com</a>, 
-                Website: <a href="https://ssghypermart.com">ssghypermart.com</a>
+                Phone: +91 9310523943<br/> Email: <a href="mailto:ssgmart9@gmail.com">ssgmart9@gmail.com</a>, Website: <a href="https://ssghypermart.com">ssghypermart.com</a>
             </div>
         </div>
     </div>
+
+    <script>
+        // Function to show the result message with animation
+        function showMessage() {
+            const messageElement = document.querySelector('.result');
+            const overlay = document.querySelector('.overlay');
+            if (messageElement) {
+                messageElement.style.opacity = '1';
+                messageElement.style.transform = 'translateY(0)';
+                overlay.classList.add('visible'); // Show overlay
+            }
+        }
+
+        // Example usage
+        document.addEventListener('DOMContentLoaded', showMessage);
+    </script>
 </body>
 </html>
