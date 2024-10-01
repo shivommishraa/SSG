@@ -233,7 +233,7 @@
             <!-- Buttons for Home and Quiz -->
             <div class="buttons">
                 <a href="<?php echo site_url(); ?>" class="home-button">Home</a>
-                <a href="#" class="quiz-button">Quiz</a>
+                <a href="<?php echo site_url(); ?>/Website/QrScanner/scan" class="quiz-button">Quiz</a>
             </div>
 
             <!-- Order Information -->
