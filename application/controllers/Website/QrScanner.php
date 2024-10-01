@@ -91,7 +91,7 @@ public function checkanswer() {
     if ($answer == $correctAnswer) {
         // User answered correctly
         $data['message1'] = 'Thank you so much! You passed the puzzle!'; // Acknowledgment message
-        
+        $data['isCorrect'] = true;
         if ($attempts >= 2) {
             $randomNumber = rand(1, 100); // Generates a number between 1 and 100
             
@@ -121,7 +121,7 @@ public function checkanswer() {
         // User answered incorrectly
         $data['message1'] = 'Sorry, that\'s not correct. Please try again!'; // Acknowledgment message
         $data['message2'] = ''; // No prize message
-        
+        $data['isCorrect'] = false;
         // Increment the attempt count
         $attempts++;
         $this->session->set_userdata('attempts', $attempts);
