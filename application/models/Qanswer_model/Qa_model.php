@@ -77,4 +77,12 @@ class Qa_model extends CI_Model
         $this->db->update("tbl_questionanswer", $data);
         return true;
     }
+
+
+    
+     public function insertQuiz($data)
+    {
+        $this->db->insert("tbl_quiz", $data);
+        return $this->db->insert_id();
+    }
 }

@@ -228,6 +228,9 @@
                     <option value="<?php echo $option; ?>"><?php echo $option; ?></option>
                 <?php endforeach; ?>
             </select>
+            <input required type="hidden" name="name" value="<?php $question;?>">
+            <input required type="text" name="name" placeholder="Enter Your Name">
+            <input  required type="number" name="mobile" placeholder="Enter Your Number">
             <button type="submit" name="submit">Submit</button>
         </form>
 

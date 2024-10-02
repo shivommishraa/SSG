@@ -159,7 +159,13 @@ public function checkanswer() {
         $attempts++;
         $this->session->set_userdata('attempts', $attempts);
     }
-
+    $data["question"] = $this->input->post("question");
+    $data["answer"] = $this->input->post("answer");
+    $data["correctanswer"] = $correctAnswer;
+    $data["name"] = $this->input->post("name");
+    $data["mobile"] = $this->input->post("mobile");
+    $data["prize"] = $data['message2']
+    $this->Qa_model->insertQuiz($data);
     // Load the view with the data
     $this->load->view('Ssgwebsite/website/scan/checkanswer', $data);
 }
