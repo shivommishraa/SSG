@@ -164,7 +164,7 @@ public function checkanswer() {
     $data["correctanswer"] = $correctAnswer;
     $data["name"] = $this->input->post("name");
     $data["mobile"] = $this->input->post("mobile");
-    $data["prize"] = $data['message2']
+    $data["prize"] = $data['message2'];
     $this->Qa_model->insertQuiz($data);
     // Load the view with the data
     $this->load->view('Ssgwebsite/website/scan/checkanswer', $data);
