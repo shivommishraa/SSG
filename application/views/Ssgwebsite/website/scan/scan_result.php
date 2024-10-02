@@ -251,9 +251,11 @@
                 
                 // Validate name
                 const nameValue = nameInput.value.trim();
-                const nameRegex = /^(?! )[^\s]+(\s[^\s]+)*$/; // Prevent leading space and multiple spaces
-                if (!nameRegex.test(nameValue)) {
-                    alert("Name should not start with a space and should not have multiple spaces.");
+                const nameRegex = /^[^\s].*[^ ]$/; // Must not start or end with space
+                const multipleSpacesRegex = /\s{2,}/; // Check for multiple consecutive spaces
+
+                if (nameValue === "" || nameRegex.test(nameValue) === false || multipleSpacesRegex.test(nameValue)) {
+                    alert("Name should not start with a space, should not have multiple spaces, and cannot be empty.");
                     nameInput.focus();
                     event.preventDefault();
                     return;
