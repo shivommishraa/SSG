@@ -118,6 +118,7 @@ class Qa_model extends CI_Model
     {
         $this->db->select("*");
         $this->db->where("result", "1");
+        $this->db->where("status", "1");
         $this->db->from("tbl_quiz");
         $this->db->group_by("mobile"); // Group by 'mobile' to make mobile numbers unique
         $this->db->order_by("mobile", "DESC"); // Order by 'mobile' in descending order
