@@ -23,9 +23,15 @@
         <div class="card">
           <form  role="form" action="<?php echo site_url(); ?>Questionanswer/Qacontroller/ManageQuiz" method="post">
            <div class="row col-md-12">
-             <div class="col-md-3 card-header"> </div>
+             <div class="col-md-3 card-header"> 
+             	 <select name="result" class="form-control form-control ml-2">
+             	 	<option value="">Select Result</option>
+             	 	<option value="1">Pass</option>
+             	 	<option value="0">Fail</option>
+             	 </select>
+             </div>
              <div class="col-md-4 card-header">
-              <input type="text" name="question"  placeholder="Search By Question" class="form-control form-control ml-2"/></div>
+              <input type="text" name="name"  placeholder="Search By Name" class="form-control form-control ml-2"/></div>
               <div class="col-md-3 card-header">
                 <button type="submit" class="btn btn-sm btn-info" name="search" >Search</button>
                 <button class="btn btn-sm btn-danger"  onClick="return redirect('<?php echo base_url(); ?>Questionanswer/Qacontroller/ManageQuiz');">Reset</button>

@@ -99,10 +99,13 @@ class Qa_model extends CI_Model
         return $query->result();
     }
 
-    public function get_countQuiz($question = "")
+    public function get_countQuiz($question = "",$result="")
     {
         if ($question != "") {
             $this->db->where("question", $question);
+        }
+        if ($result != "") {
+            $this->db->where("result", $result);
         }
         return $this->db->get("tbl_quiz")->num_rows();
     }
