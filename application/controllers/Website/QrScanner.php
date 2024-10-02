@@ -86,9 +86,10 @@ public function checkanswer() {
     
     // Get the number of attempts from the session
     $attempts = $this->session->userdata('attempts') ?? 0;
-
+    $result=0;
     // Validate the answer
     if ($answer == $correctAnswer) {
+        $result=1;
         // User answered correctly
         $data['message1'] = 'Nice.. Correct answer!'; // Acknowledgment message
         $data['isCorrect'] = true;
@@ -157,6 +158,7 @@ public function checkanswer() {
         $data['isCorrect'] = false;
         // Increment the attempt count
         $attempts++;
+        $result=0;
         $this->session->set_userdata('attempts', $attempts);
     }
     $data1["question"] = $this->input->post("question");
@@ -165,6 +167,7 @@ public function checkanswer() {
     $data1["name"] = $this->input->post("name");
     $data1["mobile"] = $this->input->post("mobile");
     $data1["prize"] = $data['message2'];
+    $data1["result"] = $result;
     $this->Qa_model->insertQuiz($data1);
     // Load the view with the data
     $this->load->view('Ssgwebsite/website/scan/checkanswer', $data);
