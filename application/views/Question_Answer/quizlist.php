@@ -27,7 +27,7 @@
              	 <select name="result" class="form-control form-control ml-2">
              	 	<option value="">Select Result</option>
              	 	<option value="1">Pass</option>
-             	 	<option value="0">Fail</option>
+             	 	<option value="2">Fail</option>
              	 </select>
              </div>
              <div class="col-md-4 card-header">
@@ -76,11 +76,11 @@
                 <td>  <?php echo $qa_data->name; ?> </td>
                 <td>  <?php echo $qa_data->mobile; ?> </td>
                 <td><span <?php if (
-                   $qa_data->result == 0
+                   $qa_data->result == 2
                ) { ?> class="badge badge-danger"<?php } else { ?> class="badge badge-success"<?php } ?>>
                 <a style="color:#fff;" href="#" > 
                     <?php if (
-                          $qa_data->result == 0
+                          $qa_data->result == 2
                       ) {
                           echo "Fail";
                       } else {

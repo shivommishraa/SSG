@@ -87,7 +87,7 @@ public function checkanswer() {
     
     // Get the number of attempts from the session
     $attempts = $this->session->userdata('attempts') ?? 0;
-    $result=0;
+    $result=2;
     // Validate the answer
     if ($answer == $correctAnswer) {
         $result=1;
@@ -159,7 +159,7 @@ public function checkanswer() {
         $data['isCorrect'] = false;
         // Increment the attempt count
         $attempts++;
-        $result=0;
+        $result=2;
         $this->session->set_userdata('attempts', $attempts);
     }
     $data1["question"] = $this->input->post("question");
