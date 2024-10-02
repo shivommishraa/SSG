@@ -94,7 +94,7 @@ public function checkanswer() {
         $data['isCorrect'] = true;
         if ($attempts >= 2) {
             $randomNumber = rand(1, 100); // Generates a number between 1 and 100
-            echo  $randomNumber; exit;
+            
             switch ($randomNumber) {
                 case 1:
                     $data['message2'] = 'Congratulations! Enjoy a delicious 5 rupee chocolate as a treat!';
@@ -147,9 +147,9 @@ public function checkanswer() {
         }
 
         $data['isCorrect'] = true; // Set a flag for correctness
-
+        $attempts++;
         // Reset attempts since the answer is correct
-        $this->session->set_userdata('attempts', 0);
+        //$this->session->set_userdata('attempts', 0);
     } else {
         // User answered incorrectly
         $data['message1'] = 'Sorry, that\'s not correct. Please try again!'; // Acknowledgment message
