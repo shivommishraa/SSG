@@ -17,6 +17,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             min-height: 100vh;
             padding: 20px;
             text-align: center;
@@ -34,6 +35,7 @@
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
             max-width: 500px;
             width: 100%;
+            margin-bottom: 20px;
         }
         input[type="number"], select {
             padding: 15px;
@@ -75,6 +77,7 @@
             -webkit-text-fill-color: transparent;
             animation: rainbow 5s ease-in-out infinite;
             background-size: 200% 200%;
+            margin-bottom: 20px;
         }
 
         @keyframes rainbow {
@@ -86,6 +89,60 @@
             }
             100% {
                 background-position: 0% 50%;
+            }
+        }
+
+        /* Buttons for Home and Quiz */
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .home-button {
+            padding: 12px 25px;
+            background-color: #ff6f61;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .home-button:hover {
+            background-color: #ff3b30;
+        }
+
+        /* Footer Info */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        .footer a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+            }
+            .animated-text {
+                font-size: 2rem;
+            }
+            button {
+                font-size: 1rem;
+            }
+            p {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -108,6 +165,19 @@
             </select>
             <button type="submit" name="submit">Submit</button>
         </form>
+
+        <!-- Buttons for Home and Quiz -->
+        <div class="buttons">
+            <a href="<?php echo site_url(); ?>" class="home-button">Home</a>
+        </div>
+    </div>
+
+    <!-- Footer with Contact Information -->
+    <div class="footer">
+        <p>Phone: +91 9310523943<br/>
+           Email: <a href="mailto:ssgmart9@gmail.com">ssgmart9@gmail.com</a><br/>
+           Website: <a href="https://ssghypermart.com" target="_blank">ssghypermart.com</a>
+        </p>
     </div>
 
     <script>
