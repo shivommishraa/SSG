@@ -21,6 +21,11 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             animation: color-change 3s infinite;
+            position: sticky;
+            top: 0;
+            background-color: #f4f4f4;
+            padding: 10px 0;
+            z-index: 1000;
         }
 
         /* Animation for title */
@@ -30,56 +35,79 @@
             100% { color: #ff6600; }
         }
 
-        /* Responsive list styles */
-        .customer-list {
-            max-width: 800px;
+        /* Scrollable table container */
+        .table-container {
+            max-height: 400px;
+            overflow-y: auto;
             margin: 0 auto;
-            background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .customer-item {
-            display: flex;
-            justify-content: space-between;
+        /* Table styles */
+        .customer-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .customer-table th, .customer-table td {
             padding: 15px;
+            text-align: left;
             border-bottom: 1px solid #ddd;
+        }
+
+        .customer-table th {
+            background-color: #ff6600;
+            color: white;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .customer-table tr:hover {
+            background-color: #f0f8ff;
             transition: background-color 0.3s;
         }
 
-        .customer-item:last-child {
-            border-bottom: none;
-        }
-
-        .customer-item:hover {
-            background-color: #f0f8ff;
-        }
-
         .customer-name {
-            font-weight: bold;
-            font-size: 1.2em;
             color: #007bff;
-        }
-
-        .customer-result {
-            font-size: 1.2em;
-            color: #28a745;
+            font-weight: bold;
         }
 
         .customer-mobile {
-            font-size: 1.1em;
             color: #6c757d;
         }
 
+        .customer-result {
+            font-size: 1.1em;
+        }
+
+        .pass {
+            color: green;
+        }
+
+        .fail {
+            color: red;
+        }
+
         @media screen and (max-width: 600px) {
-            .customer-item {
-                flex-direction: column;
-                align-items: flex-start;
+            .customer-table, .customer-table th, .customer-table td {
+                display: block;
+                width: 100%;
             }
 
-            .customer-result {
-                margin-top: 5px;
+            .customer-table th {
+                text-align: center;
+                background-color: #ff6600;
+            }
+
+            .customer-table td {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
             }
         }
     </style>
@@ -88,18 +116,29 @@
 
     <h1>SSG HYPER MART TOP CUSTOMER's</h1>
 
-    <div class="customer-list">
-        <?php foreach ($allData as $customer): ?>
-        <div class="customer-item">
-            <div class="customer-name"><?= htmlspecialchars($customer->name) ?></div>
-            <div class="customer-mobile">
-                <?= substr($customer->mobile_number, 0, 2) . '****' . substr($customer->mobile_number, -1) ?>
-            </div>
-            <div class="customer-result">
-                <?= $customer->result == 1 ? '<span style="color: green;">Pass</span>' : '<span style="color: red;">Fail</span>' ?>
-            </div>
-        </div>
-        <?php endforeach; ?>
+    <div class="table-container">
+        <table class="customer-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($allData as $customer): ?>
+                <tr>
+                    <td class="customer-name"><?= htmlspecialchars($customer->name) ?></td>
+                    <td class="customer-mobile">
+                        <?= substr($customer->mobile, 0, 2) . '****' . substr($customer->mobile, -1) ?>
+                    </td>
+                    <td class="customer-result">
+                        <?= $customer->result == 1 ? '<span class="pass">Pass</span>' : '<span class="fail">Fail</span>' ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </div>
 
 </body>
