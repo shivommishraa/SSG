@@ -94,7 +94,7 @@ public function checkanswer() {
         $data['isCorrect'] = true;
         if ($attempts >= 2) {
             $randomNumber = rand(1, 100); // Generates a number between 1 and 100
-            
+            echo  $randomNumber; exit;
             switch ($randomNumber) {
                 case 1:
                     $data['message2'] = 'Congratulations! Enjoy a delicious 5 rupee chocolate as a treat!';
