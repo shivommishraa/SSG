@@ -59,6 +59,17 @@ class Qa_model extends CI_Model {
         $this->db->insert('tbl_questionanswer', $data);
         return $this->db->insert_id();
     }
+
+      public function getDataByQa_id($id) {
+        $this->db->where('qa_id', $id);
+        return $this->db->get('tbl_questionanswer')->result();
+    }
+
+    public function updateQa($id,$data) {
+        $this->db->where('qa_id', $id);
+        $this->db->update('tbl_questionanswer', $data);
+        return true;
+    }
        /* public function all_text_category()
         {
              return $this->db->get('tbl_textcategory')->result();

@@ -83,9 +83,36 @@ class Qacontroller extends CI_Controller {
       $data['answer'] = $this->input->post('answer');
       $data['options'] = $this->input->post('options');
       $this->Qa_model->insert($data);
-      $this->session->set_flashdata('success', 'Question added Successfully');
+      $this->session->set_flashdata('success', 'Question added Successfully.');
       redirect('Questionanswer/Qacontroller/ManageQuestionanswer');
 
+    }
+
+    public function editQa($qa_id) {
+      $id= $this->session->userdata('session_id');
+      $data['admin']=$this->Adminmodel->getadmin($id);
+      $data['menu_groups']=$this->Menu->getAllMenuGroup();
+      $data['menu_details']=$this->Menu->getAllMenu();
+      $data['admin_role']=$this->Menu->adminrole();
+      $this->load->view('Dashboard/header.php',$data);
+      $this->load->view('Dashboard/side.php');
+      $data['qa_id'] = $qa_id;
+      $data['qa_data'] = $this->Qa_model->getDataByQa_id($qa_id);
+      $this->load->view('Questionanswer/editquestionanswer', $data);
+      $this->load->view('Dashboard/footer.php');
+      }
+
+
+      public function updateQuestion() {
+      $qa_id = $this->input->post('qa_id');
+      $data['question'] = $this->input->post('question');
+      $data['answer'] = $this->input->post('answer');
+      $data['options'] = $this->input->post('options');
+      $edit = $this->Qa_model->updateQa($qa_id,$data);
+      if ($edit) {
+        $this->session->set_flashdata('success', 'Question Updated Successfully.');
+        redirect('Questionanswer/Qacontroller/ManageQuestionanswer');
+      }
     }
 
      public function ManageText_status()
@@ -182,26 +209,7 @@ class Qacontroller extends CI_Controller {
     created by your name
     created at 18-08-20.
     */
-    public function editTbl_category($tbl_brand_category_id) {
-      $id= $this->session->userdata('session_id');
-      $data['admin']=$this->Adminmodel->getadmin($id);
-      $data['menu_groups']=$this->Menu->getAllMenuGroup();
-      $data['menu_details']=$this->Menu->getAllMenu();
-      $data['admin_role']=$this->Menu->adminrole();
-      $this->load->view('Dashboard/header.php',$data);
-      $this->load->view('Dashboard/side.php');
-      $data['tbl_brand_category_id'] = $tbl_brand_category_id;
-      $data['categorydropdown'] = $this->Category_model->parent_zero_category();
-      $data['tbl_Category'] = $this->Category_model->getDataBycategory_id($tbl_brand_category_id);
-      
-      $data['getsingleparent']=function($id){
-       return $this->Category_model->getsingleparent($id);};
-       $data['getparent']=function($id){
-        return $this->Category_model->getparent($id);};
-
-        $this->load->view('category/edit-tbl_category', $data);
-        $this->load->view('Dashboard/footer.php');
-      }
+    
 
 
     public function editText_category($tbl_brand_category_id) {
