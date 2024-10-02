@@ -31,6 +31,7 @@ class QrScanner extends CI_Controller {
         // Prepare the question and correct answer
         $data['question'] = $selectedQuestion->question; // Access as object property
         $data['correct_answer'] = $selectedQuestion->answer; // Access as object property
+        $data['qa_id'] = $selectedQuestion->qa_id; // Access as object property
 
         // Ensure options are an array
         if (is_string($selectedQuestion->options)) {
@@ -166,6 +167,7 @@ public function checkanswer() {
     $data1["correctanswer"] = $correctAnswer;
     $data1["name"] = $this->input->post("name");
     $data1["mobile"] = $this->input->post("mobile");
+    $data1["qa_id"] = $this->input->post("qa_id");
     $data1["prize"] = $data['message2'];
     $data1["result"] = $result;
     $this->Qa_model->insertQuiz($data1);

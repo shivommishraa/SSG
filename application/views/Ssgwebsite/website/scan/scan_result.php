@@ -236,6 +236,7 @@
                 <?php endforeach; ?>
             </select>
             <input required type="hidden" name="question" value="<?php echo $question;?>">
+            <input required type="hidden" name="qa_id" value="<?php echo $qa_id;?>">
             <input required type="text" name="name" placeholder="Enter Your Name" id="name">
             <input required type="number" name="mobile" placeholder="Enter Your Number" id="mobile">
             <div id="mobileError" class="error-message" style="display:none;"></div>
