@@ -90,7 +90,7 @@
                  <td><span <?php if (
                    $qa_data->status == 0
                ) { ?> class="badge badge-success"<?php } else { ?> class="badge badge-danger"<?php } ?>>
-                <a style="color:#fff;" href="<?php echo site_url(); ?>Questionanswer/Qacontroller/changeStatus/<?php echo $qa_data->id; ?>" > 
+                <a style="color:#fff;" href="<?php echo site_url(); ?>Questionanswer/Qacontroller/changeStatusQuiz/<?php echo $qa_data->id; ?>" > 
                     <?php if (
                           $qa_data->status == 0
                       ) {
