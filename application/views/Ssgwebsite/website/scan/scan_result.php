@@ -278,12 +278,31 @@
                 }
             });
 
-            form.addEventListener("submit", function(event) {
-                mobileError.style.display = 'none'; // Reset error message
+            mobileInput.addEventListener('input', function() {
                 const mobileValue = mobileInput.value.trim();
 
-                // Validate mobile number
-                if (!/^\d{10}$/.test(mobileValue)) {
+                // Show error message if the number exceeds 10 digits
+                if (mobileValue.length > 10) {
+                    mobileError.textContent = "Please enter a valid mobile number (10 digits only, no spaces).";
+                    mobileError.style.display = 'block';
+                } else {
+                    mobileError.style.display = 'none'; // Hide error message
+                }
+
+                // Validate mobile number only if it has exactly 10 digits
+                if (mobileValue.length === 10 && !/^\d{10}$/.test(mobileValue)) {
+                    mobileError.textContent = "Please enter a valid mobile number (10 digits only, no spaces).";
+                    mobileError.style.display = 'block';
+                } else {
+                    mobileError.style.display = 'none'; // Hide error message
+                }
+            });
+
+            form.addEventListener("submit", function(event) {
+                const mobileValue = mobileInput.value.trim();
+
+                // Validate mobile number only if it has exactly 10 digits
+                if (mobileValue.length !== 10 || !/^\d{10}$/.test(mobileValue)) {
                     mobileError.textContent = "Please enter a valid mobile number (10 digits only, no spaces).";
                     mobileError.style.display = 'block';
                     mobileInput.focus();
