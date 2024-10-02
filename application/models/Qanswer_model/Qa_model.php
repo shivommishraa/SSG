@@ -87,12 +87,15 @@ class Qa_model extends CI_Model
     }
 
 
-    public function getAllDataQuiz($limit, $start, $question)
+    public function getAllDataQuiz($limit, $start, $name,$result)
     {
         $this->db->select("*");
         $this->db->limit($limit, $start);
-        if ($question != "") {
-            $this->db->where("question", $question);
+        if ($name != "") {
+            $this->db->where("name", $name);
+        }
+        if ($result != "") {
+            $this->db->where("result", $result);
         }
         $this->db->from("tbl_quiz");
         $query = $this->db->get();

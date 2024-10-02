@@ -167,7 +167,8 @@ class Qacontroller extends CI_Controller
         $data["allData"] = $this->Qa_model->getAllDataQuiz(
             $config["per_page"],
             $page,
-            $name
+            $name,
+            $result
         );
         $this->load->view("Dashboard/header.php", $data);
         $this->load->view("Dashboard/side.php");
