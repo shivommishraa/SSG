@@ -98,7 +98,7 @@ class Qacontroller extends CI_Controller {
       $this->load->view('Dashboard/side.php');
       $data['qa_id'] = $qa_id;
       $data['qa_data'] = $this->Qa_model->getDataByQa_id($qa_id);
-      $this->load->view('Questionanswer/editquestionanswer', $data);
+      $this->load->view('Question_Answer/editquestionanswer', $data);
       $this->load->view('Dashboard/footer.php');
       }
 
