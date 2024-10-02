@@ -54,7 +54,7 @@
             margin-bottom: 20px;
         }
 
-        select {
+        select, input[type="text"], input[type="number"] {
             padding: 15px;
             width: 100%;
             border: 2px solid #fcb69f;
@@ -65,7 +65,7 @@
             transition: border-color 0.3s ease;
         }
 
-        select:focus {
+        select:focus, input[type="text"]:focus, input[type="number"]:focus {
             border-color: #ff6f61;
         }
 
@@ -165,7 +165,7 @@
                 padding: 12px 18px;
             }
 
-            select {
+            select, input[type="text"], input[type="number"] {
                 padding: 12px;
                 font-size: 0.9rem;
             }
@@ -198,7 +198,7 @@
                 padding: 10px 15px;
             }
 
-            select {
+            select, input[type="text"], input[type="number"] {
                 padding: 10px;
                 font-size: 0.8rem;
             }
@@ -228,9 +228,9 @@
                     <option value="<?php echo $option; ?>"><?php echo $option; ?></option>
                 <?php endforeach; ?>
             </select>
-            <input required type="hidden" name="name" value="<?php $question;?>">
+            <input required type="hidden" name="name" value="<?php echo $question;?>">
             <input required type="text" name="name" placeholder="Enter Your Name">
-            <input  required type="number" name="mobile" placeholder="Enter Your Number">
+            <input required type="number" name="mobile" placeholder="Enter Your Number">
             <button type="submit" name="submit">Submit</button>
         </form>
 
