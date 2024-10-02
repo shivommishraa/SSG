@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSG Hyper Mart Puzzle</title>
+    <title>SSG HYPER MART</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -66,22 +66,46 @@
             font-size: 1.5rem;
             margin-bottom: 20px;
         }
+        /* Animated Text */
+        .animated-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6f61, #ff3b30, #ffecb3, #fcb69f, #ff9a8b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow 5s ease-in-out infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 style="color:black">Are You an SSG Super Customer? Take the Quiz to Find Out !</h1>
+        <h1 class="animated-text">SSG HYPER MART</h1>
+
+        <h2>Are You an SSG Super Customer? Take the Quiz to Find Out!</h2>
 
         <p><?php echo $question; ?></p> <!-- Show the question here -->
 
         <form method="post" action="<?php echo base_url('Website/QrScanner/checkanswer'); ?>">
            
-                <select name="answer" required>
-                    <option value="">Select your answer</option>
-                    <?php foreach ($options as $option): ?>
-                        <option value="<?php echo $option; ?>"><?php echo $option; ?></option>
-                    <?php endforeach; ?>
-                </select>
+            <select name="answer" required>
+                <option value="">Select your answer</option>
+                <?php foreach ($options as $option): ?>
+                    <option value="<?php echo $option; ?>"><?php echo $option; ?></option>
+                <?php endforeach; ?>
+            </select>
             <button type="submit" name="submit">Submit</button>
         </form>
     </div>
