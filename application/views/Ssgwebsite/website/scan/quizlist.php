@@ -38,8 +38,7 @@
 
         /* Scrollable table container */
         .table-container {
-            max-height: 400px;
-            overflow-y: auto;
+            overflow-x: auto; /* Make table horizontally scrollable */
             margin: 0 auto 20px;
             border-radius: 10px;
             background-color: #fff;
@@ -50,6 +49,7 @@
         .customer-table {
             width: 100%;
             border-collapse: collapse;
+            min-width: 600px; /* Ensure table doesn't shrink too much */
         }
 
         .customer-table th, .customer-table td {
