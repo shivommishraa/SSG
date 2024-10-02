@@ -96,17 +96,50 @@ public function checkanswer() {
             $randomNumber = rand(1, 100); // Generates a number between 1 and 100
             
             switch ($randomNumber) {
-                case 5:
+                case 1:
                     $data['message2'] = 'Congratulations! Enjoy a delicious 5 rupee chocolate as a treat!';
                     break;
-                case 1:
+                case 5:
                     $data['message2'] = 'Awesome! Here’s a lovely pack of 5 rupee chips for you!';
                     break;
                 case 10:
                     $data['message2'] = 'Fantastic! You’ve earned a 10 rupee discount on your total purchase!';
                     break;
+                case 15:
+                    $data['message2'] = 'Fantastic! You are an SSG HYPER MART super customer!';
+                    break;
+                case 20:
+                    $data['message2'] = 'Awesome! You are a valued customer at SSG HYPER MART!';
+                    break;
+                case 21:
+                    $data['message2'] = 'Congratulations! Relish a yummy 5 rupee biscuit as a sweet reward!';
+                    break;
+                case 30:
+                    $data['message2'] = 'Dazzling! You are an SSG HYPER MART amazing customer!';
+                    break;
+                case 40:
+                    $data['message2'] = 'Spectacular! You are an SSG HYPER MART VIP customer!';
+                    break;
+                case 50:
+                    $data['message2'] = 'Fantastic! Welcome to the SSG HYPER MART family, our amazing customer!';
+                    break;
+                case 60:
+                    $data['message2'] = 'Wonderful! Thank you for being an extraordinary customer at SSG HYPER MART!';
+                    break;
+                case 70:
+                    $data['message2'] = 'Remarkable! You are a super customer at SSG HYPER MART!';
+                    break;
+                case 80:
+                    $data['message2'] = 'Incredible! You are an SSG HYPER MART exceptional customer!';
+                    break;
+                case 90:
+                    $data['message2'] = 'Fabulous! You are an SSG HYPER MART outstanding customer!';
+                    break;
+                case 100:
+                    $data['message2'] = 'Great news! You are a VIP customer at SSG HYPER MART!';
+                    break;
                 default:
-                    $data['message2'] = 'Thank you for your efforts! Better luck next time!';
+                    $data['message2'] = 'We truly appreciate your efforts! Keep shining, and better luck next time!';
             }
         } else {
             // If fewer than 2 attempts
