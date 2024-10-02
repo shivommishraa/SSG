@@ -39,7 +39,7 @@ class Qacontroller extends CI_Controller {
        $config = $this->config->item('pagination_config');;
        $config['base_url'] = base_url() ."Questionanswer/Qacontroller/ManageQuestionanswer"."/$name";
        $config['total_rows'] = $this->Qa_model->get_count($name);
-       $config['per_page'] = 20;
+       $config['per_page'] = 40;
        $config['uri_segment'] = 5;
        $this->pagination->initialize($config);
        $page = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
