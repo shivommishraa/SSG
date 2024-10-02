@@ -134,7 +134,7 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+       /* @media (max-width: 768px) {
             .customer-table, .customer-table th, .customer-table td {
                 display: block;
                 width: 100%;
@@ -183,7 +183,7 @@
                 padding: 12px 15px;
                 width: 90%;
             }
-        }
+        }*/
     </style>
 </head>
 <body>
