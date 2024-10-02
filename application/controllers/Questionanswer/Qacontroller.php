@@ -175,4 +175,15 @@ class Qacontroller extends CI_Controller
         $this->load->view("Question_Answer/quizlist", $data);
         $this->load->view("Dashboard/footer.php");
     }
+
+
+    public function changeStatusQuiz($tbl_id)
+    {
+        $edit = $this->Qa_model->changeStatusQuiz($tbl_id);
+        $this->session->set_flashdata(
+            "success",
+            "Record " . $edit . " Successfully"
+        );
+        redirect("Questionanswer/Qacontroller/ManageQuiz");
+    }
 }

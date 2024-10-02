@@ -63,7 +63,7 @@
                  <th>Mobile</th>
                  <th>Result</th>
                  <th>Date</th>
-                 <!-- <th colspan="1">Actions</th> -->
+                 <th colspan="1">Actions</th>
 
                </tr>
              </thead>
@@ -87,6 +87,17 @@
                           echo "Pass";
                       } ?></a></span></td>
                 <td>  <?php echo $qa_data->updated_at; ?> </td>
+                 <td><span <?php if (
+                   $qa_data->status == 0
+               ) { ?> class="badge badge-success"<?php } else { ?> class="badge badge-danger"<?php } ?>>
+                <a style="color:#fff;" href="<?php echo site_url(); ?>Questionanswer/Qacontroller/changeStatus/<?php echo $qa_data->id; ?>" > 
+                    <?php if (
+                          $qa_data->status == 0
+                      ) {
+                          echo "Enable";
+                      } else {
+                          echo "Disable";
+                      } ?></a></span></td>
               </tr>
               <?php $i++;}
               ?>

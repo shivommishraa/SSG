@@ -125,5 +125,23 @@ class Qa_model extends CI_Model
         return $query->result();
     }
 
+    public function changeStatusQuiz($id)
+    {
+        $table = $this->getDataBydata_Quizid($id);
+        if ($table[0]->status == 0) {
+            $this->update($id, ["status" => "1"]);
+            return "Activated";
+        } else {
+            $this->update($id, ["status" => "0"]);
+            return "Deactivated";
+        }
+    }
+
+    public function getDataBydata_Quizid($id)
+    {
+        $this->db->where("id", $id);
+        return $this->db->get("tbl_quiz")->result();
+    }
+
     
 }
