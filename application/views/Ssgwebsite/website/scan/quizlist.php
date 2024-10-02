@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSG HYPER MART TOP CUSTOMER's</title>
+    <title>SSG HYPER MART</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* General styles */
@@ -48,12 +48,12 @@
         /* Table styles */
         .customer-table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: collapse; /* Merged borders */
             min-width: 600px; /* Ensure table doesn't shrink too much */
         }
 
         .customer-table th, .customer-table td {
-            padding: 15px;
+            padding: 10px; /* Reduced padding */
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
@@ -68,8 +68,13 @@
             z-index: 1;
         }
 
+        /* Alternate row colors for better readability */
+        .customer-table tr:nth-child(even) {
+            background-color: #f9f9f9; /* Light grey for even rows */
+        }
+
         .customer-table tr:hover {
-            background-color: #f0f8ff;
+            background-color: #e0e0e0; /* Lighter hover effect */
             transition: background-color 0.3s;
         }
 
@@ -133,62 +138,11 @@
             text-decoration: underline;
         }
 
-        /* Responsive Design */
-       /* @media (max-width: 768px) {
-            .customer-table, .customer-table th, .customer-table td {
-                display: block;
-                width: 100%;
-            }
-
-            .customer-table th {
-                text-align: center;
-                background-color: #ff6600;
-            }
-
-            .customer-table td {
-                display: flex;
-                justify-content: space-between;
-                padding: 10px;
-                border: none;
-                border-bottom: 1px solid #ddd;
-            }
-
-            .customer-name, .customer-mobile, .customer-result {
-                font-size: 1em;
-            }
-
-            .buttons a {
-                display: block;
-                width: 80%;
-                margin: 10px auto;
-                padding: 12px 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5em;
-            }
-
-            .customer-table td {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .customer-table th {
-                font-size: 1em;
-            }
-
-            .home-button, .quiz-button {
-                padding: 12px 15px;
-                width: 90%;
-            }
-        }*/
     </style>
 </head>
 <body>
 
-    <h1>SSG HYPER MART TOP CUSTOMER's</h1>
+    <h1>SSG HYPER MART TOP CUSTOMER</h1>
 
     <!-- Scrollable Table Container -->
     <div class="table-container">
