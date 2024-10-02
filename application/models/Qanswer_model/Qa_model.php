@@ -85,4 +85,25 @@ class Qa_model extends CI_Model
         $this->db->insert("tbl_quiz", $data);
         return $this->db->insert_id();
     }
+
+
+    public function getAllDataQuiz($limit, $start, $question)
+    {
+        $this->db->select("*");
+        $this->db->limit($limit, $start);
+        if ($question != "") {
+            $this->db->where("question", $question);
+        }
+        $this->db->from("tbl_quiz");
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function get_countQuiz($question = "")
+    {
+        if ($question != "") {
+            $this->db->where("question", $question);
+        }
+        return $this->db->get("tbl_quiz")->num_rows();
+    }
 }

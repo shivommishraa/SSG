@@ -131,4 +131,42 @@ class Qacontroller extends CI_Controller
             redirect("Questionanswer/Qacontroller/ManageQuestionanswer");
         }
     }
+
+
+
+    public function ManageQuiz()
+    {
+        $id = $this->session->userdata("session_id");
+        $data["admin"] = $this->Adminmodel->getadmin($id);
+        $data["menu_groups"] = $this->Menu->getAllMenuGroup();
+        $data["menu_details"] = $this->Menu->getAllMenu();
+        $data["admin_role"] = $this->Menu->adminrole();
+        //============================ Start Pager Code ==============================
+        $name = $this->input->post("question")
+            ? $this->input->post("question")
+            : 0;
+        $name = $this->uri->segment(4) ? $this->uri->segment(4) : $name;
+        $this->load->config("bootstrap_pagination");
+        $config = $this->config->item("pagination_config");
+        $config["base_url"] =
+            base_url() .
+            "Questionanswer/Qacontroller/ManageQuiz" .
+            "/$name";
+        $config["total_rows"] = $this->Qa_model->get_countQuiz($name);
+        $config["per_page"] = 40;
+        $config["uri_segment"] = 5;
+        $this->pagination->initialize($config);
+        $page = $this->uri->segment(5) ? $this->uri->segment(5) : 0;
+        $data["links"] = $this->pagination->create_links();
+        //============================ End Pager Code ==============================
+        $data["allData"] = $this->Qa_model->getAllDataQuiz(
+            $config["per_page"],
+            $page,
+            $name
+        );
+        $this->load->view("Dashboard/header.php", $data);
+        $this->load->view("Dashboard/side.php");
+        $this->load->view("Question_Answer/quizlist", $data);
+        $this->load->view("Dashboard/footer.php");
+    }
 }
