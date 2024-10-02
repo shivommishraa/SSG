@@ -211,6 +211,13 @@
                 font-size: 0.8rem;
             }
         }
+
+        /* Error message for mobile number */
+        .error-message {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -231,6 +238,7 @@
             <input required type="hidden" name="question" value="<?php echo $question;?>">
             <input required type="text" name="name" placeholder="Enter Your Name" id="name">
             <input required type="number" name="mobile" placeholder="Enter Your Number" id="mobile">
+            <div id="mobileError" class="error-message" style="display:none;"></div>
             <button type="submit" name="submit">Submit</button>
         </form>
 
@@ -247,39 +255,39 @@
             const form = document.getElementById('quizForm');
             const nameInput = document.getElementById('name');
             const mobileInput = document.getElementById('mobile');
+            const mobileError = document.getElementById('mobileError');
 
             // Disable spaces on input for name and mobile
             nameInput.addEventListener('keypress', function(event) {
-                if (event.key === " ") {
+                // Prevent first character from being a space
+                if (nameInput.value.length === 0 && event.key === " ") {
+                    event.preventDefault();
+                }
+
+                // Prevent consecutive spaces
+                const value = nameInput.value;
+                if (event.key === " " && value.endsWith(" ")) {
                     event.preventDefault();
                 }
             });
 
             mobileInput.addEventListener('keypress', function(event) {
+                // Prevent any spaces from being entered
                 if (event.key === " ") {
                     event.preventDefault();
                 }
             });
 
-            form.addEventListener('submit', function(event) {
-                // Validate name
-                const nameValue = nameInput.value.trim();
-                const nameRegex = /^[^\s].*[^ ]$/; // Must not start or end with space
-                const multipleSpacesRegex = /\s{2,}/; // Check for multiple consecutive spaces
-
-                if (nameValue === "" || nameRegex.test(nameValue) === false || multipleSpacesRegex.test(nameValue)) {
-                    alert("Name should not start with a space, should not have multiple spaces, and cannot be empty.");
-                    nameInput.focus();
-                    event.preventDefault();
-                    return;
-                }
-
-                // Validate mobile
+            form.addEventListener("submit", function(event) {
+                mobileError.style.display = 'none'; // Reset error message
                 const mobileValue = mobileInput.value.trim();
+
+                // Validate mobile number
                 if (!/^\d{10}$/.test(mobileValue)) {
-                    alert("Please enter a valid mobile number (10 digits only, no spaces).");
+                    mobileError.textContent = "Please enter a valid mobile number (10 digits only, no spaces).";
+                    mobileError.style.display = 'block';
                     mobileInput.focus();
-                    event.preventDefault();
+                    event.preventDefault(); // Prevent form submission
                 }
             });
         });
