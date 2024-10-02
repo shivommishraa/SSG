@@ -57,7 +57,7 @@
                  <th>Mobile</th>
                  <th>Result</th>
                  <th>Date</th>
-                 <th colspan="1">Actions</th>
+                 <!-- <th colspan="1">Actions</th> -->
 
                </tr>
              </thead>
@@ -69,11 +69,9 @@
                 <td> <?php echo $i; ?> </td>
                 <td>  <?php echo $qa_data->name; ?> </td>
                 <td>  <?php echo $qa_data->mobile; ?> </td>
-                <td>  <?php echo $qa_data->result; ?> </td>
-                <td>  <?php echo $qa_data->updated_at; ?> </td>
-               <td><span <?php if (
+                <td><span <?php if (
                    $qa_data->result == 0
-               ) { ?> class="badge badge-success"<?php } else { ?> class="badge badge-danger"<?php } ?>>
+               ) { ?> class="badge badge-danger"<?php } else { ?> class="badge badge-success"<?php } ?>>
                 <a style="color:#fff;" href="#" > 
                     <?php if (
                           $qa_data->result == 0
@@ -82,8 +80,7 @@
                       } else {
                           echo "Pass";
                       } ?></a></span></td>
-                <!-- <td><a href="<?php echo site_url(); ?>Questionanswer/Qacontroller/editQa/<?php echo $qa_data->qa_id; ?>"><i class="fas fa-pencil-alt"style="color: blue;"></i></a></td>
-                <td><a href="<?php echo site_url(); ?>Questionanswer/Qacontroller/deleteQa/<?php echo $qa_data->qa_id; ?>" onclick="return confirm('Are you sure to delete')"><i class="fa fa-trash"style="color: red;"></i></a></td> -->
+                <td>  <?php echo $qa_data->updated_at; ?> </td>
               </tr>
               <?php $i++;}
               ?>
