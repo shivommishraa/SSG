@@ -12,8 +12,9 @@
             background-color: #f4f4f4;
             color: #333;
             padding: 20px;
+            box-sizing: border-box;
         }
-        
+
         h1 {
             text-align: center;
             color: #ff6600;
@@ -39,7 +40,7 @@
         .table-container {
             max-height: 400px;
             overflow-y: auto;
-            margin: 0 auto;
+            margin: 0 auto 20px;
             border-radius: 10px;
             background-color: #fff;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
@@ -93,7 +94,47 @@
             color: red;
         }
 
-        @media screen and (max-width: 600px) {
+        /* Buttons */
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .home-button, .quiz-button {
+            display: inline-block;
+            background-color: #ff6600;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-button:hover, .quiz-button:hover {
+            background-color: #33cc33;
+        }
+
+        /* Contact info */
+        .order-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1em;
+        }
+
+        .order-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .order-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .customer-table, .customer-table th, .customer-table td {
                 display: block;
                 width: 100%;
@@ -108,6 +149,39 @@
                 display: flex;
                 justify-content: space-between;
                 padding: 10px;
+                border: none;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .customer-name, .customer-mobile, .customer-result {
+                font-size: 1em;
+            }
+
+            .buttons a {
+                display: block;
+                width: 80%;
+                margin: 10px auto;
+                padding: 12px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .customer-table td {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .customer-table th {
+                font-size: 1em;
+            }
+
+            .home-button, .quiz-button {
+                padding: 12px 15px;
+                width: 90%;
             }
         }
     </style>
@@ -116,6 +190,7 @@
 
     <h1>SSG HYPER MART TOP CUSTOMER's</h1>
 
+    <!-- Scrollable Table Container -->
     <div class="table-container">
         <table class="customer-table">
             <thead>
@@ -139,6 +214,19 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="buttons">
+        <a href="<?php echo site_url(); ?>" class="home-button">Home</a>
+        <a href="<?php echo site_url(); ?>Website/QrScanner/scan" class="quiz-button">Quiz</a>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="order-info">
+        Phone: +91 9310523943<br/> 
+        Email: <a href="mailto:ssgmart9@gmail.com">ssgmart9@gmail.com</a>, 
+        Website: <a href="https://ssghypermart.com">ssghypermart.com</a>
     </div>
 
 </body>
