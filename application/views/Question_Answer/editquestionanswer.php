@@ -33,15 +33,17 @@
        </h5>
        <div class="card-body">
         
-        <form role="form" class="needs-validation" novalidate  method="post" action="<?php echo site_url()?>Questionanswer/Qacontroller/updateQuestion" enctype="multipart/form-data">
-          <input type="hidden" value="<?php echo $qa_data[0]->qa_id ?>"   name="cate_id">
+        <form role="form" class="needs-validation" novalidate  method="post" action="<?php echo site_url(); ?>Questionanswer/Qacontroller/updateQuestion" enctype="multipart/form-data">
+          <input type="hidden" value="<?php echo $qa_data[0]
+              ->qa_id; ?>"   name="cate_id">
 
           <div class="row">
          
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                 
                               <label for="validationCustom01">Question:</label>
-                              <input type="text" placeholder="Enter Question Here" value="<?php echo $qa_data[0]->question ?>" class="form-control" required id="validationCustom01" name="question" required="">
+                              <input type="text" placeholder="Enter Question Here" value="<?php echo $qa_data[0]
+                                  ->question; ?>" class="form-control" required id="validationCustom01" name="question" required="">
                               <div class="valid-feedback">
                                 Looks good!
                               </div>
@@ -52,7 +54,8 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                 
                               <label for="validationCustom02">Answer:</label>
-                              <input type="text" placeholder="Enter Answer Here." value="<?php echo $qa_data[0]->answer ?>" class="form-control" required id="validationCustom01" name="answer" required="">
+                              <input type="text" placeholder="Enter Answer Here." value="<?php echo $qa_data[0]
+                                  ->answer; ?>" class="form-control" required id="validationCustom01" name="answer" required="">
                               <div class="valid-feedback">
                                 Looks good!
                               </div>
@@ -63,7 +66,8 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                 
                               <label for="validationCustom03">Options:</label>
-                              <input type="text" placeholder="Enter options in comma-separated format here." class="form-control" value="<?php echo $qa_data[0]->options ?>" required id="validationCustom01" name="options" required="">
+                              <input type="text" placeholder="Enter options in comma-separated format here." class="form-control" value="<?php echo $qa_data[0]
+                                  ->options; ?>" required id="validationCustom01" name="options" required="">
                               <div class="valid-feedback">
                                 Looks good!
                               </div>

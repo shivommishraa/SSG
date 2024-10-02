@@ -32,7 +32,7 @@
                          </div>
                      </h5>
                      <div class="card-body">
-                       <form role="form" class="needs-validation" novalidate  method="post" action="<?php echo site_url()?>Questionanswer/Qacontroller/addQuestionPost"  enctype="multipart/form-data" >
+                       <form role="form" class="needs-validation" novalidate  method="post" action="<?php echo site_url(); ?>Questionanswer/Qacontroller/addQuestionPost"  enctype="multipart/form-data" >
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                 
@@ -67,15 +67,7 @@
                                 Enter feature name.
                               </div>
                         </div>
-                        <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
-                           <label for="validationCustom02">Parent:</label>
-                           <select class="form-control" id="validationCustom02"  name="parent_id">
-                               <option value="0">Select Parent</option>
-                               <?php foreach($categorydropdown as $row): ?>
-                                   <option value="<?php echo $row->category_id; ?>" ><?php echo $row->category_name; ?></option>
-                               <?php endforeach; ?>
-                           </select>
-                       </div> -->
+                       
                    </div>
                    <div class="form-row pt-2">
                                      
