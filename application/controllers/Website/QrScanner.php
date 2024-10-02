@@ -97,53 +97,53 @@ public function checkanswer() {
             
             switch ($randomNumber) {
                 case 1:
-                    $data['message2'] = 'Congratulations! Enjoy a delicious 5 rupee chocolate as a treat!';
+                    $data['message2'] = 'Congratulations!<br/>Enjoy a delicious 5 rupee chocolate as a treat!';
                     break;
                 case 5:
-                    $data['message2'] = 'Awesome! Here’s a lovely pack of 5 rupee chips for you!';
+                    $data['message2'] = 'Awesome!<br/>Here’s a lovely pack of 5 rupee chips for you!';
                     break;
                 case 10:
-                    $data['message2'] = 'Fantastic! You’ve earned a 10 rupee discount on your total purchase!';
+                    $data['message2'] = 'Fantastic!<br/>You’ve earned a 10 rupee discount on your total purchase!';
                     break;
                 case 15:
-                    $data['message2'] = 'Fantastic! You are an SSG HYPER MART super customer!';
+                    $data['message2'] = 'Fantastic!<br/>You are an SSG HYPER MART super customer!';
                     break;
                 case 20:
-                    $data['message2'] = 'Awesome! You are a valued customer at SSG HYPER MART!';
+                    $data['message2'] = 'Awesome!<br/>You are a valued customer at SSG HYPER MART!';
                     break;
                 case 21:
-                    $data['message2'] = 'Congratulations! Relish a yummy 5 rupee biscuit as a sweet reward!';
+                    $data['message2'] = 'Congratulations!<br/>Relish a yummy 5 rupee biscuit as a sweet reward!';
                     break;
                 case 30:
-                    $data['message2'] = 'Dazzling! You are an SSG HYPER MART amazing customer!';
+                    $data['message2'] = 'Dazzling!<br/>You are an SSG HYPER MART amazing customer!';
                     break;
                 case 40:
-                    $data['message2'] = 'Spectacular! You are an SSG HYPER MART VIP customer!';
+                    $data['message2'] = 'Spectacular!<br/>You are an SSG HYPER MART VIP customer!';
                     break;
                 case 50:
-                    $data['message2'] = 'Fantastic! Welcome to the SSG HYPER MART family, our amazing customer!';
+                    $data['message2'] = 'Fantastic!<br/>Welcome to the SSG HYPER MART family, our amazing customer!';
                     break;
                 case 60:
-                    $data['message2'] = 'Wonderful! Thank you for being an extraordinary customer at SSG HYPER MART!';
+                    $data['message2'] = 'Wonderful!<br/>Thank you for being an extraordinary customer at SSG HYPER MART!';
                     break;
                 case 70:
-                    $data['message2'] = 'Remarkable! You are a super customer at SSG HYPER MART!';
+                    $data['message2'] = 'Remarkable!<br/>You are a super customer at SSG HYPER MART!';
                     break;
                 case 80:
-                    $data['message2'] = 'Incredible! You are an SSG HYPER MART exceptional customer!';
+                    $data['message2'] = 'Incredible!<br/>You are an SSG HYPER MART exceptional customer!';
                     break;
                 case 90:
-                    $data['message2'] = 'Fabulous! You are an SSG HYPER MART outstanding customer!';
+                    $data['message2'] = 'Fabulous!<br/>You are an SSG HYPER MART outstanding customer!';
                     break;
                 case 100:
-                    $data['message2'] = 'Great news! You are a VIP customer at SSG HYPER MART!';
+                    $data['message2'] = 'Great news!<br/>You are a VIP customer at SSG HYPER MART!';
                     break;
                 default:
-                    $data['message2'] = 'We truly appreciate your efforts! Keep shining, and better luck next time!';
+                    $data['message2'] = 'We truly appreciate your efforts!<br/>Keep shining, and better luck next time!';
             }
         } else {
             // If fewer than 2 attempts
-            $data['message2'] = 'Thank you for your efforts! Better luck next time!'; // No prize message for fewer than 2 attempts
+            $data['message2'] = 'Thank you for your efforts!<br/>Better luck next time!'; // No prize message for fewer than 2 attempts
         }
 
         $data['isCorrect'] = true; // Set a flag for correctness
