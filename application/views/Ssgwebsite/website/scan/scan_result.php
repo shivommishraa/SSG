@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SSG HYPER MART</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -35,7 +36,7 @@
             color: #ff6f61;
             margin-bottom: 20px;
         }
-        input[type="number"], select {
+        select {
             padding: 15px;
             width: 100%;
             border: 2px solid #fcb69f;
@@ -45,7 +46,7 @@
             outline: none;
             transition: border-color 0.3s ease;
         }
-        input[type="number"]:focus, select:focus {
+        select:focus {
             border-color: #ff6f61;
         }
         button {
@@ -63,34 +64,9 @@
         button:hover {
             background-color: #ff3b30;
         }
-        .home-button {
-            background-color: #4CAF50; /* Green color for home button */
-        }
-        .home-button:hover {
-            background-color: #388E3C; /* Darker green on hover */
-        }
         p {
             font-size: 1.5rem;
             margin-bottom: 20px;
-        }
-        /* Footer Info within the container */
-        .footer-info {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid #fcb69f;
-            text-align: center;
-        }
-        .footer-info p {
-            font-size: 1rem;
-            color: #333;
-            line-height: 1.6;
-        }
-        .footer-info a {
-            color: #ff6f61;
-            text-decoration: none;
-        }
-        .footer-info a:hover {
-            text-decoration: underline;
         }
 
         /* Animated Text */
@@ -117,6 +93,32 @@
             }
         }
 
+        /* Footer Info within the container */
+        .footer-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #fcb69f;
+            text-align: center;
+        }
+        .footer-info p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .footer-info i {
+            margin-right: 10px;
+            color: #ff6f61;
+        }
+        .footer-info a {
+            color: #ff6f61;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer-info a:hover {
+            text-decoration: underline;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .container {
@@ -130,6 +132,9 @@
             }
             p {
                 font-size: 1.2rem;
+            }
+            .footer-info p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -153,17 +158,11 @@
             <button type="submit" name="submit">Submit</button>
         </form>
 
-        <!-- Buttons for Home and Quiz -->
-        <div class="buttons">
-            <a href="<?php echo site_url(); ?>" class="home-button button">Home</a>
-        </div>
-
         <!-- Footer with Contact Information inside the same div -->
         <div class="footer-info">
-            <p>Phone: +91 9310523943<br/>
-               Email: <a href="mailto:ssgmart9@gmail.com">ssgmart9@gmail.com</a><br/>
-               Website: <a href="https://ssghypermart.com" target="_blank">ssghypermart.com</a>
-            </p>
+            <p><i class="fas fa-phone-alt"></i>Phone: +91 9310523943</p>
+            <p><i class="fas fa-envelope"></i>Email: <a href="mailto:ssgmart9@gmail.com">ssgmart9@gmail.com</a></p>
+            <p><i class="fas fa-globe"></i>Website: <a href="https://ssghypermart.com" target="_blank">ssghypermart.com</a></p>
         </div>
     </div>
 
