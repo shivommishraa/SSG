@@ -130,10 +130,10 @@ class Qa_model extends CI_Model
     {
         $table = $this->getDataBydata_Quizid($id);
         if ($table[0]->status == 0) {
-            $this->update($id, ["status" => "1"]);
+            $this->updateQuiz($id, ["status" => "1"]);
             return "Activated";
         } else {
-            $this->update($id, ["status" => "0"]);
+            $this->updateQuiz($id, ["status" => "0"]);
             return "Deactivated";
         }
     }
@@ -142,6 +142,13 @@ class Qa_model extends CI_Model
     {
         $this->db->where("id", $id);
         return $this->db->get("tbl_quiz")->result();
+    }
+
+    public function updateQuiz($id, $data)
+    {
+        $this->db->where("id", $id);
+        $this->db->update("tbl_quiz", $data);
+        return true;
     }
 
     
