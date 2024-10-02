@@ -141,7 +141,8 @@
         /* Buttons Styling */
         .buttons {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Centers buttons horizontally */
+            gap: 20px; /* Adds space between buttons */
             margin-top: 30px;
         }
 
@@ -233,6 +234,7 @@
             <!-- Buttons for Home and Quiz -->
             <div class="buttons">
                 <a href="<?php echo site_url(); ?>" class="home-button">Home</a>
+                <a href="<?php echo site_url(); ?>Website/QrScanner/getList" class="home-button">Top Customers</a>
                 <a href="<?php echo site_url(); ?>Website/QrScanner/scan" class="quiz-button">Quiz</a>
             </div>
 
