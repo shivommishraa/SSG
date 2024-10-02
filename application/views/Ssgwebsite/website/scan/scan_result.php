@@ -245,10 +245,23 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const form = document.getElementById('quizForm');
+            const nameInput = document.getElementById('name');
+            const mobileInput = document.getElementById('mobile');
+
+            // Disable spaces on input for name and mobile
+            nameInput.addEventListener('keypress', function(event) {
+                if (event.key === " ") {
+                    event.preventDefault();
+                }
+            });
+
+            mobileInput.addEventListener('keypress', function(event) {
+                if (event.key === " ") {
+                    event.preventDefault();
+                }
+            });
+
             form.addEventListener('submit', function(event) {
-                const nameInput = document.getElementById('name');
-                const mobileInput = document.getElementById('mobile');
-                
                 // Validate name
                 const nameValue = nameInput.value.trim();
                 const nameRegex = /^[^\s].*[^ ]$/; // Must not start or end with space
@@ -263,8 +276,8 @@
 
                 // Validate mobile
                 const mobileValue = mobileInput.value.trim();
-                if (!/^\d{10}$/.test(mobileValue)) { // Check if mobile number is exactly 10 digits
-                    alert("Please add a valid mobile number (10 digits only, no spaces).");
+                if (!/^\d{10}$/.test(mobileValue)) {
+                    alert("Please enter a valid mobile number (10 digits only, no spaces).");
                     mobileInput.focus();
                     event.preventDefault();
                 }
