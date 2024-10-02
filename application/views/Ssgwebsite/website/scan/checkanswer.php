@@ -17,10 +17,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; /* Use min-height instead of height for scrolling */
             color: #333;
             position: relative;
-            overflow: hidden;
+            overflow-y: auto; /* Enable vertical scrolling if content overflows */
             background: linear-gradient(135deg, #ff0081, #ff8c00, #4caf50, #00bcd4);
             background-size: 400% 400%;
             animation: gradientAnimation 10s ease infinite;
@@ -234,7 +234,7 @@
             <!-- Buttons for Home and Quiz -->
             <div class="buttons">
                 <a href="<?php echo site_url(); ?>" class="home-button">Home</a>
-                <a href="<?php echo site_url(); ?>Website/QrScanner/getList" class="home-button">Top Customers</a>
+                <a href="<?php echo site_url(); ?>" class="home-button">Winners</a>
                 <a href="<?php echo site_url(); ?>Website/QrScanner/scan" class="quiz-button">Quiz</a>
             </div>
 
