@@ -149,6 +149,11 @@
         @media (max-width: 768px) {
             .container {
                 max-width: 90%;
+                padding: 20px;
+            }
+
+            h1, h2 {
+                font-size: 1.5rem;
             }
 
             .animated-text {
@@ -157,6 +162,12 @@
 
             button {
                 font-size: 1rem;
+                padding: 12px 18px;
+            }
+
+            select {
+                padding: 12px;
+                font-size: 0.9rem;
             }
 
             p {
@@ -164,7 +175,40 @@
             }
 
             .footer-info p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                max-width: 100%;
+                padding: 15px;
+            }
+
+            h1, h2 {
+                font-size: 1.2rem;
+            }
+
+            .animated-text {
+                font-size: 1.8rem;
+            }
+
+            button {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+
+            select {
+                padding: 10px;
+                font-size: 0.8rem;
+            }
+
+            p {
                 font-size: 1rem;
+            }
+
+            .footer-info p {
+                font-size: 0.8rem;
             }
         }
     </style>
