@@ -175,5 +175,10 @@ public function checkanswer() {
     $this->load->view('Ssgwebsite/website/scan/checkanswer', $data);
 }
 
+public function getList(){
+    $data['allData'] = $this->Qa_model->getAllQuiz();
+    $this->load->view('Ssgwebsite/website/scan/quizlist', $data);
+}
+
 
 }

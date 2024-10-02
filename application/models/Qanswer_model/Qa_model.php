@@ -112,4 +112,18 @@ class Qa_model extends CI_Model
         }
         return $this->db->get("tbl_quiz")->num_rows();
     }
+
+
+    public function getAllQuiz()
+    {
+        $this->db->select("*");
+        $this->db->where("result", "1");
+        $this->db->from("tbl_quiz");
+        $this->db->group_by("mobile"); // Group by 'mobile' to make mobile numbers unique
+        $this->db->order_by("mobile", "DESC"); // Order by 'mobile' in descending order
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    
 }
