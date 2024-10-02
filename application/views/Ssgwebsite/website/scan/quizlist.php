@@ -53,7 +53,7 @@
         }
 
         .customer-table th, .customer-table td {
-            padding: 10px; /* Reduced padding */
+            padding: 5px; /* Reduced padding */
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
@@ -138,6 +138,13 @@
             text-decoration: underline;
         }
 
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            .customer-table th, .customer-table td {
+                padding: 5px; /* Adjust padding for smaller screens */
+                font-size: 0.9em; /* Smaller font size */
+            }
+        }
     </style>
 </head>
 <body>
@@ -179,7 +186,7 @@
     <!-- Contact Information -->
     <div class="order-info">
         Phone: +91 9310523943<br/> 
-        Email: <a href="mailto:ssgmart9@gmail.com">ssgmart9@gmail.com</a>, 
+        Email: <a href="mailto:ssgmart9@gmail.com">ssgmart9@gmail.com</a><br/> 
         Website: <a href="https://ssghypermart.com">ssghypermart.com</a>
     </div>
 
