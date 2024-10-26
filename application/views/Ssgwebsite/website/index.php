@@ -447,6 +447,22 @@
         .w3-button:hover {
             background-color: #ff7f50;
         }
+        .custom-button {
+        background-color: #2dd9c9; /* Set background color */
+        color: white; /* Text color */
+        border: none; /* Remove border */
+        border-radius: 15px; /* Round corners */
+        padding: 10px 20px; /* Add some padding */
+        text-align: center; /* Center text */
+        text-decoration: none; /* Remove underline */
+        display: inline-block; /* Make it inline */
+        font-size: 16px; /* Font size */
+        transition: background-color 0.3s; /* Transition for hover effect */
+    }
+
+    .custom-button:hover {
+        background-color: #24b1a8; /* Darken color on hover */
+    }
     </style>
     <script>
         window.onload = function() {
@@ -468,7 +484,7 @@
             </div>
             <footer class="w3-container w3-teal">
 <div style="text-align: center;">
-    <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="w3-button w3-yellow">Order Now</a>
+    <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="custom-button">Order Now</a>
 </div>
             </footer>
         </div>
