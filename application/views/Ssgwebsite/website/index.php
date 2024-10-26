@@ -467,7 +467,9 @@
                 <p>Here is some additional information that makes this modal attractive.</p> -->
             </div>
             <footer class="w3-container w3-teal">
-<a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="w3-button w3-yellow">Order Now</a>
+<div style="text-align: center;">
+    <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="w3-button w3-yellow">Order Now</a>
+</div>
             </footer>
         </div>
     </div>
