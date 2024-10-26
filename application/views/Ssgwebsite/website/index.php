@@ -462,7 +462,7 @@
                 <h2>Modal Header</h2>
             </header>
             <div class="w3-container">
-                <img src="<?php echo base_url(); ?>ssgassests/img/diwalibanner.png" alt="Image">
+                <img src="<?php echo base_url(); ?>ssgassests/img/diwalibanner.jpg" alt="Image">
                 <p>Some text about the image..</p>
                 <p>Here is some additional information that makes this modal attractive.</p>
             </div>
