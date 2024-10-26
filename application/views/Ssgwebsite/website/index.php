@@ -426,3 +426,53 @@
         </div>
     </section> -->
     <!-- Blog Section End -->
+<head>    
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+    <style>
+        
+        .w3-modal-content {
+            background-color: #282c34;
+            color: white;
+            border-radius: 10px;
+        }
+        .w3-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .w3-button {
+            transition: background-color 0.3s;
+        }
+        .w3-button:hover {
+            background-color: #ff7f50;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            document.getElementById('id01').style.display = 'block';
+        };
+    </script>
+
+<div class="w3-container">
+    <h2>W3.CSS Animated Modal</h2>
+    <p>The modal below opens automatically on page load!</p>
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Animated Modal</button>
+
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-teal"> 
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h2>Modal Header</h2>
+            </header>
+            <div class="w3-container">
+                <img src="https://via.placeholder.com/400" alt="Dummy Image">
+                <p>Some text about the image..</p>
+                <p>Here is some additional information that makes this modal attractive.</p>
+            </div>
+            <footer class="w3-container w3-teal">
+                <p>Modal Footer</p>
+            </footer>
+        </div>
+    </div>
+</div>
