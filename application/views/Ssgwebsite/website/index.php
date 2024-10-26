@@ -455,10 +455,6 @@
     </script>
 
 <div class="w3-container">
-    <h2>W3.CSS Animated Modal</h2>
-    <p>The modal below opens automatically on page load!</p>
-    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Animated Modal</button>
-
     <div id="id01" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
             <header class="w3-container w3-teal"> 
@@ -466,7 +462,7 @@
                 <h2>Modal Header</h2>
             </header>
             <div class="w3-container">
-                <img src="https://via.placeholder.com/400" alt="Dummy Image">
+                <img src="<?php echo base_url(); ?>ssgassests/img/diwalibanner.png" alt="Image">
                 <p>Some text about the image..</p>
                 <p>Here is some additional information that makes this modal attractive.</p>
             </div>
