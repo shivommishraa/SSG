@@ -467,7 +467,7 @@
     }
 
     .footer-custom {
-        background-color: #1f2125; /* Footer background color */
+        background-color: #282c34; /* Footer background color */
         color: white; /* Footer text color */
     }
     </style>
@@ -489,7 +489,7 @@
                 <!-- <p>Some text about the image..</p>
                 <p>Here is some additional information that makes this modal attractive.</p> -->
             </div>
-            <footer class="w3-container w3-teal footer-custom">
+            <footer class="w3-container w3-teal footer-custom" style="background-color: #282c34;">
                 <div style="text-align: center;">
                     <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="custom-button">Order Now</a>
                 </div>
