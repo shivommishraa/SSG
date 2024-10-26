@@ -426,6 +426,8 @@
         </div>
     </section> -->
     <!-- Blog Section End -->
+    
+<!-- -------------- Start Code for POPUP ------------------ -->
 <head>    
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
@@ -483,10 +485,11 @@
                 <p>Here is some additional information that makes this modal attractive.</p> -->
             </div>
             <footer class="w3-container w3-teal">
-<div style="text-align: center;">
-    <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="custom-button">Order Now</a>
-</div>
+                <div style="text-align: center;">
+                    <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="custom-button">Order Now</a>
+                </div>
             </footer>
         </div>
     </div>
 </div>
+<!-- -------------- End Code for POPUP ------------------ -->
