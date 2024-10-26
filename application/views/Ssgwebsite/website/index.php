@@ -459,16 +459,16 @@
         <div class="w3-modal-content w3-animate-top w3-card-4">
             <header class="w3-container w3-teal"> 
                 <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                <h2>Modal Header</h2>
+                <!-- <h2>Modal Header</h2> -->
             </header>
             <div class="w3-container">
                 <img src="<?php echo base_url(); ?>ssgassests/img/diwalibanner.jpg" alt="Image">
-                <p>Some text about the image..</p>
-                <p>Here is some additional information that makes this modal attractive.</p>
+                <!-- <p>Some text about the image..</p>
+                <p>Here is some additional information that makes this modal attractive.</p> -->
             </div>
-            <footer class="w3-container w3-teal">
+            <!-- <footer class="w3-container w3-teal">
                 <p>Modal Footer</p>
-            </footer>
+            </footer> -->
         </div>
     </div>
 </div>
