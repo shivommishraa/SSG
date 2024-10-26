@@ -467,9 +467,8 @@
     }
 
     .footer-custom {
-        background-color: #282c34; /* Footer background color */
+        background-color: #1f2125; /* Footer background color */
         color: white; /* Footer text color */
-        padding: 20px 0; /* Padding for the footer */
     }
     </style>
     <script>
