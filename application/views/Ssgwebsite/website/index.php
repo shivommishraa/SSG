@@ -426,7 +426,7 @@
         </div>
     </section> -->
     <!-- Blog Section End -->
-    
+
 <!-- -------------- Start Code for POPUP ------------------ -->
 <head>    
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -449,8 +449,8 @@
         .w3-button:hover {
             background-color: #ff7f50;
         }
-        .custom-button {
-        background-color: #2dd9c9; /* Set background color */
+           .custom-button {
+        background-color: #282c34; /* Set button background color */
         color: white; /* Text color */
         border: none; /* Remove border */
         border-radius: 15px; /* Round corners */
@@ -463,7 +463,13 @@
     }
 
     .custom-button:hover {
-        background-color: #24b1a8; /* Darken color on hover */
+        background-color: #1f2125; /* Darken color on hover */
+    }
+
+    .footer-custom {
+        background-color: #282c34; /* Footer background color */
+        color: white; /* Footer text color */
+        padding: 20px 0; /* Padding for the footer */
     }
     </style>
     <script>
@@ -484,7 +490,7 @@
                 <!-- <p>Some text about the image..</p>
                 <p>Here is some additional information that makes this modal attractive.</p> -->
             </div>
-            <footer class="w3-container w3-teal">
+            <footer class="w3-container w3-teal footer-custom">
                 <div style="text-align: center;">
                     <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="custom-button">Order Now</a>
                 </div>
