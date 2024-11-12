@@ -428,7 +428,7 @@
     <!-- Blog Section End -->
 
 <!-- -------------- Start Code for POPUP ------------------ -->
-<head>    
+<!-- <head>    
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
@@ -475,26 +475,24 @@
         window.onload = function() {
             document.getElementById('id01').style.display = 'block';
         };
-    </script>
-
+    </script> -->
+<!-- 
 <div class="w3-container">
     <div id="id01" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
             <header class="w3-container w3-teal"> 
                 <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                <!-- <h2>Modal Header</h2> -->
+              
             </header>
             <div class="w3-container">
-                <img src="<?php echo base_url(); ?>ssgassests/img/diwalibanner.jpg" alt="Image">
-                <!-- <p>Some text about the image..</p>
-                <p>Here is some additional information that makes this modal attractive.</p> -->
+                <img src="<?php //echo base_url(); ?>ssgassests/img/diwalibanner.jpg" alt="Image">
             </div>
             <footer class="w3-container w3-teal footer-custom" style="background-color: #282c34;">
                 <div style="text-align: center;">
-                    <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="custom-button">Order Now</a>
+                    <a href="<?php //echo base_url(); ?>Website/Website_controller/ordernow" class="custom-button">Order Now</a>
                 </div>
             </footer>
         </div>
     </div>
-</div>
+</div> -->
 <!-- -------------- End Code for POPUP ------------------ -->
