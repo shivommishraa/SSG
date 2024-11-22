@@ -30,7 +30,7 @@
 
 <!-- Tabs Section (Mission, Team, Values) -->
 <div class="tabs-container">
-    <div class="tabs">
+    <div class="tabs" style="padding-top: 40px;">
         <div class="tab" id="tab1" onclick="switchTab(1)">Our Mission</div>
         <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
         <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
@@ -134,12 +134,6 @@
                     <h5>- Mohit</h5>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="testimonial-item">
-                    <p>"Great prices, and excellent service in SSG Hyper Mart!"</p>
-                    <h5>- Lucky</h5>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -148,14 +142,31 @@
 /* General styles for the page */
 .about-us, .business-info-section, .testimonials-section, .why-choose-us-section {
     padding: 50px 0;
-    background-color: #f9f9f9;
+    background: linear-gradient(45deg, #ff8c00, #ff008c, #00c6ff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
 }
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .section-title {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
+    color: #fff;
 }
+
 .info-box, .feature-item, .testimonial-item {
     text-align: center;
     padding: 20px;
@@ -164,18 +175,22 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
+
 .feature-item h4 {
     font-size: 20px;
     margin-bottom: 10px;
 }
+
 .tabs-container {
     margin: 50px 0;
 }
+
 .tabs {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
+
 .tab {
     cursor: pointer;
     font-size: 18px;
@@ -185,14 +200,17 @@
     border-radius: 5px;
     transition: all 0.3s;
 }
+
 .tab:hover, .tab.active {
     background-color: #008cba;
     color: #fff;
 }
+
 .tab-content .content {
     display: none;
     text-align: center;
 }
+
 .tab-content .content.active {
     display: block;
 }
