@@ -4,10 +4,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Order Now</h2>
+                        <h2>About Us</h2>
                         <div class="breadcrumb__option">
                             <a href="<?php echo base_url(); ?>">Home</a>
-                            <span>Order</span>
+                            <span>About Us</span>
                         </div>
                     </div>
                 </div>
