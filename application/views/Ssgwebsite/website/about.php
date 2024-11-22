@@ -31,9 +31,9 @@
 <!-- Tabs Section (Mission, Team, Values) -->
 <div class="tabs-container">
     <div class="tabs">
-        <div class="tab active" id="tab1" onclick="switchTab(1)">Our Mission</div>
-        <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
-        <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
+        <div class="tab active" onclick="switchTab(1)">Our Mission</div>
+        <div class="tab" onclick="switchTab(2)">Our Team</div>
+        <div class="tab" onclick="switchTab(3)">Our Values</div>
     </div>
 
     <div class="tab-content">
@@ -49,65 +49,57 @@
     </div>
 </div>
 
-<!-- Business Information Section Begin -->
+<!-- Business Information Section -->
 <section class="business-info-section spad">
     <div class="container">
         <h2 class="section-title text-center">Our Business Information</h2>
         <div class="row">
-            <div class="col-md-3 info-box animated">
+            <div class="col-md-3 info-box">
                 <h5>Nature of Business</h5>
                 <p>Retailer</p>
             </div>
-            <div class="col-md-3 info-box animated">
+            <div class="col-md-3 info-box">
                 <h5>GSTIN</h5>
                 <p>09GKUPM8516D1ZJ</p>
             </div>
-            <div class="col-md-3 info-box animated">
+            <div class="col-md-3 info-box">
                 <h5>Food License</h5>
                 <p>Licensed and Approved</p>
             </div>
-            <div class="col-md-3 info-box animated">
+            <div class="col-md-3 info-box">
                 <h5>Udyam Registration</h5>
                 <p>Registered Business</p>
             </div>
         </div>
     </div>
 </section>
-<!-- Business Information Section End -->
 
 <!-- Why Choose Us Section -->
 <section class="why-choose-us-section spad">
     <div class="container">
         <h2 class="section-title text-center">Why Choose Us?</h2>
-        <div class="row animated-section">
-            <div class="col-md-4">
-                <div class="feature-item">
-                    <h4>High-Quality Products</h4>
-                    <p>We ensure that every product meets the highest quality standards for freshness, nutrition, and taste.</p>
-                </div>
+        <div class="row">
+            <div class="col-md-4 feature-item">
+                <h4>High-Quality Products</h4>
+                <p>We ensure that every product meets the highest quality standards for freshness, nutrition, and taste.</p>
             </div>
-            <div class="col-md-4">
-                <div class="feature-item">
-                    <h4>Affordable Prices</h4>
-                    <p>We offer competitive prices on all products to make shopping easier for everyone.</p>
-                </div>
+            <div class="col-md-4 feature-item">
+                <h4>Affordable Prices</h4>
+                <p>We offer competitive prices on all products to make shopping easier for everyone.</p>
             </div>
-            <div class="col-md-4">
-                <div class="feature-item">
-                    <h4>Home Delivery in Under 1 km</h4>
-                    <p>Enjoy fast and reliable delivery. <b>Terms and Conditions Apply</b>.</p>
-                </div>
+            <div class="col-md-4 feature-item">
+                <h4>Home Delivery in Under 1 km</h4>
+                <p>Enjoy fast and reliable delivery. <b>Terms and Conditions Apply</b>.</p>
             </div>
         </div>
     </div>
 </section>
-<!-- Why Choose Us Section End -->
 
-<!-- Testimonials Section with Carousel -->
+<!-- Testimonials Section -->
 <div class="testimonials-section spad">
     <div class="container">
         <h2 class="section-title text-center">What Our Customers Say</h2>
-        <div class="carousel">
+        <div id="testimonial-carousel" class="carousel">
             <div class="carousel-item active">
                 <p>"SSG Hyper Mart always delivers the freshest products. Their customer service is top-notch!"</p>
                 <h5>- Akshat</h5>
@@ -125,48 +117,42 @@
 </div>
 
 <style>
-/* General styles for the page */
-.about-us, .business-info-section, .testimonials-section, .why-choose-us-section {
-    padding: 50px 0;
+/* General Styles */
+.tabs-container .tab {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0 5px;
+    color: #555;
     background-color: #f9f9f9;
+    transition: all 0.3s ease;
 }
-.section-title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
+.tab.active {
+    background-color: #008cba;
+    color: #fff;
 }
-.info-box, .feature-item {
-    text-align: center;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+.tab-content .content {
+    display: none;
+    margin-top: 20px;
 }
-.carousel {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
+.tab-content .content.active {
+    display: block;
 }
 .carousel-item {
     display: none;
-    text-align: center;
-    transition: opacity 0.5s ease-in-out;
 }
 .carousel-item.active {
     display: block;
-}
-.tabs .tab.active,
-.tabs-container .tab-content .content.active {
-    display: block;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
 }
 </style>
 
 <script>
 function switchTab(tabNumber) {
     const tabs = document.querySelectorAll('.tab');
-    const contents = document.querySelectorAll('.tab-content .content');
+    const contents = document.querySelectorAll('.content');
     tabs.forEach((tab, index) => {
         tab.classList.toggle('active', index + 1 === tabNumber);
         contents[index].classList.toggle('active', index + 1 === tabNumber);
@@ -175,10 +161,9 @@ function switchTab(tabNumber) {
 document.addEventListener('DOMContentLoaded', () => {
     switchTab(1);
 
-    // Carousel for Testimonials
+    // Testimonials Carousel
     const carouselItems = document.querySelectorAll('.carousel-item');
     let currentIndex = 0;
-
     setInterval(() => {
         carouselItems[currentIndex].classList.remove('active');
         currentIndex = (currentIndex + 1) % carouselItems.length;
