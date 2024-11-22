@@ -79,7 +79,7 @@
 <section class="why-choose-us-section spad">
     <div class="container">
         <h2 class="section-title text-center">Why Choose Us?</h2>
-        <div class="row">
+        <div class="row animated-section">
             <div class="col-md-4">
                 <div class="feature-item">
                     <h4>High-Quality Products</h4>
@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="feature-item colorful-animation">
+                <div class="feature-item">
                     <h4>Home Delivery in Under 1 km</h4>
                     <p>Enjoy fast and reliable delivery. <b>Terms and Conditions Apply</b>.</p>
                 </div>
@@ -103,28 +103,22 @@
 </section>
 <!-- Why Choose Us Section End -->
 
-<!-- Testimonials Section -->
+<!-- Testimonials Section with Carousel -->
 <div class="testimonials-section spad">
     <div class="container">
         <h2 class="section-title text-center">What Our Customers Say</h2>
-        <div class="row testimonials-row">
-            <div class="col-md-4 testimonial-item">
+        <div class="carousel">
+            <div class="carousel-item active">
                 <p>"SSG Hyper Mart always delivers the freshest products. Their customer service is top-notch!"</p>
                 <h5>- Akshat</h5>
             </div>
-            <div class="col-md-4 testimonial-item">
+            <div class="carousel-item">
                 <p>"I love the variety of organic products at SSG. I can trust them for all my grocery needs."</p>
                 <h5>- Krishna</h5>
             </div>
-            <div class="col-md-4 testimonial-item">
+            <div class="carousel-item">
                 <p>"Fast delivery, great prices, and excellent quality. Highly recommend SSG Hyper Mart!"</p>
                 <h5>- Mohit</h5>
-            </div>
-            <div class="col-md-4">
-                <div class="testimonial-item">
-                    <p>"Great prices, and excellent service in SSG Hyper Mart!"</p>
-                    <h5>- Lucky</h5>
-                </div>
             </div>
         </div>
     </div>
@@ -142,7 +136,7 @@
     margin-bottom: 20px;
     text-align: center;
 }
-.info-box, .feature-item, .testimonial-item {
+.info-box, .feature-item {
     text-align: center;
     padding: 20px;
     background: #fff;
@@ -150,32 +144,30 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
-.feature-item.h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
 }
-.colorful-animation {
-    animation: pulse 1.5s infinite alternate;
+.carousel-item {
+    display: none;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
 }
-@keyframes pulse {
-    from {
-        transform: scale(1);
-        background-color: #ffea00;
-    }
-    to {
-        transform: scale(1.05);
-        background-color: #ffc107;
-    }
+.carousel-item.active {
+    display: block;
 }
-.animated {
-    animation: fadeIn 1s ease-in-out;
+.animated-section .feature-item {
+    animation: fadeInUp 1.5s ease-in-out;
 }
-@keyframes fadeIn {
+@keyframes fadeInUp {
     from {
         opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 </style>
@@ -192,15 +184,14 @@ function switchTab(tabNumber) {
 document.addEventListener('DOMContentLoaded', () => {
     switchTab(1);
 
-    // Auto-swap testimonials
-    const testimonials = document.querySelectorAll('.testimonial-item');
+    // Carousel for Testimonials
+    const carouselItems = document.querySelectorAll('.carousel-item');
     let currentIndex = 0;
 
     setInterval(() => {
-        testimonials.forEach((item, index) => {
-            item.style.display = index === currentIndex ? 'block' : 'none';
-        });
-        currentIndex = (currentIndex + 1) % testimonials.length;
+        carouselItems[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % carouselItems.length;
+        carouselItems[currentIndex].classList.add('active');
     }, 3000);
 });
 </script>
