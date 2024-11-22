@@ -34,17 +34,7 @@
 
   <style>
     /* General styles for the page */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
-    }
+  
 
     .tabs-container {
       max-width: 1000px;
