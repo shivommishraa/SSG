@@ -30,7 +30,7 @@
 
 <!-- Tabs Section (Mission, Team, Values) -->
 <div class="tabs-container">
-    <div class="tabs">
+    <div class="tabs text-center">
         <div class="tab active" onclick="switchTab(1)">Our Mission</div>
         <div class="tab" onclick="switchTab(2)">Our Team</div>
         <div class="tab" onclick="switchTab(3)">Our Values</div>
@@ -118,34 +118,96 @@
 
 <style>
 /* General Styles */
-.tabs-container .tab {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.tabs-container {
+    margin-top: 50px;
+}
+
+.tabs {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
     cursor: pointer;
-    display: inline-block;
     padding: 10px 20px;
     border-radius: 5px;
-    margin: 0 5px;
+    margin: 0 10px;
     color: #555;
     background-color: #f9f9f9;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-.tab.active {
+
+.tab:hover {
     background-color: #008cba;
     color: #fff;
 }
+
+.tab.active {
+    background-color: #008cba;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 140, 202, 0.3);
+}
+
 .tab-content .content {
     display: none;
     margin-top: 20px;
+    text-align: center;
 }
+
 .tab-content .content.active {
     display: block;
 }
+
 .carousel-item {
     display: none;
 }
+
 .carousel-item.active {
     display: block;
     text-align: center;
     transition: opacity 0.5s ease-in-out;
+}
+
+/* Text Animation */
+@keyframes textColorChange {
+    0% {
+        color: #555;
+    }
+    50% {
+        color: #008cba;
+    }
+    100% {
+        color: #555;
+    }
+}
+
+h2, h4 {
+    animation: textColorChange 2s infinite;
+}
+
+/* Center Tab Section */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+h2.section-title {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+p.section-description {
+    font-size: 1.2rem;
+    color: #777;
 }
 </style>
 
@@ -158,6 +220,7 @@ function switchTab(tabNumber) {
         contents[index].classList.toggle('active', index + 1 === tabNumber);
     });
 }
+
 document.addEventListener('DOMContentLoaded', () => {
     switchTab(1);
 
