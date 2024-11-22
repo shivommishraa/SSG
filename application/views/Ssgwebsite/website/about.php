@@ -31,13 +31,13 @@
 <!-- Tabs Section (Mission, Team, Values) -->
 <div class="tabs-container">
     <div class="tabs">
-        <div class="tab" id="tab1" onclick="switchTab(1)">Our Mission</div>
+        <div class="tab active" id="tab1" onclick="switchTab(1)">Our Mission</div>
         <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
         <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
     </div>
 
-    <div class="tab-content" id="content">
-        <div class="content" id="content1">
+    <div class="tab-content">
+        <div class="content active" id="content1">
             <p>At SSG Hyper Mart, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
         </div>
         <div class="content" id="content2">
@@ -157,18 +157,9 @@
 .carousel-item.active {
     display: block;
 }
-.animated-section .feature-item {
-    animation: fadeInUp 1.5s ease-in-out;
-}
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.tabs .tab.active,
+.tabs-container .tab-content .content.active {
+    display: block;
 }
 </style>
 
