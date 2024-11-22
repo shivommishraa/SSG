@@ -38,15 +38,12 @@
 
     <div class="tab-content" id="content">
         <div class="content" id="content1">
-            <h2>Our Mission</h2>
             <p>At SSG Hyper Mart, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
         </div>
         <div class="content" id="content2">
-            <h2>Our Team</h2>
             <p>We are a diverse group of professionals with a passion for food and service. Our team includes experienced chefs, suppliers, logistics experts, and customer service specialists who work together to ensure that you have access to the best products and the highest quality shopping experience.</p>
         </div>
         <div class="content" id="content3">
-            <h2>Our Values</h2>
             <p>Integrity, transparency, and customer-first approach are the values that guide everything we do. We believe in creating a supportive environment for our employees, fostering collaboration, and delivering excellence in all our services.</p>
         </div>
     </div>
@@ -57,35 +54,21 @@
     <div class="container">
         <h2 class="section-title text-center">Our Business Information</h2>
         <div class="row">
-            <div class="col-md-3">
-                <div class="info-box">
-                    <h5>Nature of Business</h5>
-                    <p>Retailer</p>
-                </div>
+            <div class="col-md-3 info-box animated">
+                <h5>Nature of Business</h5>
+                <p>Retailer</p>
             </div>
-            <div class="col-md-3">
-                <div class="info-box">
-                    <h5>GSTIN</h5>
-                    <p>09GKUPM8516D1ZJ</p>
-                </div>
+            <div class="col-md-3 info-box animated">
+                <h5>GSTIN</h5>
+                <p>09GKUPM8516D1ZJ</p>
             </div>
-            <div class="col-md-3">
-                <div class="info-box">
-                    <h5>GST Registration Date</h5>
-                    <p>15-03-2023</p>
-                </div>
+            <div class="col-md-3 info-box animated">
+                <h5>Food License</h5>
+                <p>Licensed and Approved</p>
             </div>
-            <div class="col-md-3">
-                <div class="info-box">
-                    <h5>Food License</h5>
-                    <p>Licensed and Approved</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="info-box">
-                    <h5>Udyam Registration</h5>
-                    <p>Registered Business</p>
-                </div>
+            <div class="col-md-3 info-box animated">
+                <h5>Udyam Registration</h5>
+                <p>Registered Business</p>
             </div>
         </div>
     </div>
@@ -110,9 +93,9 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="feature-item">
-                    <h4>Exceptional Service</h4>
-                    <p>Our dedicated team works tirelessly to provide you with the best shopping experience.</p>
+                <div class="feature-item colorful-animation">
+                    <h4>Home Delivery in Under 1 km</h4>
+                    <p>Enjoy fast and reliable delivery. <b>Terms and Conditions Apply</b>.</p>
                 </div>
             </div>
         </div>
@@ -124,24 +107,18 @@
 <div class="testimonials-section spad">
     <div class="container">
         <h2 class="section-title text-center">What Our Customers Say</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="testimonial-item">
-                    <p>"SSG Hyper Mart always delivers the freshest products. Their customer service is top-notch!"</p>
-                    <h5>- Akshat</h5>
-                </div>
+        <div class="row testimonials-row">
+            <div class="col-md-4 testimonial-item">
+                <p>"SSG Hyper Mart always delivers the freshest products. Their customer service is top-notch!"</p>
+                <h5>- Akshat</h5>
             </div>
-            <div class="col-md-4">
-                <div class="testimonial-item">
-                    <p>"I love the variety of organic products at SSG. I can trust them for all my grocery needs."</p>
-                    <h5>- Krishna</h5>
-                </div>
+            <div class="col-md-4 testimonial-item">
+                <p>"I love the variety of organic products at SSG. I can trust them for all my grocery needs."</p>
+                <h5>- Krishna</h5>
             </div>
-            <div class="col-md-4">
-                <div class="testimonial-item">
-                    <p>"Fast delivery, great prices, and excellent quality. Highly recommend SSG Hyper Mart!"</p>
-                    <h5>- Mohit</h5>
-                </div>
+            <div class="col-md-4 testimonial-item">
+                <p>"Fast delivery, great prices, and excellent quality. Highly recommend SSG Hyper Mart!"</p>
+                <h5>- Mohit</h5>
             </div>
             <div class="col-md-4">
                 <div class="testimonial-item">
@@ -173,37 +150,33 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
-.feature-item h4 {
+.feature-item.h4 {
     font-size: 20px;
     margin-bottom: 10px;
 }
-.tabs-container {
-    margin: 50px 0;
+.colorful-animation {
+    animation: pulse 1.5s infinite alternate;
 }
-.tabs {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        background-color: #ffea00;
+    }
+    to {
+        transform: scale(1.05);
+        background-color: #ffc107;
+    }
 }
-.tab {
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    color: #555;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: all 0.3s;
+.animated {
+    animation: fadeIn 1s ease-in-out;
 }
-.tab:hover, .tab.active {
-    background-color: #008cba;
-    color: #fff;
-}
-.tab-content .content {
-    display: none;
-    text-align: center;
-}
-.tab-content .content.active {
-    display: block;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 </style>
 
@@ -216,5 +189,18 @@ function switchTab(tabNumber) {
         contents[index].classList.toggle('active', index + 1 === tabNumber);
     });
 }
-document.addEventListener('DOMContentLoaded', () => switchTab(1));
+document.addEventListener('DOMContentLoaded', () => {
+    switchTab(1);
+
+    // Auto-swap testimonials
+    const testimonials = document.querySelectorAll('.testimonial-item');
+    let currentIndex = 0;
+
+    setInterval(() => {
+        testimonials.forEach((item, index) => {
+            item.style.display = index === currentIndex ? 'block' : 'none';
+        });
+        currentIndex = (currentIndex + 1) % testimonials.length;
+    }, 3000);
+});
 </script>
