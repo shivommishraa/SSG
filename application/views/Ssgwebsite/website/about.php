@@ -30,14 +30,14 @@
 
 <!-- Tabs Section (Mission, Team, Values) -->
 <div class="tabs-container">
-    <div class="tabs text-center">
-        <div class="tab active" onclick="switchTab(1)">Our Mission</div>
-        <div class="tab" onclick="switchTab(2)">Our Team</div>
-        <div class="tab" onclick="switchTab(3)">Our Values</div>
+    <div class="tabs">
+        <div class="tab" id="tab1" onclick="switchTab(1)">Our Mission</div>
+        <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
+        <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
     </div>
 
-    <div class="tab-content">
-        <div class="content active" id="content1">
+    <div class="tab-content" id="content">
+        <div class="content" id="content1">
             <p>At SSG Hyper Mart, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
         </div>
         <div class="content" id="content2">
@@ -49,188 +49,163 @@
     </div>
 </div>
 
-<!-- Business Information Section -->
+<!-- Business Information Section Begin -->
 <section class="business-info-section spad">
     <div class="container">
         <h2 class="section-title text-center">Our Business Information</h2>
         <div class="row">
-            <div class="col-md-3 info-box">
-                <h5>Nature of Business</h5>
-                <p>Retailer</p>
+            <div class="col-md-3">
+                <div class="info-box">
+                    <h5>Nature of Business</h5>
+                    <p>Retailer</p>
+                </div>
             </div>
-            <div class="col-md-3 info-box">
-                <h5>GSTIN</h5>
-                <p>09GKUPM8516D1ZJ</p>
+            <div class="col-md-3">
+                <div class="info-box">
+                    <h5>GSTIN</h5>
+                    <p>09GKUPM8516D1ZJ</p>
+                </div>
             </div>
-            <div class="col-md-3 info-box">
-                <h5>Food License</h5>
-                <p>Licensed and Approved</p>
+            <div class="col-md-3">
+                <div class="info-box">
+                    <h5>Food License</h5>
+                    <p>Licensed and Approved</p>
+                </div>
             </div>
-            <div class="col-md-3 info-box">
-                <h5>Udyam Registration</h5>
-                <p>Registered Business</p>
+            <div class="col-md-3">
+                <div class="info-box">
+                    <h5>Udyam Registration</h5>
+                    <p>Registered Business</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<!-- Business Information Section End -->
 
 <!-- Why Choose Us Section -->
 <section class="why-choose-us-section spad">
     <div class="container">
         <h2 class="section-title text-center">Why Choose Us?</h2>
         <div class="row">
-            <div class="col-md-4 feature-item">
-                <h4>High-Quality Products</h4>
-                <p>We ensure that every product meets the highest quality standards for freshness, nutrition, and taste.</p>
+            <div class="col-md-4">
+                <div class="feature-item">
+                    <h4>High-Quality Products</h4>
+                    <p>We ensure that every product meets the highest quality standards for freshness, nutrition, and taste.</p>
+                </div>
             </div>
-            <div class="col-md-4 feature-item">
-                <h4>Affordable Prices</h4>
-                <p>We offer competitive prices on all products to make shopping easier for everyone.</p>
+            <div class="col-md-4">
+                <div class="feature-item">
+                    <h4>Affordable Prices</h4>
+                    <p>We offer competitive prices on all products to make shopping easier for everyone.</p>
+                </div>
             </div>
-            <div class="col-md-4 feature-item">
-                <h4>Home Delivery in Under 1 km</h4>
-                <p>Enjoy fast and reliable delivery. <b>Terms and Conditions Apply</b>.</p>
+            <div class="col-md-4">
+                <div class="feature-item">
+                    <h4>Exceptional Service</h4>
+                    <p>Our dedicated team works tirelessly to provide you with the best shopping experience.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<!-- Why Choose Us Section End -->
 
 <!-- Testimonials Section -->
 <div class="testimonials-section spad">
     <div class="container">
         <h2 class="section-title text-center">What Our Customers Say</h2>
-        <div id="testimonial-carousel" class="carousel">
-            <div class="carousel-item active">
-                <p>"SSG Hyper Mart always delivers the freshest products. Their customer service is top-notch!"</p>
-                <h5>- Akshat</h5>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testimonial-item">
+                    <p>"SSG Hyper Mart always delivers the freshest products. Their customer service is top-notch!"</p>
+                    <h5>- Akshat</h5>
+                </div>
             </div>
-            <div class="carousel-item">
-                <p>"I love the variety of organic products at SSG. I can trust them for all my grocery needs."</p>
-                <h5>- Krishna</h5>
+            <div class="col-md-4">
+                <div class="testimonial-item">
+                    <p>"I love the variety of organic products at SSG. I can trust them for all my grocery needs."</p>
+                    <h5>- Krishna</h5>
+                </div>
             </div>
-            <div class="carousel-item">
-                <p>"Fast delivery, great prices, and excellent quality. Highly recommend SSG Hyper Mart!"</p>
-                <h5>- Mohit</h5>
+            <div class="col-md-4">
+                <div class="testimonial-item">
+                    <p>"Fast delivery, great prices, and excellent quality. Highly recommend SSG Hyper Mart!"</p>
+                    <h5>- Mohit</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-item">
+                    <p>"Great prices, and excellent service in SSG Hyper Mart!"</p>
+                    <h5>- Lucky</h5>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <style>
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* General styles for the page */
+.about-us, .business-info-section, .testimonials-section, .why-choose-us-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
 }
-
-.tabs-container {
-    margin-top: 50px;
-}
-
-.tabs {
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
     text-align: center;
-    display: flex;
-    justify-content: center;
+}
+.info-box, .feature-item, .testimonial-item {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
-
-.tab {
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 0 10px;
-    color: #555;
-    background-color: #f9f9f9;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.feature-item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
-
-.tab:hover {
-    background-color: #008cba;
-    color: #fff;
-}
-
-.tab.active {
-    background-color: #008cba;
-    color: #fff;
-    box-shadow: 0 5px 15px rgba(0, 140, 202, 0.3);
-}
-
-.tab-content .content {
-    display: none;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.tab-content .content.active {
-    display: block;
-}
-
-.carousel-item {
-    display: none;
-}
-
-.carousel-item.active {
-    display: block;
-    text-align: center;
-    transition: opacity 0.5s ease-in-out;
-}
-
-/* Text Animation */
-@keyframes textColorChange {
-    0% {
-        color: #555;
-    }
-    50% {
-        color: #008cba;
-    }
-    100% {
-        color: #555;
-    }
-}
-
-h2, h4 {
-    animation: textColorChange 2s infinite;
-}
-
-/* Center Tab Section */
 .tabs-container {
+    margin: 50px 0;
+}
+.tabs {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 60px;
+    gap: 20px;
 }
-
-h2.section-title {
-    color: #333;
-    margin-bottom: 30px;
+.tab {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s;
 }
-
-p.section-description {
-    font-size: 1.2rem;
-    color: #777;
+.tab:hover, .tab.active {
+    background-color: #008cba;
+    color: #fff;
+}
+.tab-content .content {
+    display: none;
+    text-align: center;
+}
+.tab-content .content.active {
+    display: block;
 }
 </style>
 
 <script>
 function switchTab(tabNumber) {
     const tabs = document.querySelectorAll('.tab');
-    const contents = document.querySelectorAll('.content');
+    const contents = document.querySelectorAll('.tab-content .content');
     tabs.forEach((tab, index) => {
         tab.classList.toggle('active', index + 1 === tabNumber);
         contents[index].classList.toggle('active', index + 1 === tabNumber);
     });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    switchTab(1);
-
-    // Testimonials Carousel
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    let currentIndex = 0;
-    setInterval(() => {
-        carouselItems[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % carouselItems.length;
-        carouselItems[currentIndex].classList.add('active');
-    }, 3000);
-});
+document.addEventListener('DOMContentLoaded', () => switchTab(1));
 </script>
