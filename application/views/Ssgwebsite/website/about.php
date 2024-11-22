@@ -134,17 +134,32 @@
                     <h5>- Mohit</h5>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="testimonial-item">
+                    <p>"Great prices, and excellent service in SSG Hyper Mart!"</p>
+                    <h5>- Lucky</h5>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <style>
-/* General styles for the page */
-.about-us, .business-info-section, .testimonials-section, .why-choose-us-section {
-    padding: 50px 0;
+/* Inner Div Styling with Gradient Animation */
+.info-box, .feature-item, .testimonial-item {
+    text-align: center;
+    padding: 20px;
     background: linear-gradient(45deg, #ff8c00, #ff008c, #00c6ff);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+}
+
+.info-box:hover, .feature-item:hover, .testimonial-item:hover {
+    transform: scale(1.05);
 }
 
 @keyframes gradientAnimation {
@@ -159,28 +174,12 @@
     }
 }
 
-.section-title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #fff;
+/* Section Styling */
+.about-us, .business-info-section, .testimonials-section, .why-choose-us-section {
+    padding: 50px 0;
 }
 
-.info-box, .feature-item, .testimonial-item {
-    text-align: center;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.feature-item h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
+/* Tabs Section Styling */
 .tabs-container {
     margin: 50px 0;
 }
