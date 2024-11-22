@@ -146,6 +146,15 @@ class Website_controller extends CI_Controller {
 
   }
 
+   public function aboutus(){
+
+    $data['page_active']='aboutus';
+    $this->load->view('Ssgwebsite/website/header',$data);
+    $this->load->view('Ssgwebsite/website/about');
+    $this->load->view('Ssgwebsite/website/footer');
+
+  }
+
 
 
   public function savedata()
