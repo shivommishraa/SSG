@@ -52,7 +52,75 @@
     </div>
 </div>
 
-<!-- Testimonials Section (Optional) -->
+<!-- Business Information Section Begin -->
+<section class="business-info-section spad">
+    <div class="container">
+        <h2 class="section-title text-center">Our Business Information</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="info-box">
+                    <h5>Nature of Business</h5>
+                    <p>Retailer</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-box">
+                    <h5>GSTIN</h5>
+                    <p>09GKUPM8516D1ZJ</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-box">
+                    <h5>GST Registration Date</h5>
+                    <p>15-03-2023</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-box">
+                    <h5>Food License</h5>
+                    <p>Licensed and Approved</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-box">
+                    <h5>Udyam Registration</h5>
+                    <p>Registered Business</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Business Information Section End -->
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us-section spad">
+    <div class="container">
+        <h2 class="section-title text-center">Why Choose Us?</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-item">
+                    <h4>High-Quality Products</h4>
+                    <p>We ensure that every product meets the highest quality standards for freshness, nutrition, and taste.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-item">
+                    <h4>Affordable Prices</h4>
+                    <p>We offer competitive prices on all products to make shopping easier for everyone.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-item">
+                    <h4>Exceptional Service</h4>
+                    <p>Our dedicated team works tirelessly to provide you with the best shopping experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Why Choose Us Section End -->
+
+<!-- Testimonials Section -->
 <div class="testimonials-section spad">
     <div class="container">
         <h2 class="section-title text-center">What Our Customers Say</h2>
@@ -60,19 +128,25 @@
             <div class="col-md-4">
                 <div class="testimonial-item">
                     <p>"SSG Hyper Mart always delivers the freshest products. Their customer service is top-notch!"</p>
-                    <h5>- Sarah M.</h5>
+                    <h5>- Akshat</h5>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="testimonial-item">
                     <p>"I love the variety of organic products at SSG. I can trust them for all my grocery needs."</p>
-                    <h5>- John D.</h5>
+                    <h5>- Krishna</h5>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="testimonial-item">
                     <p>"Fast delivery, great prices, and excellent quality. Highly recommend SSG Hyper Mart!"</p>
-                    <h5>- Emily R.</h5>
+                    <h5>- Mohit</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-item">
+                    <p>"Great prices, and excellent service in SSG Hyper Mart!"</p>
+                    <h5>- Lucky</h5>
                 </div>
             </div>
         </div>
@@ -81,146 +155,66 @@
 
 <style>
 /* General styles for the page */
-.about-us {
-  padding: 50px 0;
-  background-color: #f9f9f9;
+.about-us, .business-info-section, .testimonials-section, .why-choose-us-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
 }
-
 .section-title {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
 }
-
-.section-description {
-  font-size: 18px;
-  color: #555;
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto;
+.info-box, .feature-item, .testimonial-item {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
-
+.feature-item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
 .tabs-container {
-  max-width: 1000px;
-  margin: 50px auto;
-  padding: 20px;
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+    margin: 50px 0;
 }
-
 .tabs {
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 2px solid #ddd;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
-
 .tab {
-  flex: 1;
-  text-align: center;
-  padding: 12px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s;
 }
-
-.tab:hover {
-  background-color: #008cba;
-  color: white;
+.tab:hover, .tab.active {
+    background-color: #008cba;
+    color: #fff;
 }
-
-.tab.active {
-  color: white;
-  background-color: #008cba;
-  border-radius: 5px 5px 0 0;
+.tab-content .content {
+    display: none;
+    text-align: center;
 }
-
-.tab-content {
-  padding: 20px;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.content {
-  display: none;
-}
-
-.content h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.content p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* Animation for tab content */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.testimonials-section {
-  padding: 50px 0;
-  background-color: #e9e9e9;
-}
-
-.testimonial-item {
-  background: white;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  text-align: center;
-  border-radius: 8px;
-}
-
-.testimonial-item p {
-  font-style: italic;
-  font-size: 16px;
-  color: #555;
-}
-
-.testimonial-item h5 {
-  margin-top: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-}
-
-@media (max-width: 768px) {
-  .tabs {
-    flex-direction: column;
-  }
-
-  .tab {
-    margin: 5px 0;
-  }
+.tab-content .content.active {
+    display: block;
 }
 </style>
 
 <script>
-// JavaScript for handling the tab switch
 function switchTab(tabNumber) {
-  // Remove active class from all tabs and content
-  const tabs = document.querySelectorAll('.tab');
-  const contents = document.querySelectorAll('.content');
-  
-  tabs.forEach(tab => tab.classList.remove('active'));
-  contents.forEach(content => content.style.display = 'none');
-  
-  // Add active class to the clicked tab
-  document.getElementById('tab' + tabNumber).classList.add('active');
-  
-  // Show the corresponding content
-  document.getElementById('content' + tabNumber).style.display = 'block';
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content .content');
+    tabs.forEach((tab, index) => {
+        tab.classList.toggle('active', index + 1 === tabNumber);
+        contents[index].classList.toggle('active', index + 1 === tabNumber);
+    });
 }
-
-// Set default tab (first one) on page load
-document.addEventListener('DOMContentLoaded', () => {
-  switchTab(1);
-});
+document.addEventListener('DOMContentLoaded', () => switchTab(1));
 </script>
