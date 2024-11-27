@@ -117,21 +117,21 @@ class Qa_model extends CI_Model
     public function getAllQuiz()
     {
         $this->db->select("mobile, COUNT(result) as result_count"); // Select mobile and the count of result = 1
-        $this->db->where("result", "1"); // Only consider rows where result = 1
-        $this->db->where("status", "1"); // Only consider active users (status = 1)
-        $this->db->from("tbl_quiz");
+$this->db->where("result", "1"); // Only consider rows where result = 1
+$this->db->where("status", "1"); // Only consider active users (status = 1)
+$this->db->from("tbl_quiz");
 
-        // Group by mobile number to count result = 1 for each mobile
-        $this->db->group_by("mobile");
+// Group by mobile number to count result = 1 for each mobile
+$this->db->group_by("mobile");
 
-        // Order by the count of result = 1 in descending order (max count first)
-        $this->db->order_by("result_count", "DESC"); 
+// Order by the count of result = 1 in descending order (max count first)
+$this->db->order_by("result_count", "DESC"); 
 
-        // Fetch the results
-        $query = $this->db->get();
+// Fetch the results
+$query = $this->db->get();
 
-        // Return the results
-        return $query->result();
+// Return the results
+return $query->result();
 
 
        /* $this->db->select("*");
