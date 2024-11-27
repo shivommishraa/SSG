@@ -116,38 +116,23 @@ class Qa_model extends CI_Model
 
     public function getAllQuiz()
     {
-        // First part: Users with result = 1
-$this->db->select("*");
-$this->db->where("result", "1");
-$this->db->where("status", "1");
-$this->db->from("tbl_quiz");
+        $this->db->select("mobile, COUNT(result) as result_count"); // Select mobile and the count of result = 1
+        $this->db->where("result", "1"); // Only consider rows where result = 1
+        $this->db->where("status", "1"); // Only consider active users (status = 1)
+        $this->db->from("tbl_quiz");
 
-// Group by 'mobile' to ensure uniqueness
-$this->db->group_by("mobile");
+        // Group by mobile number to count result = 1 for each mobile
+        $this->db->group_by("mobile");
 
-// Order by 'mobile' in descending order
-$this->db->order_by("mobile", "DESC");
-$query1 = $this->db->get_compiled_select();
+        // Order by the count of result = 1 in descending order (max count first)
+        $this->db->order_by("result_count", "DESC"); 
 
-// Second part: Users with result != 1
-$this->db->reset_query();
-$this->db->select("*");
-$this->db->where("result <>", "1");  // Ensure result is not 1
-$this->db->where("status", "1");
-$this->db->from("tbl_quiz");
+        // Fetch the results
+        $query = $this->db->get();
 
-// Group by 'mobile' to ensure uniqueness
-$this->db->group_by("mobile");
+        // Return the results
+        return $query->result();
 
-// Order by 'mobile' in descending order
-$this->db->order_by("mobile", "DESC");
-$query2 = $this->db->get_compiled_select();
-
-// Combine both queries with UNION
-$query = $this->db->query("($query1) UNION ($query2) ORDER BY mobile DESC");
-
-// Return the result
-return $query->result();
 
        /* $this->db->select("*");
         $this->db->where("result", "1");
