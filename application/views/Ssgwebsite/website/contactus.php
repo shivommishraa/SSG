@@ -31,7 +31,7 @@
                     <div class="contact__widget">
                         <span class="icon_pin_alt"></span>
                         <h4>Address</h4>
-                        <p>CH.CHIRANJI SQUARE,Aimnabad,Behind ACE CITY Greater Noida West-201306 (India)</p>
+                        <p>CH.CHIRANJI SQUARE,Aimnabad,Behind ACE CITY Sector-1 Greater Noida West-201306 (India)</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
@@ -65,7 +65,7 @@
                 <h4>SSG MART</h4>
                 <ul>
                     <li>Mobile: +91 81785843409</li>
-                    <li>Add:CH.CHIRANJI SQUARE,Aimnabad,Behind ACE CITY Greater Noida West-201306 (India)</li>
+                    <li>Add:CH.CHIRANJI SQUARE,Aimnabad,Behind ACE CITY Sector-1 Greater Noida West-201306 (India)</li>
                 </ul>
             </div>
         </div>
