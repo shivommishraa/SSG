@@ -108,37 +108,37 @@ public function checkanswer() {
                     $data['message2'] = 'Fantastic! You’ve earned a 10 rupee discount on your total purchase!';
                     break;
                 case 15:
-                    $data['message2'] = 'Fantastic! You are an SSG HYPER MART super customer!';
+                    $data['message2'] = 'Fantastic! You are an SSG MART super customer!';
                     break;
                 case 20:
-                    $data['message2'] = 'Awesome! You are a valued customer at SSG HYPER MART!';
+                    $data['message2'] = 'Awesome! You are a valued customer at SSG MART!';
                     break;
                 case 21:
                     $data['message2'] = 'Congratulations! Relish a yummy 5 rupee biscuit as a sweet reward!';
                     break;
                 case 30:
-                    $data['message2'] = 'Dazzling! You are an SSG HYPER MART amazing customer!';
+                    $data['message2'] = 'Dazzling! You are an SSG MART amazing customer!';
                     break;
                 case 40:
-                    $data['message2'] = 'Spectacular! You are an SSG HYPER MART VIP customer!';
+                    $data['message2'] = 'Spectacular! You are an SSG MART VIP customer!';
                     break;
                 case 50:
-                    $data['message2'] = 'Fantastic! Welcome to the SSG HYPER MART family, our amazing customer!';
+                    $data['message2'] = 'Fantastic! Welcome to the SSG MART family, our amazing customer!';
                     break;
                 case 60:
-                    $data['message2'] = 'Wonderful! Thank you for being an extraordinary customer at SSG HYPER MART!';
+                    $data['message2'] = 'Wonderful! Thank you for being an extraordinary customer at SSG MART!';
                     break;
                 case 70:
-                    $data['message2'] = 'Remarkable! You are a super customer at SSG HYPER MART!';
+                    $data['message2'] = 'Remarkable! You are a super customer at SSG MART!';
                     break;
                 case 80:
-                    $data['message2'] = 'Incredible! You are an SSG HYPER MART exceptional customer!';
+                    $data['message2'] = 'Incredible! You are an SSG MART exceptional customer!';
                     break;
                 case 90:
-                    $data['message2'] = 'Fabulous! You are an SSG HYPER MART outstanding customer!';
+                    $data['message2'] = 'Fabulous! You are an SSG MART outstanding customer!';
                     break;
                 case 100:
-                    $data['message2'] = 'Great news! You are a VIP customer at SSG HYPER MART!';
+                    $data['message2'] = 'Great news! You are a VIP customer at SSG MART!';
                     break;
                 default:
                     $data['message2'] = 'We truly appreciate your efforts! Keep shining, and better luck next time!';

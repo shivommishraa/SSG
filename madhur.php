@@ -49,7 +49,7 @@ hr {
     <p>SSG Group</p>
   </div>
   <div class="middle">
-    <h1>SSG HYPER MART</h1>
+    <h1>SSG MART</h1>
     <hr>
     <p>COMING SOON</p>
   </div>

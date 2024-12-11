@@ -222,7 +222,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="animated-text">SSG HYPER MART</h1>
+        <h1 class="animated-text">SSG MART</h1>
 
         <h2>Are You an SSG Super Customer? Take the Quiz to Find Out!</h2>
 

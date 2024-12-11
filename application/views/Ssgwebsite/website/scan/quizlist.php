@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSG HYPER MART</title>
+    <title>SSG MART</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* General styles */
@@ -149,7 +149,7 @@
 </head>
 <body>
 
-    <h1>SSG HYPER MART TOP CUSTOMER</h1>
+    <h1>SSG MART TOP CUSTOMER</h1>
 
     <!-- Scrollable Table Container -->
     <div class="table-container">

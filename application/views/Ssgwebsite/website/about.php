@@ -21,8 +21,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-title">Welcome to SSG Hyper Mart</h2>
-                <p class="section-description">SSG Hyper Mart is dedicated to providing the best quality grocery and everyday essentials at affordable prices. With a wide range of products and exceptional customer service, we aim to be your trusted partner in shopping.</p>
+                <h2 class="section-title">Welcome to SSG MART</h2>
+                <p class="section-description">SSG MART is dedicated to providing the best quality grocery and everyday essentials at affordable prices. With a wide range of products and exceptional customer service, we aim to be your trusted partner in shopping.</p>
             </div>
         </div>
     </div>
@@ -38,7 +38,7 @@
 
     <div class="tab-content" id="content">
         <div class="content" id="content1">
-            <p>At SSG Hyper Mart, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
+            <p>At SSG MART, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
         </div>
         <div class="content" id="content2">
             <p>We are a diverse group of professionals with a passion for food and service. Our team includes experienced chefs, suppliers, logistics experts, and customer service specialists who work together to ensure that you have access to the best products and the highest quality shopping experience.</p>
@@ -118,7 +118,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="testimonial-item">
-                    <p>"SSG Hyper Mart always delivers the freshest products. Their customer service is top-notch!"</p>
+                    <p>"SSG MART always delivers the freshest products. Their customer service is top-notch!"</p>
                     <h5>- Akshat</h5>
                 </div>
             </div>
@@ -130,7 +130,7 @@
             </div>
             <div class="col-md-4">
                 <div class="testimonial-item">
-                    <p>"Fast delivery, great prices, and excellent quality. Highly recommend SSG Hyper Mart!"</p>
+                    <p>"Fast delivery, great prices, and excellent quality. Highly recommend SSG MART!"</p>
                     <h5>- Mohit</h5>
                 </div>
             </div>

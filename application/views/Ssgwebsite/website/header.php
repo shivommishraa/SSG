@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="SSG Hyper Mart">
+    <meta name="description" content="SSG MART">
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SSG Hyper Mart</title>
+    <title>SSG MART</title>
     <link rel="shortcut icon" href="<?php echo base_url(); ?>ssgassests/img/ssglogo.png" type="image/x-icon" />
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">

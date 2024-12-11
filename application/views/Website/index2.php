@@ -3,7 +3,7 @@
                             <head>
                                 <meta charset='utf-8'>
                                 <meta name='viewport' content='width=device-width, initial-scale=1'>
-                                <title>SSG Hyper Mart</title>
+                                <title>SSG MART</title>
                                 <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' rel='stylesheet'>
                                 <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
                                 <style>body {
@@ -113,7 +113,7 @@ p.mb-1 {
             <div>
                
 <p class="mb-1" style="font-size: 19px;text-align: center;">!!..Coming Soon..!!</p>
-            </div> <button class="btn btn-primary btn-lg" ><small>-: SSG Hyper Mart :- <br/>at</small><br/><span id="blink" style=" font-size: 18px; text-align: center; font-weight: bold;">06 July 2023 (04 PM IST)</span> 
+            </div> <button class="btn btn-primary btn-lg" ><small>-: SSG MART :- <br/>at</small><br/><span id="blink" style=" font-size: 18px; text-align: center; font-weight: bold;">06 July 2023 (04 PM IST)</span> 
               <p style="color: white; font-size: 10px; margin-top: 10px"><i class="fa fa-envelope" aria-hidden="true"></i>
  ssgmart9@gmail.com &nbsp; <i class="fa fa-mobile" aria-hidden="true"></i> 8178584340</p>
  <p style="color: white; font-size: 10px; margin-top: 1px";>Designed By:- S.S.G Group</p>
@@ -131,7 +131,7 @@ p.mb-1 {
             <div class="form-group"><input type="password" name="password" class="form-control" id="password" required><label class="form-control-placeholder" for="password">Password</label></div>
 
              <button class="btn btn-primary btn-block btn-lg mt-1 mb-2"><span>Launch</span></button>
-             <p style="text-align:justify; margin-top:15px; color:green;">On the eighth anniversary of Maa Durga, I bow to Maa Durga. May Maa Durga bless everyone with happiness and prosperity. On this auspicious occasion, with the blessings of Maa Durga, we are bringing <span style="font-weight:bold;">SSG Hyper Mart</span> online.</p>
+             <p style="text-align:justify; margin-top:15px; color:green;">On the eighth anniversary of Maa Durga, I bow to Maa Durga. May Maa Durga bless everyone with happiness and prosperity. On this auspicious occasion, with the blessings of Maa Durga, we are bringing <span style="font-weight:bold;">SSG MART</span> online.</p>
         </div>
         
     </div>

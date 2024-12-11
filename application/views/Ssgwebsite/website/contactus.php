@@ -62,7 +62,7 @@
         <div class="map-inside">
             <i class="icon_pin"></i>
             <div class="inside-widget">
-                <h4>SSG Hyper Mart</h4>
+                <h4>SSG MART</h4>
                 <ul>
                     <li>Mobile: +91 81785843409</li>
                     <li>Add:CH.CHIRANJI SQUARE,Aimnabad,Behind ACE CITY Greater Noida West-201306 (India)</li>

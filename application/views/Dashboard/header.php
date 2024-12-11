@@ -28,7 +28,7 @@
     
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/summernote/css/summernote-bs4.css">
    
-   <title>SSG Hyper Mart</title>
+   <title>SSG MART</title>
    
 </head>
 

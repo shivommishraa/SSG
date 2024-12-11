@@ -2,11 +2,11 @@
 <html lang="en" >
 <head>
    <meta charset="utf-8">
-  <meta name="description" content="SSG HYPER MART,Super Sale,Best Offer">
+  <meta name="description" content="SSG MART,Super Sale,Best Offer">
   <meta name="keywords" content="Best Shop in Noida,Best Shop in Sector 1,super offer,super sale">
   <meta name="author" content="Madhur Mishra">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>SSG Hyper Mart</title>
+  <title>SSG MART</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <link rel="shortcut icon" href="https://ssghypermart.com/ssgassests/img/ssglogo.png" type="image/x-icon" />
