@@ -9,7 +9,7 @@
                             <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>ssgassests/img/ssglogo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: <b>CH.CHIRANJI SQUARE</b><br/>Aimnabad,Behind ACE CITY<br/>Greater Noida West-201306 (India)</li>
+                            <li>Address: CH.CHIRANJI SQUARE<br/>Aimnabad,Behind ACE CITY<br/>Greater Noida West-201306 (India)</li>
                             <li>Phone: +91 9310523943</li>
                             <li>Email: ssgmart9@gmail.com</li>
                         </ul>
