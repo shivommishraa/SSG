@@ -19,16 +19,16 @@
                     <div class="footer__widget">
                         <h6>Useful Links</h6>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Delivery infomation</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/aboutus">About Us</a></li>
+                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/aboutus#ssgmessage">About Our Shop</a></li>
+                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/aboutus#tab3">Delivery infomation</a></li>
+                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/aboutus#tab1">Privacy Policy</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#">Who We Are</a></li>
-                            <li><a href="#">Our Services</a></li>
+                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/aboutus#ssgbusinessinfo">Who We Are</a></li>
+                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/aboutus#whychooseus">Our Services</a></li>
                             <li><a href="<?php echo base_url(); ?>Website/Website_controller/contactus">Contact</a></li>
-                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/aboutus#ourcustomerfeedback">Testimonials</a></li>
                         </ul>
                     </div>
                 </div>
