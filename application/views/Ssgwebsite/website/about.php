@@ -19,7 +19,7 @@
 <!-- About Us Main Content Section -->
 <div class="about-us spad">
     <div class="container">
-        <div class="row">
+        <div class="row" id="ssgmessage">
             <div class="col-lg-12 text-center">
                 <h2 class="section-title">Welcome to SSG MART</h2>
                 <p class="section-description">SSG MART is dedicated to providing the best quality grocery and everyday essentials at affordable prices. With a wide range of products and exceptional customer service, we aim to be your trusted partner in shopping.</p>
@@ -38,13 +38,13 @@
 
     <div class="tab-content" id="content">
         <div class="content" id="content1">
-            <p>At SSG MART, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
+            <p id="ourmission">At SSG MART, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
         </div>
         <div class="content" id="content2">
-            <p>We are a diverse group of professionals with a passion for food and service. Our team includes experienced chefs, suppliers, logistics experts, and customer service specialists who work together to ensure that you have access to the best products and the highest quality shopping experience.</p>
+            <p id="ourteam">We are a diverse group of professionals with a passion for food and service. Our team includes experienced chefs, suppliers, logistics experts, and customer service specialists who work together to ensure that you have access to the best products and the highest quality shopping experience.</p>
         </div>
         <div class="content" id="content3">
-            <p>Integrity, transparency, and customer-first approach are the values that guide everything we do. We believe in creating a supportive environment for our employees, fostering collaboration, and delivering excellence in all our services.</p>
+            <p id="ourvalue">Integrity, transparency, and customer-first approach are the values that guide everything we do. We believe in creating a supportive environment for our employees, fostering collaboration, and delivering excellence in all our services.</p>
         </div>
     </div>
 </div>
@@ -52,7 +52,7 @@
 <!-- Business Information Section Begin -->
 <section class="business-info-section spad">
     <div class="container">
-        <h2 class="section-title text-center">Our Business Information</h2>
+        <h2 class="section-title text-center" id="ssgbusinessinfo">Our Business Information</h2>
         <div class="row">
             <div class="col-md-3">
                 <div class="info-box">
@@ -86,7 +86,7 @@
 <!-- Why Choose Us Section -->
 <section class="why-choose-us-section spad">
     <div class="container">
-        <h2 class="section-title text-center">Why Choose Us?</h2>
+        <h2 class="section-title text-center" id="whychooseus">Why Choose Us?</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="feature-item">
@@ -114,7 +114,7 @@
 <!-- Testimonials Section -->
 <div class="testimonials-section spad">
     <div class="container">
-        <h2 class="section-title text-center">What Our Customers Say</h2>
+        <h2 class="section-title text-center" id="ourcustomerfeedback">What Our Customers Say</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="testimonial-item">
