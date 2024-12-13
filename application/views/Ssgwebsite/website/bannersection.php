@@ -48,7 +48,7 @@
                     <div class="hero__item set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/hero/ssgbanner.PNG">
                         <div class="hero__text">
                             <span>FRESH PRODUCTS</span>
-                            <h2>SSG Mart</h2>
+                            <h2>SSG MART</h2>
                             <p>*Free Delivery Available</p>
                             <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="primary-btn">ORDER NOW</a>
                         </div>
