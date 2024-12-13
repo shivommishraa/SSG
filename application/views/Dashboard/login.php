@@ -71,7 +71,7 @@
                 </div>
             </div> -->
         </div>
-        <div class=" text-center">All rights reserved by <a href="http://www.mstatus.in/">SSG Hyper Mart</a>.</div>
+        <div class=" text-center">All rights reserved by <a href="http://www.mstatus.in/">SSG MART</a>.</div>
     </div>
     
     <!-- ============================================================== -->

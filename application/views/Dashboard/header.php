@@ -44,7 +44,7 @@
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
              <!--  <img src="<?php //echo base_url(); ?>assets/images/firstrite_logo1.png" alt="" height="90vw"> -->
-                <a class="navbar-brand" href="#" style="font-family:Montserrat Regular;">SSG Hyper Mart</a>
+                <a class="navbar-brand" href="#" style="font-family:Montserrat Regular;">SSG MART</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
