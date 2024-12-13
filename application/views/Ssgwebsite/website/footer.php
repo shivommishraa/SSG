@@ -25,7 +25,7 @@
                             <li><a href="<?php echo base_url(); ?>Website/Website_controller/aboutus#tab1">Privacy Policy</a></li>
                         </ul>
                         <ul>
-                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/aboutus#ssgbusinessinfo">Who We Are</a></li>
+                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/ordernow">Order Now</a></li>
                             <li><a href="<?php echo base_url(); ?>Website/Website_controller/aboutus#whychooseus">Our Services</a></li>
                             <li><a href="<?php echo base_url(); ?>Website/Website_controller/contactus">Contact</a></li>
                             <li><a href="<?php echo base_url(); ?>Website/Website_controller/aboutus#ourcustomerfeedback">Testimonials</a></li>
