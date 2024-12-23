@@ -56,3 +56,5 @@ $route['translate_uri_dashes'] = FALSE;
 $route['login']="Admin/Login_Controller/login";
 $route['Website']="Website/Website_Controller";
 $route['adminmadhur_895']="Dashboard";
+
+$route['newssg']="Website/Website_controller/newindex";
