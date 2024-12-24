@@ -32,7 +32,7 @@
          </div>
        </h5>
        <div class="card-body">
-        <form class="needs-validation" novalidate  method="post" action="<?php echo site_url()?>Product/Tbl_productController/editTbl_productPost">
+        <form class="needs-validation" enctype="multipart/form-data" novalidate  method="post" action="<?php echo site_url()?>Product/Tbl_productController/editTbl_productPost">
           <input type="hidden" value="<?php echo $tbl_product[0]->id ?>"   name="tbl_product_id">
 
           <div class="row">
