@@ -131,26 +131,18 @@
                                         Looks good!
                                     </div>
                                 </div>
+                                <?php if(!empty($row->thumble_image)){ ?>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Thumble Image:</label>
+                                    <img height="50px" width="50px"> src="<?php echo site_url(); ?>ssgassests/productupload/<?php echo $row->thumble_image; ?>"/>
+                                </div>
+                                <?php } ?>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
         <label for="validationCustom05">Product Description:</label>
         <textarea  class="form-control"  name="product_description"><?php echo $tbl_product[0]->product_description ?></textarea>
         
         
       </div>
-     <!--  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
-       <label for="validationCustom03">Actual Price:</label>
-       <input type="text" value="<?php //echo $tbl_product[0]->actual_price ?>"   class="form-control"  name="actual_price" >
-       
-     </div> -->
-     <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
-      <label for="validationCustom04">Discount Percentage:</label>
-      <input type="number" class="form-control"  value="<?php //echo $tbl_product[0]->discount_percentage ?>" id="validationCustom04" name="discount_percentage">
-      
-    </div> -->
-
-
-
-
   </div>
   <div class="form-row">
                                            <!-- <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mb-2">
