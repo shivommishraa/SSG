@@ -31,7 +31,7 @@ public function getSliderProduct(){
 public function getAllEnabledProductsForFeatured(){
     $this->db->select('*');
     $this->db->where('status', "1");
-    $this->db->where('enable_featured_product IS NOT NULL', "", false); // Add condition for non-NULL values
+    $this->db->where('enable_featured_product >', 0); // Check for values greater than 0
     $this->db->from('gallery');   
     $query = $this->db->get();
     return $query->result();
