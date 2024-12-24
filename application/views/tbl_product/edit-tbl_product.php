@@ -43,7 +43,7 @@
              <div class="valid-feedback">
               Looks good!
             </div>
-          </div>
+          </div> 
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
            <label for="validationCustom02">Product Brand:</label>
            <select class="form-control"  name="product_brand" id="validationCustom02"required>
@@ -58,22 +58,95 @@
           Looks good!
         </div>
       </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pt-2">
+                                    <label for="validationCustom03">Product Category:</label>
+                                    <select required class="form-control"  name="product_category" id="validationCustom02"required>
+                                       <option value="">Select Product Category</option>
+                                       <?php foreach ($categorydropdown as $row): ?>
+                                            <option value="<?php echo $row->cate_id; ?>" ><?php echo $row->cate_name; ?></option>
+                                      <?php endforeach; ?>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Enter product category.
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Actual Price:</label>
+                                    <input  type="number"  class="form-control" required=""  name="actual_price" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Enter actual price.
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Sell Price:</label>
+                                    <input required type="number"  class="form-control" name="sell_price" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Enter sell price.
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom04">Discount Percentage:</label>
+                                    <input type="number" class="form-control" value="0" name="discount_percentage">
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Enable For Scroll:</label>
+                                    <select class="form-control"  name="enable_for_scroll" id="validationCustom02"required>
+                                       <option value="0">No</option>
+                                       <option value="1">Yes</option>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Product Feature:</label>
+                                    <select class="form-control"  name="enable_featured_product" id="validationCustom02" >
+                                       <option value="">Select Product Feature</option>
+                                       <?php foreach ($featureddropdown as $row): ?>
+                                            <option value="<?php echo $row->category_id; ?>" >
+                                                <?php echo $row->category_name; ?>
+                                            </option>
+                                      <?php endforeach; ?>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Thumble Image:</label>
+                                    <input type="file"  class="form-control" name="thumble_image" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
         <label for="validationCustom05">Product Description:</label>
         <textarea  class="form-control"  name="product_description"><?php echo $tbl_product[0]->product_description ?></textarea>
         
         
       </div>
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
+     <!--  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
        <label for="validationCustom03">Actual Price:</label>
-       <input type="text" value="<?php echo $tbl_product[0]->actual_price ?>"   class="form-control"  name="actual_price" >
+       <input type="text" value="<?php //echo $tbl_product[0]->actual_price ?>"   class="form-control"  name="actual_price" >
        
-     </div>
-     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
+     </div> -->
+     <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
       <label for="validationCustom04">Discount Percentage:</label>
-      <input type="number" class="form-control"  value="<?php echo $tbl_product[0]->discount_percentage ?>" id="validationCustom04" name="discount_percentage">
+      <input type="number" class="form-control"  value="<?php //echo $tbl_product[0]->discount_percentage ?>" id="validationCustom04" name="discount_percentage">
       
-    </div>
+    </div> -->
 
 
 
