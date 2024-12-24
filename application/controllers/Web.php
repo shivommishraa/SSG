@@ -9,7 +9,7 @@ class Web extends CI_Controller {
     $this->load->model('Admin_model/Role_model');
     $this->load->model('Admin_model/Adminmodel');
     $this->load->model('Nice_websitemodel/Nice_webmodel');
-    $this->load->model('Product_model/tbl_product');
+    $this->load->model('Product_model/Product_model');
     $this->load->library('session');
     $this->load->library("pagination");
     $this->load->helper(array('url','form'));
