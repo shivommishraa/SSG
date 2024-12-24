@@ -28,6 +28,15 @@ public function getSliderProduct(){
     $query=$this->db->get();
     return $query->result();
 }
+public function getAllEnabledProductsForFeatured(){
+    $this->db->select('*');
+    $this->db->where('status', "1");
+    $this->db->where('enable_featured_product IS NOT NULL', null, false); // Add condition for non-NULL values
+    $this->db->from('gallery');   
+    $query = $this->db->get();
+    return $query->result();
+}
+
 /*================Code for get  all product from product table ===============*/
 public function getAll() {
     return $this->db->get('gallery')->result();

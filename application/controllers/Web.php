@@ -44,6 +44,7 @@ class Web extends CI_Controller {
         $data["sliderProduct"] = $this->tbl_product->getSliderProduct();
         $data["productcategories"] = $this->Category_model->getAllEnabledProductCategories();
         $data["featuredcategory"] = $this->Category_model->getAllEnableFeatureddcategory();
+        $data["enabledProductsForFeatured"] = $this->tbl_product->getAllEnabledProductsForFeatured();
         $data['product_image']=function($id){
         return $this->Nice_webmodel->getimage_datails($id);};
         $data['product_brand']=function($id){

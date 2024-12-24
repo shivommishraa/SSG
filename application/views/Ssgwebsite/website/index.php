@@ -7,25 +7,23 @@
                         <h2>Featured Product</h2>
                     </div>
                     <div class="featured__controls">
-                        <?php if(!empty($featuredcategory)) {?>
+                        <?php if(!empty($featuredcategory)) { ?>
                         <ul>
                             <li class="active" data-filter="*">All</li>
                             <?php $i=1; foreach($featuredcategory as $fcategory) { ?>
                             <li data-filter=".cname_<?php echo $fcategory->category_id; ?>"><?php echo $fcategory->category_name; ?></li>
                             <?php  $i++; } ?>
-                            <!-- <li data-filter=".oranges">New Arival Product</li>
-                            <li data-filter=".fresh-meat">Best Product</li>
-                            <li data-filter=".vegetables">Dry Food</li>
-                            <li data-filter=".fastfood">Fast Food</li> -->
                         </ul>
                         <?php } ?>
                     </div>
                 </div>
             </div>
             <div class="row featured__filter">
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                 <?php if(!empty($enabledProductsForFeatured)) { ?>
+                    <?php $i=1; foreach($enabledProductsForFeatured as $fproducts) { ?>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix <?php echo "cname_".$fproducts->enable_featured_product; ?> fresh-meat">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/featured/feature-1.jpg">
+                        <div class="featured__item__pic set-bg" data-setbg="<?php echo base_url(); ?>/ssgassests/productupload/<?php echo $fproducts->thumble_image; ?>">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -33,11 +31,13 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Lifebuoy Handwash</a></h6>
+                            <h6><a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" target="_blank"><?php echo $fproducts->product_name; ?></a></h6>
                             <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
+                <?php  $i++; } ?>
+                <?php } ?>
                <!--  <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/featured/feature-2.jpg">
