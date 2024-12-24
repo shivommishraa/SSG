@@ -7,7 +7,7 @@
                         <h2>Featured Product</h2>
                     </div>
                     <div class="featured__controls">
-                        <?php if(!empty($featuredcategory)) { ?>
+                        <?php if(!empty($featuredcategory) && !empty($enabledProductsForFeatured)) { ?>
                         <ul>
                             <li class="active" data-filter="*">All</li>
                             <?php $i=1; foreach($featuredcategory as $fcategory) { ?>
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="row featured__filter">
-                 <?php if(!empty($enabledProductsForFeatured)) { ?>
+                 <?php if(!empty($enabledProductsForFeatured) && !empty($featuredcategory)) { ?>
                     <?php $i=1; foreach($enabledProductsForFeatured as $fproducts) { ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix <?php echo "cname_".$fproducts->enable_featured_product; ?> fresh-meat">
                     <div class="featured__item">
