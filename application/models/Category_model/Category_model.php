@@ -6,6 +6,11 @@ class Category_model extends CI_Model {
     public function getAll() {
         return $this->db->get('tbl_category')->result();
     }
+
+    public function getAllEnabledProductCategories() {
+         $this->db->where('status',"1");
+        return $this->db->get('tbl_category')->result();
+    }
     public function all_text_category()
     {
          return $this->db->get('tbl_textcategory')->result();

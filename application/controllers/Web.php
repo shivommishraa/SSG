@@ -9,6 +9,7 @@ class Web extends CI_Controller {
     $this->load->model('Admin_model/Role_model');
     $this->load->model('Admin_model/Adminmodel');
     $this->load->model('Nice_websitemodel/Nice_webmodel');
+    $this->load->model('Category_model/Category_model');
     $this->load->model('Product_model/tbl_product');
     $this->load->library('session');
     $this->load->library("pagination");
@@ -41,6 +42,7 @@ class Web extends CI_Controller {
         if(!empty($galleryid)){ $data['searchdata']=$galleryid;}
         $data["allbrand"] = $this->Nice_webmodel->getproduct_brand();
         $data["sliderProduct"] = $this->tbl_product->getSliderProduct();
+        $data["productcategories"] = $this->Category_model->getAllEnabledProductCategories();
         $data['product_image']=function($id){
         return $this->Nice_webmodel->getimage_datails($id);};
         $data['product_brand']=function($id){

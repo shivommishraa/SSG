@@ -4,23 +4,16 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <span>Our Products</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Biscuits</a></li>
-                            <li><a href="#">Namkeen</a></li>
-                            <li><a href="#">Ice Cream</a></li>
-                            <li><a href="#">Maggi & Macaroni</a></li>
-                            <li><a href="#">Cold Drinks</a></li>
-                            <li><a href="#">Rice</a></li>
-                            <li><a href="#">Flour</a></li>
-                            <li><a href="#">Pickles</a></li>
-                            <li><a href="#">Sago</a></li>
-                            <li><a href="#">Toys & Gifts</a></li>
-                            <li><a href="#">Stationery</a></li>
-                        </ul>
+                         <?php if(!empty($productcategories)) {?>
+                            <div class="hero__categories__all">
+                                <i class="fa fa-bars"></i>
+                                <span>Product Categories</span>
+                            </div>
+                            <ul>
+                                <?php $i=1; foreach($productcategories as $category) { ?>
+                                <li><a href="#"><?php echo $category->category_name; ?></a></li>
+                            </ul>
+                        <?php  $i++; } } ?>
                     </div>
                 </div>
                 <div class="col-lg-9">
