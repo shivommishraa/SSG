@@ -4,11 +4,11 @@
 class Tbl_product extends CI_Model {
 
  
-    public function getAllproduct($limit,$start,$product_name='',$brand_name='') {
+public function getAllproduct($limit,$start,$product_name='',$brand_name='') {
      
-       $this->db->select('*');
-       $this->db->limit($limit, $start);
-       if($product_name!=''){
+    $this->db->select('*');
+    $this->db->limit($limit, $start);
+    if($product_name!=''){
         $this->db->where('product_name',$product_name);
         
     }
@@ -19,7 +19,14 @@ class Tbl_product extends CI_Model {
     $this->db->from('gallery');   
     $query=$this->db->get();
     return $query->result();
-    
+}
+/*================function for get slider product from gallery table ===============*/
+public function getSliderProduct(){
+    $this->db->select('*');
+    $this->db->where('enable_for_scroll',"1");
+    $this->db->from('gallery');   
+    $query=$this->db->get();
+    return $query->result();
 }
 /*================Code for get  all product from product table ===============*/
 public function getAll() {
