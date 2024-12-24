@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="SSG MART">
-    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="keywords" content="SsgMart, SSGMART, ssgmart, ssg_mart,bestmart,noidabestmart">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SSG MART</title>
