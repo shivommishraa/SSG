@@ -75,26 +75,6 @@
                         </div>
                     </div>
                     <?php $i++; } } ?>
-                   <!--  <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/categories/cat-2.jpg">
-                            <h5><a href="#">Parle G Biscuit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/categories/cat-3.jpg">
-                            <h5><a href="#">Hair Product</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/categories/cat-4.jpg">
-                            <h5><a href="#">Drink Fruits</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/categories/cat-5.jpg">
-                            <h5><a href="#">Dove Shampoo</a></h5>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
