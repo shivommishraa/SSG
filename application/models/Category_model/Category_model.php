@@ -8,8 +8,8 @@ class Category_model extends CI_Model {
     }
 
     public function getAllEnabledProductCategories() {
-         $this->db->where('status',"1");
-        return $this->db->get('tbl_category')->result();
+         $this->db->where('status_staus',"1");
+        return $this->db->get('tbl_textcategory')->result();
     }
     public function all_text_category()
     {
