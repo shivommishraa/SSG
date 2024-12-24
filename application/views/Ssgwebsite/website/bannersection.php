@@ -74,6 +74,7 @@
                             <h5><a href="#"><?php echo $row->product_name; ?></a></h5>
                         </div>
                     </div>
+                    <?php $i++; } } ?>
                    <!--  <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/categories/cat-2.jpg">
                             <h5><a href="#">Parle G Biscuit</a></h5>
