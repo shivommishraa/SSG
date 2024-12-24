@@ -210,4 +210,11 @@ public function getparent($id)
 }
 
 
+
+public function getAllEnableFeatureddcategory() {
+    $this->db->where('status', "1");
+    return $this->db->get('tbl_category')->result();   
+}
+
+
 }

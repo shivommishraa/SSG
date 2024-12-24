@@ -7,13 +7,18 @@
                         <h2>Featured Product</h2>
                     </div>
                     <div class="featured__controls">
+                        <?php if(!empty($featuredcategory)) {?>
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".oranges">New Arival Product</li>
+                            <?php $i=1; foreach($featuredcategory as $fcategory) { ?>
+                            <li data-filter=".cname_<?php echo $fcategory->category_id; ?>"><?php echo $fcategory->category_name; ?></li>
+                            <?php  $i++; } ?>
+                            <!-- <li data-filter=".oranges">New Arival Product</li>
                             <li data-filter=".fresh-meat">Best Product</li>
                             <li data-filter=".vegetables">Dry Food</li>
-                            <li data-filter=".fastfood">Fast Food</li>
+                            <li data-filter=".fastfood">Fast Food</li> -->
                         </ul>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -33,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
+               <!--  <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/featured/feature-2.jpg">
                             <ul class="featured__item__pic__hover">
@@ -44,7 +49,6 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Dove Shampoo</a></h6>
-                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
@@ -59,7 +63,6 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Dove Moisturizer</a></h6>
-                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
@@ -74,7 +77,6 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Drink Fruits</a></h6>
-                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
@@ -89,7 +91,6 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Hair Product</a></h6>
-                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
@@ -104,7 +105,6 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Parle G Biscuit</a></h6>
-                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,6 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Drink Fruits</a></h6>
-                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
@@ -134,10 +133,9 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Fruit & More</a></h6>
-                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

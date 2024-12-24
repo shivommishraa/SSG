@@ -43,6 +43,7 @@ class Web extends CI_Controller {
         $data["allbrand"] = $this->Nice_webmodel->getproduct_brand();
         $data["sliderProduct"] = $this->tbl_product->getSliderProduct();
         $data["productcategories"] = $this->Category_model->getAllEnabledProductCategories();
+        $data["featuredcategory"] = $this->Category_model->getAllEnableFeatureddcategory();
         $data['product_image']=function($id){
         return $this->Nice_webmodel->getimage_datails($id);};
         $data['product_brand']=function($id){
@@ -51,7 +52,7 @@ class Web extends CI_Controller {
         //$this->load->view('Website/ms_header',$data);
         $this->load->view('Ssgwebsite/website/header');
         $this->load->view('Ssgwebsite/website/bannersection',$data);
-        $this->load->view('Ssgwebsite/website/index');
+        $this->load->view('Ssgwebsite/website/index',$data);
         $this->load->view('Ssgwebsite/website/footer');
         // $this->load->view('Ssgwebsite/website/madhur');
     }else{
