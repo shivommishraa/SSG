@@ -48,7 +48,7 @@ class Web extends CI_Controller {
                
         //$this->load->view('Website/ms_header',$data);
         $this->load->view('Ssgwebsite/website/header');
-        $this->load->view('Ssgwebsite/website/bannersection');
+        $this->load->view('Ssgwebsite/website/bannersection',$data);
         $this->load->view('Ssgwebsite/website/index');
         $this->load->view('Ssgwebsite/website/footer');
         // $this->load->view('Ssgwebsite/website/madhur');

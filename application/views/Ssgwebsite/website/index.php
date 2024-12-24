@@ -18,14 +18,9 @@
                 </div>
             </div>
             <div class="row featured__filter">
-                <?php 
-                    if(!empty($sliderProduct)) { 
-                        $i=1; foreach($sliderProduct as $row) {
-
-                ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="<?php echo base_url(); ?>/ssgassests/productupload/<?php echo $row->thumble_image; ?>">
+                        <div class="featured__item__pic set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/featured/feature-1.jpg">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -33,13 +28,12 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#"><?php echo $row->product_name; ?></a></h6>
+                            <h6><a href="#">Lifebuoy Handwash</a></h6>
                             <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
-                <?php $i++; } } ?>
-                <!-- <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/featured/feature-2.jpg">
                             <ul class="featured__item__pic__hover">
@@ -50,6 +44,7 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Dove Shampoo</a></h6>
+                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
@@ -64,6 +59,7 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Dove Moisturizer</a></h6>
+                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
@@ -78,6 +74,7 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Drink Fruits</a></h6>
+                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
@@ -92,6 +89,7 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Hair Product</a></h6>
+                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
@@ -106,6 +104,7 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Parle G Biscuit</a></h6>
+                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
@@ -120,6 +119,7 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Drink Fruits</a></h6>
+                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
                 </div>
@@ -134,9 +134,10 @@
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="#">Fruit & More</a></h6>
+                            <!-- <h5>₹30.00</h5> -->
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>

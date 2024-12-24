@@ -64,12 +64,17 @@
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
+                     <?php 
+                        if(!empty($sliderProduct)) { 
+                            $i=1; foreach($sliderProduct as $row) {
+
+                    ?>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/categories/cat-1.jpg">
-                            <h5><a href="#">Lifebuoy Handwash</a></h5>
+                        <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>/ssgassests/productupload/<?php echo $row->thumble_image; ?>">
+                            <h5><a href="#"><?php echo $row->product_name; ?></a></h5>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                   <!--  <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/categories/cat-2.jpg">
                             <h5><a href="#">Parle G Biscuit</a></h5>
                         </div>
@@ -88,7 +93,7 @@
                         <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/categories/cat-5.jpg">
                             <h5><a href="#">Dove Shampoo</a></h5>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
