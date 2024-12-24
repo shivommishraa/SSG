@@ -11,7 +11,7 @@
                             </div>
                             <ul>
                                 <?php $i=1; foreach($productcategories as $category) { ?>
-                                    <li><a href="#"><?php echo $category->cate_name; ?></a></li>
+                                    <li><a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" target="_blank"><?php echo $category->cate_name; ?></a></li>
                                 <?php  $i++; } ?>
                             </ul>
                         <?php } ?>
@@ -65,7 +65,7 @@
                     ?>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="<?php echo base_url(); ?>/ssgassests/productupload/<?php echo $row->thumble_image; ?>">
-                            <h5><a href="#"><?php echo $row->product_name; ?></a></h5>
+                            <h5><a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" target="_blank"><?php echo $row->product_name; ?></a></h5>
                         </div>
                     </div>
                     <?php $i++; } } ?>
