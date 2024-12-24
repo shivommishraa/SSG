@@ -145,11 +145,10 @@ public function doUpload($file) {
                               $data['product_category'] = $this->input->post('product_category');
                               $data['enable_for_scroll'] = $this->input->post('enable_for_scroll');
                               $data['enable_featured_product'] = $this->input->post('enable_featured_product');
-                              
-                                $data['thumble_image'] = $this->input->post('thumble_image');
-                                if ($_FILES['thumble_image']['name']) { 
-                                  $data['thumble_image'] = $this->doUpload('thumble_image');
-                                }
+                              $data['thumble_image'] = $this->input->post('thumble_image');
+                              if ($_FILES['thumble_image']['name']) { 
+                                $data['thumble_image'] = $this->doUpload('thumble_image');
+                              }
                               /*========================================================================*/
                               $data['modified']=date("Y-m-d H:i:s");
                               $percentage=$this->input->post('discount_percentage');
