@@ -63,7 +63,7 @@
                                     <select required class="form-control"  name="product_category" id="validationCustom02"required>
                                        <option value="">Select Product Category</option>
                                        <?php foreach ($categorydropdown as $row): ?>
-                                            <option value="<?php echo $row->cate_id; ?>" ><?php echo $row->cate_name; ?></option>
+                                            <option value="<?php echo $row->cate_id; ?>" <?php if($row->cate_id==$tbl_product[0]->product_category) echo "selected"; ?>><?php echo $row->cate_name; ?></option>
                                       <?php endforeach; ?>
                                     </select>
                                     <div class="valid-feedback">
@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom03">Actual Price:</label>
-                                    <input  type="number"  class="form-control" required=""  name="actual_price" >
+                                    <input  type="number" value="<?php echo $tbl_product[0]->actual_price; ?>" class="form-control" required=""  name="actual_price" >
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom03">Sell Price:</label>
-                                    <input required type="number"  class="form-control" name="sell_price" >
+                                    <input required type="number" value="<?php echo $tbl_product[0]->sell_price ?>"  class="form-control" name="sell_price" >
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom04">Discount Percentage:</label>
-                                    <input type="number" class="form-control" value="0" name="discount_percentage">
+                                    <input type="number" class="form-control" value="<?php echo $tbl_product[0]->discount_percentage ?>" name="discount_percentage">
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -103,8 +103,8 @@
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom03">Enable For Scroll:</label>
                                     <select class="form-control"  name="enable_for_scroll" id="validationCustom02"required>
-                                       <option value="0">No</option>
-                                       <option value="1">Yes</option>
+                                       <option value="0" <?php if("0"==$tbl_product[0]->enable_for_scroll) echo "selected"; ?>>No</option>
+                                       <option value="1"<?php if("1"==$tbl_product[0]->enable_for_scroll) echo "selected"; ?>>Yes</option>
                                     </select>
                                     <div class="valid-feedback">
                                         Looks good!
@@ -115,7 +115,7 @@
                                     <select class="form-control"  name="enable_featured_product" id="validationCustom02" >
                                        <option value="">Select Product Feature</option>
                                        <?php foreach ($featureddropdown as $row): ?>
-                                            <option value="<?php echo $row->category_id; ?>" >
+                                            <option value="<?php echo $row->category_id; ?>"  <?php if($row->category_id==$tbl_product[0]->enable_featured_product) echo "selected"; ?>>
                                                 <?php echo $row->category_name; ?>
                                             </option>
                                       <?php endforeach; ?>
