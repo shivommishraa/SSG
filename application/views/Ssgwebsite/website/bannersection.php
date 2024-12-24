@@ -11,7 +11,7 @@
                             </div>
                             <ul>
                                 <?php $i=1; foreach($productcategories as $category) { ?>
-                                <li><a href="#"><?php echo $category->category_name; ?></a></li>
+                                <li><a href="#"><?php echo $category->cate_name; ?></a></li>
                             </ul>
                         <?php  $i++; } } ?>
                     </div>
