@@ -70,7 +70,7 @@
                     <div class="latest-product__text">
                         <h4>Latest Products</h4>
                         <div class="latest-product__slider owl-carousel">
-                            <div class="latest-prdouct__slider__item">
+                            <!-- <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img src="<?php echo base_url(); ?>ssgassests/img/latest-product/lp-1.jpg" alt="">
@@ -98,7 +98,7 @@
                                         <span>$30.00</span>
                                     </div>
                                 </a>
-                            </div>
+                            </div> -->
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
