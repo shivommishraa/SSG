@@ -46,44 +46,27 @@
 
         <div class="card-body">
           <div class="table-responsive">
-           <?php if(!empty($tbl_brands)) {?>
             <table class="table table-striped table-bordered first">
               <thead>
                 <tr>
                  <th>SL No</th>
-                 <th>Product Feature Name</th>
-                 <th>Status</th>
-                 <th colspan="2">Actions</th>
-
+                 <th>Page Name</th>
+                 <th>Details</th>
                </tr>
              </thead>
              <tbody>
-              <?php $i=1; foreach($tbl_brands as $tbl_brand) { ?>
                <tr>
-                <td> <?php echo $i; ?> </td>
-                <td>  <?php echo $tbl_brand->category_name ?> </td>
-                <td><?php if($tbl_brand->parent_id!=0){  $pname=$getparent($tbl_brand->parent_id);
-                 if(!empty($pname)){ echo $pname[0]->category_name;}  }else{ echo '--';}?>
-               </td>
-               
-               <td><span <?php if($tbl_brand->status==0){?> class="badge badge-success"<?php }else{ ?> class="badge badge-danger"<?php }?>>
-                <a style="color:#fff;" href="<?php echo site_url()?>Category/Category_Controller/changeStatusTbl_category/<?php echo $tbl_brand->category_id ?>" > <?php if($tbl_brand->status==0){ echo "Activate"; } else { echo "Deactivate"; } ?></a></span></td>
-                
-<!-- 
-                <td><a href="<?php echo site_url()?>Category/Category_Controller/editTbl_category/<?php echo $tbl_brand->category_id?>"><i class="fas fa-pencil-alt"style="color: blue;"></i></a></td> -->
-
-                <td><a href="<?php echo site_url()?>Category/Category_Controller/deleteTbl_category/<?php echo $tbl_brand->category_id?>" onclick="return confirm('Are you sure to delete')"><i class="fa fa-trash"style="color: red;"></i></a></td>
+                <td>1.</td>
+                <td>Home Page</td>
+                <td><a href="<?php echo site_url()?>AddInfo/Addinfocontroller/homePageInfo"><i class="fa fa-eye"style="color: green;"></i></a></td>           
               </tr>
-              <?php $i++; } ?>
             </tbody>
           </table>
-        <?php } else {?>
-          <div class="alert alert-info" role="alert">
+          <!-- <div class="alert alert-info" role="alert">
            <strong>No Category Record Found!</strong>
-         </div>
-       <?php } ?>
+         </div> -->
 
-       <div class="dataTables_paginate paging_simple_numbers pt-2 "><?php echo $links; ?></div>
+       <!-- <div class="dataTables_paginate paging_simple_numbers pt-2 "><?php //echo $links; ?></div> -->
      </div>
    </div>
  </div>
