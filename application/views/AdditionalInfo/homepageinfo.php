@@ -32,28 +32,94 @@
                          </div>
                      </h5>
                      <div class="card-body">
-                       <form role="form" class="needs-validation" novalidate  method="post" action="<?php echo site_url()?>AddInfo/Addinfocontroller/manageInfoPost"  enctype="multipart/form-data" >
+                       <form role="form" class="needs-validation" novalidate  method="post" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/manageInfoPost"  enctype="multipart/form-data" >
                         <div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                
-                              <label for="validationCustom01">Product Feature Name:</label>
-                              <input type="text" class="form-control" required id="validationCustom01" name="category_name" required="">
-                              <div class="valid-feedback">
-                                Looks good!
-                              </div>
-                              <div class="invalid-feedback">
-                                Enter feature name.
-                              </div>
-                        </div>
-                        <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
-                           <label for="validationCustom02">Parent:</label>
-                           <select class="form-control" id="validationCustom02"  name="parent_id">
-                               <option value="0">Select Parent</option>
-                               <?php foreach($categorydropdown as $row): ?>
-                                   <option value="<?php echo $row->category_id; ?>" ><?php echo $row->category_name; ?></option>
-                               <?php endforeach; ?>
-                           </select>
-                       </div> -->
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Info Popup For Home Page:</label>
+                                    <select class="form-control"  name="modelpopupenable" id="validationCustom02"required>
+                                       <option value="0">No</option>
+                                       <option value="1">Yes</option>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Info Popup Image:</label>
+                                    <input type="file"  class="form-control" name="modelpopupimage" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Info Popup Button Link:</label>
+                                    <input  type="text"  class="form-control" required=""  name="modelpopupbtnlink" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Enter actual price.
+                                    </div>
+                                </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
+                                    <label for="validationCustomUsername">Top Heading Message:</label>
+                                    <textarea  class="form-control" name="topheadingmsg" ></textarea>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pt-2">
+                                    <label for="validationCustom03">Main Banner Image:</label>
+                                    <input type="file"  class="form-control" name="bannerimage" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pt-2">
+                                    <label for="validationCustom03">Main Banner Title:</label>
+                                    <input  type="text"  class="form-control" required=""  name="bannertitle" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Enter actual price.
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
+                                    <label for="validationCustomUsername">Main Banner Description:</label>
+                                    <textarea  class="form-control" name="bannerdescription" ></textarea>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
+                                    <label for="validationCustomUsername">Main Banner Additional Message:</label>
+                                    <textarea  class="form-control" name="banneradditionalmsg" ></textarea>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Main Banner Button Title:</label>
+                                    <input  type="text"  class="form-control" required=""  name="bannerbtntitle" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Enter actual price.
+                                    </div>
+                                </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Main Banner Button URL:</label>
+                                    <input  type="text"  class="form-control" required=""  name="bannerbtnurl" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Enter actual price.
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Main Banner Status:</label>
+                                    <select class="form-control"  name="status" id="validationCustom02"required>
+                                       <option value="0">No</option>
+                                       <option value="1">Yes</option>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                            </div>
                    </div>
                    <div class="form-row pt-2">
                                      
