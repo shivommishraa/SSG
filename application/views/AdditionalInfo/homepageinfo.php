@@ -35,7 +35,7 @@
                        <form role="form" class="needs-validation" novalidate  method="post" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/manageInfoPost"  enctype="multipart/form-data" >
                         <div class="row">
                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
-                                <h4 class="pageheader-title text-center">Infomation Popup For Home Page (Details)</h4>
+                                <h4 class="text-center">Infomation Popup For Home Page (Details)</h4>
                              </div>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom03">Info Popup For Home Page:</label>
@@ -65,14 +65,14 @@
                                     </div> -->
                                 </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
-                                <h4 class="pageheader-title text-center">Infomation Popup For Home Page (Details)</h4>
+                                <h4 class="text-center">Infomation Popup For Home Page (Details)</h4>
                              </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
                                 <label for="validationCustomUsername">Top Heading Message:</label>
                                 <textarea  class="form-control" name="topheadingmsg" ></textarea>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
-                                <h4 class="pageheader-title text-center">Main Banner For Home Page (Details)</h4>
+                                <h4 class="text-center">Main Banner For Home Page (Details)</h4>
                             </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pt-2">
                                     <label for="validationCustom03">Main Banner Image:</label>
