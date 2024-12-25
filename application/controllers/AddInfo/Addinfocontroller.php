@@ -50,7 +50,7 @@ class Addinfocontroller extends CI_Controller {
      $this->load->view('Dashboard/side.php');
      $data['getparent']=function($id){
        return $this->Category_model->getparent($id);};
-       $this->load->view('category/manage-tbl_category', $data);
+       $this->load->view('AdditionalInfo/manageaddinfo', $data);
        $this->load->view('Dashboard/footer.php');
 
      }
