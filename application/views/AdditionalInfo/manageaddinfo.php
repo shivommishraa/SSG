@@ -21,23 +21,7 @@
       <div class="row">
        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="card">
-          <form  role="form" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/manageInfoPost" method="post">
-           <div class="row col-md-12">
-             <div class="col-md-3 card-header"> </div>
-             <div class="col-md-4 card-header">
-              <input type="text" name="category_name"  placeholder="Search By Name" class="form-control form-control ml-2"/></div>
-              <div class="col-md-3 card-header">
-                <button type="submit" class="btn btn-sm btn-info" name="search" >Search</button>
-                <button class="btn btn-sm btn-danger"  onClick="return redirect('<?php echo base_url();?>AddInfo/Addinfocontroller/manageInfo');">Reset</button>
-              </div>
-
-              <div class="col-md-2 card-header text-right">
-                <button class="btn btn-sm btn-primary"  onClick="return redirect('<?php echo site_url(); ?>AddInfo/Addinfocontroller/addInfo');"><i class="fa fa-plus" aria-hidden="true"></i> Add New</button>
-              </div>
-              
-              
-            </div>
-          </form>
+          
           <?php if($this->session->flashdata('success')){ ?>
            <div class="alert alert-success">
             <strong><span class="glyphicon glyphicon-ok"></span>   <?php echo $this->session->flashdata('success'); ?></strong>
