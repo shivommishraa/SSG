@@ -22,11 +22,9 @@ class Web extends CI_Controller {
     $hostvalid=$this->Nice_webmodel->getHostpermit();  
     if($hostvalid=='1'){
         $data['page_active']='index_active';
-
         //============================ Start Pager Code ==============================
         $galleryid=($this->input->post('galleryid')) ? $this->input->post('galleryid') :0;
         $galleryid=($this->uri->segment(4)) ?  $this->uri->segment(4) :$galleryid;
-        
         $this->load->config('bootstrap_pagination');
         $config = $this->config->item('pagination_config');;
         $config['base_url'] = base_url() ."Website/Website_controller/index"."/$galleryid";
@@ -36,8 +34,7 @@ class Web extends CI_Controller {
         $this->pagination->initialize($config);
         $page = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
         $data['links'] = $this->pagination->create_links();
-              //============================ End Pager Code ==============================
-       
+       //============================ End Pager Code ==============================
         $data["products"] = $this->Nice_webmodel->getAllProducts($config['per_page'],$page,$galleryid);
         if(!empty($galleryid)){ $data['searchdata']=$galleryid;}
         $data["allbrand"] = $this->Nice_webmodel->getproduct_brand();
@@ -45,17 +42,17 @@ class Web extends CI_Controller {
         $data["productcategories"] = $this->Category_model->getAllEnabledProductCategories();
         $data["featuredcategory"] = $this->Category_model->getAllEnableFeatureddcategory();
         $data["enabledProductsForFeatured"] = $this->tbl_product->getAllEnabledProductsForFeatured();
+        $data["mostViewedProduct"] = $this->tbl_product->getAllMostViewedProduct();
+        $data["topRatedProduct"] = $this->tbl_product->getAlltopRatedProduct();
+        $data["latestProduct"] = $this->tbl_product->getAlllatestProduct();
         $data['product_image']=function($id){
         return $this->Nice_webmodel->getimage_datails($id);};
         $data['product_brand']=function($id){
         return $this->Nice_webmodel->getproduct_brand($id);};
-               
-        //$this->load->view('Website/ms_header',$data);
         $this->load->view('Ssgwebsite/website/header');
         $this->load->view('Ssgwebsite/website/bannersection',$data);
         $this->load->view('Ssgwebsite/website/index',$data);
         $this->load->view('Ssgwebsite/website/footer');
-        // $this->load->view('Ssgwebsite/website/madhur');
     }else{
         $data='';
         $this->load->view('Website/index2',$data);

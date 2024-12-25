@@ -36,6 +36,30 @@ public function getAllEnabledProductsForFeatured(){
     $query = $this->db->get();
     return $query->result();
 }
+public function getAllMostViewedProduct(){
+    $this->db->select('*');
+    $this->db->where('status', "1");
+    $this->db->where('most_viewed_product >', 0); // Check for values greater than 0
+    $this->db->from('gallery');   
+    $query = $this->db->get();
+    return $query->result();
+}
+public function getAlltopRatedProduct(){
+    $this->db->select('*');
+    $this->db->where('status', "1");
+    $this->db->where('top_rated_product >', 0); // Check for values greater than 0
+    $this->db->from('gallery');   
+    $query = $this->db->get();
+    return $query->result();
+}
+public function getAlllatestProduct(){
+    $this->db->select('*');
+    $this->db->where('status', "1");
+    $this->db->where('latest_product >', 0); // Check for values greater than 0
+    $this->db->from('gallery');   
+    $query = $this->db->get();
+    return $query->result();
+}
 
 /*================Code for get  all product from product table ===============*/
 public function getAll() {
