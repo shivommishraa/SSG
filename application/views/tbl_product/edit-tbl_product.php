@@ -100,6 +100,38 @@
                                         Looks good!
                                     </div>
                                 </div>
+                                <!-- ====== -->
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Latest Product:</label>
+                                    <select class="form-control"  name="latest_product" id="validationCustom02"required>
+                                       <option value="0" <?php if("0"==$tbl_product[0]->latest_product) echo "selected"; ?>>No</option>
+                                       <option value="1"<?php if("1"==$tbl_product[0]->latest_product) echo "selected"; ?>>Yes</option>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Most Viewed Product:</label>
+                                    <select class="form-control"  name="most_viewed_product" id="validationCustom02"required>
+                                       <option value="0" <?php if("0"==$tbl_product[0]->most_viewed_product) echo "selected"; ?>>No</option>
+                                       <option value="1"<?php if("1"==$tbl_product[0]->most_viewed_product) echo "selected"; ?>>Yes</option>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Top Rated Product:</label>
+                                    <select class="form-control"  name="top_rated_product" id="validationCustom02"required>
+                                       <option value="0" <?php if("0"==$tbl_product[0]->top_rated_product) echo "selected"; ?>>No</option>
+                                       <option value="1"<?php if("1"==$tbl_product[0]->top_rated_product) echo "selected"; ?>>Yes</option>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <!-- ====== -->
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom03">Enable For Scroll:</label>
                                     <select class="form-control"  name="enable_for_scroll" id="validationCustom02"required>

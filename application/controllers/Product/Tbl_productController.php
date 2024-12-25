@@ -77,6 +77,11 @@ public function addTbl_productPost() {
   $data['product_category'] = $this->input->post('product_category');
   $data['enable_for_scroll'] = $this->input->post('enable_for_scroll');
   $data['enable_featured_product'] = $this->input->post('enable_featured_product');
+  /*===========*/
+  $data['latest_product'] = $this->input->post('latest_product');
+  $data['most_viewed_product'] = $this->input->post('most_viewed_product');
+  $data['top_rated_product'] = $this->input->post('top_rated_product');
+  /*===========*/
   $data['thumble_image'] = $this->input->post('thumble_image');
   if ($_FILES['thumble_image']['name']) { 
     $data['thumble_image'] = $this->doUpload('thumble_image');
@@ -144,6 +149,11 @@ public function doUpload($file) {
                               $data['sell_price'] = $this->input->post('sell_price');
                               $data['product_category'] = $this->input->post('product_category');
                               $data['enable_for_scroll'] = $this->input->post('enable_for_scroll');
+                              /*===========*/
+                              $data['latest_product'] = $this->input->post('latest_product');
+                              $data['most_viewed_product'] = $this->input->post('most_viewed_product');
+                              $data['top_rated_product'] = $this->input->post('top_rated_product');
+                              /*===========*/
                               $data['enable_featured_product'] = $this->input->post('enable_featured_product');
                               if ($_FILES['thumble_image']['name']) { 
                                 $data['thumble_image'] = $this->doUpload('thumble_image');
