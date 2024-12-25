@@ -54,6 +54,20 @@ class Addinfocontroller extends CI_Controller {
        $this->load->view('Dashboard/footer.php');
 
      }
+
+    public function homePageInfo() {
+      $id= $this->session->userdata('session_id');
+      $data['admin']=$this->Adminmodel->getadmin($id);
+      $data['menu_groups']=$this->Menu->getAllMenuGroup();
+      $data['menu_details']=$this->Menu->getAllMenu();
+      $data['admin_role']=$this->Menu->adminrole();
+      $this->load->view('Dashboard/header.php',$data);
+      $this->load->view('Dashboard/side.php');
+      $this->load->view('AdditionalInfo/homepageinfo',$data);
+      $this->load->view('Dashboard/footer.php');
+    }
+
+    /* ===========================================================*/
      public function ManageText_status()
      {
       
@@ -88,18 +102,7 @@ class Addinfocontroller extends CI_Controller {
     created by your name
     created at 18-08-20.
     */
-    public function addTbl_category() {
-      $id= $this->session->userdata('session_id');
-      $data['admin']=$this->Adminmodel->getadmin($id);
-      $data['menu_groups']=$this->Menu->getAllMenuGroup();
-      $data['menu_details']=$this->Menu->getAllMenu();
-      $data['admin_role']=$this->Menu->adminrole();
-      $this->load->view('Dashboard/header.php',$data);
-      $this->load->view('Dashboard/side.php');
-      $data['categorydropdown'] = $this->Category_model->parent_zero_category();
-      $this->load->view('category/add-tbl_category',$data);
-      $this->load->view('Dashboard/footer.php');
-    }
+    
     /*
     function for add Tbl_brand post
     created by your name
