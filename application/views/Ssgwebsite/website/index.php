@@ -69,7 +69,7 @@
                 <?php if(!empty($latestProduct)) { ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Latest Products</h4>
+                        <h4>Latest</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                  <?php $i=1; foreach($latestProduct as $ltproducts) { ?>
@@ -140,7 +140,7 @@
                 <?php if(!empty($topRatedProduct)) { ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Top Rated Products</h4>
+                        <h4>Top Rated</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 <?php $i=1; foreach($topRatedProduct as $trproducts) { ?>
@@ -185,24 +185,6 @@
                                     </div>
                                 </a>
                                 <?php  $i++; } ?>
-                               <!--  <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>ssgassests/img/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>ssgassests/img/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a> -->
                             </div>
                         </div>
                     </div>
@@ -211,7 +193,7 @@
                 <?php if(!empty($mostViewedProduct)) { ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Most Viewed Products</h4>
+                        <h4>Most Viewed</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 <?php $i=1; foreach($mostViewedProduct as $mvproducts) { ?>
@@ -225,24 +207,6 @@
                                     </div>
                                 </a>
                                 <?php  $i++; } ?>
-                                <!-- <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>ssgassests/img/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>ssgassests/img/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a> -->
                             </div>
                             <div class="latest-prdouct__slider__item">
                                 <?php $i=1; foreach($mostViewedProduct as $mvproducts) { ?>
@@ -256,25 +220,6 @@
                                     </div>
                                 </a>
                                 <?php  $i++; } ?>
-                                <!-- <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>ssgassests/img/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="<?php echo base_url(); ?>ssgassests/img/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div> -->
                         </div>
                     </div>
                 </div>
