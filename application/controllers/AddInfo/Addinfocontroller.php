@@ -54,7 +54,18 @@ class Addinfocontroller extends CI_Controller {
        $this->load->view('Dashboard/footer.php');
 
      }
-
+    public function updateHomeAddInfo($tbl_id) {
+        $id= $this->session->userdata('session_id');
+        $data['admin']=$this->Adminmodel->getadmin($id);
+        $data['menu_groups']=$this->Menu->getAllMenuGroup();
+        $data['menu_details']=$this->Menu->getAllMenu();
+        $data['admin_role']=$this->Menu->adminrole();
+        $this->load->view('Dashboard/header.php',$data);
+        $this->load->view('Dashboard/side.php');
+        $data['add_info'] = $this->Infomodel->getInfoDataById($tbl_id);
+        $this->load->view('AdditionalInfo/homepageinfo',$data);
+        $this->load->view('Dashboard/footer.php');
+    }
     public function homePageInfo() {
       $id= $this->session->userdata('session_id');
       $data['admin']=$this->Adminmodel->getadmin($id);
@@ -69,19 +80,40 @@ class Addinfocontroller extends CI_Controller {
 
     public function AddInfoPost() {
       $data['modelpopupenable'] = $this->input->post('modelpopupenable');
-      $data['modelpopupimage'] = $this->input->post('modelpopupimage');
       $data['modelpopupbtnlink'] = $this->input->post('modelpopupbtnlink');
       $data['topheadingmsg'] = $this->input->post('topheadingmsg');
-      $data['bannerimage'] = $this->input->post('bannerimage');
       $data['bannerdescription'] = $this->input->post('bannerdescription');
       $data['bannertitle'] = $this->input->post('bannertitle');
       $data['banneradditionalmsg'] = $this->input->post('banneradditionalmsg');
       $data['bannerbtntitle'] = $this->input->post('bannerbtntitle');
       $data['bannerbtnurl'] = $this->input->post('bannerbtnurl');
       $data['status'] = $this->input->post('status');
+      if ($_FILES['modelpopupimage']['name']) { 
+        $data['modelpopupimage'] = $this->doUpload('modelpopupimage');
+      }
+      if ($_FILES['bannerimage']['name']) { 
+        $data['bannerimage'] = $this->doUpload('bannerimage');
+      }
       $this->Infomodel->addInfoinsert($data);
       $this->session->set_flashdata('success', 'Information added Successfully');
       redirect('AddInfo/Addinfocontroller/manageInfo');
+    }
+
+
+    public function doUpload($file) {
+      $config['upload_path'] = './ssgassests/productupload';
+      $config['allowed_types'] = '*';
+      $this->load->library('upload', $config);
+      if ( ! $this->upload->do_upload($file))
+      {
+        $error = array('error' => $this->upload->display_errors());
+        $this->load->view('upload_form', $error);
+      }
+      else
+      {
+        $data = array('upload_data' => $this->upload->data());
+        return $data['upload_data']['file_name'];
+      }
     }
 
     /* ===========================================================*/
@@ -335,30 +367,7 @@ class Addinfocontroller extends CI_Controller {
       $this->session->set_flashdata('success', 'Status '.$edit.' Successfully');
       redirect('Category/Category_Controller/ManageText_status');
     }
-        /*
-    function for upload files
-    return uploaded file name.
-    created by your name
-    created at 18-08-20.
-    */
-    function doUpload($file) {
-      $config['upload_path'] = './uploads/tbl_brand';
-      $config['allowed_types'] = '*';
-      $this->load->library('upload', $config);
-      if ( ! $this->upload->do_upload($file))
-      {
-        $error = array('error' => $this->upload->display_errors());
-        $this->load->view('upload_form', $error);
-      }
-      else
-      {
-        $data = array('upload_data' => $this->upload->data());
-        return $data['upload_data']['file_name'];
-      }
-    }
-
-
-
+    
 
     public function addText_category() {
       $id= $this->session->userdata('session_id');

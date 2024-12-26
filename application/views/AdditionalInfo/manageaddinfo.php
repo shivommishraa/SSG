@@ -42,7 +42,7 @@
                <tr>
                 <td>1.</td>
                 <td>Home Page</td>
-                <td><a href="<?php echo site_url()?>AddInfo/Addinfocontroller/homePageInfo"><i class="fa fa-eye"style="color: green;"></i></a></td>           
+                <td><a href="<?php echo site_url()?>AddInfo/Addinfocontroller/updateHomeAddInfo/1"><i class="fa fa-eye"style="color: green;"></i></a></td>           
               </tr>
             </tbody>
           </table>

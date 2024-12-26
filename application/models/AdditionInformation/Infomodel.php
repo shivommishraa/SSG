@@ -12,6 +12,11 @@ class Infomodel extends CI_Model {
         return $this->db->insert_id();
     }
 
+    public function getInfoDataById($id) {
+        $this->db->where('id', $id);
+        return $this->db->get('tbl_additional_info')->result();
+    }
+/*===================================================================*/
     public function getAllEnabledProductCategories() {
          $this->db->where('status_staus',"1");
         return $this->db->get('tbl_textcategory')->result();
