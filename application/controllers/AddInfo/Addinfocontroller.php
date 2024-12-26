@@ -101,7 +101,7 @@ class Addinfocontroller extends CI_Controller {
 
 
     public function doUpload($file) {
-      $config['upload_path'] = './ssgassests/productupload';
+      $config['upload_path'] = './ssgassests/infodetailsupload';
       $config['allowed_types'] = '*';
       $this->load->library('upload', $config);
       if ( ! $this->upload->do_upload($file))

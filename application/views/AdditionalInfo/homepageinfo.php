@@ -41,8 +41,8 @@
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom03">Info Popup For Home Page:</label>
                                     <select class="form-control"  name="modelpopupenable" id="validationCustom02"required>
-                                       <option value="0">No</option>
-                                       <option value="1">Yes</option>
+                                       <option value="0" <?php if("0"==$add_info[0]->modelpopupenable) echo "selected"; ?>>No</option>
+                                       <option value="1" <?php if("0"==$add_info[0]->modelpopupenable) echo "selected"; ?>>Yes</option>
                                     </select>
                                     <div class="valid-feedback">
                                         Looks good!
@@ -55,9 +55,15 @@
                                         Looks good!
                                     </div>
                                 </div>
+                            <?php if(!empty($add_info[0]->modelpopupimage)){ ?>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Uploaded Info Popup Image:</label>
+                                    <img height="150px" width="200px" src="<?php echo site_url(); ?>ssgassests/infodetailsupload/<?php echo $add_info[0]->modelpopupimage; ?>"/>
+                                </div>
+                                <?php } ?>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom03">Info Popup Button Link:</label>
-                                    <input  type="text"  class="form-control" required=""  name="modelpopupbtnlink" >
+                                    <input  type="text" value="<?php echo $add_info[0]->modelpopupbtnlink ?>"  class="form-control" required=""  name="modelpopupbtnlink" >
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -70,7 +76,7 @@
                              </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
                                 <label for="validationCustomUsername">Top Heading Message:</label>
-                                <textarea  class="form-control" name="topheadingmsg" ></textarea>
+                                <textarea class="form-control" name="topheadingmsg" ><?php echo $add_info[0]->topheadingmsg ?></textarea>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
                                 <h4>Main Banner For Home Page (Details)</h4>
@@ -82,9 +88,15 @@
                                         Looks good!
                                     </div>
                                 </div>
+                                 <?php if(!empty($add_info[0]->bannerimage)){ ?>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Uploaded Main Banner Image:</label>
+                                    <img height="150px" width="200px" src="<?php echo site_url(); ?>ssgassests/infodetailsupload/<?php echo $add_info[0]->bannerimage; ?>"/>
+                                </div>
+                                <?php } ?>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pt-2">
                                     <label for="validationCustom03">Main Banner Title:</label>
-                                    <input  type="text"  class="form-control" required=""  name="bannertitle" >
+                                    <input  type="text" value="<?php echo $add_info[0]->bannertitle ?>" class="form-control" required=""  name="bannertitle" >
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -98,11 +110,11 @@
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
                                     <label for="validationCustomUsername">Main Banner Additional Message:</label>
-                                    <textarea  class="form-control" name="banneradditionalmsg" ></textarea>
+                                    <textarea  class="form-control" name="banneradditionalmsg" ><?php echo $add_info[0]->banneradditionalmsg ?></textarea>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom03">Main Banner Button Title:</label>
-                                    <input  type="text"  class="form-control" required=""  name="bannerbtntitle" >
+                                    <input  type="text" value="<?php echo $add_info[0]->bannerbtntitle; ?>"  class="form-control" required=""  name="bannerbtntitle" >
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -112,7 +124,7 @@
                                 </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom03">Main Banner Button URL:</label>
-                                    <input  type="text"  class="form-control" required=""  name="bannerbtnurl" >
+                                    <input  type="text"value="<?php echo $add_info[0]->bannerbtnurl; ?>"  class="form-control" required=""  name="bannerbtnurl" >
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -123,8 +135,8 @@
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom03">Main Banner Status:</label>
                                     <select class="form-control"  name="status" id="validationCustom02"required>
-                                       <option value="0">No</option>
-                                       <option value="1">Yes</option>
+                                       <option value="0"<?php if("0"==$add_info[0]->status) echo "selected"; ?>>No</option>
+                                       <option value="1"<?php if("1"==$add_info[0]->status) echo "selected"; ?>>Yes</option>
                                     </select>
                                     <div class="valid-feedback">
                                         Looks good!

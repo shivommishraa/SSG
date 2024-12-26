@@ -46,11 +46,6 @@
               </tr>
             </tbody>
           </table>
-          <!-- <div class="alert alert-info" role="alert">
-           <strong>No Category Record Found!</strong>
-         </div> -->
-
-       <!-- <div class="dataTables_paginate paging_simple_numbers pt-2 "><?php //echo $links; ?></div> -->
      </div>
    </div>
  </div>
