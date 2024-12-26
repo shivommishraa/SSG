@@ -127,11 +127,7 @@ public function getTextBystatus_id($s_id) {
     $this->db->where('text_status_id', $s_id);
     return $this->db->get('tbl_text_status')->result();
 }
-public function update($category_id,$data) {
-    $this->db->where('category_id', $category_id);
-    $this->db->update('tbl_category', $data);
-    return true;
-}
+
 
 public function Textupdate($category_id,$data) {
     $this->db->where('cate_id', $category_id);
