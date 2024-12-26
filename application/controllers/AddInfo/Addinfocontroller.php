@@ -67,6 +67,23 @@ class Addinfocontroller extends CI_Controller {
       $this->load->view('Dashboard/footer.php');
     }
 
+    public function AddInfoPost() {
+      $data['modelpopupenable'] = $this->input->post('modelpopupenable');
+      $data['modelpopupimage'] = $this->input->post('modelpopupimage');
+      $data['modelpopupbtnlink'] = $this->input->post('modelpopupbtnlink');
+      $data['topheadingmsg'] = $this->input->post('topheadingmsg');
+      $data['bannerimage'] = $this->input->post('bannerimage');
+      $data['bannerdescription'] = $this->input->post('bannerdescription');
+      $data['bannertitle'] = $this->input->post('bannertitle');
+      $data['banneradditionalmsg'] = $this->input->post('banneradditionalmsg');
+      $data['bannerbtntitle'] = $this->input->post('bannerbtntitle');
+      $data['bannerbtnurl'] = $this->input->post('bannerbtnurl');
+      $data['status'] = $this->input->post('status');
+      $this->Infomodel->addInfoinsert($data);
+      $this->session->set_flashdata('success', 'Information added Successfully');
+      redirect('AddInfo/Addinfocontroller/manageInfo');
+    }
+
     /* ===========================================================*/
      public function ManageText_status()
      {
@@ -117,7 +134,7 @@ class Addinfocontroller extends CI_Controller {
       redirect('Category/Category_Controller/ManageTbl_category');
 
     }
-     public function addText_categoryPost() {
+     public function AddInfoPost() {
       $data['cate_name'] = $this->input->post('category_name');
       $this->Category_model->textcategoryinsert($data);
       $this->session->set_flashdata('success', 'Category added Successfully');

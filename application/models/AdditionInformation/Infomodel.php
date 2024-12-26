@@ -7,6 +7,11 @@ class Infomodel extends CI_Model {
         return $this->db->get('tbl_additional_info')->result();
     }
 
+    public function addInfoinsert($data) {
+        $this->db->insert('tbl_additional_info', $data);
+        return $this->db->insert_id();
+    }
+
     public function getAllEnabledProductCategories() {
          $this->db->where('status_staus',"1");
         return $this->db->get('tbl_textcategory')->result();
@@ -85,10 +90,7 @@ public function getAlltextstatus($limit,$start,$category_id)
     return $query->result();
 }
 
-public function insert($data) {
-    $this->db->insert('tbl_category', $data);
-    return $this->db->insert_id();
-}
+
 
 public function textcategoryinsert($data) {
     $this->db->insert('tbl_textcategory', $data);
