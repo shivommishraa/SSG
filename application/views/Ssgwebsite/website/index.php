@@ -291,7 +291,12 @@
     <!-- Blog Section End -->
 
 <!-- -------------- Start Code for POPUP ------------------ -->
-<?php if($homepageInfo[0]->modelpopupenable){ ?>
+
+<?php
+echo "ddddddd";
+print_r($homepageInfo);
+
+ if($homepageInfo[0]->modelpopupenable){ ?>
 <head>    
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
