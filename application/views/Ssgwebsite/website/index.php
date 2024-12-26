@@ -293,8 +293,6 @@
 <!-- -------------- Start Code for POPUP ------------------ -->
 
 <?php
-echo "ddddddd";
-print_r($homepageInfo);
 
  if($homepageInfo[0]->modelpopupenable){ ?>
 <head>    
@@ -353,11 +351,13 @@ print_r($homepageInfo);
               
             </header>
             <div class="w3-container">
-                <img src="<?php //echo base_url(); ?>ssgassests/img/diwalibanner.jpg" alt="Image">
+                <img src="ssgassests/infodetailsupload/<?php echo $homepageInfo[0]->modelpopupimage; ?>" alt="Image">
             </div>
             <footer class="w3-container w3-teal footer-custom" style="background-color: #282c34;">
                 <div style="text-align: center;">
-                    <a href="<?php //echo base_url(); ?>Website/Website_controller/ordernow" class="custom-button">Order Now</a>
+                    <?php if(($homepageInfo[0]->modelpopupbtnlink) && ($homepageInfo[0]->bannerbtntitle)){ ?>
+                    <a href="<?php echo $homepageInfo[0]->modelpopupbtnlink; ?>" class="custom-button"><?php echo $homepageInfo[0]->bannerbtntitle; ?></a>
+                    <?php } ?>
                 </div>
             </footer>
         </div>

@@ -42,7 +42,7 @@
                                     <label for="validationCustom03">Info Popup For Home Page:</label>
                                     <select class="form-control"  name="modelpopupenable" id="validationCustom02"required>
                                        <option value="0" <?php if("0"==$add_info[0]->modelpopupenable) echo "selected"; ?>>No</option>
-                                       <option value="1" <?php if("0"==$add_info[0]->modelpopupenable) echo "selected"; ?>>Yes</option>
+                                       <option value="1" <?php if("1"==$add_info[0]->modelpopupenable) echo "selected"; ?>>Yes</option>
                                     </select>
                                     <div class="valid-feedback">
                                         Looks good!
