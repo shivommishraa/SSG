@@ -32,7 +32,7 @@
                          </div>
                      </h5>
                      <div class="card-body">
-                       <form role="form" class="needs-validation" novalidate  method="post" action="<?php echo site_url(); ?>editAddInfoPost"  enctype="multipart/form-data" >
+                       <form role="form" class="needs-validation" novalidate  method="post" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/editAddInfoPost"  enctype="multipart/form-data" >
                         <input type="hidden" value="<?php echo $add_info[0]->id ?>"   name="id">
                         <div class="row">
                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
