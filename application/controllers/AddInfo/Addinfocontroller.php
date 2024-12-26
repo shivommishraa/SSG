@@ -99,6 +99,33 @@ class Addinfocontroller extends CI_Controller {
       redirect('AddInfo/Addinfocontroller/manageInfo');
     }
 
+    public function editAddInfoPost() {
+      $tbl_info_id = $this->input->post('id');
+      $add_info = $this->Infomodel->getInfoDataById($tbl_info_id);
+      $data['modelpopupenable'] = $this->input->post('modelpopupenable');
+      $data['modelpopupbtnlink'] = $this->input->post('modelpopupbtnlink');
+      $data['topheadingmsg'] = $this->input->post('topheadingmsg');
+      $data['bannerdescription'] = $this->input->post('bannerdescription');
+      $data['bannertitle'] = $this->input->post('bannertitle');
+      $data['banneradditionalmsg'] = $this->input->post('banneradditionalmsg');
+      $data['bannerbtntitle'] = $this->input->post('bannerbtntitle');
+      $data['bannerbtnurl'] = $this->input->post('bannerbtnurl');
+      $data['status'] = $this->input->post('status');
+      if ($_FILES['modelpopupimage']['name']) { 
+        $data['modelpopupimage'] = $this->doUpload('modelpopupimage');
+      }
+      if ($_FILES['bannerimage']['name']) { 
+        $data['bannerimage'] = $this->doUpload('bannerimage');
+      }
+                              
+      $edit = $this->Infomodel->update($tbl_info_id,$data);
+
+      if ($edit) {
+        $this->session->set_flashdata('success', 'Additional Information Updated Successfully.');
+        redirect('AddInfo/Addinfocontroller/manageInfo');
+      }
+  }
+
 
     public function doUpload($file) {
       $config['upload_path'] = './ssgassests/infodetailsupload';

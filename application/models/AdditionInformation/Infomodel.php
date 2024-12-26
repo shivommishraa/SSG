@@ -16,6 +16,12 @@ class Infomodel extends CI_Model {
         $this->db->where('id', $id);
         return $this->db->get('tbl_additional_info')->result();
     }
+
+    public function update($id,$data) {
+        $this->db->where('id', $id);
+        $this->db->update('tbl_additional_info', $data);
+        return true;
+    }
 /*===================================================================*/
     public function getAllEnabledProductCategories() {
          $this->db->where('status_staus',"1");
