@@ -134,7 +134,7 @@ class Addinfocontroller extends CI_Controller {
       redirect('Category/Category_Controller/ManageTbl_category');
 
     }
-     public function AddInfoPost() {
+     public function addText_categoryPost() {
       $data['cate_name'] = $this->input->post('category_name');
       $this->Category_model->textcategoryinsert($data);
       $this->session->set_flashdata('success', 'Category added Successfully');
