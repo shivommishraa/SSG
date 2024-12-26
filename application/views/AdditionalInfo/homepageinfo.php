@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
                                     <label for="validationCustomUsername">Main Banner Description:</label>
-                                    <textarea  class="form-control" name="bannerdescription" ></textarea>
+                                    <textarea  class="form-control" name="bannerdescription" ><?php echo $add_info[0]->bannerdescription ?></textarea>
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
                                     <label for="validationCustomUsername">Main Banner Additional Message:</label>

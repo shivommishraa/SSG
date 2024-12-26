@@ -45,6 +45,7 @@ class Web extends CI_Controller {
         $data["mostViewedProduct"] = $this->tbl_product->getAllMostViewedProduct();
         $data["topRatedProduct"] = $this->tbl_product->getAlltopRatedProduct();
         $data["latestProduct"] = $this->tbl_product->getAlllatestProduct();
+        $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
         $data['product_image']=function($id){
         return $this->Nice_webmodel->getimage_datails($id);};
         $data['product_brand']=function($id){
