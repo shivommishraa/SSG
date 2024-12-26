@@ -11,6 +11,7 @@ class Web extends CI_Controller {
     $this->load->model('Nice_websitemodel/Nice_webmodel');
     $this->load->model('Category_model/Category_model');
     $this->load->model('Product_model/tbl_product');
+    $this->load->model('AdditionInformation/Infomodel');
     $this->load->library('session');
     $this->load->library("pagination");
     $this->load->helper(array('url','form'));
