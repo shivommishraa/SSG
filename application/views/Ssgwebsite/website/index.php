@@ -291,7 +291,8 @@
     <!-- Blog Section End -->
 
 <!-- -------------- Start Code for POPUP ------------------ -->
-<!-- <head>    
+<?php if($homepageInfo[0]->modelpopupenable){ ?>
+<head>    
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
@@ -338,8 +339,7 @@
         window.onload = function() {
             document.getElementById('id01').style.display = 'block';
         };
-    </script> -->
-<!-- 
+    </script>
 <div class="w3-container">
     <div id="id01" class="w3-modal">
         <div class="w3-modal-content w3-animate-top w3-card-4">
@@ -357,5 +357,7 @@
             </footer>
         </div>
     </div>
-</div> -->
+</div> 
+
+<?php } ?>
 <!-- -------------- End Code for POPUP ------------------ -->
