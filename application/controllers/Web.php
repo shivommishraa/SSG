@@ -51,7 +51,7 @@ class Web extends CI_Controller {
         return $this->Nice_webmodel->getimage_datails($id);};
         $data['product_brand']=function($id){
         return $this->Nice_webmodel->getproduct_brand($id);};
-        $this->load->view('Ssgwebsite/website/header');
+        $this->load->view('Ssgwebsite/website/header',$data);
         $this->load->view('Ssgwebsite/website/bannersection',$data);
         $this->load->view('Ssgwebsite/website/index',$data);
         $this->load->view('Ssgwebsite/website/footer');
