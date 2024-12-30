@@ -31,30 +31,70 @@
                              </div>
                          </div>
                      </h5>
-                     <div class="card-body">
+                    <div class="card-body">
                        <form role="form" class="needs-validation" novalidate  method="post" action="<?php echo site_url()?>Customer/FrontendCustomer/addFrontendCustomer"  enctype="multipart/form-data" >
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
-                              <label for="validationCustom01">Customer Type:</label>
-                              <input type="text" class="form-control" required id="validationCustom01" name="type" required="">
-                              <div class="valid-feedback">
-                                Looks good!
-                              </div>
-                              <div class="invalid-feedback">
-                                Enter Customer Type.
-                              </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
-                                    <label for="validationCustom03">Status:</label>
-                                    <select class="form-control"  name="status" id="validationCustom02"required>
-                                       <option value="0">No</option>
-                                       <option value="1" >Yes</option>
-                                    </select>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
+                                <label for="validationCustom01">Customer Name:</label>
+                                <input type="text" class="form-control" required id="validationCustom01" name="name" required="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Enter Customer Name.
+                                </div>
                             </div>
-                   </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
+                                <label for="validationCustom01">Customer Email:</label>
+                                <input type="email" class="form-control" required id="validationCustom01" name="email" required="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Enter Customer Email.
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
+                                <label for="validationCustom01">Mobile:</label>
+                                <input type="number" class="form-control" required id="validationCustom01" name="mobile" required="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Enter Customer Mobile Number.
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
+                                <label for="validationCustom01">Profile Image:</label>
+                                <input type="file" class="form-control" required id="validationCustom01" name="customerimage" required="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Enter Customer Profile Image.
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
+                                <label for="validationCustom01">Password:</label>
+                                <input type="text" class="form-control" required id="validationCustom01" name="password" required="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Enter Customer Password.
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
+                                <label for="validationCustom03">Status:</label>
+                                <select class="form-control"  name="status" id="validationCustom02"required>
+                                    <option value="0">No</option>
+                                    <option value="1" >Yes</option>
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
                    <div class="form-row pt-2">
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                                 <button class="btn btn-primary" type="submit">Submit</button>

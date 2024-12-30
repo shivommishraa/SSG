@@ -36,13 +36,62 @@
         <form role="form" class="needs-validation" novalidate  method="post" action="<?php echo site_url()?>Customer/FrontendCustomer/frontendcustomerUpdatePost" enctype="multipart/form-data">
           <input type="hidden" value="<?php echo $ctdata[0]->id ?>"   name="id">
           <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-             <label for="validationCustom01">Customer Type:</label>
-             <input type="text" id="validationCustom01" value="<?php echo $ctdata[0]->type ?>" required="Customer Type" placeholder="Customer Type" class="form-control" name="type">
-             <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
+                                <label for="validationCustom01">Customer Name:</label>
+                                <input type="text" class="form-control" required id="validationCustom01" name="name"  value="<?php echo $ctdata[0]->name ?>" required="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Enter Customer Name.
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
+                                <label for="validationCustom01">Customer Email:</label>
+                                <input type="email"  value="<?php echo $ctdata[0]->name ?>" class="form-control" required id="validationCustom01" name="email" required="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Enter Customer Email.
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
+                                <label for="validationCustom01">Mobile:</label>
+                                <input type="number"  value="<?php echo $ctdata[0]->name ?>" class="form-control" required id="validationCustom01" name="mobile" required="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Enter Customer Mobile Number.
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
+                                <label for="validationCustom01">Profile Image:</label>
+                                <input type="file" class="form-control" required id="validationCustom01" name="customerimage" required="">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Enter Customer Profile Image.
+                                </div>
+                            </div>
+                            <?php if(!empty($add_info[0]->customerimage)){ ?>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
+                                    <label for="validationCustom03">Uploaded Customer Image:</label>
+                                    <img height="150px" width="200px" src="<?php echo site_url(); ?>ssgassests/img/customerimage/<?php echo $ctdata[0]->customerimage; ?>"/>
+                                </div>
+                                <?php } ?>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
+                                <label for="validationCustom03">Status:</label>
+                                <select class="form-control"  name="status" id="validationCustom02"required>
+                                    <option value="0"<?php if("0"==$ctdata[0]->status) echo "selected"; ?>>No</option>
+                                    <option value="1" <?php if("0"==$ctdata[0]->status) echo "selected"; ?>>Yes</option>
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
       </div>
       <div class="form-row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-2 pt-2">

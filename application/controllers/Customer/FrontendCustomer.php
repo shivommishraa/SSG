@@ -37,12 +37,11 @@ class FrontendCustomer extends CI_Controller {
      	$page = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
      	$data['links'] = $this->pagination->create_links();
           //============================ End Pager Code ==============================
-     	$data["customerType"] = $this->FrontendCustomermodel->getAllCustomerType($config['per_page'],$page,$email);
+     	$data["fcustomer"] = $this->FrontendCustomermodel->getAllCustomerType($config['per_page'],$page,$email);
      	$this->load->view('Dashboard/header.php',$data);
      	$this->load->view('Dashboard/side.php');
     	$this->load->view('Customer/Admin/managefrontendcustomer', $data);
        	$this->load->view('Dashboard/footer.php');
-
      }
 
     public function addNewFrontendCustomer() {
@@ -57,11 +56,33 @@ class FrontendCustomer extends CI_Controller {
         $this->load->view('Dashboard/footer.php');
     }
     public function addFrontendCustomer() {
-      $data['type'] = $this->input->post('type');
+      $data['email'] = $this->input->post('email');
+      $data['name'] = $this->input->post('name');
+      $data['mobile'] = $this->input->post('mobile');
+      $data['password'] = $this->input->post('password');
       $data['status'] = $this->input->post('status');
+      if ($_FILES['customerimage']['name']) { 
+        $data['customerimage'] = $this->doUpload('customerimage');
+      }
       $this->FrontendCustomermodel->InsertData($data);
       $this->session->set_flashdata('success', 'Customer Added Successfully');
       redirect('Customer/CustomerType/managefrontendcustomer');
+    }
+
+    public function doUpload($file) {
+      $config['upload_path'] = './ssgassests/img/customerimage';
+      $config['allowed_types'] = '*';
+      $this->load->library('upload', $config);
+      if ( ! $this->upload->do_upload($file))
+      {
+        $error = array('error' => $this->upload->display_errors());
+        $this->load->view('upload_form', $error);
+      }
+      else
+      {
+        $data = array('upload_data' => $this->upload->data());
+        return $data['upload_data']['file_name'];
+      }
     }
 
     public function editFrontendCustomer($tbl_id) {
@@ -80,7 +101,14 @@ class FrontendCustomer extends CI_Controller {
     public function frontendcustomerUpdatePost() {
 	      $tbl_info_id = $this->input->post('id');
 	      $ctdata = $this->FrontendCustomermodel->getCustomerTypeById($tbl_info_id);
-	      $data['type'] = $this->input->post('type');
+	      $data['email'] = $this->input->post('email');
+        $data['name'] = $this->input->post('name');
+        $data['mobile'] = $this->input->post('mobile');
+        $data['password'] = $this->input->post('password');
+        $data['status'] = $this->input->post('status');
+        if ($_FILES['customerimage']['name']) { 
+          $data['customerimage'] = $this->doUpload('customerimage');
+        }
 	      $edit = $this->FrontendCustomermodel->update($tbl_info_id,$data);
 	      if ($edit) {
 	        $this->session->set_flashdata('success', 'Customer Updated Successfully.');

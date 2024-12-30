@@ -10,8 +10,7 @@
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="<?php echo site_url(); ?>Dashboard" class="breadcrumb-link">Dashboard</a></li>
                   <li class="breadcrumb-item"><a href="">Customer</a></li>
-                  <li class="breadcrumb-item "><a href="">Manage Frontend Customer</a></li>
-                  
+                  <li class="breadcrumb-item"><a href="">Manage Frontend Customer</a></li>
                 </ol>
               </nav>
             </div>
@@ -30,12 +29,9 @@
                 <button type="submit" class="btn btn-sm btn-info" name="search" >Search</button>
                 <button class="btn btn-sm btn-danger"  onClick="return redirect('<?php echo base_url();?>Customer/FrontendCustomer/manageFrontendCustomer');">Reset</button>
               </div>
-
               <div class="col-md-2 card-header text-right">
                 <button class="btn btn-sm btn-primary"  onClick="return redirect('<?php echo site_url(); ?>Customer/FrontendCustomer/addNewFrontendCustomer');"><i class="fa fa-plus" aria-hidden="true"></i> Add New</button>
               </div>
-              
-              
             </div>
           </form>
           <?php if($this->session->flashdata('success')){ ?>
@@ -43,32 +39,31 @@
             <strong><span class="glyphicon glyphicon-ok"></span>   <?php echo $this->session->flashdata('success'); ?></strong>
           </div>
         <?php } ?>
-
         <div class="card-body">
           <div class="table-responsive">
-           <?php if(!empty($customerType)) {?>
+           <?php if(!empty($fcustomer)) {?>
             <table class="table table-striped table-bordered first">
               <thead>
                 <tr>
-                 <th>SL No</th>
-                 <th>Customer Type</th>
-                 <th>Status</th>
-                 <th colspan="2">Actions</th>
+                  <th>SL No</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Mobile</th>
+                  <th>Status</th>
+                  <th colspan="2">Actions</th>
                </tr>
              </thead>
-             <tbody>
-              <?php $i=1; foreach($customerType as $customerType) { ?>
-               <tr>
-                <td> <?php echo $i; ?> </td>
-                <td>  <?php echo $customerType->type ?> </td>
-               
-               <td><span <?php if($customerType->status==0){?> class="badge badge-success"<?php }else{ ?> class="badge badge-danger"<?php }?>>
-                <a style="color:#fff;" href="<?php echo site_url()?>Customer/CustomerType/changestatus/<?php echo $customerType->id ?>" > <?php if($customerType->status==0){ echo "Activate"; } else { echo "Deactivate"; } ?></a></span></td>
-                
-
-                <td><a href="<?php echo site_url()?>Customer/CustomerType/editCustomerType/<?php echo $customerType->id?>"><i class="fas fa-pencil-alt"style="color: blue;"></i></a></td>
-
-                <td><a href="<?php echo site_url()?>Customer/CustomerType/deleteCustomerType/<?php echo $customerType->id?>" onclick="return confirm('Are you sure to delete')"><i class="fa fa-trash"style="color: red;"></i></a></td>
+              <tbody>
+              <?php $i=1; foreach($fcustomer as $fcustomer) { ?>
+              <tr>
+                <td><?php echo $i; ?> </td>
+                <td><?php echo $fcustomer->name; ?> </td>
+                <td><?php echo $fcustomer->email; ?> </td>
+                <td><?php echo $fcustomer->mobile; ?> </td>
+                <td><span <?php if($fcustomer->status==0){?> class="badge badge-success"<?php }else{ ?> class="badge badge-danger"<?php }?>>
+                <a style="color:#fff;" href="<?php echo site_url()?>Customer/FrontendCustomer/changestatus/<?php echo $fcustomer->id ?>" > <?php if($fcustomer->status==0){ echo "Activate"; } else { echo "Deactivate"; } ?></a></span></td>
+                <td><a href="<?php echo site_url()?>Customer/FrontendCustomer/editFrontendCustomer/<?php echo $fcustomer->id?>"><i class="fas fa-pencil-alt"style="color: blue;"></i></a></td>
+                <td><a href="<?php echo site_url()?>Customer/FrontendCustomer/deleteFrontendCustomer/<?php echo $fcustomer->id?>" onclick="return confirm('Are you sure to delete')"><i class="fa fa-trash"style="color: red;"></i></a></td>
               </tr>
               <?php $i++; } ?>
             </tbody>
