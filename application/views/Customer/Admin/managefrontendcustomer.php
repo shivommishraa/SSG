@@ -24,7 +24,7 @@
            <div class="row col-md-12">
              <div class="col-md-3 card-header"> </div>
              <div class="col-md-4 card-header">
-              <input type="text" name="type"  placeholder="Search By Name" class="form-control form-control ml-2"/></div>
+              <input type="text" name="email"  placeholder="Search By Email" class="form-control form-control ml-2"/></div>
               <div class="col-md-3 card-header">
                 <button type="submit" class="btn btn-sm btn-info" name="search" >Search</button>
                 <button class="btn btn-sm btn-danger"  onClick="return redirect('<?php echo base_url();?>Customer/FrontendCustomer/manageFrontendCustomer');">Reset</button>
