@@ -58,4 +58,37 @@ class FrontendCustomermodel extends CI_Model {
 	    }
 	}
 
+
+	public function validateCustomer()
+	{
+	     $email_id=$this->security->xss_clean($this->input->post('email'));
+	     $password=$this->input->post('password');
+	     $this->db->select('*');
+	     $this->db->from('tbl_frontend_customer');
+	     $this->db->where('email', $email_id);  
+	     $this->db->where('password', $password);  
+	     $query = $this->db->get(); 
+	     if($query->num_rows()>0)
+	     {
+	      $row=$query->row();
+	      $data=array(
+	        
+	        'customer_email'=>$row->email_id,
+	        'customer_password'=>$row->password,
+	        'customer_session_id'=>$row->admin_id,
+	        'customer_validated'=>true
+	      );
+	      
+	      $this->session->set_userdata($data);
+	      $this->session->userdata($data);
+	      return true;
+	      
+	    }
+	    else
+	    {
+	      return false;
+	    }
+	  
+	}
+
 }

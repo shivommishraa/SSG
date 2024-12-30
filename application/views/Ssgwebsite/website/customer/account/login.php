@@ -28,9 +28,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8">
-                    <form id="login-form" action="" method="POST">
+                    <form id="login-form" action="<?php echo base_url(); ?>Website/Website_controller/customer_login_valid" method="POST">
                         <div class="form-group mb-3">
-                            <label for="email" class="form-label">Email or Username</label>
+                            <label for="email" class="form-label">Email</label>
                             <input type="text" id="email" name="email" class="form-control" placeholder="Enter your email or username" required>
                         </div>
                         <div class="form-group mb-3">

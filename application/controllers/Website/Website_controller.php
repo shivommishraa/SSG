@@ -183,6 +183,79 @@ class Website_controller extends CI_Controller {
     redirect(base_url());
   }
 
+  public function logincustomer(){
+
+    $data['email'] = $this->input->post('email');
+    $data['password'] = $this->input->post('password'); 
+    $this->FrontendCustomermodel->checkdata($data);
+    $this->session->set_flashdata('success', 'Customer Added Successfully');
+    redirect(base_url());
+  }
+
+/*=====================================================*/
+ /*public function login()
+  {
+    if($this->session->userdata('session_id')!='')
+    {
+      redirect('Dashboard');
+    }
+    else
+    {
+      $this->load->view('Dashboard/login.php');
+    }
+    
+  }*/
+  
+  
+  function customer_login_valid()  
+  {  
+   $this->load->library('form_validation');  
+   $this->form_validation->set_rules('email', 'email', 'required');  
+   $this->form_validation->set_rules('password', 'Password', 'required');  
+   if($this->form_validation->run())  
+   {  
+    
+    $result=$this->FrontendCustomermodel->validateCustomer();
+    if($result)
+    {
+      $customerData=$this->session->set_userdata('fcustomer','1'); 
+      redirect(base_url());   
+    }
+    else
+    {
+      $this->session->set_flashdata('success', 'Invalid Email Id Or Password'); 
+      
+      redirect('logincustomer');
+    }
+    
+    
+    
+  }  
+  else  
+  {  
+    
+    
+    $this->login();  
+  }  
+}  
+
+
+/*function logout()
+{
+
+  $array_items = array('password', 'email_id','session_id');
+
+  $this->session->unset_userdata($array_items);
+  
+  $this->session->sess_destroy();
+
+  redirect('login');
+}*/
+
+
+/*=====================================================*/
+  
+
 
 
   public function savedata()
