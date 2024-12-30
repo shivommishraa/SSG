@@ -101,10 +101,18 @@
             <a href="#"><i class="fa fa-linkedin"></i></a>
             <a href="#"><i class="fa fa-pinterest-p"></i></a>-->
         </div>
+        <?php 
+            $topheadingmsg="For Orders Please Contact Us.";
+            if($homepageInfo[0]->topheadingmsg){ 
+                $topheadingmsg=$homepageInfo[0]->topheadingmsg;
+            }else{
+                $topheadingmsg="For Orders Please Contact Us.";
+            }
+        ?>
         <div class="humberger__menu__contact">
             <ul>
                 <li><i class="fa fa-envelope"></i> ssgmart9@gmail.com</li>
-                <li>For Orders Please Contact Us.</li>
+                <li><marquee behavior="scroll" direction="left" style="font-weight: bold; font-size: 24px; color: blue; animation: blinkssg 1s infinite;"><?php echo $topheadingmsg; ?></marquee></li>
             </ul>
         </div>
     </div>
@@ -119,7 +127,10 @@
                         <div class="header__top__left">
                             <ul>
                                 <li><i class="fa fa-envelope"></i> ssgmart9@gmail.com</li>
-                                <li>For Orders Please Contact Us.</li>
+                                <li>
+                                    <marquee behavior="scroll" direction="left" style="font-weight: bold; font-size: 24px; color: blue; animation: blinkssg 1s infinite;"><?php echo $topheadingmsg; ?></marquee>
+                                   
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -197,3 +208,12 @@
         </div>
     </header>
     <!-- Header Section End -->
+<style>
+  @keyframes blinkssg {
+    0% { color: blue; }
+    25% { color: red; }
+    50% { color: darkgreen; }
+    75% { color: yellow; }
+    100% { color: blue; }
+  }
+</style>
