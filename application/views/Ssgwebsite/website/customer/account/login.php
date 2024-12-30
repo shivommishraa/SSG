@@ -24,7 +24,7 @@
 
 <!-- Login Form Begin -->
 <div id="loginForm" class="tab-content">
-    <div class="login-form">
+    <div class="login-form mt-1">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8">
@@ -66,7 +66,7 @@
 
 <!-- Register Form Begin -->
 <div id="registerForm" class="tab-content" style="display: none;">
-    <div class="register-form spad">
+    <div class="register-form mt-1">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8">
