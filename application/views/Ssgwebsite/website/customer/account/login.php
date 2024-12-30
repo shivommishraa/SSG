@@ -24,7 +24,7 @@
 
 <!-- Login Form Begin -->
 <div id="loginForm" class="tab-content">
-    <div class="login-form spad">
+    <div class="login-form">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8">
@@ -47,7 +47,7 @@
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                         </div>
-                        <div class="social-login text-center mt-4">
+                        <!-- <div class="social-login text-center mt-4">
                             <span>Sign in with:</span>
                             <div class="d-flex justify-content-center gap-3 mt-2">
                                 <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fab fa-facebook"></i> Facebook</a>
@@ -55,7 +55,7 @@
                                 <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fab fa-twitter"></i> Twitter</a>
                                 <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fab fa-github"></i> GitHub</a>
                             </div>
-                        </div>
+                        </div> -->
                     </form>
                 </div>
             </div>
