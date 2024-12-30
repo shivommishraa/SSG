@@ -112,7 +112,7 @@
         <div class="humberger__menu__contact">
             <ul>
                 <li><i class="fa fa-envelope"></i> ssgmart9@gmail.com</li>
-                <li><marquee behavior="scroll" direction="left" style="font-weight: bold; font-size: 24px; color: blue; animation: blinkssg 1s infinite;"><?php echo $topheadingmsg; ?></marquee></li>
+                <li><div behavior="scroll" direction="left" style="font-weight: bold;color: blue; animation: blinkssg 1s infinite;"><?php echo $topheadingmsg; ?></div></li>
             </ul>
         </div>
     </div>
@@ -128,7 +128,7 @@
                             <ul>
                                 <li><i class="fa fa-envelope"></i> ssgmart9@gmail.com</li>
                                 <li>
-                                    <marquee behavior="scroll" direction="left" style="font-weight: bold; font-size: 24px; color: blue; animation: blinkssg 1s infinite;"><?php echo $topheadingmsg; ?></marquee>
+                                    <div behavior="scroll" direction="left" style="font-weight: bold;  color: blue; animation: blinkssg 1s infinite;"><?php echo $topheadingmsg; ?></div>
                                    
                                 </li>
                             </ul>
