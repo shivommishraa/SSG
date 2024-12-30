@@ -48,7 +48,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
                                 <label for="validationCustom01">Customer Email:</label>
-                                <input type="email"  value="<?php echo $ctdata[0]->name ?>" class="form-control" required id="validationCustom01" name="email" required="">
+                                <input type="email"  value="<?php echo $ctdata[0]->email ?>" class="form-control" required id="validationCustom01" name="email" required="">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -58,7 +58,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
                                 <label for="validationCustom01">Mobile:</label>
-                                <input type="number"  value="<?php echo $ctdata[0]->name ?>" class="form-control" required id="validationCustom01" name="mobile" required="">
+                                <input type="number"  value="<?php echo $ctdata[0]->mobile ?>" class="form-control" required id="validationCustom01" name="mobile" required="">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
