@@ -66,7 +66,7 @@ class FrontendCustomer extends CI_Controller {
       }
       $this->FrontendCustomermodel->InsertData($data);
       $this->session->set_flashdata('success', 'Customer Added Successfully');
-      redirect('Customer/CustomerType/managefrontendcustomer');
+      redirect('Customer/FrontendCustomer/manageFrontendCustomer');
     }
 
     public function doUpload($file) {
