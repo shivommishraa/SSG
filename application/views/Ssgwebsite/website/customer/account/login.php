@@ -70,10 +70,10 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8">
-                    <form id="register-form" action="" method="POST">
+                    <form id="register-form" action="<?php echo base_url(); ?>Website/Website_controller/registercustomer" method="POST">
                         <div class="form-group mb-3">
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required>
+                            <input type="text" id="username" name="name" class="form-control" placeholder="Enter your username" required>
                         </div>
                         <div class="form-group mb-3">
                             <label for="email" class="form-label">Email</label>
@@ -81,6 +81,10 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="password" class="form-label">Password</label>
+                            <input type="password" id="password" class="form-control" placeholder="Create a password" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="password" class="form-label">Confirm Password</label>
                             <input type="password" id="password" name="password" class="form-control" placeholder="Create a password" required>
                         </div>
                         <div class="d-grid">

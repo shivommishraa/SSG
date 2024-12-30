@@ -11,6 +11,7 @@ class Website_controller extends CI_Controller {
         $this->load->model('AdditionInformation/Infomodel');
         $this->load->model('Nice_websitemodel/Nice_webmodel');
         $this->load->model('Menu_model/Menu');
+        $this->load->model('Customer/FrontendCustomermodel');
         $this->load->helper('url');
         $this->load->library("pagination");
         $this->load->library('session');
@@ -170,6 +171,16 @@ class Website_controller extends CI_Controller {
     $this->load->view('Ssgwebsite/website/customer/account/login');
     $this->load->view('Ssgwebsite/website/footer');
 
+  }
+
+  public function registercustomer(){
+
+    $data['email'] = $this->input->post('email');
+    $data['name'] = $this->input->post('name');
+    $data['password'] = $this->input->post('password'); 
+    $this->FrontendCustomermodel->InsertData($data);
+    $this->session->set_flashdata('success', 'Customer Added Successfully');
+    redirect('Web/index');
   }
 
 
