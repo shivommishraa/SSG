@@ -180,7 +180,7 @@ class Website_controller extends CI_Controller {
     $data['password'] = $this->input->post('password'); 
     $this->FrontendCustomermodel->InsertData($data);
     $this->session->set_flashdata('success', 'Customer Added Successfully');
-    redirect('Web/index');
+    redirect(base_url());
   }
 
 
