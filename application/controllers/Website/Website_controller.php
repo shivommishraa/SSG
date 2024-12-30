@@ -8,6 +8,7 @@ class Website_controller extends CI_Controller {
         parent::__construct();
         $this->load->model(array('Admin_model/Adminmodel','Warehouse/Warehouse_model'));
         $this->load->model(array('Admin_model/Role_model','Designation/Designation_model'));
+        $this->load->model('AdditionInformation/Infomodel');
         $this->load->model('Nice_websitemodel/Nice_webmodel');
         $this->load->model('Menu_model/Menu');
         $this->load->helper('url');
@@ -68,6 +69,7 @@ class Website_controller extends CI_Controller {
     return $this->Nice_webmodel->getproduct_brand($id);};
            
     //$this->load->view('Website/ms_header',$data);
+    $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
     $this->load->view('Ssgwebsite/website/header',$data);
     $this->load->view('Ssgwebsite/website/bannersection');
     $this->load->view('Ssgwebsite/website/index');
@@ -121,6 +123,7 @@ class Website_controller extends CI_Controller {
   public function privacypolicy(){
     
     $data['page_active']='privacypolicy';
+    $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
     $this->load->view('Website/ms_header',$data);
     $this->load->view('Website/privacypolicy');
     $this->load->view('Website/ms_footer');
@@ -131,6 +134,7 @@ class Website_controller extends CI_Controller {
   public function contactus(){
 
     $data['page_active']='contactus';
+    $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
     $this->load->view('Ssgwebsite/website/header',$data);
     $this->load->view('Ssgwebsite/website/contactus');
     $this->load->view('Ssgwebsite/website/footer');
@@ -140,6 +144,7 @@ class Website_controller extends CI_Controller {
    public function ordernow(){
 
     $data['page_active']='order';
+    $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
     $this->load->view('Ssgwebsite/website/header',$data);
     $this->load->view('Ssgwebsite/website/order');
     $this->load->view('Ssgwebsite/website/footer');
@@ -149,6 +154,7 @@ class Website_controller extends CI_Controller {
    public function aboutus(){
 
     $data['page_active']='aboutus';
+    $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
     $this->load->view('Ssgwebsite/website/header',$data);
     $this->load->view('Ssgwebsite/website/about');
     $this->load->view('Ssgwebsite/website/footer');
