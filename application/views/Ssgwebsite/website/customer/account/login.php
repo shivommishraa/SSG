@@ -47,6 +47,15 @@
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                         </div>
+                        <!-- <div class="social-login text-center mt-4">
+                            <span>Sign in with:</span>
+                            <div class="d-flex justify-content-center gap-3 mt-2">
+                                <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fab fa-facebook"></i> Facebook</a>
+                                <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fab fa-google"></i> Google</a>
+                                <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fab fa-twitter"></i> Twitter</a>
+                                <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div> -->
                     </form>
                 </div>
             </div>
@@ -61,7 +70,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8">
-                    <form id="register-form" action="<?php echo base_url(); ?>Website/Website_controller/registercustomer" method="POST" onsubmit="return validateRegisterForm()">
+                    <form id="register-form" action="<?php echo base_url(); ?>Website/Website_controller/registercustomer" method="POST">
                         <div class="form-group mb-3">
                             <label for="username" class="form-label">Name</label>
                             <input type="text" id="username" name="name" class="form-control" placeholder="Enter your username" required>
@@ -72,13 +81,12 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" id="password" name="password" class="form-control" placeholder="Create a password" required>
+                            <input type="password" id="password" class="form-control" placeholder="Create a password" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="confirmPassword" class="form-label">Confirm Password</label>
-                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm your password" required>
+                            <label for="password" class="form-label">Confirm Password</label>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Create a password" required>
                         </div>
-                        <div id="error-message" style="color: red; display: none;" class="mb-3">Passwords do not match. Please try again.</div>
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary btn-block">Register</button>
                         </div>
@@ -103,20 +111,6 @@
         document.getElementById("registerForm").style.display = "block";
         document.getElementById("registerTab").classList.add("active");
         document.getElementById("loginTab").classList.remove("active");
-    }
-
-    function validateRegisterForm() {
-        const password = document.getElementById("password").value;
-        const confirmPassword = document.getElementById("confirmPassword").value;
-        const errorMessage = document.getElementById("error-message");
-
-        if (password !== confirmPassword) {
-            errorMessage.style.display = "block";
-            return false;
-        } else {
-            errorMessage.style.display = "none";
-            return true;
-        }
     }
 </script>
 
