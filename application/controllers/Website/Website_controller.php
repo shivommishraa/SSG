@@ -162,6 +162,17 @@ class Website_controller extends CI_Controller {
   }
 
 
+  public function customerlogin(){
+
+    $data['page_active']='login';
+    $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
+    $this->load->view('Ssgwebsite/website/header',$data);
+    $this->load->view('Ssgwebsite/website/customer/account/login');
+    $this->load->view('Ssgwebsite/website/footer');
+
+  }
+
+
 
   public function savedata()
   {
