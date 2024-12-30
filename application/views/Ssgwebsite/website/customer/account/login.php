@@ -32,10 +32,14 @@
                         <input type="text" id="email" name="name" placeholder="Email">
                         <span id="nwoc"></span>
                     </div>
+               	<div class="row">
+               	<div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <input type="number" id="password" name="password" placeholder="Password" required>
+                        <input type="number" id="password" name="password" placeholder="Passw" required>
                         <span id="mnwoc" ></span>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-12 text-center">
                         <button type="button" id="btnsubmit" class="site-btn">Submit</button>
                         <div style="display: none;" class="form-group" id="woc">
