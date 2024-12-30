@@ -1,55 +1,67 @@
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/breadcrumb.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Login</h2>
-                        <div class="breadcrumb__option">
-                            <a href="<?php echo base_url(); ?>">Home</a>
-                            <span>Login</span>
-                        </div>
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/breadcrumb.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text">
+                    <h2>Login</h2>
+                    <div class="breadcrumb__option">
+                        <a href="<?php echo base_url(); ?>">Home</a>
+                        <span>Login</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Breadcrumb Section End -->
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
 
-    <!-- Contact Form Begin -->
-    <div class="contact-form spad">
-        <div class="container">
-           <!--  <div class="row">
-                <div class="col-lg-12">
-                    <div class="contact__form__title">
-                        <h2>Leave Message</h2>
+<!-- Login Form Begin -->
+<div class="login-form spad">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="form-title text-center mb-4">
+                    <h2>Login</h2>
+                </div>
+                <form id="login-form" action="" method="POST">
+                    <div class="form-group mb-3">
+                        <label for="email" class="form-label">Email or Username</label>
+                        <input type="text" id="email" name="email" class="form-control" placeholder="Enter your email or username" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="text-center mb-3">
+                        <a href="#" class="text-decoration-none">Forgot password?</a>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <span>Not a member? <a href="#" class="text-decoration-none">Register</a></span>
+                    </div>
+                </form>
+                <div class="social-login text-center mt-4">
+                    <span>Sign in with:</span>
+                    <div class="d-flex justify-content-center gap-3 mt-2">
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fab fa-facebook"></i> Facebook</a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fab fa-google"></i> Google</a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fab fa-github"></i> GitHub</a>
                     </div>
                 </div>
-            </div> -->
-            <form id="contact-form" action="" method="POST">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" id="email" name="name" placeholder="Email">
-                        <span id="nwoc"></span>
-                    </div>
-               	<div class="row">
-               	<div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <input type="number" id="password" name="password" placeholder="Passw" required>
-                        <span id="mnwoc" ></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <button type="button" id="btnsubmit" class="site-btn">Submit</button>
-                        <div style="display: none;" class="form-group" id="woc">
-                        <span style="color: blue;">Your order has been received successfully. We will reach you soon..!!</span>
-                    </div>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
+</div>
+<!-- Login Form End -->
+
     <!-- Contact Form End -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" language="javascript" >  
