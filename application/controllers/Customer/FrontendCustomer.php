@@ -112,20 +112,20 @@ class FrontendCustomer extends CI_Controller {
 	      $edit = $this->FrontendCustomermodel->update($tbl_info_id,$data);
 	      if ($edit) {
 	        $this->session->set_flashdata('success', 'Customer Updated Successfully.');
-	        redirect('Customer/CustomerType/managefrontendcustomer');
+	        redirect('Customer/FrontendCustomer/manageFrontendCustomer');
 	      }
   	}
 
     public function deleteFrontendCustomer($id) {
       $delete = $this->FrontendCustomermodel->delete($id);
       $this->session->set_flashdata('success', 'Customer deleted.');
-      redirect('Customer/CustomerType/managefrontendcustomer');
+      redirect('Customer/FrontendCustomer/manageFrontendCustomer');
     }
 
     public function changestatus($id) {
       $edit = $this->FrontendCustomermodel->changeStatus($id);
       $this->session->set_flashdata('success', 'Customer '.$edit.' Successfully');
-      redirect('Customer/CustomerType/managefrontendcustomer');
+      redirect('Customer/FrontendCustomer/manageFrontendCustomer');
     }
 
 }
