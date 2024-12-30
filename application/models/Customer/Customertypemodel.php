@@ -13,7 +13,7 @@ class Customertypemodel extends CI_Model {
 
 	public function get_count($type='') 
     {
-    	if($category_name!=''){
+    	if($type!=''){
             $this->db->where('type',$type); 
         }
         return $this->db->get('tbl_customer_type')->num_rows();
