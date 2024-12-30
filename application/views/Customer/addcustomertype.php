@@ -41,7 +41,7 @@
                                 Looks good!
                               </div>
                               <div class="invalid-feedback">
-                                Enter feature name.
+                                Enter Customer Type.
                               </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
