@@ -45,7 +45,17 @@ class CustomerType extends CI_Controller {
 
      }
 
-
+    public function addNewCustomerType() {
+     $id= $this->session->userdata('session_id');
+        $data['admin']=$this->Adminmodel->getadmin($id);
+        $data['menu_groups']=$this->Menu->getAllMenuGroup();
+        $data['menu_details']=$this->Menu->getAllMenu();
+        $data['admin_role']=$this->Menu->adminrole();
+        $this->load->view('Dashboard/header.php',$data);
+        $this->load->view('Dashboard/side.php');
+        $this->load->view('Customer/addcustomertype',$data);
+        $this->load->view('Dashboard/footer.php');
+    }
     public function addCustomerType() {
       $data['type'] = $this->input->post('type');
       $data['status'] = $this->input->post('status');
@@ -67,7 +77,7 @@ class CustomerType extends CI_Controller {
         $this->load->view('Dashboard/footer.php');
     }
 
-    public function customerTypePost() {
+    public function customerTypeUpdatePost() {
 	      $tbl_info_id = $this->input->post('id');
 	      $ctdata = $this->Customertypemodel->getCustomerTypeById($tbl_info_id);
 	      $data['type'] = $this->input->post('type');

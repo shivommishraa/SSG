@@ -32,7 +32,7 @@
               </div>
 
               <div class="col-md-2 card-header text-right">
-                <button class="btn btn-sm btn-primary"  onClick="return redirect('<?php echo site_url(); ?>Customer/CustomerType/addCustomerType');"><i class="fa fa-plus" aria-hidden="true"></i> Add New</button>
+                <button class="btn btn-sm btn-primary"  onClick="return redirect('<?php echo site_url(); ?>Customer/CustomerType/addNewCustomerType');"><i class="fa fa-plus" aria-hidden="true"></i> Add New</button>
               </div>
               
               
