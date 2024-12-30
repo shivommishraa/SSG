@@ -76,7 +76,7 @@
                                     Enter Customer Profile Image.
                                 </div>
                             </div>
-                            <?php if(!empty($add_info[0]->customerimage)){ ?>
+                            <?php if(!empty($ctdata[0]->customerimage)){ ?>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
                                     <label for="validationCustom03">Uploaded Customer Image:</label>
                                     <img height="150px" width="200px" src="<?php echo site_url(); ?>ssgassests/img/customerimage/<?php echo $ctdata[0]->customerimage; ?>"/>
