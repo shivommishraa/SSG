@@ -101,10 +101,8 @@ class FrontendCustomer extends CI_Controller {
     public function frontendcustomerUpdatePost() {
 	      $tbl_info_id = $this->input->post('id');
 	      $ctdata = $this->FrontendCustomermodel->getCustomerTypeById($tbl_info_id);
-	      $data['email'] = $this->input->post('email');
         $data['name'] = $this->input->post('name');
         $data['mobile'] = $this->input->post('mobile');
-        $data['password'] = $this->input->post('password');
         $data['status'] = $this->input->post('status');
         if ($_FILES['customerimage']['name']) { 
           $data['customerimage'] = $this->doUpload('customerimage');
