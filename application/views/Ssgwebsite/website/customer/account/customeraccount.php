@@ -49,8 +49,8 @@
                     <div class="col-lg-4">
                       <div class="card mb-4">
                         <div class="card-body text-center">
-                          <?php if(!empty($loggedinCusomter[0]->image)){ ?>
-                            <img src="<?php echo base_url(); ?>ssgassests/img/customerimage/<?php $loggedinCusomter[0]->image; ?>" alt="avatar"
+                          <?php if(!empty($loggedinCusomter[0]->customerimage)){ ?>
+                            <img src="<?php echo base_url(); ?>ssgassests/img/customerimage/<?php echo $loggedinCusomter[0]->customerimage; ?>" alt="avatar"
                             class="rounded-circle img-fluid" style="width: 150px;">
                           <?php }else{ ?>
                           <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
