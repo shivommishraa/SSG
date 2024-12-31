@@ -115,31 +115,8 @@
         document.getElementById("registerTab").classList.add("active");
         document.getElementById("loginTab").classList.remove("active");
     }
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const passwordField = document.getElementById("password");
-        const confirmPasswordField = document.getElementById("confirmPassword");
-        const registerButton = document.querySelector("#register-form button[type='submit']");
 
-        // Function to check password match and toggle button state
-        function validatePasswords() {
-            const password = passwordField.value;
-            const confirmPassword = confirmPasswordField.value;
-            if (password === confirmPassword && password !== "") {
-                registerButton.disabled = false;
-            } else {
-                registerButton.disabled = true;
-            }
-        }
-
-        // Disable the button initially
-        registerButton.disabled = true;
-
-        // Add event listeners to validate on input
-        passwordField.addEventListener("input", validatePasswords);
-        confirmPasswordField.addEventListener("input", validatePasswords);
-    });
+    
 </script>
 
 <style>
