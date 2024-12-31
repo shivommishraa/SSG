@@ -256,7 +256,7 @@ class Website_controller extends CI_Controller {
     }
     else
     {
-      $this->session->set_flashdata('success', 'Invalid Email Id Or Password'); 
+      $this->session->set_flashdata('error', 'Invalid email ID or password. Please enter the correct credentials and try again.'); 
       
       $this->customerlogin();
     }
