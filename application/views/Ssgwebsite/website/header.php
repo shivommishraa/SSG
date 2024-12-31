@@ -53,7 +53,11 @@
                 </ul>
             </div>
             <div class="header__top__right__auth">
-                <a href="<?php echo base_url(); ?>Website/Website_controller/customerlogin"><i class="fa fa-user"></i> Login</a>
+                <?php if(!empty($loggedinCusomter[0]->id)){ ?>
+                    <a href="#"></i> Account</a>
+                <?php }else{ ?>
+                    <a href="<?php echo base_url(); ?>Website/Website_controller/customerlogin"><i class="fa fa-user"></i> Login</a>
+                <?php } ?>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
@@ -154,7 +158,11 @@
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="<?php echo base_url(); ?>Website/Website_controller/customerlogin"><i class="fa fa-user"></i> Login</a>
+                                <?php if(!empty($loggedinCusomter[0]->id)){ ?>
+                                    <a href="#"><i class="fa fa-user"></i> Account</a>
+                                <?php }else{ ?>
+                                    <a href="<?php echo base_url(); ?>Website/Website_controller/customerlogin"><i class="fa fa-user"></i> Login</a>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

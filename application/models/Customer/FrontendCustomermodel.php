@@ -29,6 +29,11 @@ class FrontendCustomermodel extends CI_Model {
         return $this->db->insert_id();
     }
 
+    public function getloggedinCustomerData($id) {
+        $this->db->where('id', $id);
+        return $this->db->get('tbl_frontend_customer')->result();
+    }
+
     public function getCustomerTypeById($id) {
         $this->db->where('id', $id);
         return $this->db->get('tbl_frontend_customer')->result();
@@ -75,7 +80,7 @@ class FrontendCustomermodel extends CI_Model {
 	        
 	        'customer_email'=>$row->email_id,
 	        'customer_password'=>$row->password,
-	        'customer_session_id'=>$row->admin_id,
+	        'customer_session_id'=>$row->id,
 	        'customer_validated'=>true
 	      );
 	      

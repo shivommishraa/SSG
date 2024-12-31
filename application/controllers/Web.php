@@ -9,6 +9,7 @@ class Web extends CI_Controller {
     $this->load->model('Admin_model/Role_model');
     $this->load->model('Admin_model/Adminmodel');
     $this->load->model('Nice_websitemodel/Nice_webmodel');
+    $this->load->model('Customer/FrontendCustomermodel');
     $this->load->model('Category_model/Category_model');
     $this->load->model('Product_model/tbl_product');
     $this->load->model('AdditionInformation/Infomodel');
@@ -22,6 +23,12 @@ class Web extends CI_Controller {
 
     $hostvalid=$this->Nice_webmodel->getHostpermit();  
     if($hostvalid=='1'){
+        $loggedincusomterid= $this->session->userdata('customer_session_id');
+        if(!empty($loggedincusomterid)){
+            $data['loggedinCusomter']=$this->FrontendCustomermodel->getloggedinCustomerData($loggedincusomterid);
+        }else{
+            $data['loggedinCusomter']="";
+        }
         $data['page_active']='index_active';
         //============================ Start Pager Code ==============================
         $galleryid=($this->input->post('galleryid')) ? $this->input->post('galleryid') :0;
