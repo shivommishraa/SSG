@@ -116,16 +116,37 @@
         document.getElementById("loginTab").classList.remove("active");
     }
 
-    function validatePasswords() {
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirmPassword').value;
-        
-        if (password != confirmPassword) {
-            alert('Passwords do not match. Please try again.');
-            return true; // Prevent form submission
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('register-form');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // Function to check if passwords match
+        function checkPasswordsMatch() {
+            if (password.value !== confirmPassword.value) {
+                passwordError.style.display = 'block';
+                submitBtn.disabled = true;
+                return false;
+            } else {
+                passwordError.style.display = 'none';
+                submitBtn.disabled = false;
+                return true;
+            }
         }
-        return true; // Allow form submission
-    }
+
+        // Attach event listeners to password fields
+        password.addEventListener('input', checkPasswordsMatch);
+        confirmPassword.addEventListener('input', checkPasswordsMatch);
+
+        // Validate on form submission
+        form.addEventListener('submit', function (e) {
+            if (!checkPasswordsMatch()) {
+                e.preventDefault(); // Prevent form submission
+                alert('Please ensure that your passwords match.');
+            }
+        });
+    });
 </script>
 
 <style>
