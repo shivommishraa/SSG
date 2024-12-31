@@ -283,7 +283,7 @@ public function customeraccount(){
     $this->load->view('Ssgwebsite/website/customer/account/customeraccount');
     $this->load->view('Ssgwebsite/website/footer');
   }else{
-    redirect($this->customerlogin());
+    redirect(base_url());
   }
 }
 
