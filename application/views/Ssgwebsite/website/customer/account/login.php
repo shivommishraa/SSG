@@ -15,7 +15,16 @@
     </div>
 </section>
 <!-- Breadcrumb Section End -->
-
+<?php if($this->session->flashdata('success')){ ?>
+       <div class="alert alert-success mt-2">
+        <strong><span class="glyphicon glyphicon-ok"></span>   <?php echo $this->session->flashdata('success'); ?></strong>
+      </div>
+    <?php } ?>
+<?php if($this->session->flashdata('error')){ ?>
+       <div class="alert alert-danger mt-2">
+        <strong><span class="glyphicon glyphicon-ok"></span>   <?php echo $this->session->flashdata('error'); ?></strong>
+      </div>
+    <?php } ?>
 <!-- Tab Buttons -->
 <div class="tabs-container text-center my-4">
     <button id="loginTab" class="tab-button active" onclick="showLogin()">Login</button>
