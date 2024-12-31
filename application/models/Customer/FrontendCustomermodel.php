@@ -34,6 +34,11 @@ class FrontendCustomermodel extends CI_Model {
         return $this->db->get('tbl_frontend_customer')->result();
     }
 
+    public function getDataByEmail($email) {
+        $this->db->where('email', $email);
+        return $this->db->get('tbl_frontend_customer')->result();
+    }
+
     public function getCustomerTypeById($id) {
         $this->db->where('id', $id);
         return $this->db->get('tbl_frontend_customer')->result();
