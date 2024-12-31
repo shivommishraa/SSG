@@ -55,11 +55,11 @@
             
                 <?php if(!empty($loggedinCusomter[0]->id)){ ?>
                     <div class="header__top__right__language">
-                        <a href="#"><i class="fa fa-user"></i> Account</a>
+                        <i class="fa fa-user"></i>
                         <span class="arrow_carrot-down"></span>
                         <ul>
-                            <li><a href="#">Account Details</a></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="#">Account</a></li>
+                            <li><a href="#">English</a></li>
                         </ul>
                     </div>
                 <?php }else{ ?>
@@ -168,10 +168,10 @@
                             </div>
                                 <?php if(!empty($loggedinCusomter[0]->id)){ ?>
                                     <div class="header__top__right__language">
-                                        <a href="#"><i class="fa fa-user"></i> Account</a>
+                                        <i class="fa fa-user"></i>
                                         <span class="arrow_carrot-down"></span>
                                         <ul>
-                                            <li><a href="#">Account Details</a></li>
+                                            <li><a href="#">Account</a></li>
                                             <li><a href="#">Logout</a></li>
                                         </ul>
                                     </div>
