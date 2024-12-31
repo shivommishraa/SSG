@@ -124,14 +124,16 @@
 
         // Function to check if passwords match
         function checkPasswordsMatch() {
-            if (password.value !== confirmPassword.value) {
+            if (password.value == confirmPassword.value) {
+                 passwordError.style.display = 'none';
+                submitBtn.disabled = false;
+                return true;
+            } else {
+               
+
                 passwordError.style.display = 'block';
                 submitBtn.disabled = true;
                 return false;
-            } else {
-                passwordError.style.display = 'none';
-                submitBtn.disabled = false;
-                return true;
             }
         }
 
