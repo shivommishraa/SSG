@@ -194,11 +194,11 @@ class Website_controller extends CI_Controller {
   }
 
   public function registercustomer(){
-
     $data['email'] = $this->input->post('email');
     $data['name'] = $this->input->post('name');
     $data['password'] = $this->input->post('password'); 
     $data['confirmpassword'] = $this->input->post('confirmpassword'); 
+    $data['ip_address'] = $_SERVER['REMOTE_ADDR']; 
     if((!empty($data['password'])) && (!empty($data['confirmpassword'])) && (!empty($data['email'])) && ($data['password'] == $data['confirmpassword'])){
       $customerData=$this->FrontendCustomermodel->getDataByEmail($data['email']);
       if(empty($customerData)){
@@ -226,20 +226,7 @@ class Website_controller extends CI_Controller {
   }
 
 /*=====================================================*/
- /*public function login()
-  {
-    if($this->session->userdata('session_id')!='')
-    {
-      redirect('Dashboard');
-    }
-    else
-    {
-      $this->load->view('Dashboard/login.php');
-    }
-    
-  }*/
-  
-  
+ 
   function customer_login_valid()  
   {  
    $this->load->library('form_validation');  
