@@ -15,7 +15,7 @@
         </div>
     </section>
     <!-- Breadcrumb Section End -->
-  <section class="categories">
+  <section class="hero">
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
