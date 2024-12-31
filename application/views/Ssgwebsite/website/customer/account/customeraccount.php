@@ -15,7 +15,7 @@
         </div>
     </section>
     <!-- Breadcrumb Section End -->
-  <section class="hero">
+  <section class="featured spad">
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
