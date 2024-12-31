@@ -54,14 +54,12 @@
             </div>
             
                 <?php if(!empty($loggedinCusomter[0]->id)){ ?>
-                    <a href="#"></i> Account</a>
                     <div class="header__top__right__language">
-                        <img src="<?php echo base_url(); ?>ssgassests/img/language.png" alt="">
-                        <div>English</div>
+                        <a href="#"><i class="fa fa-user"></i> Account</a>
                         <span class="arrow_carrot-down"></span>
                         <ul>
-                            <li><a href="#">Hindi</a></li>
-                            <li><a href="#">English</a></li>
+                            <li><a href="#">Account Details</a></li>
+                            <li><a href="#">Logout</a></li>
                         </ul>
                     </div>
                 <?php }else{ ?>
@@ -170,15 +168,14 @@
                             </div>
                                 <?php if(!empty($loggedinCusomter[0]->id)){ ?>
                                     <div class="header__top__right__language">
-                                        <img src="<?php echo base_url(); ?>ssgassests/img/language.png" alt="">
-                                        <div>English</div>
+                                        <a href="#"><i class="fa fa-user"></i> Account</a>
                                         <span class="arrow_carrot-down"></span>
                                         <ul>
-                                            <li><a href="#">Hindi</a></li>
-                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Account Details</a></li>
+                                            <li><a href="#">Logout</a></li>
                                         </ul>
                                     </div>
-                                    <a href="#"><i class="fa fa-user"></i> Account</a>
+                                    
                                 <?php }else{ ?>
                                     <div class="header__top__right__auth">
                                         <a href="<?php echo base_url(); ?>Website/Website_controller/customerlogin"><i class="fa fa-user"></i> Login</a>
