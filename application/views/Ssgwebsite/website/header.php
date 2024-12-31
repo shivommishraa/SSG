@@ -52,13 +52,24 @@
                     <li><a href="#">English</a></li>
                 </ul>
             </div>
-            <div class="header__top__right__auth">
+            
                 <?php if(!empty($loggedinCusomter[0]->id)){ ?>
                     <a href="#"></i> Account</a>
+                    <div class="header__top__right__language">
+                        <img src="<?php echo base_url(); ?>ssgassests/img/language.png" alt="">
+                        <div>English</div>
+                        <span class="arrow_carrot-down"></span>
+                        <ul>
+                            <li><a href="#">Hindi</a></li>
+                            <li><a href="#">English</a></li>
+                        </ul>
+                    </div>
                 <?php }else{ ?>
-                    <a href="<?php echo base_url(); ?>Website/Website_controller/customerlogin"><i class="fa fa-user"></i> Login</a>
+                    <div class="header__top__right__auth">
+                        <a href="<?php echo base_url(); ?>Website/Website_controller/customerlogin"><i class="fa fa-user"></i> Login</a>
+                    </div>
                 <?php } ?>
-            </div>
+           
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
@@ -157,13 +168,23 @@
                                     <li><a href="#">English</a></li>
                                 </ul>
                             </div>
-                            <div class="header__top__right__auth">
                                 <?php if(!empty($loggedinCusomter[0]->id)){ ?>
+                                    <div class="header__top__right__language">
+                                        <img src="<?php echo base_url(); ?>ssgassests/img/language.png" alt="">
+                                        <div>English</div>
+                                        <span class="arrow_carrot-down"></span>
+                                        <ul>
+                                            <li><a href="#">Hindi</a></li>
+                                            <li><a href="#">English</a></li>
+                                        </ul>
+                                    </div>
                                     <a href="#"><i class="fa fa-user"></i> Account</a>
                                 <?php }else{ ?>
-                                    <a href="<?php echo base_url(); ?>Website/Website_controller/customerlogin"><i class="fa fa-user"></i> Login</a>
+                                    <div class="header__top__right__auth">
+                                        <a href="<?php echo base_url(); ?>Website/Website_controller/customerlogin"><i class="fa fa-user"></i> Login</a>
+                                    </div>
                                 <?php } ?>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
