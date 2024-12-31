@@ -70,7 +70,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8">
-                    <form id="register-form" action="<?php echo base_url(); ?>Website/Website_controller/registercustomer" method="POST">
+                    <form id="register-form" action="<?php echo base_url(); ?>Website/Website_controller/registercustomer" method="POST" onsubmit="return validatePasswords()">
                         <div class="form-group mb-3">
                             <label for="username" class="form-label">Name</label>
                             <input type="text" id="username" name="name" class="form-control" placeholder="Enter your username" required>
@@ -81,11 +81,11 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" id="password" class="form-control" placeholder="Create a password" required>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Create a password" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="password" class="form-label">Confirm Password</label>
-                            <input type="password" id="password" name="password" class="form-control" placeholder="Create a password" required>
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmpassword" class="form-control" placeholder="Confirm Password" required>
                         </div>
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary btn-block">Register</button>
@@ -96,6 +96,9 @@
         </div>
     </div>
 </div>
+
+
+
 <!-- Register Form End -->
 
 <script>
@@ -111,6 +114,17 @@
         document.getElementById("registerForm").style.display = "block";
         document.getElementById("registerTab").classList.add("active");
         document.getElementById("loginTab").classList.remove("active");
+    }
+
+    function validatePasswords() {
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        
+        if (password !== confirmPassword) {
+            alert('Passwords do not match. Please try again.');
+            return false; // Prevent form submission
+        }
+        return true; // Allow form submission
     }
 </script>
 

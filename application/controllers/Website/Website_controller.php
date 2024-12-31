@@ -198,15 +198,22 @@ class Website_controller extends CI_Controller {
     $data['email'] = $this->input->post('email');
     $data['name'] = $this->input->post('name');
     $data['password'] = $this->input->post('password'); 
-    $customerData=$this->FrontendCustomermodel->getDataByEmail($data['email']);
-    if(empty($customerData)){
-      $this->FrontendCustomermodel->InsertData($data);
-      $this->session->set_flashdata('success', 'Customer Added Successfully');
-      redirect(base_url()); 
+    $data['confirmpassword'] = $this->input->post('confirmpassword'); 
+    if((!empty($data['password'])) && (!empty($data['confirmpassword'])) && (!empty($data['email'])) && ($data['password'] == $data['confirmpassword'])){
+      $customerData=$this->FrontendCustomermodel->getDataByEmail($data['email']);
+      if(empty($customerData)){
+        $this->FrontendCustomermodel->InsertData($data);
+        $this->session->set_flashdata('success', 'Customer Added Successfully');
+        redirect(base_url()); 
+      }else{
+        $this->session->set_flashdata('error', 'Email already exists. Please try with another email.');
+        $this->customerlogin();
+      }
     }else{
-      $this->session->set_flashdata('success', 'Email already exists. Please try with another email.');
+      $this->session->set_flashdata('error', 'Something went wrong. Please try with another again.');
       $this->customerlogin();
     }
+    
   }
 
   public function logincustomer(){
