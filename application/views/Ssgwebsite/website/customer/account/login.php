@@ -115,39 +115,30 @@
         document.getElementById("registerTab").classList.add("active");
         document.getElementById("loginTab").classList.remove("active");
     }
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const passwordField = document.getElementById("password");
+        const confirmPasswordField = document.getElementById("confirmPassword");
+        const registerButton = document.querySelector("#register-form button[type='submit']");
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('register-form');
-        const password = document.getElementById('password');
-        const confirmPassword = document.getElementById('confirmPassword');
-        const submitBtn = document.getElementById('submitBtn');
-
-        // Function to check if passwords match
-        function checkPasswordsMatch() {
-            if (password.value == confirmPassword.value) {
-                 passwordError.style.display = 'none';
-                submitBtn.disabled = false;
-                return true;
+        // Function to check password match and toggle button state
+        function validatePasswords() {
+            const password = passwordField.value;
+            const confirmPassword = confirmPasswordField.value;
+            if (password === confirmPassword && password !== "") {
+                registerButton.disabled = false;
             } else {
-               
-
-                passwordError.style.display = 'block';
-                submitBtn.disabled = true;
-                return false;
+                registerButton.disabled = true;
             }
         }
 
-        // Attach event listeners to password fields
-        password.addEventListener('input', checkPasswordsMatch);
-        confirmPassword.addEventListener('input', checkPasswordsMatch);
+        // Disable the button initially
+        registerButton.disabled = true;
 
-        // Validate on form submission
-        form.addEventListener('submit', function (e) {
-            if (!checkPasswordsMatch()) {
-                e.preventDefault(); // Prevent form submission
-                alert('Please ensure that your passwords match.');
-            }
-        });
+        // Add event listeners to validate on input
+        passwordField.addEventListener("input", validatePasswords);
+        confirmPasswordField.addEventListener("input", validatePasswords);
     });
 </script>
 
