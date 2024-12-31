@@ -45,7 +45,12 @@ class Website_controller extends CI_Controller {
   public function index(){ 
     
     $data['page_active']='index_active';
-
+    $loggedincusomterid= $this->session->userdata('customer_session_id');
+    if(!empty($loggedincusomterid)){
+      $data['loggedinCusomter']=$this->FrontendCustomermodel->getloggedinCustomerData($loggedincusomterid);
+      }else{
+        $data['loggedinCusomter']="";
+      }
     //============================ Start Pager Code ==============================
     $galleryid=($this->input->post('galleryid')) ? $this->input->post('galleryid') :0;
     $galleryid=($this->uri->segment(4)) ?  $this->uri->segment(4) :$galleryid;
@@ -133,7 +138,12 @@ class Website_controller extends CI_Controller {
 
 
   public function contactus(){
-
+    $loggedincusomterid= $this->session->userdata('customer_session_id');
+        if(!empty($loggedincusomterid)){
+            $data['loggedinCusomter']=$this->FrontendCustomermodel->getloggedinCustomerData($loggedincusomterid);
+        }else{
+            $data['loggedinCusomter']="";
+        }
     $data['page_active']='contactus';
     $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
     $this->load->view('Ssgwebsite/website/header',$data);
@@ -143,7 +153,12 @@ class Website_controller extends CI_Controller {
   }
 
    public function ordernow(){
-
+    $loggedincusomterid= $this->session->userdata('customer_session_id');
+        if(!empty($loggedincusomterid)){
+            $data['loggedinCusomter']=$this->FrontendCustomermodel->getloggedinCustomerData($loggedincusomterid);
+        }else{
+            $data['loggedinCusomter']="";
+        }
     $data['page_active']='order';
     $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
     $this->load->view('Ssgwebsite/website/header',$data);
@@ -153,7 +168,12 @@ class Website_controller extends CI_Controller {
   }
 
    public function aboutus(){
-
+    $loggedincusomterid= $this->session->userdata('customer_session_id');
+        if(!empty($loggedincusomterid)){
+            $data['loggedinCusomter']=$this->FrontendCustomermodel->getloggedinCustomerData($loggedincusomterid);
+        }else{
+            $data['loggedinCusomter']="";
+        }
     $data['page_active']='aboutus';
     $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
     $this->load->view('Ssgwebsite/website/header',$data);
@@ -250,6 +270,12 @@ function customerlogout()
 
 
 public function customeraccount(){
+  $loggedincusomterid= $this->session->userdata('customer_session_id');
+        if(!empty($loggedincusomterid)){
+            $data['loggedinCusomter']=$this->FrontendCustomermodel->getloggedinCustomerData($loggedincusomterid);
+        }else{
+            $data['loggedinCusomter']="";
+        }
     $data['page_active']='customeraccount';
     $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
     $this->load->view('Ssgwebsite/website/header',$data);
