@@ -271,6 +271,7 @@ function customerlogout()
 
 public function customeraccount(){
   $loggedincusomterid= $this->session->userdata('customer_session_id');
+  if(!empty($loggedincusomterid)){
         if(!empty($loggedincusomterid)){
             $data['loggedinCusomter']=$this->FrontendCustomermodel->getloggedinCustomerData($loggedincusomterid);
         }else{
@@ -281,6 +282,9 @@ public function customeraccount(){
     $this->load->view('Ssgwebsite/website/header',$data);
     $this->load->view('Ssgwebsite/website/customer/account/customeraccount');
     $this->load->view('Ssgwebsite/website/footer');
+  }else{
+    $this->customerlogin();
+  }
 }
 
 /*=====================================================*/
