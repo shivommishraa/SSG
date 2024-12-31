@@ -225,33 +225,37 @@ class Website_controller extends CI_Controller {
     {
       $this->session->set_flashdata('success', 'Invalid Email Id Or Password'); 
       
-      redirect('logincustomer');
+      $this->customerlogin();
     }
-    
-    
-    
   }  
   else  
   {  
-    
-    
     $this->login();  
   }  
 }  
 
 
-/*function logout()
+function customerlogout()
 {
-
-  $array_items = array('password', 'email_id','session_id');
+  $array_items = array('password', 'customer_email','customer_session_id');
 
   $this->session->unset_userdata($array_items);
   
   $this->session->sess_destroy();
 
-  redirect('login');
-}*/
+  $this->session->set_flashdata('success', 'Account Logout Successfully.');
 
+  $this->customerlogin();
+}
+
+
+public function customeraccount(){
+    $data['page_active']='customeraccount';
+    $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
+    $this->load->view('Ssgwebsite/website/header',$data);
+    $this->load->view('Ssgwebsite/website/customer/account/customeraccount');
+    $this->load->view('Ssgwebsite/website/footer');
+}
 
 /*=====================================================*/
   

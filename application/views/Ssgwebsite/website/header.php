@@ -58,8 +58,8 @@
                         <i class="fa fa-user"></i>
                         <span class="arrow_carrot-down"></span>
                         <ul>
-                            <li><a href="#">Account</a></li>
-                            <li><a href="#">English</a></li>
+                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/customeraccount">Account</a></li>
+                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/customerlogout">Logout</a></li>
                         </ul>
                     </div>
                 <?php }else{ ?>
@@ -171,8 +171,8 @@
                                         <i class="fa fa-user"></i>
                                         <span class="arrow_carrot-down"></span>
                                         <ul>
-                                            <li><a href="#">Account</a></li>
-                                            <li><a href="#">Logout</a></li>
+                                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/customeraccount">Account</a></li>
+                                            <li><a href="<?php echo base_url(); ?>Website/Website_controller/customerlogout">Logout</a></li>
                                         </ul>
                                     </div>
                                     
