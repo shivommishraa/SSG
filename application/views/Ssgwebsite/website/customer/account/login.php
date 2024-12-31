@@ -32,7 +32,7 @@
 </div>
 
 <!-- Login Form Begin -->
-<div id="loginForm" class="tab-content">
+<div id="loginForm" class="tab-content mb-3">
     <div class="login-form mt-1">
         <div class="container">
             <div class="row justify-content-center">
@@ -74,7 +74,7 @@
 <!-- Login Form End -->
 
 <!-- Register Form Begin -->
-<div id="registerForm" class="tab-content" style="display: none;">
+<div id="registerForm" class="tab-content mb-3" style="display: none;">
     <div class="register-form mt-1">
         <div class="container">
             <div class="row justify-content-center">

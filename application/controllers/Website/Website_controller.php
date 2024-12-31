@@ -203,14 +203,14 @@ class Website_controller extends CI_Controller {
       $customerData=$this->FrontendCustomermodel->getDataByEmail($data['email']);
       if(empty($customerData)){
         $this->FrontendCustomermodel->InsertData($data);
-        $this->session->set_flashdata('success', 'Customer Added Successfully');
-        redirect(base_url()); 
+        $this->session->set_flashdata('success', 'Thank you. Your account has been created successfully. Please use your credentials to log in to my portal.');
+        $this->customerlogin();
       }else{
-        $this->session->set_flashdata('error', 'Email already exists. Please try with another email.');
+        $this->session->set_flashdata('error', 'This email is already registered. Please try using a different email.');
         $this->customerlogin();
       }
     }else{
-      $this->session->set_flashdata('error', 'Something went wrong. Please try with another again.');
+      $this->session->set_flashdata('error', 'Something went wrong. Please try again.');
       $this->customerlogin();
     }
     
@@ -221,7 +221,7 @@ class Website_controller extends CI_Controller {
     $data['email'] = $this->input->post('email');
     $data['password'] = $this->input->post('password'); 
     $this->FrontendCustomermodel->checkdata($data);
-    $this->session->set_flashdata('success', 'Customer Added Successfully');
+    $this->session->set_flashdata('success', 'Logged in successfully.');
     redirect(base_url());
   }
 
