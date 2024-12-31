@@ -239,7 +239,7 @@ class Website_controller extends CI_Controller {
     if($result)
     {
       $customerData=$this->session->set_userdata('fcustomer','1'); 
-      $this->customeraccount();
+      redirect(base_url());   
     }
     else
     {
@@ -250,7 +250,7 @@ class Website_controller extends CI_Controller {
   }  
   else  
   {  
-    $this->customerlogin();
+     $this->customerlogin();
   }  
 }  
 
