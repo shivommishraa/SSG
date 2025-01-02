@@ -15,6 +15,18 @@
         </div>
   </section>
   <!-- Page Banner Section End -->
+  <!-- Message Section Begin -->
+  <?php if($this->session->flashdata('success')){ ?>
+      <div class="alert alert-success mt-2">
+        <strong><span class="glyphicon glyphicon-ok"></span>   <?php echo $this->session->flashdata('success'); ?></strong>
+      </div>
+    <?php } ?>
+  <?php if($this->session->flashdata('error')){ ?>
+      <div class="alert alert-danger mt-2">
+        <strong><span class="glyphicon glyphicon-ok"></span>   <?php echo $this->session->flashdata('error'); ?></strong>
+      </div>
+  <?php } ?>
+  <!-- Page Banner Section End -->
   <!-- My Profile Section Begin -->
   <section class="featured spad">
     <div class="container">
