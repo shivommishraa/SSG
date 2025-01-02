@@ -29,8 +29,8 @@
 </div>
 
 <!-- Tabs Section (Mission, Team, Values) -->
-<section class="featured spad">
-    <div class="tabs-container">
+<section class="featured">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-4 text-center">
                 <div class="tab active" id="tab1" onclick="switchTab(1)">Our Mission</div>
