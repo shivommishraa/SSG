@@ -329,12 +329,12 @@ public function customeraccount(){
 
   }
 
-  public function savenewlatteremail(){
+  public function savenewslatteremail(){
     $data = array(
-          'newlatteremail'  =>     $this->input->post('newlatteremail'),
+          'newslatteremail'  =>     $this->input->post('newslatteremail'),
           'system_ip'     =>     $_SERVER['REMOTE_ADDR'],       
       );
-    $result=$this->Nice_webmodel->savenewlatteremail($data);
+    $result=$this->Nice_webmodel->savenewslatteremail($data);
     if($result){
       echo  1;
     }else{

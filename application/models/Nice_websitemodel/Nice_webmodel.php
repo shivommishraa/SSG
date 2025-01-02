@@ -133,7 +133,7 @@ public function get_countStatus($cate_id='')
         }
     }
 
-    public function savenewlatteremail($data) 
+    public function savenewslatteremail($data) 
     {
         if($this->db->insert('tbl_newlatter_email',$data))
         {
