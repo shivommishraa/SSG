@@ -30,7 +30,7 @@
 
 <!-- Tabs Section (Mission, Team, Values) -->
 
-    <div class="container">
+    <div class="container spad">
         <h2 class="section-title">The Heart of SSG MART</h2>
         <div class="row justify-content-center">
             <div class="col-12 col-md-4 text-center">
@@ -56,6 +56,7 @@
             </div>
         </div>
     </div>
+</section>
 <!-- Business Information Section Begin -->
 <section class="business-info-section spad">
     <div class="container">
