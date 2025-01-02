@@ -126,11 +126,11 @@
             <ul>
                 <li>
                     <div>
-                        <button class="audioButton">
-                            <img class="audioIcon" src="<?php echo base_url(); ?>ssgassests/img/play.png" alt="Play Icon">
+                        <!-- <button class="audioButton">
+                            <img class="audioIcon" src="<?php //echo base_url(); ?>ssgassests/img/play.png" alt="Play Icon">
                             <span class="audioText">Play</span>
                         </button>
-                        <audio class="audioPlayer" src="<?php echo base_url(); ?>ssgassests/audiofiles/ssgmart_3_new.mp3"></audio>
+                        <audio class="audioPlayer" src="<?php //echo base_url(); ?>ssgassests/audiofiles/ssgmart_3_new.mp3"></audio> -->
                     </div>
                 </li>
                 <li><div behavior="scroll" direction="left" style="font-weight: bold;color: blue; animation: blinkssg 1s infinite;"><?php echo $topheadingmsg; ?></div></li>
