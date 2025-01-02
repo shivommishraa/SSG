@@ -33,7 +33,7 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="list-group" id="list-tab" role="tablist">
-            <a class="list-group-item list-group-item-action active" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">My Profile</a>
+            <a class="list-group-item list-group-item-action active" id="list-profile-list" data-toggle="list" href="#list-home" role="tab" aria-controls="profile">My Profile</a>
             <!-- <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Address</a>
             <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">My Orders</a>-->
             <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a> 
