@@ -122,6 +122,7 @@ public function get_countStatus($cate_id='')
             return 0;   
         }
     }
+
     public function saveorder($data) 
     {
         if($this->db->insert('tbl_order',$data))
@@ -131,6 +132,12 @@ public function get_countStatus($cate_id='')
         {
             return 0;   
         }
+    }
+
+    public function getNewslatterbyId($newslatteremail)
+    {
+        $this->db->where('newslatteremail', $newslatteremail); 
+        return $this->db->get('tbl_newlatter_email')->result();
     }
 
     public function savenewslatteremail($data) 
