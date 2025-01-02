@@ -330,23 +330,29 @@ public function customeraccount(){
   }
 
   public function savenewslatteremail(){
+    $status=0;
     $email=$this->input->post('newslatteremail');
-    $getData=$this->Nice_webmodel->getNewslatterbyId($email);
-    if(!empty($email) && empty($getData)){
-      $data = array(
-          'newslatteremail'  =>     $email,
-          'system_ip'     =>     $_SERVER['REMOTE_ADDR'],       
-      );
-      $result=$this->Nice_webmodel->savenewslatteremail($data);
-      if($result){
-        echo  1;
-      }else{
-        echo  0;
-      }
-    }else{
-      echo  0;
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('email', 'email', 'required');  
+    if ($this->form_validation->run() == FALSE) {
+       echo 0;
+    } else {
+        $getData=$this->Nice_webmodel->getNewslatterbyId($email);
+        if(!empty($email) && empty($getData)){
+          $data = array(
+              'newslatteremail'  =>     $email,
+              'system_ip'     =>     $_SERVER['REMOTE_ADDR'],       
+          );
+          $result=$this->Nice_webmodel->savenewslatteremail($data);
+          if($result){
+            echo  1;
+          }else{
+            echo  0;
+          }
+        }else{
+          echo  0;
+        }
     }
-    
   }
 
 
