@@ -54,62 +54,35 @@
 </section>
 <!-- Founders Section End -->
 
-<!-- Attractive Section Begin -->
-<section class="attractive-section spad">
+<!-- Tabs Section (Mission, Team, Values) -->
+<section class="featured">
     <div class="container">
-        <h2 class="section-title text-center" id="attractive">Why SSG MART is the Best Choice</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="attractive-box">
-                    <h4>Exclusivity</h4>
-                    <p>We offer unique, high-quality products you won't find anywhere else. Explore our exclusive range of organic and locally sourced items!</p>
-                </div>
+        <h2 class="section-title">The Heart of SSG MART</h2>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4 text-center">
+                <div class="tab active" id="tab1" onclick="switchTab(1)">Our Mission</div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="attractive-box">
-                    <h4>Convenience</h4>
-                    <p>Order from the comfort of your home and enjoy fast, hassle-free delivery services. We prioritize your convenience!</p>
-                </div>
+            <div class="col-12 col-md-4 text-center">
+                <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="attractive-box">
-                    <h4>Customer Satisfaction</h4>
-                    <p>Our focus is always on providing an outstanding shopping experience. From personalized recommendations to after-purchase support, we've got you covered!</p>
-                </div>
+            <div class="col-12 col-md-4 text-center">
+                <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
+            </div>
+        </div>
+        <hr>
+        <div class="tab-content" id="content">
+            <div class="content active" id="content1">
+                <p id="ourmission">At SSG MART, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
+            </div>
+            <div class="content" id="content2">
+                <p id="ourteam">We are a diverse group of professionals with a passion for food and service. Our team includes experienced chefs, suppliers, logistics experts, and customer service specialists who work together to ensure that you have access to the best products and the highest quality shopping experience.</p>
+            </div>
+            <div class="content" id="content3">
+                <p id="ourvalue">Integrity, transparency, and customer-first approach are the values that guide everything we do. We believe in creating a supportive environment for our employees, fostering collaboration, and delivering excellence in all our services.</p>
             </div>
         </div>
     </div>
 </section>
-<!-- Attractive Section End -->
-
-<!-- Tabs Section (Mission, Team, Values) -->
-
-<div class="container">
-    <h2 class="section-title">The Heart of SSG MART</h2>
-    <div class="row justify-content-center mt-2">
-        <div class="col-12 col-md-4 text-center">
-            <div class="tab active" id="tab1" onclick="switchTab(1)">Our Mission</div>
-        </div>
-        <div class="col-12 col-md-4 text-center">
-            <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
-        </div>
-        <div class="col-12 col-md-4 text-center">
-            <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
-        </div>
-    </div>
-    <hr>
-    <div class="tab-content" id="content">
-        <div class="content active" id="content1">
-            <p id="ourmission">At SSG MART, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
-        </div>
-        <div class="content" id="content2">
-            <p id="ourteam">We are a diverse group of professionals with a passion for food and service. Our team includes experienced chefs, suppliers, logistics experts, and customer service specialists who work together to ensure that you have access to the best products and the highest quality shopping experience.</p>
-        </div>
-        <div class="content" id="content3">
-            <p id="ourvalue">Integrity, transparency, and customer-first approach are the values that guide everything we do. We believe in creating a supportive environment for our employees, fostering collaboration, and delivering excellence in all our services.</p>
-        </div>
-    </div>
-</div>
 <!-- Business Information Section Begin -->
 <section class="business-info-section spad">
     <div class="container">
@@ -200,79 +173,75 @@
 </div>
 
 <style>
-/* General styles for the tabs */
-.tab {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #f0f0f0;
-    margin: 5px;
-    border-radius: 5px;
-}
-
-.tab.active {
-    background-color: #2196f3;
-    color: white;
-}
-
-/* Tab content styling */
-.content {
-    display: none;
-    padding: 20px;
+/* General styles for the page */
+.about-us, .business-info-section, .testimonials-section, .why-choose-us-section {
+    padding: 50px 0;
     background-color: #f9f9f9;
 }
-
-.content.active {
-    display: block;
-}
-
-/* Styling for alternating divs */
-.founder-box:nth-child(odd),
-.attractive-box:nth-child(odd),
-.testimonial-item:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.founder-box:nth-child(even),
-.attractive-box:nth-child(even),
-.testimonial-item:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-/* Add margins for consistency */
-.founder-box,
-.attractive-box,
-.testimonial-item {
-    margin-top: 20px;
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
     margin-bottom: 20px;
+    text-align: center;
+}
+.info-box, .feature-item, .testimonial-item {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
 }
 
-/* Attractive box */
-.attractive-box {
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+/* Add border on hover for info-box, feature-item, and testimonial-item */
+.info-box:hover, .feature-item:hover, .testimonial-item:hover {
+    border: 2px solid #7fad39;
 }
 
-.attractive-box:hover {
-    background-color: #e3f2fd;
+/* Specific styling for the feature items */
+.feature-item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.tabs-container {
+    margin: 50px 0;
+}
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.tab {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+.tab:hover, .tab.active {
+    background-color: #7fad39;
+    color: #fff;
+}
+.tab-content .content {
+    display: none;
+    text-align: center;
+}
+.tab-content .content.active {
+    display: block;
 }
 </style>
 
 <script>
-function switchTab(tabIndex) {
-    // Hide all content
-    const contents = document.querySelectorAll('.content');
-    contents.forEach(content => content.classList.remove('active'));
-
-    // Remove active class from all tabs
+function switchTab(tabNumber) {
     const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => tab.classList.remove('active'));
-
-    // Show the selected tab content
-    document.getElementById('content' + tabIndex).classList.add('active');
-    
-    // Add active class to the clicked tab
-    document.getElementById('tab' + tabIndex).classList.add('active');
+    const contents = document.querySelectorAll('.tab-content .content');
+    tabs.forEach((tab, index) => {
+        tab.classList.toggle('active', index + 1 === tabNumber);
+        contents[index].classList.toggle('active', index + 1 === tabNumber);
+    });
 }
+document.addEventListener('DOMContentLoaded', () => switchTab(1));
 </script>

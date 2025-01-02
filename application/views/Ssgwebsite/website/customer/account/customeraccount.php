@@ -1,280 +1,386 @@
-<!-- Breadcrumb Section Begin -->
-<section class="breadcrumb-section set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/breadcrumb.jpg">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <div class="breadcrumb__text">
-                    <h2>About Us</h2>
-                    <div class="breadcrumb__option">
-                        <a href="<?php echo base_url(); ?>">Home</a>
-                        <span>About Us</span>
+    <!-- Page Banner Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/breadcrumb.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>My Profile</h2>
+                        <div class="breadcrumb__option">
+                            <a href="<?php echo base_url(); ?>">Home</a>
+                            <span>My Profile</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Breadcrumb Section End -->
-
-<!-- About Us Main Content Section -->
-<div class="about-us spad">
+  </section>
+  <!-- Page Banner Section End -->
+  <!-- Message Section Begin -->
+  <?php if($this->session->flashdata('success')){ ?>
+      <div class="alert alert-success mt-2">
+        <strong><span class="glyphicon glyphicon-ok"></span>   <?php echo $this->session->flashdata('success'); ?></strong>
+      </div>
+    <?php } ?>
+  <?php if($this->session->flashdata('error')){ ?>
+      <div class="alert alert-danger mt-2">
+        <strong><span class="glyphicon glyphicon-ok"></span>   <?php echo $this->session->flashdata('error'); ?></strong>
+      </div>
+  <?php } ?>
+  <!-- Page Banner Section End -->
+  <!-- My Profile Section Begin -->
+  <section class="featured spad">
     <div class="container">
-        <div class="row" id="ssgmessage">
-            <div class="col-12 text-center">
-                <h2 class="section-title">Welcome to SSG MART</h2>
-                <p class="section-description">SSG MART is dedicated to providing the best quality grocery and everyday essentials at affordable prices. With a wide range of products and exceptional customer service, we aim to be your trusted partner in shopping.</p>
-            </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="list-profile-list" data-toggle="list" href="#list-home" role="tab" aria-controls="profile">My Profile</a>
+            <!-- <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Address</a>
+            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">My Orders</a>-->
+            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a> 
+          </div>
         </div>
+        <div class="col-lg-8">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+              <!-- ================Home===================== -->
+              <section style="background-color: #eee;">
+                <div class="container py-5">
+                  <!-- <div class="row">
+                    <div class="col">
+                      <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
+                        <ol class="breadcrumb mb-0">
+                          <li class="breadcrumb-item"><a href="#">Home</a></li>
+                          <li class="breadcrumb-item"><a href="#">User</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                        </ol>
+                      </nav>
+                    </div>
+                  </div> -->
+
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="card mb-4">
+                        <div class="card-body text-center">
+                          <?php if(!empty($loggedinCusomter[0]->customerimage)){ ?>
+                            <img src="<?php echo base_url(); ?>ssgassests/img/customerimage/<?php echo $loggedinCusomter[0]->customerimage; ?>" alt="avatar"
+                            class="rounded-circle img-fluid" style="width: 150px;">
+                          <?php }else{ ?>
+                          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                            class="rounded-circle img-fluid" style="width: 150px;">
+                          <?php } ?>
+                          <h5 class="my-3"><?php echo $loggedinCusomter[0]->name; ?></h5>
+                          <!-- <p class="text-muted mb-1">Full Stack Developer</p> -->
+                          <!-- <p class="text-muted mb-4">Bay Area, San Francisco, CA</p> -->
+                          <!-- <div class="d-flex justify-content-center mb-2">
+                            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary">Follow</button>
+                            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary ms-1">Message</button>
+                          </div> -->
+                        </div>
+                      </div>
+                     <!--  <div class="card mb-4 mb-lg-0">
+                        <div class="card-body p-0">
+                          <ul class="list-group list-group-flush rounded-3">
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                              <i class="fas fa-globe fa-lg text-warning"></i>
+                              <p class="mb-0">https://mdbootstrap.com</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                              <i class="fab fa-github fa-lg text-body"></i>
+                              <p class="mb-0">mdbootstrap</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                              <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
+                              <p class="mb-0">@mdbootstrap</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                              <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                              <p class="mb-0">mdbootstrap</p>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                              <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+                              <p class="mb-0">mdbootstrap</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div> -->
+                    </div>
+                    <div class="col-lg-8">
+                      <div class="card mb-4">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <p class="mb-0">Full Name</p>
+                            </div>
+                            <div class="col-sm-9">
+                              <p class="text-muted mb-0"><?php echo $loggedinCusomter[0]->name; ?></p>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <p class="mb-0">Email</p>
+                            </div>
+                            <div class="col-sm-9">
+                              <p class="text-muted mb-0"><?php echo $loggedinCusomter[0]->email; ?></p>
+                            </div>
+                          </div>
+                          <hr>
+                          <!-- <div class="row">
+                            <div class="col-sm-3">
+                              <p class="mb-0">Phone</p>
+                            </div>
+                            <div class="col-sm-9">
+                              <p class="text-muted mb-0">34534534</p>
+                            </div>
+                          </div>
+                          <hr> -->
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <p class="mb-0">Mobile</p>
+                            </div>
+                            <div class="col-sm-9">
+                              <p class="text-muted mb-0"><?php echo $loggedinCusomter[0]->mobile; ?></p>
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <p class="mb-0">User Type</p>
+                            </div>
+                            <div class="col-sm-9">
+                              <p class="text-muted mb-0">General</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="row">
+                        <div class="col-md-6">
+                          <div class="card mb-4 mb-md-0">
+                            <div class="card-body">
+                              <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
+                              </p>
+                              <p class="mb-1" style="font-size: .77rem;">Web Design</p>
+                              <div class="progress rounded" style="height: 5px;">
+                                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                              <div class="progress rounded" style="height: 5px;">
+                                <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                              <div class="progress rounded" style="height: 5px;">
+                                <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                              <div class="progress rounded" style="height: 5px;">
+                                <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
+                              <div class="progress rounded mb-2" style="height: 5px;">
+                                <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="card mb-4 mb-md-0">
+                            <div class="card-body">
+                              <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
+                              </p>
+                              <p class="mb-1" style="font-size: .77rem;">Web Design</p>
+                              <div class="progress rounded" style="height: 5px;">
+                                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
+                              <div class="progress rounded" style="height: 5px;">
+                                <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
+                              <div class="progress rounded" style="height: 5px;">
+                                <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
+                              <div class="progress rounded" style="height: 5px;">
+                                <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
+                              <div class="progress rounded mb-2" style="height: 5px;">
+                                <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                                  aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- =================Home==================== -->
+            </div>
+            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+              ..2.
+            </div>
+            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+              ..3.
+            </div>
+            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+               <!-- ================Home===================== -->
+              <section style="background-color: #eee;">
+                <div class="container py-5">
+                  <!-- <div class="row">
+                    <div class="col">
+                      <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
+                        <ol class="breadcrumb mb-0">
+                          <li class="breadcrumb-item"><a href="#">Home</a></li>
+                          <li class="breadcrumb-item"><a href="#">User</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                        </ol>
+                      </nav>
+                    </div>
+                  </div> -->
+
+                  <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <form action="<?php echo base_url(); ?>Website/Website_controller/customer_update" method="POST" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Full Name</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="name" value="<?php echo isset($loggedinCusomter[0]->name) ? $loggedinCusomter[0]->name : ''; ?>" required>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Mobile</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="mobile" value="<?php echo isset($loggedinCusomter[0]->mobile) ? $loggedinCusomter[0]->mobile : ''; ?>" required>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Profile Image</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="file" class="form-control" name="customerimage">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Address</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="address" rows="4" required><?php echo isset($loggedinCusomter[0]->address) ? $loggedinCusomter[0]->address : ''; ?></textarea>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Pincode</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" name="pincode" value="<?php echo isset($loggedinCusomter[0]->pincode) ? $loggedinCusomter[0]->pincode : ''; ?>" required>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Country</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="country" value="<?php echo isset($loggedinCusomter[0]->country) ? $loggedinCusomter[0]->country : ''; ?>" required>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">State</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="state" value="<?php echo isset($loggedinCusomter[0]->state) ? $loggedinCusomter[0]->state : ''; ?>" required>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">District</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="district" value="<?php echo isset($loggedinCusomter[0]->district) ? $loggedinCusomter[0]->district : ''; ?>" required>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-9 offset-sm-3">
+                                            <button type="submit" class="btn" style="background-color:#7fad39; color:white;">Update</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+              </section>
+              <!-- =================Home==================== -->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-
-<!-- Founders Section Begin -->
-<section class="founders-section spad">
-    <div class="container">
-        <h2 class="section-title text-center" id="founders">Meet Our Founders</h2>
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="founder-box">
-                    <img src="path/to/founder1.jpg" alt="Founder 1" class="founder-img">
-                    <h4>John Doe</h4>
-                    <p>Co-Founder & CEO</p>
-                    <p>With a vision for sustainable business practices, John founded SSG MART to offer quality products while supporting local vendors and promoting ethical practices.</p>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="founder-box">
-                    <img src="path/to/founder2.jpg" alt="Founder 2" class="founder-img">
-                    <h4>Jane Smith</h4>
-                    <p>Co-Founder & CFO</p>
-                    <p>Jane's expertise in finance and operations has been instrumental in shaping SSG MART's business strategy and growth. Her focus on efficiency ensures smooth operations.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Founders Section End -->
-
-<!-- Attractive Section Begin -->
-<section class="attractive-section spad">
-    <div class="container">
-        <h2 class="section-title text-center" id="attractive">Why SSG MART is the Best Choice</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="attractive-box">
-                    <h4>Exclusivity</h4>
-                    <p>We offer unique, high-quality products you won't find anywhere else. Explore our exclusive range of organic and locally sourced items!</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="attractive-box">
-                    <h4>Convenience</h4>
-                    <p>Order from the comfort of your home and enjoy fast, hassle-free delivery services. We prioritize your convenience!</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="attractive-box">
-                    <h4>Customer Satisfaction</h4>
-                    <p>Our focus is always on providing an outstanding shopping experience. From personalized recommendations to after-purchase support, we've got you covered!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Attractive Section End -->
-
-<!-- Tabs Section (Mission, Team, Values) -->
-
-<div class="container">
-    <h2 class="section-title">The Heart of SSG MART</h2>
-    <div class="row justify-content-center mt-2">
-        <div class="col-12 col-md-4 text-center">
-            <div class="tab active" id="tab1" onclick="switchTab(1)">Our Mission</div>
-        </div>
-        <div class="col-12 col-md-4 text-center">
-            <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
-        </div>
-        <div class="col-12 col-md-4 text-center">
-            <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
-        </div>
-    </div>
-    <hr>
-    <div class="tab-content" id="content">
-        <div class="content active" id="content1">
-            <p id="ourmission">At SSG MART, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
-        </div>
-        <div class="content" id="content2">
-            <p id="ourteam">We are a diverse group of professionals with a passion for food and service. Our team includes experienced chefs, suppliers, logistics experts, and customer service specialists who work together to ensure that you have access to the best products and the highest quality shopping experience.</p>
-        </div>
-        <div class="content" id="content3">
-            <p id="ourvalue">Integrity, transparency, and customer-first approach are the values that guide everything we do. We believe in creating a supportive environment for our employees, fostering collaboration, and delivering excellence in all our services.</p>
-        </div>
-    </div>
-</div>
-<!-- Business Information Section Begin -->
-<section class="business-info-section spad">
-    <div class="container">
-        <h2 class="section-title text-center" id="ssgbusinessinfo">Our Business Information</h2>
-        <div class="row">
-            <div class="col-md-3 col-sm-6 mb-4">
-                <div class="info-box">
-                    <h5>Nature of Business</h5>
-                    <p>Retailer</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-                <div class="info-box">
-                    <h5>GSTIN</h5>
-                    <p>09GKUPM8516D1ZJ</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-                <div class="info-box">
-                    <h5>Food License</h5>
-                    <p>Licensed and Approved</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-                <div class="info-box">
-                    <h5>Udyam Registration</h5>
-                    <p>Registered Business</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Business Information Section End -->
-
-<!-- Why Choose Us Section -->
-<section class="why-choose-us-section spad">
-    <div class="container">
-        <h2 class="section-title text-center" id="whychooseus">Why Choose Us?</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="feature-item">
-                    <h4>High-Quality Products</h4>
-                    <p>We ensure that every product meets the highest quality standards for freshness, nutrition, and taste.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="feature-item">
-                    <h4>Affordable Prices</h4>
-                    <p>We offer competitive prices on all products to make shopping easier for everyone.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="feature-item">
-                    <h4>Exceptional Service</h4>
-                    <p>Our dedicated team works tirelessly to provide you with the best shopping experience.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Why Choose Us Section End -->
-
-<!-- Testimonials Section -->
-<div class="testimonials-section spad">
-    <div class="container">
-        <h2 class="section-title text-center" id="ourcustomerfeedback">What Our Customers Say</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="testimonial-item">
-                    <p>"SSG MART always delivers the freshest products. Their customer service is top-notch!"</p>
-                    <h5>- Akshat</h5>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="testimonial-item">
-                    <p>"I love the variety of organic products at SSG. I can trust them for all my grocery needs."</p>
-                    <h5>- Krishna</h5>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="testimonial-item">
-                    <p>"Fast delivery, great prices, and excellent quality. Highly recommend SSG MART!"</p>
-                    <h5>- Mohit</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-/* General styles for the tabs */
-.tab {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #7fad39; /* Green color */
-    color: white;
-    margin: 5px;
-    border-radius: 5px;
-}
-
-.tab.active {
-    background-color: #6f8b2d; /* Darker green */
-}
-
-/* Tab content styling */
-.content {
-    display: none;
-    padding: 20px;
-    background-color: #f9f9f9;
-}
-
-.content.active {
-    display: block;
-}
-
-/* Styling for alternating divs */
-.founder-box:nth-child(odd),
-.attractive-box:nth-child(odd),
-.testimonial-item:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-.founder-box:nth-child(even),
-.attractive-box:nth-child(even),
-.testimonial-item:nth-child(even) {
-    background-color: #f1f1f1;
-}
-
-/* Add margins for consistency */
-.founder-box,
-.attractive-box,
-.testimonial-item {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-/* Attractive box with card-like style */
-.attractive-box {
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #ddd;
-}
-
-.attractive-box:hover {
-    border-color: #7fad39; /* Green border on hover */
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-}
-</style>
+  </section>
+  <!-- My Profile Section End -->
+  <script>
+    $(function () {
+        $('#myList a:last-child').tab('show')
+    })
+  </script>
 
 <script>
-function switchTab(tabIndex) {
-    // Hide all content
-    const contents = document.querySelectorAll('.content');
-    contents.forEach(content => content.classList.remove('active'));
+  // Wait for the DOM to fully load
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get all the tab links
+    const tabLinks = document.querySelectorAll('.list-group-item');
 
-    // Remove active class from all tabs
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => tab.classList.remove('active'));
+    // Set the default background and border color for the active tab
+    tabLinks.forEach(function (tab) {
+      if (tab.classList.contains('active')) {
+        tab.style.backgroundColor = '#7fad39'; // Set the default active tab color
+        tab.style.border = '2px solid #7fad39'; // Set the border color for the active tab
+      }
+    });
 
-    // Show the selected tab content
-    document.getElementById('content' + tabIndex).classList.add('active');
-    
-    // Add active class to the clicked tab
-    document.getElementById('tab' + tabIndex).classList.add('active');
-}
+    // Loop through each tab and add event listener
+    tabLinks.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        // Remove background color and border from all tabs
+        tabLinks.forEach(function (link) {
+          link.style.backgroundColor = ''; // Reset all background colors
+          link.style.border = ''; // Reset the border for all tabs
+        });
+
+        // Set background color and border color to #7fad39 for the clicked tab
+        tab.style.backgroundColor = '#7fad39';
+        tab.style.border = '2px solid #7fad39'; // Apply the border to the clicked tab
+      });
+    });
+  });
 </script>
+
