@@ -124,7 +124,15 @@
         ?>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> ssgmart9@gmail.com</li>
+                <li>
+                    <div>
+                        <button id="audioButton">
+                        <img id="audioIcon" src="<?php echo base_url(); ?>ssgassests/img/play.png" alt="Play Icon">
+                        <span id="audioText">Play</span>
+                        </button>
+                        <audio id="audioPlayer" src="<?php echo base_url(); ?>ssgassests/audiofiles/ssgmart_3_new.mp3"></audio>
+                    </div>
+                </li>
                 <li><div behavior="scroll" direction="left" style="font-weight: bold;color: blue; animation: blinkssg 1s infinite;"><?php echo $topheadingmsg; ?></div></li>
             </ul>
         </div>
@@ -280,16 +288,12 @@
     </script>
     <style>
         #audioButton {
-            padding: 10px 20px;
-            font-size: 16px;
+            font-size: 14px;
             cursor: pointer;
-            background-color: #4CAF50;
+            background-color: #7fad39;
             color: white;
             border: none;
             border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         #audioButton img {
