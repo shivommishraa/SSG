@@ -142,7 +142,10 @@
                                 <!-- <li><i class="fa fa-envelope"></i> ssgmart9@gmail.com</li> -->
                                 <li>
                                     <div>
-                                        <button id="audioButton">Play</button>
+                                        <button id="audioButton">
+                                            <img id="audioIcon" src="<?php echo base_url(); ?>ssgassests/img/play.png" alt="Play Icon">
+                                            <span id="audioText">Play</span>
+                                        </button>
                                         <audio id="audioPlayer" src="<?php echo base_url(); ?>ssgassests/audiofiles/ssgmart_3_new.mp3"></audio>
                                     </div>
                                 </li>
@@ -252,18 +255,27 @@
 <script>
         const audioPlayer = document.getElementById('audioPlayer');
         const audioButton = document.getElementById('audioButton');
+        const audioIcon = document.getElementById('audioIcon');
+        const audioText = document.getElementById('audioText');
 
         // Handle button click
         audioButton.addEventListener('click', () => {
             if (audioPlayer.paused) {
                 audioPlayer.play();
-                audioButton.textContent = 'Playing...';
+                audioIcon.src = '<?php echo base_url(); ?>ssgassests/img/mute.png'; // Change to pause icon
+                audioText.textContent = 'Pause';
+            } else {
+                audioPlayer.pause();
+                audioPlayer.currentTime = 0; // Reset to start
+                audioIcon.src = '<?php echo base_url(); ?>ssgassests/img/play.png'; // Change to play icon
+                audioText.textContent = 'Play';
             }
         });
 
-        // Reset button text when audio ends
+        // Reset button text and icon when audio ends
         audioPlayer.addEventListener('ended', () => {
-            audioButton.textContent = 'Play';
+            audioIcon.src = 'play-icon.png'; // Change back to play icon
+            audioText.textContent = 'Play';
         });
     </script>
     <style>
@@ -275,5 +287,13 @@
             color: white;
             border: none;
             border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #audioButton img {
+            width: 20px;
+            margin-right: 10px;
         }
     </style>
