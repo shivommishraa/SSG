@@ -33,10 +33,10 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="list-group" id="list-tab" role="tablist">
-            <a class="list-group-item list-group-item-action active" id="list-profile-list" data-toggle="list" href="#list-home" role="tab" aria-controls="profile">My Profile</a>
-            <!-- <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Address</a>
-            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">My Orders</a>-->
-            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a> 
+            <a class="list-group-item list-group-item-action active bg-success" id="list-profile-list" data-toggle="list" href="#list-home" role="tab" aria-controls="profile">My Profile</a>
+            <!-- <a class="list-group-item list-group-item-action bg-success" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Address</a>
+            <a class="list-group-item list-group-item-action bg-success" id="list-messages-list" data-toggle="list" href="#list-messages bg-success" role="tab" aria-controls="messages">My Orders</a>-->
+            <a class="list-group-item list-group-item-action bg-success" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a> 
           </div>
         </div>
         <div class="col-lg-8">
@@ -328,7 +328,7 @@
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-9 offset-sm-3">
-                                            <button type="submit" class="btn btn-primary">Update</button>
+                                            <button type="submit" class="btn btn-success">Update</button>
                                         </div>
                                     </div>
                                 </form>
