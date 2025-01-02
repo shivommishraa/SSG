@@ -124,15 +124,7 @@
         ?>
         <div class="humberger__menu__contact">
             <ul>
-                <li>
-                    <div>
-                        <!-- <button class="audioButton">
-                            <img class="audioIcon" src="<?php //echo base_url(); ?>ssgassests/img/play.png" alt="Play Icon">
-                            <span class="audioText">Play</span>
-                        </button>
-                        <audio class="audioPlayer" src="<?php //echo base_url(); ?>ssgassests/audiofiles/ssgmart_3_new.mp3"></audio> -->
-                    </div>
-                </li>
+                <li><i class="fa fa-envelope"></i> ssgmart9@gmail.com</li>
                 <li><div behavior="scroll" direction="left" style="font-weight: bold;color: blue; animation: blinkssg 1s infinite;"><?php echo $topheadingmsg; ?></div></li>
             </ul>
         </div>
@@ -150,11 +142,11 @@
                                 <!-- <li><i class="fa fa-envelope"></i> ssgmart9@gmail.com</li> -->
                                 <li>
                                     <div>
-                                       <button class="audioButton">
-                                            <img class="audioIcon" src="<?php echo base_url(); ?>ssgassests/img/play.png" alt="Play Icon">
-                                            <span class="audioText">Play</span>
+                                        <button id="audioButton">
+                                            <img id="audioIcon" src="<?php echo base_url(); ?>ssgassests/img/play.png" alt="Play Icon">
+                                            <span id="audioText">Play</span>
                                         </button>
-                                        <audio class="audioPlayer" src="<?php echo base_url(); ?>ssgassests/audiofiles/ssgmart_3_new.mp3"></audio>
+                                        <audio id="audioPlayer" src="<?php echo base_url(); ?>ssgassests/audiofiles/ssgmart_3_new.mp3"></audio>
                                     </div>
                                 </li>
                                 <li>
@@ -261,21 +253,21 @@
   }
 </style>
 <script>
-         const audioPlayer = document.querySelector('.audioPlayer');
-        const audioButton = document.querySelector('.audioButton');
-        const audioIcon = document.querySelector('.audioIcon');
-        const audioText = document.querySelector('.audioText');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const audioButton = document.getElementById('audioButton');
+        const audioIcon = document.getElementById('audioIcon');
+        const audioText = document.getElementById('audioText');
 
         // Handle button click
         audioButton.addEventListener('click', () => {
             if (audioPlayer.paused) {
                 audioPlayer.play();
-                audioIcon.src = 'pause-icon.png'; // Change to pause icon
+                audioIcon.src = '<?php echo base_url(); ?>ssgassests/img/mute.png'; // Change to pause icon
                 audioText.textContent = 'Pause';
             } else {
                 audioPlayer.pause();
                 audioPlayer.currentTime = 0; // Reset to start
-                audioIcon.src = 'play-icon.png'; // Change to play icon
+                audioIcon.src = '<?php echo base_url(); ?>ssgassests/img/play.png'; // Change to play icon
                 audioText.textContent = 'Play';
             }
         });
@@ -287,20 +279,16 @@
         });
     </script>
     <style>
-       .audioButton {
-            padding: 10px 20px;
-            font-size: 16px;
+        #audioButton {
+            font-size: 14px;
             cursor: pointer;
-            background-color: #4CAF50;
+            background-color: #7fad39;
             color: white;
             border: none;
             border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        .audioButton img {
+        #audioButton img {
             width: 20px;
             margin-right: 10px;
         }
