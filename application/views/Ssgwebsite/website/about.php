@@ -163,7 +163,15 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    transition: border-color 0.3s ease;
 }
+
+/* Add border on hover for info-box, feature-item, and testimonial-item */
+.info-box:hover, .feature-item:hover, .testimonial-item:hover {
+    border: 2px solid #7fad39;
+}
+
+/* Specific styling for the feature items */
 .feature-item h4 {
     font-size: 20px;
     margin-bottom: 10px;
