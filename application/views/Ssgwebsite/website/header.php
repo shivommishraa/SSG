@@ -124,7 +124,13 @@
         ?>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> ssgmart9@gmail.com</li>
+                <li>
+                    <button id="hmgAudioButton">
+                    <img id="hmgAudioIcon" src="<?php echo base_url(); ?>ssgassests/img/play.png" alt="Play Icon">
+                    <span id="hmgAudioText">Play</span>
+                </button>
+                <audio id="hmgAudioPlayer" src="<?php echo base_url(); ?>ssgassests/audiofiles/ssgmart_3_new.mp3"></audio>
+                </li>
                 <li><div behavior="scroll" direction="left" style="font-weight: bold;color: blue; animation: blinkssg 1s infinite;"><?php echo $topheadingmsg; ?></div></li>
             </ul>
         </div>
@@ -277,6 +283,33 @@
             audioIcon.src = '<?php echo base_url(); ?>ssgassests/img/play.png'; // Change back to play icon
             audioText.textContent = 'Play';
         });
+
+
+
+        const hmgaudioPlayer = document.getElementById('hmgAudioPlayer');
+        const hmgaudioButton = document.getElementById('hmgAudioButton');
+        const hmgaudioIcon = document.getElementById('hmgAudioIcon');
+        const hmgaudioText = document.getElementById('hmgAudioText');
+
+        // Handle button click
+        hmgaudioButton.addEventListener('click', () => {
+            if (hmgaudioPlayer.paused) {
+                hmgaudioPlayer.play();
+                hmgaudioIcon.src = '<?php echo base_url(); ?>ssgassests/img/mute.png'; // Change to pause icon
+                hmgaudioText.textContent = 'Pause';
+            } else {
+                hmgaudioPlayer.pause();
+                hmgaudioPlayer.currentTime = 0; // Reset to start
+                hmgaudioIcon.src = '<?php echo base_url(); ?>ssgassests/img/play.png'; // Change to play icon
+                hmgaudioText.textContent = 'Play';
+            }
+        });
+
+        // Reset button text and icon when audio ends
+        hmgaudioPlayer.addEventListener('ended', () => {
+            audioIcon.src = '<?php echo base_url(); ?>ssgassests/img/play.png'; // Change back to play icon
+            audioText.textContent = 'Play';
+        });
     </script>
     <style>
         #audioButton {
@@ -289,6 +322,23 @@
         }
 
         #audioButton img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+
+
+        /*======mobile========*/
+        #hmgAudioButton {
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #7fad39;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #hmgAudioButton img {
             width: 20px;
             margin-right: 10px;
         }
