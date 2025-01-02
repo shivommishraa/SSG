@@ -2,7 +2,7 @@
 <section class="breadcrumb-section set-bg" data-setbg="<?php echo base_url(); ?>ssgassests/img/breadcrumb.jpg">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="col-12 text-center">
                 <div class="breadcrumb__text">
                     <h2>About Us</h2>
                     <div class="breadcrumb__option">
@@ -20,7 +20,7 @@
 <div class="about-us spad">
     <div class="container">
         <div class="row" id="ssgmessage">
-            <div class="col-lg-12 text-center">
+            <div class="col-12 text-center">
                 <h2 class="section-title">Welcome to SSG MART</h2>
                 <p class="section-description">SSG MART is dedicated to providing the best quality grocery and everyday essentials at affordable prices. With a wide range of products and exceptional customer service, we aim to be your trusted partner in shopping.</p>
             </div>
@@ -30,14 +30,20 @@
 
 <!-- Tabs Section (Mission, Team, Values) -->
 <div class="tabs-container">
-    <div class="tabs">
-        <div class="tab" id="tab1" onclick="switchTab(1)">Our Mission</div>
-        <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
-        <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-4 text-center">
+            <div class="tab active" id="tab1" onclick="switchTab(1)">Our Mission</div>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+            <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+            <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
+        </div>
     </div>
     <hr>
     <div class="tab-content" id="content">
-        <div class="content" id="content1">
+        <div class="content active" id="content1">
             <p id="ourmission">At SSG MART, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
         </div>
         <div class="content" id="content2">
@@ -54,25 +60,25 @@
     <div class="container">
         <h2 class="section-title text-center" id="ssgbusinessinfo">Our Business Information</h2>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-6 mb-4">
                 <div class="info-box">
                     <h5>Nature of Business</h5>
                     <p>Retailer</p>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-6 mb-4">
                 <div class="info-box">
                     <h5>GSTIN</h5>
                     <p>09GKUPM8516D1ZJ</p>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-6 mb-4">
                 <div class="info-box">
                     <h5>Food License</h5>
                     <p>Licensed and Approved</p>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-6 mb-4">
                 <div class="info-box">
                     <h5>Udyam Registration</h5>
                     <p>Registered Business</p>
@@ -88,19 +94,19 @@
     <div class="container">
         <h2 class="section-title text-center" id="whychooseus">Why Choose Us?</h2>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="feature-item">
                     <h4>High-Quality Products</h4>
                     <p>We ensure that every product meets the highest quality standards for freshness, nutrition, and taste.</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="feature-item">
                     <h4>Affordable Prices</h4>
                     <p>We offer competitive prices on all products to make shopping easier for everyone.</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="feature-item">
                     <h4>Exceptional Service</h4>
                     <p>Our dedicated team works tirelessly to provide you with the best shopping experience.</p>
@@ -116,19 +122,19 @@
     <div class="container">
         <h2 class="section-title text-center" id="ourcustomerfeedback">What Our Customers Say</h2>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="testimonial-item">
                     <p>"SSG MART always delivers the freshest products. Their customer service is top-notch!"</p>
                     <h5>- Akshat</h5>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="testimonial-item">
                     <p>"I love the variety of organic products at SSG. I can trust them for all my grocery needs."</p>
                     <h5>- Krishna</h5>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="testimonial-item">
                     <p>"Fast delivery, great prices, and excellent quality. Highly recommend SSG MART!"</p>
                     <h5>- Mohit</h5>
