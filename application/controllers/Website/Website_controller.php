@@ -351,12 +351,17 @@ public function customeraccount(){
       if ($_FILES['customerimage']['name']) { 
         $data['customerimage'] = $this->doUpload('customerimage');
       }  
-      $edit = $this->FrontendCustomermodel->update($loggedincusomterid,$data);
-      if ($edit) {
-        $this->session->set_flashdata('success', 'Profile Updated Successfully.');
-        redirect('Website/Website_controller/customeraccount');
+      if(!empty($data['name']) && !empty($data['mobile'])){
+        $edit = $this->FrontendCustomermodel->update($loggedincusomterid,$data);
+        if ($edit) {
+          $this->session->set_flashdata('success', 'Profile Updated Successfully.');
+          redirect('Website/Website_controller/customeraccount');
+        }else{
+          $this->session->set_flashdata('error', 'Something went wrong.Please try again.');
+          redirect('Website/Website_controller/customeraccount');
+        }
       }else{
-        $this->session->set_flashdata('error', 'Something went wrong.Please try again.');
+        $this->session->set_flashdata('error', 'Please Fill required Fields.');
         redirect('Website/Website_controller/customeraccount');
       }
     }else{

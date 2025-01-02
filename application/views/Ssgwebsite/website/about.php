@@ -180,8 +180,7 @@
     transition: all 0.3s;
 }
 .tab:hover, .tab.active {
-   /* background-color: #008cba;*/ /*//old*/
-    background-color: #7fad39;
+    background-color: #008cba;
     color: #fff;
 }
 .tab-content .content {
