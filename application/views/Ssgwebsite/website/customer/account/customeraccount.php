@@ -328,7 +328,7 @@
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-9 offset-sm-3">
-                                            <button type="submit" class="btn" style="background-color:#7fad39;">Update</button>
+                                            <button type="submit" class="btn" style="background-color:#7fad39; color:white;">Update</button>
                                         </div>
                                     </div>
                                 </form>
