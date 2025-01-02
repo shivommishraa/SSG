@@ -35,7 +35,7 @@
         <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
         <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
     </div>
-
+    <hr>
     <div class="tab-content" id="content">
         <div class="content" id="content1">
             <p id="ourmission">At SSG MART, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
@@ -180,7 +180,7 @@
     transition: all 0.3s;
 }
 .tab:hover, .tab.active {
-    background-color: #008cba;
+    background-color: #7fad39;
     color: #fff;
 }
 .tab-content .content {
