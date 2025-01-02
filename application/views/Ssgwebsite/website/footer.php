@@ -38,7 +38,7 @@
                         <p>Get E-mail updates about our latest product and special offers.</p>
                         <form action="#">
                             <input type="text" name="newlatteremail" placeholder="Enter your email">
-                            <button type="submit" class="site-btn">Subscribe</button>
+                            <button id="btnnewlattersubmit" type="button" class="site-btn">Subscribe</button>
                             <span id="errormessagenewlatter"></span>
                             <div style="display: none;" class="form-group" id="successmessagenewslatter">
                                 <span style="color: blue;">Subscribed successfully.</span>
@@ -85,7 +85,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" language="javascript" >  
 $(document).ready(function() {
-    $("#btnsubmit").click(function() { //alert('hello');
+    $("#btnnewlattersubmit").click(function() { //alert('hello');
         var name = $('#newlatteremail').val();
         var status = '0';
         if (name == '') {
