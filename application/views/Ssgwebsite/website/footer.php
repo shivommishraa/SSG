@@ -57,7 +57,7 @@
                 <div class="col-lg-12">
                     <div class="footer__copyright">
                         <div class="footer__copyright__text"><p>
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> <a href="<?php echo base_url(); ?>" target="_blank">SSG GROUP</a></p></div>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> SSG Group</p></div>
                        <!--  <div class="footer__copyright__payment"><img src="<?php echo base_url(); ?>ssgassests/img/payment-item.png" alt=""></div> -->
                     </div>
                 </div>
