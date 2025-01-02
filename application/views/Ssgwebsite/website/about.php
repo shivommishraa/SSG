@@ -35,7 +35,6 @@
         <div class="row">
             <div class="col-md-6 mb-4">
                 <div class="founder-box">
-                    <img src="path/to/founder1.jpg" alt="Founder 1" class="founder-img">
                     <h4>Mr. Ganesh Kumar Mishra</h4>
                     <p>Founder & CEO of SSG Group</p>
                     <p>With vision and passion, <b>Mr. Ganesh Kumar Mishra</b> laid the foundation of <b>SSG Group</b>, turning his dreams into reality. His leadership has always been driven by a commitment to excellence, quality, and a deep understanding of customer needs. As the CEO of <b>SSG Group</b>, he continues to inspire everyone with his unwavering dedication to growth and innovation. His journey is a testament to hard work, perseverance, and the belief that success is built on the foundation of trust and integrity. <b>Under his guidance and blessings, everything at SSG Group has been made possible, and the company continues to flourish.</b></p>
@@ -43,17 +42,16 @@
             </div>
             <div class="col-md-6 mb-4">
                 <div class="founder-box">
-                    <img src="path/to/founder2.jpg" alt="Founder 2" class="founder-img">
                     <h4>Mrs. Savitri Mishra</h4>
                     <p>Creative Director & COO of SSG Group</p>
                     <p>A visionary and a leader in her own right, <b>Mrs. Savitri Mishra</b> brings unparalleled creativity and operational excellence to <b>SSG Group</b>. As the Creative Director and COO, she combines artistic brilliance with practical leadership, ensuring that every decision reflects the values of the company. Her innovative approach and strong management skills have been instrumental in shaping <b>SSG Mart</b> and the wider group’s success. Her ability to balance creativity and strategy makes her an invaluable part of the company’s journey towards continued success. <b>With her support and blessings, all achievements have been made possible, paving the way for a bright future.</b></p>
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 <!-- Founders Section End -->
+
 
 <!-- Tabs Section (Mission, Team, Values) -->
 <section class="featured spad">
@@ -233,6 +231,35 @@
 .tab-content .content.active {
     display: block;
 }
+
+
+.founder-box {
+    background-color: #fff;
+    border: 2px solid #ddd; /* Light border color */
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.founder-box:hover {
+    border-color: #7fad39; /* Green border on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.founder-box h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.founder-box p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
 </style>
 
 <script>
