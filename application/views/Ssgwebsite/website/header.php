@@ -274,7 +274,7 @@
 
         // Reset button text and icon when audio ends
         audioPlayer.addEventListener('ended', () => {
-            audioIcon.src = 'play-icon.png'; // Change back to play icon
+            audioIcon.src = '<?php echo base_url(); ?>ssgassests/img/play.png'; // Change back to play icon
             audioText.textContent = 'Play';
         });
     </script>
