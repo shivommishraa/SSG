@@ -314,6 +314,10 @@
             transition: background-color 0.3s;
             background-color: #ffffff00;
             color: #000;
+            font-size: 25px;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
         }
         .w3-button:hover {
             background-color: #ff7f50;
