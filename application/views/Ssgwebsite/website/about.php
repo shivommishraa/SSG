@@ -200,55 +200,79 @@
 </div>
 
 <style>
-/* General styles for the page */
-.about-us, .business-info-section, .testimonials-section, .founders-section, .attractive-section {
-    padding: 50px 0;
+/* General styles for the tabs */
+.tab {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.tab.active {
+    background-color: #2196f3;
+    color: white;
+}
+
+/* Tab content styling */
+.content {
+    display: none;
+    padding: 20px;
     background-color: #f9f9f9;
 }
-.section-title {
-    font-size: 32px;
-    font-weight: bold;
+
+.content.active {
+    display: block;
+}
+
+/* Styling for alternating divs */
+.founder-box:nth-child(odd),
+.attractive-box:nth-child(odd),
+.testimonial-item:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.founder-box:nth-child(even),
+.attractive-box:nth-child(even),
+.testimonial-item:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+/* Add margins for consistency */
+.founder-box,
+.attractive-box,
+.testimonial-item {
+    margin-top: 20px;
     margin-bottom: 20px;
-    text-align: center;
-}
-.info-box, .feature-item, .testimonial-item, .founder-box, .attractive-box {
-    text-align: center;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: border-color 0.3s ease;
 }
 
-/* Add border on hover for info-box, feature-item, and testimonial-item */
-.info-box:hover, .feature-item:hover, .testimonial-item:hover, .founder-box:hover, .attractive-box:hover {
-    border: 2px solid #7fad39;
+/* Attractive box */
+.attractive-box {
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
 
-/* Founder Section Styles */
-.founder-box img {
-    width: 100%;
-    border-radius: 50%;
-    max-width: 150px;
-    margin-bottom: 15px;
-}
-
-/* Attractive Section Styles */
-.attractive-box h4 {
-    font-size: 20px;
-    margin-bottom: 10px;
+.attractive-box:hover {
+    background-color: #e3f2fd;
 }
 </style>
 
 <script>
-function switchTab(tabNumber) {
+function switchTab(tabIndex) {
+    // Hide all content
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => content.classList.remove('active'));
+
+    // Remove active class from all tabs
     const tabs = document.querySelectorAll('.tab');
-    const contents = document.querySelectorAll('.tab-content .content');
-    tabs.forEach((tab, index) => {
-        tab.classList.toggle('active', index + 1 === tabNumber);
-        contents[index].classList.toggle('active', index + 1 === tabNumber);
-    });
+    tabs.forEach(tab => tab.classList.remove('active'));
+
+    // Show the selected tab content
+    document.getElementById('content' + tabIndex).classList.add('active');
+    
+    // Add active class to the clicked tab
+    document.getElementById('tab' + tabIndex).classList.add('active');
 }
-document.addEventListener('DOMContentLoaded', () => switchTab(1));
 </script>
