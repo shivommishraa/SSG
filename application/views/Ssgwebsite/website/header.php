@@ -142,7 +142,7 @@
                                 <!-- <li><i class="fa fa-envelope"></i> ssgmart9@gmail.com</li> -->
                                 <li>
                                     <div>
-                                        <button id="audioButton">Play Audio</button>
+                                        <button id="audioButton">Play</button>
                                         <audio id="audioPlayer" src="<?php echo base_url(); ?>ssgassests/audiofiles/ssgmart_3_new.mp3"></audio>
                                     </div>
                                 </li>
@@ -253,15 +253,17 @@
         const audioPlayer = document.getElementById('audioPlayer');
         const audioButton = document.getElementById('audioButton');
 
+        // Handle button click
         audioButton.addEventListener('click', () => {
             if (audioPlayer.paused) {
                 audioPlayer.play();
-                audioButton.textContent = 'Pause Audio';
-            } else {
-                audioPlayer.pause();
-                audioPlayer.currentTime = 0; // Reset to the start
-                audioButton.textContent = 'Play Audio';
+                audioButton.textContent = 'Playing...';
             }
+        });
+
+        // Reset button text when audio ends
+        audioPlayer.addEventListener('ended', () => {
+            audioButton.textContent = 'Play';
         });
     </script>
     <style>
