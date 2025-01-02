@@ -30,9 +30,9 @@
 
 <!-- Tabs Section (Mission, Team, Values) -->
 
-    <div class="container spad">
+    <div class="container">
         <h2 class="section-title">The Heart of SSG MART</h2>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-2">
             <div class="col-12 col-md-4 text-center">
                 <div class="tab active" id="tab1" onclick="switchTab(1)">Our Mission</div>
             </div>
@@ -148,7 +148,7 @@
 
 <style>
 /* General styles for the page */
-.about-us, .business-info-section, .testimonials-section, .why-choose-us-section {
+.about-us, .business-info-section, .testimonials-section {
     padding: 50px 0;
     background-color: #f9f9f9;
 }
