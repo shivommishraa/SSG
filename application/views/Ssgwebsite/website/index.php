@@ -302,7 +302,7 @@
     <style>
         
         .w3-modal-content {
-            background-color: #282c34;
+            background-color: #ffffff00;
             color: white;
             border-radius: 10px;
         }
@@ -312,6 +312,8 @@
         }
         .w3-button {
             transition: background-color 0.3s;
+            background-color: #ffffff00;
+            color: #000;
         }
         .w3-button:hover {
             background-color: #ff7f50;
@@ -353,13 +355,13 @@
             <div class="w3-container">
                 <img src="ssgassests/infodetailsupload/<?php echo $homepageInfo[0]->modelpopupimage; ?>" alt="Image">
             </div>
-            <footer class="w3-container w3-teal footer-custom" style="background-color: #282c34;">
+            <!-- <footer class="w3-container w3-teal footer-custom" style="background-color: #282c34;">
                 <div style="text-align: center;">
-                    <?php if(($homepageInfo[0]->modelpopupbtnlink) && ($homepageInfo[0]->bannerbtntitle)){ ?>
-                    <a href="<?php echo $homepageInfo[0]->modelpopupbtnlink; ?>" class="custom-button"><?php echo $homepageInfo[0]->bannerbtntitle; ?></a>
-                    <?php } ?>
+                    <?php //if(($homepageInfo[0]->modelpopupbtnlink) && ($homepageInfo[0]->bannerbtntitle)){ ?>
+                    <a href="<?php //echo $homepageInfo[0]->modelpopupbtnlink; ?>" class="custom-button"><?php //echo $homepageInfo[0]->bannerbtntitle; ?></a>
+                    <?php //} ?>
                 </div>
-            </footer>
+            </footer> -->
         </div>
     </div>
 </div> 
