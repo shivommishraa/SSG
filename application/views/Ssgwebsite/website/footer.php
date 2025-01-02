@@ -39,11 +39,11 @@
                         <form action="#">
                             <input type="text" id="newlatteremail" name="newlatteremail" placeholder="Enter your email">
                             <button id="btnnewlattersubmit" type="button" class="site-btn">Subscribe</button>
-                            <span id="errormessagenewlatter"></span>
+                        </form>
+                        <span id="errormessagenewlatter"></span>
                             <div style="display: none;" class="form-group" id="successmessagenewslatter">
                                 <span style="color: blue;">Subscribed successfully.</span>
                             </div>
-                        </form>
                         <div class="footer__widget__social">
                             <!--<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>-->
                             <a target="_blank" href="https://www.instagram.com/ssghypermart/"><i class="fa fa-instagram"></i></a>
@@ -86,9 +86,9 @@
 <script type="text/javascript" language="javascript" >  
 $(document).ready(function() {
     $("#btnnewlattersubmit").click(function() { //alert('hello');
-        var name = $('#newlatteremail').val();
+        var newlatteremail = $('#newlatteremail').val();
         var status = '0';
-        if (name == '') {
+        if (newlatteremail == '') {
             document.getElementById("errormessagenewlatter").innerHTML = "Enter Valid Email.";
             document.getElementById("errormessagenewlatter").style.color = "red";
             document.getElementById("newlatteremail").style.border = "1px solid red";
