@@ -28,35 +28,88 @@
     </div>
 </div>
 
-<!-- Tabs Section (Mission, Team, Values) -->
-
+<!-- Founders Section Begin -->
+<section class="founders-section spad">
     <div class="container">
-        <h2 class="section-title">The Heart of SSG MART</h2>
-        <div class="row justify-content-center mt-2">
-            <div class="col-12 col-md-4 text-center">
-                <div class="tab active" id="tab1" onclick="switchTab(1)">Our Mission</div>
+        <h2 class="section-title text-center" id="founders">Meet Our Founders</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="founder-box">
+                    <img src="path/to/founder1.jpg" alt="Founder 1" class="founder-img">
+                    <h4>John Doe</h4>
+                    <p>Co-Founder & CEO</p>
+                    <p>With a vision for sustainable business practices, John founded SSG MART to offer quality products while supporting local vendors and promoting ethical practices.</p>
+                </div>
             </div>
-            <div class="col-12 col-md-4 text-center">
-                <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
-            </div>
-            <div class="col-12 col-md-4 text-center">
-                <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
-            </div>
-        </div>
-        <hr>
-        <div class="tab-content" id="content">
-            <div class="content active" id="content1">
-                <p id="ourmission">At SSG MART, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
-            </div>
-            <div class="content" id="content2">
-                <p id="ourteam">We are a diverse group of professionals with a passion for food and service. Our team includes experienced chefs, suppliers, logistics experts, and customer service specialists who work together to ensure that you have access to the best products and the highest quality shopping experience.</p>
-            </div>
-            <div class="content" id="content3">
-                <p id="ourvalue">Integrity, transparency, and customer-first approach are the values that guide everything we do. We believe in creating a supportive environment for our employees, fostering collaboration, and delivering excellence in all our services.</p>
+            <div class="col-md-6 mb-4">
+                <div class="founder-box">
+                    <img src="path/to/founder2.jpg" alt="Founder 2" class="founder-img">
+                    <h4>Jane Smith</h4>
+                    <p>Co-Founder & CFO</p>
+                    <p>Jane's expertise in finance and operations has been instrumental in shaping SSG MART's business strategy and growth. Her focus on efficiency ensures smooth operations.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<!-- Founders Section End -->
+
+<!-- Attractive Section Begin -->
+<section class="attractive-section spad">
+    <div class="container">
+        <h2 class="section-title text-center" id="attractive">Why SSG MART is the Best Choice</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="attractive-box">
+                    <h4>Exclusivity</h4>
+                    <p>We offer unique, high-quality products you won't find anywhere else. Explore our exclusive range of organic and locally sourced items!</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="attractive-box">
+                    <h4>Convenience</h4>
+                    <p>Order from the comfort of your home and enjoy fast, hassle-free delivery services. We prioritize your convenience!</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="attractive-box">
+                    <h4>Customer Satisfaction</h4>
+                    <p>Our focus is always on providing an outstanding shopping experience. From personalized recommendations to after-purchase support, we've got you covered!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Attractive Section End -->
+
+<!-- Tabs Section (Mission, Team, Values) -->
+
+<div class="container">
+    <h2 class="section-title">The Heart of SSG MART</h2>
+    <div class="row justify-content-center mt-2">
+        <div class="col-12 col-md-4 text-center">
+            <div class="tab active" id="tab1" onclick="switchTab(1)">Our Mission</div>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+            <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+            <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
+        </div>
+    </div>
+    <hr>
+    <div class="tab-content" id="content">
+        <div class="content active" id="content1">
+            <p id="ourmission">At SSG MART, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
+        </div>
+        <div class="content" id="content2">
+            <p id="ourteam">We are a diverse group of professionals with a passion for food and service. Our team includes experienced chefs, suppliers, logistics experts, and customer service specialists who work together to ensure that you have access to the best products and the highest quality shopping experience.</p>
+        </div>
+        <div class="content" id="content3">
+            <p id="ourvalue">Integrity, transparency, and customer-first approach are the values that guide everything we do. We believe in creating a supportive environment for our employees, fostering collaboration, and delivering excellence in all our services.</p>
+        </div>
+    </div>
+</div>
 <!-- Business Information Section Begin -->
 <section class="business-info-section spad">
     <div class="container">
@@ -148,7 +201,7 @@
 
 <style>
 /* General styles for the page */
-.about-us, .business-info-section, .testimonials-section {
+.about-us, .business-info-section, .testimonials-section, .founders-section, .attractive-section {
     padding: 50px 0;
     background-color: #f9f9f9;
 }
@@ -158,7 +211,7 @@
     margin-bottom: 20px;
     text-align: center;
 }
-.info-box, .feature-item, .testimonial-item {
+.info-box, .feature-item, .testimonial-item, .founder-box, .attractive-box {
     text-align: center;
     padding: 20px;
     background: #fff;
@@ -169,42 +222,22 @@
 }
 
 /* Add border on hover for info-box, feature-item, and testimonial-item */
-.info-box:hover, .feature-item:hover, .testimonial-item:hover {
+.info-box:hover, .feature-item:hover, .testimonial-item:hover, .founder-box:hover, .attractive-box:hover {
     border: 2px solid #7fad39;
 }
 
-/* Specific styling for the feature items */
-.feature-item h4 {
+/* Founder Section Styles */
+.founder-box img {
+    width: 100%;
+    border-radius: 50%;
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+/* Attractive Section Styles */
+.attractive-box h4 {
     font-size: 20px;
     margin-bottom: 10px;
-}
-.tabs-container {
-    margin: 50px 0;
-}
-.tabs {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-.tab {
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    color: #555;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: all 0.3s;
-}
-.tab:hover, .tab.active {
-    background-color: #7fad39;
-    color: #fff;
-}
-.tab-content .content {
-    display: none;
-    text-align: center;
-}
-.tab-content .content.active {
-    display: block;
 }
 </style>
 
