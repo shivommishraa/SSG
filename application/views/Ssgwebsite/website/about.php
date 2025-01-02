@@ -44,7 +44,7 @@
                 <div class="founder-box">
                     <h4>Mrs. Savitri Mishra</h4>
                     <p>Creative Director & COO of SSG Group</p>
-                    <p>A visionary and a leader in her own right, <b>Mrs. Savitri Mishra</b> brings unparalleled creativity and operational excellence to <b>SSG Group</b>. As the Creative Director and COO, she combines artistic brilliance with practical leadership, ensuring that every decision reflects the values of the company. Her innovative approach and strong management skills have been instrumental in shaping <b>SSG Mart</b> and the wider group’s success. Her ability to balance creativity and strategy makes her an invaluable part of the company’s journey towards continued success. <b>With her support and blessings, all achievements have been made possible, paving the way for a bright future.</b></p>
+                    <p>A visionary and a leader in her own right, <b>Mrs. Savitri Mishra</b> brings unparalleled creativity and operational excellence to <b>SSG Group</b>. As the Creative Director and COO, she combines artistic brilliance with practical leadership, ensuring that every decision reflects the values of the company. Her innovative approach and strong management skills have been instrumental in shaping <b>SSG Mart</b> and the wider group’s success. Her creativity and strategic skills make her essential to the company's ongoing success. <b>With her support and blessings, all achievements have been made possible, paving the way for a bright future.</b></p>
                 </div>
             </div>
         </div>
