@@ -352,24 +352,35 @@
         $('#myList a:last-child').tab('show')
     })
   </script>
-  
+
 <script>
   // Wait for the DOM to fully load
   document.addEventListener('DOMContentLoaded', function () {
     // Get all the tab links
     const tabLinks = document.querySelectorAll('.list-group-item');
 
+    // Set the default background and border color for the active tab
+    tabLinks.forEach(function (tab) {
+      if (tab.classList.contains('active')) {
+        tab.style.backgroundColor = '#7fad39'; // Set the default active tab color
+        tab.style.border = '2px solid #7fad39'; // Set the border color for the active tab
+      }
+    });
+
     // Loop through each tab and add event listener
     tabLinks.forEach(function (tab) {
       tab.addEventListener('click', function () {
-        // Remove bg-success from all tabs
+        // Remove background color and border from all tabs
         tabLinks.forEach(function (link) {
-          link.classList.remove('bg-success');
+          link.style.backgroundColor = ''; // Reset all background colors
+          link.style.border = ''; // Reset the border for all tabs
         });
-        
-        // Add bg-success to the clicked tab
-        tab.classList.add('bg-success');
+
+        // Set background color and border color to #7fad39 for the clicked tab
+        tab.style.backgroundColor = '#7fad39';
+        tab.style.border = '2px solid #7fad39'; // Apply the border to the clicked tab
       });
     });
   });
 </script>
+
