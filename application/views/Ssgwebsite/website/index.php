@@ -356,9 +356,11 @@
                 <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
               
             </header>
-            <?php if(($homepageInfo[0]->modelpopupbtnlink) && ($homepageInfo[0]->modelpopupimage)){ ?>
+            <?php
+            $bannerURL=$homepageInfo[0]->modelpopupbtnlink ?? '#';
+             if((!empty($bannerURL)) && ($homepageInfo[0]->modelpopupimage)){ ?>
                 <div class="w3-container">
-                    <a href="<?php echo $homepageInfo[0]->modelpopupbtnlink; ?>"><img src="ssgassests/infodetailsupload/<?php echo $homepageInfo[0]->modelpopupimage; ?>" alt="Image"></a>
+                    <a href="<?php echo $bannerURL; ?>"><img src="ssgassests/infodetailsupload/<?php echo $homepageInfo[0]->modelpopupimage; ?>" alt="Image"></a>
                 </div>
             <?php } ?>
             <!-- <footer class="w3-container w3-teal footer-custom" style="background-color: #282c34;">
