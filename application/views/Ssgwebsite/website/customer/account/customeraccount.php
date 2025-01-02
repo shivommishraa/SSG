@@ -23,8 +23,8 @@
           <div class="list-group" id="list-tab" role="tablist">
             <a class="list-group-item list-group-item-action active" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">My Profile</a>
             <!-- <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Address</a>
-            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">My Orders</a>
-            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a> -->
+            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">My Orders</a>-->
+            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a> 
           </div>
         </div>
         <div class="col-lg-8">
@@ -222,7 +222,112 @@
               ..3.
             </div>
             <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-              ..4.
+               <!-- ================Home===================== -->
+              <section style="background-color: #eee;">
+                <div class="container py-5">
+                  <!-- <div class="row">
+                    <div class="col">
+                      <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
+                        <ol class="breadcrumb mb-0">
+                          <li class="breadcrumb-item"><a href="#">Home</a></li>
+                          <li class="breadcrumb-item"><a href="#">User</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                        </ol>
+                      </nav>
+                    </div>
+                  </div> -->
+
+                  <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <form action="<?php echo base_url(); ?>Website/Website_controller/customer_update" method="POST" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Full Name</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="name" value="<?php echo isset($loggedinCusomter[0]->name) ? $loggedinCusomter[0]->name : ''; ?>" required>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Mobile</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="mobile" value="<?php echo isset($loggedinCusomter[0]->mobile) ? $loggedinCusomter[0]->mobile : ''; ?>" required>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Profile Image</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="file" class="form-control" name="customerimage">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Address</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="address" rows="4" required><?php echo isset($loggedinCusomter[0]->address) ? $loggedinCusomter[0]->address : ''; ?></textarea>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Pincode</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" name="pincode" value="<?php echo isset($loggedinCusomter[0]->pincode) ? $loggedinCusomter[0]->pincode : ''; ?>" required>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Country</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="country" value="<?php echo isset($loggedinCusomter[0]->country) ? $loggedinCusomter[0]->country : ''; ?>" required>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">State</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="state" value="<?php echo isset($loggedinCusomter[0]->state) ? $loggedinCusomter[0]->state : ''; ?>" required>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">District</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="district" value="<?php echo isset($loggedinCusomter[0]->district) ? $loggedinCusomter[0]->district : ''; ?>" required>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-9 offset-sm-3">
+                                            <button type="submit" class="btn btn-primary">Update</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+              </section>
+              <!-- =================Home==================== -->
             </div>
           </div>
         </div>

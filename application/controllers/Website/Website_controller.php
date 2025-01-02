@@ -336,4 +336,51 @@ public function customeraccount(){
     $this->load->view('Ssgwebsite/website/footer');
   }
 
+  public function customer_update(){
+    $loggedincusomterid= $this->session->userdata('customer_session_id');
+    if(!empty($loggedincusomterid)){
+      $add_info = $this->Infomodel->getInfoDataById($loggedincusomterid);
+      $data['name'] = $this->input->post('name');
+      $data['mobile'] = $this->input->post('mobile');
+      $data['address'] = $this->input->post('address');
+      $data['pincode'] = $this->input->post('pincode');
+      $data['country'] = $this->input->post('country');
+      $data['state'] = $this->input->post('state');
+      $data['district'] = $this->input->post('district');
+      $data['update_ip_address'] = $_SERVER['REMOTE_ADDR'];
+      if ($_FILES['customerimage']['name']) { 
+        $data['customerimage'] = $this->doUpload('customerimage');
+      }  
+      $edit = $this->FrontendCustomermodel->update($loggedincusomterid,$data);
+      if ($edit) {
+        $this->session->set_flashdata('success', 'Profile Updated Successfully.');
+        redirect('Website/Website_controller/customeraccount');
+      }else{
+        $this->session->set_flashdata('error', 'Something went wrong.Please try again.');
+        redirect('Website/Website_controller/customeraccount');
+      }
+    }else{
+      $this->session->set_flashdata('error', 'Something went wrong.Please try again.');
+      redirect('Website/Website_controller/customeraccount');
+    }
+  }
+
+
+
+  public function doUpload($file) {
+      $config['upload_path'] = './ssgassests/img/customerimage';
+      $config['allowed_types'] = '*';
+      $this->load->library('upload', $config);
+      if ( ! $this->upload->do_upload($file))
+      {
+        $error = array('error' => $this->upload->display_errors());
+        $this->load->view('upload_form', $error);
+      }
+      else
+      {
+        $data = array('upload_data' => $this->upload->data());
+        return $data['upload_data']['file_name'];
+      }
+    }
+
 }
