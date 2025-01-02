@@ -32,6 +32,7 @@
 <section class="featured">
     <div class="container">
         <div class="row justify-content-center">
+            <h2 class="section-title">The Heart of SSG MART</h2>
             <div class="col-12 col-md-4 text-center">
                 <div class="tab active" id="tab1" onclick="switchTab(1)">Our Mission</div>
             </div>
