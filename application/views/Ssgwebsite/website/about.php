@@ -55,7 +55,7 @@
 <!-- Founders Section End -->
 
 <!-- Tabs Section (Mission, Team, Values) -->
-<section class="featured">
+<section class="featured spad">
     <div class="container">
         <h2 class="section-title">The Heart of SSG MART</h2>
         <div class="row justify-content-center">
@@ -174,7 +174,7 @@
 
 <style>
 /* General styles for the page */
-.about-us, .business-info-section, .testimonials-section, .why-choose-us-section {
+.about-us,  .why-choose-us-section, .featured {
     padding: 50px 0;
     background-color: #f9f9f9;
 }
