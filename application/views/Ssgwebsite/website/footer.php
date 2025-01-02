@@ -93,11 +93,17 @@ $(document).ready(function() {
             document.getElementById("errormessagenewlatter").style.color = "red";
             document.getElementById("newslatteremail").style.border = "1px solid red";
             status++;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newslatteremail)) {
+            document.getElementById("errormessagenewlatter").innerHTML = "Invalid Email Format.";
+            document.getElementById("errormessagenewlatter").style.color = "red";
+            document.getElementById("newslatteremail").style.border = "1px solid red";
+            status++;
         } else {
             document.getElementById("errormessagenewlatter").innerHTML = "";
             document.getElementById("errormessagenewlatter").style.color = "green";
             document.getElementById("newslatteremail").style.border = "1px solid green";
         }
+
         
         if (status == '0') {
             jQuery.ajax({
