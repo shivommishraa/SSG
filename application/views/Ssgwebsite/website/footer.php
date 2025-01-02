@@ -37,7 +37,7 @@
                         <h6>Join Our Newsletter Now</h6>
                         <p>Get E-mail updates about our latest product and special offers.</p>
                         <form action="#">
-                            <input type="text" id="newslatteremail" name="newslatteremail" placeholder="Enter your email">
+                            <input type="email" id="newslatteremail" name="newslatteremail" placeholder="Enter your email">
                             <button id="btnnewlattersubmit" type="button" class="site-btn">Subscribe</button>
                         </form>
                         <span id="errormessagenewlatter"></span>

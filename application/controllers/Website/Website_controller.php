@@ -332,7 +332,7 @@ public function customeraccount(){
   public function savenewslatteremail(){
     $email=$this->input->post('newslatteremail');
     $getData=$this->Nice_webmodel->getNewslatterbyId($email);
-    if(!empty($email) && !empty($getData)){
+    if(!empty($email) && empty($getData)){
       $data = array(
           'newslatteremail'  =>     $email,
           'system_ip'     =>     $_SERVER['REMOTE_ADDR'],       
