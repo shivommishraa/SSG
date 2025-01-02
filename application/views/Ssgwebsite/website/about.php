@@ -29,32 +29,33 @@
 </div>
 
 <!-- Tabs Section (Mission, Team, Values) -->
-<div class="tabs-container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-4 text-center">
-            <div class="tab active" id="tab1" onclick="switchTab(1)">Our Mission</div>
+<section class="featured spad">
+    <div class="tabs-container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4 text-center">
+                <div class="tab active" id="tab1" onclick="switchTab(1)">Our Mission</div>
+            </div>
+            <div class="col-12 col-md-4 text-center">
+                <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
+            </div>
+            <div class="col-12 col-md-4 text-center">
+                <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
+            </div>
         </div>
-        <div class="col-12 col-md-4 text-center">
-            <div class="tab" id="tab2" onclick="switchTab(2)">Our Team</div>
-        </div>
-        <div class="col-12 col-md-4 text-center">
-            <div class="tab" id="tab3" onclick="switchTab(3)">Our Values</div>
+        <hr>
+        <div class="tab-content" id="content">
+            <div class="content active" id="content1">
+                <p id="ourmission">At SSG MART, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
+            </div>
+            <div class="content" id="content2">
+                <p id="ourteam">We are a diverse group of professionals with a passion for food and service. Our team includes experienced chefs, suppliers, logistics experts, and customer service specialists who work together to ensure that you have access to the best products and the highest quality shopping experience.</p>
+            </div>
+            <div class="content" id="content3">
+                <p id="ourvalue">Integrity, transparency, and customer-first approach are the values that guide everything we do. We believe in creating a supportive environment for our employees, fostering collaboration, and delivering excellence in all our services.</p>
+            </div>
         </div>
     </div>
-    <hr>
-    <div class="tab-content" id="content">
-        <div class="content active" id="content1">
-            <p id="ourmission">At SSG MART, our mission is to provide customers with a wide range of high-quality grocery products, including refined soybean oil, wheat flour, rice flour, organic products, and more. We are committed to sustainability, ethical sourcing, and promoting local businesses through effective and timely delivery services.</p>
-        </div>
-        <div class="content" id="content2">
-            <p id="ourteam">We are a diverse group of professionals with a passion for food and service. Our team includes experienced chefs, suppliers, logistics experts, and customer service specialists who work together to ensure that you have access to the best products and the highest quality shopping experience.</p>
-        </div>
-        <div class="content" id="content3">
-            <p id="ourvalue">Integrity, transparency, and customer-first approach are the values that guide everything we do. We believe in creating a supportive environment for our employees, fostering collaboration, and delivering excellence in all our services.</p>
-        </div>
-    </div>
-</div>
-
+</section>
 <!-- Business Information Section Begin -->
 <section class="business-info-section spad">
     <div class="container">
