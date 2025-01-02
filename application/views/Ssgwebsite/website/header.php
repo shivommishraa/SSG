@@ -334,10 +334,8 @@
 
         @keyframes blinkColors {
             0% { background-color: red; }
-            20% { background-color: green; }
-            40% { background-color: yellow; }
-            60% { background-color: pink; }
-            80% { background-color: blue; }
+            33% { background-color: green; }
+            66% { background-color: blue; }
             100% { background-color: red; }
         }
 
