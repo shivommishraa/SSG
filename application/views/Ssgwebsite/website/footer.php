@@ -37,8 +37,12 @@
                         <h6>Join Our Newsletter Now</h6>
                         <p>Get E-mail updates about our latest product and special offers.</p>
                         <form action="#">
-                            <input type="text" placeholder="Enter your mail">
+                            <input type="text" name="newlatteremail" placeholder="Enter your email">
                             <button type="submit" class="site-btn">Subscribe</button>
+                            <span id="errormessagenewlatter"></span>
+                            <div style="display: none;" class="form-group" id="successmessagenewslatter">
+                                <span style="color: blue;">Subscribed successfully.</span>
+                            </div>
                         </form>
                         <div class="footer__widget__social">
                             <!--<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>-->
@@ -77,3 +81,60 @@
 </body>
 
 </html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" >  
+$(document).ready(function() {
+    $("#btnsubmit").click(function() { //alert('hello');
+        var name = $('#newlatteremail').val();
+        var status = '0';
+        if (name == '') {
+            document.getElementById("errormessagenewlatter").innerHTML = "Enter Valid Email.";
+            document.getElementById("errormessagenewlatter").style.color = "red";
+            document.getElementById("newlatteremail").style.border = "1px solid red";
+            status++;
+        } else {
+            document.getElementById("errormessagenewlatter").innerHTML = "";
+            document.getElementById("errormessagenewlatter").style.color = "green";
+            document.getElementById("newlatteremail").style.border = "1px solid green";
+        }
+        
+        if (status == '0') {
+            jQuery.ajax({
+                type: "POST",
+                url: "<?php echo base_url() . 'Website/Website_controller/savenewlatteremail'?>",
+                dataType: 'html',
+                data: {
+                    newlatteremail: newlatteremail
+                },
+                success: function(res) {
+                    if (res == 1) {
+                        $('#newlatteremail').val('');
+                        $('#successmessagenewslatter').show();
+                        document.getElementById("errormessagenewlatter").innerHTML = "";
+                        document.getElementById("errormessagenewlatter").style.color = "";
+                        document.getElementById("newlatteremail").style.border = "1px solid";
+                        var myVar = setInterval(myTimer, 4000);
+
+                    } else {
+                        document.getElementById("errormessagenewlatter").innerHTML = "Already subscribed with this email or something went wrong. Please try again.";
+                        document.getElementById("errormessagenewlatter").style.color = "red";
+                        document.getElementById("newlatteremail").style.border = "1px solid red";
+                    }
+
+                },
+                error: function() {
+                    document.getElementById("errormessagenewlatter").innerHTML = "Something went wrong. Please try again.";
+                        document.getElementById("errormessagenewlatter").style.color = "red";
+                        document.getElementById("newlatteremail").style.border = "1px solid red";
+                }
+            });
+        }
+
+    });
+});
+
+function myTimer() {
+    document.getElementById("successmessagenewslatter").style.display = "none";
+}
+ </script>  

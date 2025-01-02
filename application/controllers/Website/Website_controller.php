@@ -329,6 +329,19 @@ public function customeraccount(){
 
   }
 
+  public function savenewlatteremail(){
+    $data = array(
+          'newlatteremail'  =>     $this->input->post('newlatteremail'),
+          'system_ip'     =>     $_SERVER['REMOTE_ADDR'],       
+      );
+    $result=$this->Nice_webmodel->savenewlatteremail($data);
+    if($result){
+      echo  1;
+    }else{
+      echo  0;
+    }
+  }
+
 
   public function newoffers(){
     $this->load->view('Ssgwebsite/website/header');

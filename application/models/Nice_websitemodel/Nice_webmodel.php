@@ -132,5 +132,16 @@ public function get_countStatus($cate_id='')
             return 0;   
         }
     }
+
+    public function savenewlatteremail($data) 
+    {
+        if($this->db->insert('tbl_newlatter_email',$data))
+        {
+            return 1;   
+        }else
+        {
+            return 0;   
+        }
+    }
  }  
  
