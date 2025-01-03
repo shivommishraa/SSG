@@ -1,5 +1,5 @@
 <?php
-class NewsLatter extends CI_Model {
+class NewsLatterModel extends CI_Model {
 	
  	public function getAllNewslatter($limit,$start,$newslatteremail) {
 		$this->db->select('*');
@@ -7,7 +7,7 @@ class NewsLatter extends CI_Model {
 	    if($newslatteremail!=''){
 	    	$this->db->where('newslatteremail',$newslatteremail);
 	    }
-	    $this->db->from('tbl_newlatter_newslatteremail');   
+	    $this->db->from('tbl_newlatter_email');   
 	    $query=$this->db->get();
 	    return $query->result(); 
 	}
@@ -17,42 +17,42 @@ class NewsLatter extends CI_Model {
     	if($newslatteremail!=''){
             $this->db->where('newslatteremail',$newslatteremail); 
         }
-        return $this->db->get('tbl_newlatter_newslatteremail')->num_rows();
+        return $this->db->get('tbl_newlatter_email')->num_rows();
     }
 
     public function getAll() {
-        return $this->db->get('tbl_newlatter_newslatteremail')->result();
+        return $this->db->get('tbl_newlatter_email')->result();
     }
 
     public function InsertData($data) {
-        $this->db->insert('tbl_newlatter_newslatteremail', $data);
+        $this->db->insert('tbl_newlatter_email', $data);
         return $this->db->insert_id();
     }
 
     public function getloggedinCustomerData($id) {
         $this->db->where('id', $id);
-        return $this->db->get('tbl_newlatter_newslatteremail')->result();
+        return $this->db->get('tbl_newlatter_email')->result();
     }
 
     public function getDataBynewslatteremail($newslatteremail) {
         $this->db->where('newslatteremail', $newslatteremail);
-        return $this->db->get('tbl_newlatter_newslatteremail')->result();
+        return $this->db->get('tbl_newlatter_email')->result();
     }
 
     public function getCustomerTypeById($id) {
         $this->db->where('id', $id);
-        return $this->db->get('tbl_newlatter_newslatteremail')->result();
+        return $this->db->get('tbl_newlatter_email')->result();
     }
 
     public function update($id,$data) {
         $this->db->where('id', $id);
-        $this->db->update('tbl_newlatter_newslatteremail', $data);
+        $this->db->update('tbl_newlatter_email', $data);
         return true;
     }
 
     public function delete($id) {
 	    $this->db->where('id', $id);
-	    $this->db->delete('tbl_newlatter_newslatteremail');
+	    $this->db->delete('tbl_newlatter_email');
 	    return true;
 	}
 
@@ -74,7 +74,7 @@ class NewsLatter extends CI_Model {
 	     $newslatteremail_id=$this->security->xss_clean($this->input->post('newslatteremail'));
 	     $password=$this->input->post('password');
 	     $this->db->select('*');
-	     $this->db->from('tbl_newlatter_newslatteremail');
+	     $this->db->from('tbl_newlatter_email');
 	     $this->db->where('newslatteremail', $newslatteremail_id);  
 	     $this->db->where('password', $password);  
 	     $query = $this->db->get(); 

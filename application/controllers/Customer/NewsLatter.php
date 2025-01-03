@@ -4,7 +4,7 @@ class NewsLatter extends CI_Controller {
 
 	  public function __construct() {
 	    parent::__construct();
-	    $this->load->model('Customer/NewsLatter');
+	    $this->load->model('Customer/NewsLatterModel');
 	    $this->load->helper('url');
 	    $this->load->library("pagination");
 	    $this->load->model('Admin_model/Adminmodel');
@@ -30,14 +30,14 @@ class NewsLatter extends CI_Controller {
     	 $this->load->config('bootstrap_pagination');
      	$config = $this->config->item('pagination_config');;
      	$config['base_url'] = base_url() ."Customer/NewsLatter/manageNewslatter"."/$email";
-     	$config['total_rows'] = $this->NewsLatter->get_count($email);
+     	$config['total_rows'] = $this->NewsLatterModel->get_count($email);
      	$config['per_page'] = 20;
      	$config['uri_segment'] = 5;
      	$this->pagination->initialize($config);
      	$page = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
      	$data['links'] = $this->pagination->create_links();
           //============================ End Pager Code ==============================
-     	$data["newsLatter"] = $this->NewsLatter->getAllNewslatter($config['per_page'],$page,$email);
+     	$data["newsLatter"] = $this->NewsLatterModel->getAllNewslatter($config['per_page'],$page,$email);
      	$this->load->view('Dashboard/header.php',$data);
      	$this->load->view('Dashboard/side.php');
     	$this->load->view('Customer/Newslatter/manageNewslatter', $data);
@@ -64,7 +64,7 @@ class NewsLatter extends CI_Controller {
       if ($_FILES['customerimage']['name']) { 
         $data['customerimage'] = $this->doUpload('customerimage');
       }
-      $this->NewsLatter->InsertData($data);
+      $this->NewsLatterModel->InsertData($data);
       $this->session->set_flashdata('success', 'Customer Added Successfully');
       redirect('Customer/NewsLatter/manageNewslatter');
     }
@@ -93,21 +93,21 @@ class NewsLatter extends CI_Controller {
         $data['admin_role']=$this->Menu->adminrole();
         $this->load->view('Dashboard/header.php',$data);
         $this->load->view('Dashboard/side.php');
-        $data['ctdata'] = $this->NewsLatter->getCustomerTypeById($tbl_id);
+        $data['ctdata'] = $this->NewsLatterModel->getCustomerTypeById($tbl_id);
         $this->load->view('Customer/Admin/editfrontendcustomer',$data);
         $this->load->view('Dashboard/footer.php');
     }
 
     public function frontendcustomerUpdatePost() {
 	      $tbl_info_id = $this->input->post('id');
-	      $ctdata = $this->NewsLatter->getCustomerTypeById($tbl_info_id);
+	      $ctdata = $this->NewsLatterModel->getCustomerTypeById($tbl_info_id);
         $data['name'] = $this->input->post('name');
         $data['mobile'] = $this->input->post('mobile');
         $data['status'] = $this->input->post('status');
         if ($_FILES['customerimage']['name']) { 
           $data['customerimage'] = $this->doUpload('customerimage');
         }
-	      $edit = $this->NewsLatter->update($tbl_info_id,$data);
+	      $edit = $this->NewsLatterModel->update($tbl_info_id,$data);
 	      if ($edit) {
 	        $this->session->set_flashdata('success', 'Customer Updated Successfully.');
 	        redirect('Customer/NewsLatter/manageNewslatter');
@@ -115,13 +115,13 @@ class NewsLatter extends CI_Controller {
   	}
 
     public function deleteFrontendCustomer($id) {
-      $delete = $this->NewsLatter->delete($id);
+      $delete = $this->NewsLatterModel->delete($id);
       $this->session->set_flashdata('success', 'Details deleted.');
       redirect('Customer/NewsLatter/manageNewslatter');
     }
 
     public function changestatus($id) {
-      $edit = $this->NewsLatter->changeStatus($id);
+      $edit = $this->NewsLatterModel->changeStatus($id);
       $this->session->set_flashdata('success', 'Details '.$edit.' Successfully');
       redirect('Customer/NewsLatter/manageNewslatter');
     }
