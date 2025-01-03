@@ -60,7 +60,7 @@
                 <td><?php echo $newsLatter->system_ip; ?> </td>
                 <td><span <?php if($newsLatter->status==0){?> class="badge badge-success"<?php }else{ ?> class="badge badge-danger"<?php }?>>
                 <a style="color:#fff;" href="<?php echo site_url()?>Customer/NewsLatter/changestatus/<?php echo $newsLatter->id ?>" > <?php if($newsLatter->status==0){ echo "Activate"; } else { echo "Deactivate"; } ?></a></span></td>
-                <!-- <td><a href="<?php //echo site_url()?>Customer/NewsLatter/editFrontendCustomer/<?php echo //$newsLatter->id?>"><i class="fas fa-pencil-alt"style="color: blue;"></i></a></td> -->
+                <!-- <td><a href="<?php //echo site_url()?>Customer/NewsLatter/editFrontendCustomer/<?php //echo $newsLatter->id?>"><i class="fas fa-pencil-alt"style="color: blue;"></i></a></td> -->
                 <td><a href="<?php echo site_url()?>Customer/NewsLatter/deleteFrontendCustomer/<?php echo $newsLatter->id?>" onclick="return confirm('Are you sure to delete')"><i class="fa fa-trash"style="color: red;"></i></a></td>
               </tr>
               <?php $i++; } ?>
