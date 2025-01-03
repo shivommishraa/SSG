@@ -79,7 +79,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8">
-                    <form id="register-form" action="<?php echo base_url(); ?>Website/Website_controller/registercustomer" method="POST" onsubmit="return validatePasswords()">
+                    <form id="register-form" onsubmit="return validateForm()" action="<?php echo base_url(); ?>Website/Website_controller/registercustomer" method="POST" onsubmit="return validatePasswords()">
                         <div class="form-group mb-3">
                             <label for="username" class="form-label">Name</label>
                             <input type="text" id="username" name="name" class="form-control" placeholder="Enter your username" required>
@@ -126,6 +126,20 @@
         document.getElementById("loginTab").classList.remove("active");
     }
 
+
+
+    function validateForm() {
+       
+        const recaptchaResponse = document.querySelector('[name="g-recaptcha-response"]').value;
+
+        if (!recaptchaResponse) {
+            alert('Please verify that you are not a robot.');
+            return false;
+        }
+
+        // If all validations pass
+        return true;
+    }
     
 </script>
 
@@ -152,3 +166,4 @@
         margin-top: 20px;
     }
 </style>
+
