@@ -194,27 +194,66 @@ class Website_controller extends CI_Controller {
   }
 
   public function registercustomer(){
-    $data['email'] = $this->input->post('email');
-    $data['name'] = $this->input->post('name');
-    $data['password'] = $this->input->post('password'); 
-    $data['confirmpassword'] = $this->input->post('confirmpassword'); 
-    $data['ip_address'] = $_SERVER['REMOTE_ADDR']; 
-    if((!empty($data['password'])) && (!empty($data['confirmpassword'])) && (!empty($data['email'])) && ($data['password'] == $data['confirmpassword'])){
-      $customerData=$this->FrontendCustomermodel->getDataByEmail($data['email']);
-      if(empty($customerData)){
-        $this->FrontendCustomermodel->InsertData($data);
-        $this->session->set_flashdata('success', 'Thank you. Your account has been created successfully. Please use your credentials to log in to my portal.');
-        $this->customerlogin();
+
+    $recaptchaResponse = $this->input->post('g-recaptcha-response');
+    // Secret key from Google reCAPTCHA
+    $secretKey = '6LfU5qwqAAAAAAfJGEMd5r6Rr8hHfQyB-t7Bzdf8';
+            
+    // Verify the reCAPTCHA response
+    $response = $this->verifyRecaptcha($recaptchaResponse, $secretKey);
+            
+    if ($response->success) {
+
+      $data['email'] = $this->input->post('email');
+      $data['name'] = $this->input->post('name');
+      $data['password'] = $this->input->post('password'); 
+      $data['confirmpassword'] = $this->input->post('confirmpassword'); 
+      $data['ip_address'] = $_SERVER['REMOTE_ADDR']; 
+      if((!empty($data['password'])) && (!empty($data['confirmpassword'])) && (!empty($data['email'])) && ($data['password'] == $data['confirmpassword'])){
+        $customerData=$this->FrontendCustomermodel->getDataByEmail($data['email']);
+        if(empty($customerData)){
+          $this->FrontendCustomermodel->InsertData($data);
+          $this->session->set_flashdata('success', 'Thank you. Your account has been created successfully. Please use your credentials to log in to my portal.');
+          $this->customerlogin();
+        }else{
+          $this->session->set_flashdata('error', 'This email is already registered. Please try using a different email.');
+          $this->customerlogin();
+        }
       }else{
-        $this->session->set_flashdata('error', 'This email is already registered. Please try using a different email.');
+        $this->session->set_flashdata('error', 'Something went wrong. Please try again.');
         $this->customerlogin();
       }
-    }else{
-      $this->session->set_flashdata('error', 'Something went wrong. Please try again.');
+
+    } else {
+      // reCAPTCHA validation failed
+      //echo "Please verify that you are not a robot.";
+      $this->session->set_flashdata('error', 'Please verify that you are not a robot.');
       $this->customerlogin();
-    }
+    }  
     
   }
+
+
+   private function verifyRecaptcha($recaptchaResponse, $secretKey) {
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = [
+            'secret' => $secretKey,
+            'response' => $recaptchaResponse
+        ];
+
+        // Use cURL to send the request to Google
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        // Decode the response from Google
+        return json_decode($result);
+    }
 
   public function logincustomer(){
 
