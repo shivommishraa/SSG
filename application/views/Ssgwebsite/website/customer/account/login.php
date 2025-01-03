@@ -96,7 +96,9 @@
                             <label for="confirmPassword" class="form-label">Confirm Password</label>
                             <input type="password" id="confirmPassword" name="confirmpassword" class="form-control" placeholder="Confirm Password" required>
                         </div>
-                         <div class="g-recaptcha" name="g-recaptcha-response" data-sitekey="6LfU5qwqAAAAALp1MxohaBstJ1Avl94a6la1UBls"></div> <!-- Add this line -->
+                        <div class="form-group mb-3">
+                            <div class="g-recaptcha" name="g-recaptcha-response" data-sitekey="6LfU5qwqAAAAALp1MxohaBstJ1Avl94a6la1UBls"></div> <!-- Add this line -->
+                        </div>
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary btn-block">Register</button>
                         </div>
