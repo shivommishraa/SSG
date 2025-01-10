@@ -25,7 +25,7 @@ class Infomodel extends CI_Model {
 
     /*======== Start Code for Info Model Gallery ===========*/
     public function getAllInfoBannerGallery() {
-        return $this->db->get('tbl_additional_info')->result();
+        return $this->db->get('info_banner_gallery')->result();
     }
 
     public function updateInfoGallery($data, $id) { 
@@ -36,7 +36,7 @@ class Infomodel extends CI_Model {
             }*/ 
             
             // Update gallery data 
-            $update = $this->db->update('tbl_additional_info', $data, array('id' => $id)); 
+            $update = $this->db->update('info_banner_gallery', $data, array('id' => $id)); 
             
             // Return the status 
             return $update?true:false; 
@@ -48,7 +48,7 @@ class Infomodel extends CI_Model {
         if(!empty($data)){ 
            
             // Insert gallery data 
-            $insert = $this->db->insert_batch('tbl_additional_info', $data); 
+            $insert = $this->db->insert_batch('info_banner_gallery', $data); 
             
             // Return the status 
             return $insert?$this->db->insert_id():false; 
