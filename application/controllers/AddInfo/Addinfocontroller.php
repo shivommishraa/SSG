@@ -152,7 +152,7 @@ class Addinfocontroller extends CI_Controller {
             $data = $galleryData = array(); 
             
         // Get gallery data 
-            $galleryData = $this->gallery->getRows($id); 
+            //$galleryData = $this->gallery->getRows($id); 
 
         // If update request is submitted 
             if($this->input->post('imgSubmit')){ 
