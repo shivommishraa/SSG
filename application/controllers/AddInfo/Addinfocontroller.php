@@ -144,109 +144,7 @@ class Addinfocontroller extends CI_Controller {
     }
 
     /* ===========================================================*/
-     public function ManageText_status()
-     {
-      
-      $id= $this->session->userdata('session_id');
-     $data['admin']=$this->Adminmodel->getadmin($id);
-     $data['menu_groups']=$this->Menu->getAllMenuGroup();
-     $data['menu_details']=$this->Menu->getAllMenu();
-     $data['admin_role']=$this->Menu->adminrole();
-    
-      //============================ Start Pager Code ==============================
-    $name=($this->input->post('cate_id')) ? $this->input->post('cate_id') :0;
-    $name=($this->uri->segment(4)) ?  $this->uri->segment(4) :$name;
-    $this->load->config('bootstrap_pagination');
-    $config = $this->config->item('pagination_config');;
-    $config['base_url'] = base_url() ."Category/Category_Controller/ManageText_status"."/$name";
-    $config['total_rows'] = $this->Category_model->get_textstatuscount($name);
-    $config['per_page'] = 20;
-    $config['uri_segment'] = 5;
-    $this->pagination->initialize($config);
-    $page = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
-    $data['links'] = $this->pagination->create_links();
-          //============================ End Pager Code ==============================
-    $data["textStatus_data"] = $this->Category_model->getAlltextstatus($config['per_page'],$page,$name);
-     $data["categorydropdown"] = $this->Category_model->all_text_category();
-    $this->load->view('Dashboard/header.php',$data);
-    $this->load->view('Dashboard/side.php');
-    $this->load->view('category/manageText_status',$data);
-    $this->load->view('Dashboard/footer.php');
-     }
-    /*
-    function for  add Tbl_brand get
-    created by your name
-    created at 18-08-20.
-    */
-    
-    /*
-    function for add Tbl_brand post
-    created by your name
-    created at 18-08-20.
-    */
-    public function addTbl_categoryPost() {
-      $data['category_name'] = $this->input->post('category_name');
-      $data['parent_id'] = $this->input->post('parent_id');
-      $this->Category_model->insert($data);
-      $this->session->set_flashdata('success', 'Category added Successfully');
-        //redirect('manage-tbl_category');
-      redirect('Category/Category_Controller/ManageTbl_category');
-
-    }
-     public function addText_categoryPost() {
-      $data['cate_name'] = $this->input->post('category_name');
-      $this->Category_model->textcategoryinsert($data);
-      $this->session->set_flashdata('success', 'Category added Successfully');
-        //redirect('manage-tbl_category');
-      redirect('Category/Category_Controller/ManageText_category');
-
-    }
-
-    public function addText_statusPost() {
-      $data['text_status'] = $this->input->post('text_status');
-      $data['cate_id'] = $this->input->post('cate_id');
-      $this->Category_model->textstatusinsert($data);
-      $this->session->set_flashdata('success', 'Text Status added Successfully');
-        //redirect('manage-tbl_category');
-      redirect('Category/Category_Controller/manageText_status');
-
-    }
-
-    public function ManageText_category()
-    {
-     $id= $this->session->userdata('session_id');
-     $data['admin']=$this->Adminmodel->getadmin($id);
-     $data['menu_groups']=$this->Menu->getAllMenuGroup();
-     $data['menu_details']=$this->Menu->getAllMenu();
-     $data['admin_role']=$this->Menu->adminrole();
-    
-      //============================ Start Pager Code ==============================
-    $name=($this->input->post('cate_name')) ? $this->input->post('cate_name') :0;
-    $name=($this->uri->segment(4)) ?  $this->uri->segment(4) :$name;
-    $this->load->config('bootstrap_pagination');
-    $config = $this->config->item('pagination_config');;
-    $config['base_url'] = base_url() ."Category/Category_Controller/ManageText_category"."/$name";
-    $config['total_rows'] = $this->Category_model->get_textcount($name);
-    $config['per_page'] = 20;
-    $config['uri_segment'] = 5;
-    $this->pagination->initialize($config);
-    $page = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
-    $data['links'] = $this->pagination->create_links();
-          //============================ End Pager Code ==============================
-    $data["category_data"] = $this->Category_model->getAlltextcategory($config['per_page'],$page,$name);
-    $this->load->view('Dashboard/header.php',$data);
-    $this->load->view('Dashboard/side.php');
-    $this->load->view('category/manage-Text_category',$data);
-    $this->load->view('Dashboard/footer.php');
-
-    }
-    /*
-    function for edit Tbl_brand get
-    returns  Tbl_brand by category_id.
-    created by your name
-    created at 18-08-20.
-    */
-    public function editTbl_category($tbl_brand_category_id) {
+    public function infobannergallery(){
       $id= $this->session->userdata('session_id');
       $data['admin']=$this->Adminmodel->getadmin($id);
       $data['menu_groups']=$this->Menu->getAllMenuGroup();
@@ -254,174 +152,99 @@ class Addinfocontroller extends CI_Controller {
       $data['admin_role']=$this->Menu->adminrole();
       $this->load->view('Dashboard/header.php',$data);
       $this->load->view('Dashboard/side.php');
-      $data['tbl_brand_category_id'] = $tbl_brand_category_id;
-      $data['categorydropdown'] = $this->Category_model->parent_zero_category();
-      $data['tbl_Category'] = $this->Category_model->getDataBycategory_id($tbl_brand_category_id);
-      
-      $data['getsingleparent']=function($id){
-       return $this->Category_model->getsingleparent($id);};
-       $data['getparent']=function($id){
-        return $this->Category_model->getparent($id);};
-
-        $this->load->view('category/edit-tbl_category', $data);
-        $this->load->view('Dashboard/footer.php');
-      }
-
-
-    public function editText_category($tbl_brand_category_id) {
-        $id= $this->session->userdata('session_id');
-        $data['admin']=$this->Adminmodel->getadmin($id);
-        $data['menu_groups']=$this->Menu->getAllMenuGroup();
-        $data['menu_details']=$this->Menu->getAllMenu();
-        $data['admin_role']=$this->Menu->adminrole();
-        $this->load->view('Dashboard/header.php',$data);
-        $this->load->view('Dashboard/side.php');
-        $data['tbl_brand_category_id'] = $tbl_brand_category_id;
-        $data['tbl_Category'] = $this->Category_model->getTextBycategory_id($tbl_brand_category_id);
-        $this->load->view('category/edit-text_category', $data);
-        $this->load->view('Dashboard/footer.php');
-    }
-
-
-     public function editText_status($tbl_status_id) {
-        $id= $this->session->userdata('session_id');
-        $data['admin']=$this->Adminmodel->getadmin($id);
-        $data['menu_groups']=$this->Menu->getAllMenuGroup();
-        $data['menu_details']=$this->Menu->getAllMenu();
-        $data['admin_role']=$this->Menu->adminrole();
-        $this->load->view('Dashboard/header.php',$data);
-        $this->load->view('Dashboard/side.php');
-        $data['tbl_status_id'] = $tbl_status_id;
-        $data['txt_st_data'] = $this->Category_model->getTextBystatus_id($tbl_status_id);
-        $data['categorydropdown'] = $this->Category_model->all_text_category();
-        $this->load->view('category/edit-textstatus_category', $data);
-        $this->load->view('Dashboard/footer.php');
-    }
-    /*
-    function for edit Tbl_brand post
-    created by your name
-    created at 18-08-20.
-    */
-    public function editTbl_categoryPost() {
-      $tbl_brand_category_id = $this->input->post('category_id');
-      $tbl_brand = $this->Category_model->getDataBycategory_id($tbl_brand_category_id);
-      $data['category_name'] = $this->input->post('category_name');
-      $data['parent_id'] = $this->input->post('parent_id');
-      $edit = $this->Category_model->update($tbl_brand_category_id,$data);
-      if ($edit) {
-        $this->session->set_flashdata('success', 'Category Updated');
-        redirect('Category/Category_Controller/ManageTbl_category');
-      }
-    }
-
-    public function editTbl_statusPost() {
-      $text_status_id = $this->input->post('text_status_id');
-      $data['text_status'] = $this->input->post('text_status');
-      $data['cate_id'] = $this->input->post('cate_id');
-      $edit = $this->Category_model->Textstatusupdate($text_status_id,$data);
-      if ($edit) {
-        $this->session->set_flashdata('success', 'Text Status Updated');
-        redirect('Category/Category_Controller/ManageText_status');
-      }
-    }
-
-
-    public function editText_categoryPost() {
-      $tbl_brand_category_id = $this->input->post('cate_id');
-      $tbl_brand = $this->Category_model->getTextBycategory_id($tbl_brand_category_id);
-      $data['cate_name'] = $this->input->post('cate_name');
-      $edit = $this->Category_model->Textupdate($tbl_brand_category_id,$data);
-      if ($edit) {
-        $this->session->set_flashdata('success', 'Category Updated');
-        redirect('Category/Category_Controller/ManageText_category');
-      }
-    }
-    /*
-    function for view Tbl_brand get
-    created by your name
-    created at 18-08-20.
-    */
-    public function viewTbl_category($tbl_brand_category_id) {
-      $data['tbl_brand_category_id'] = $tbl_brand_category_id;
-      $data['tbl_brand'] = $this->Category_model->getDataBycategory_id($tbl_brand_category_id);
-      $data['getparent']=function($id){
-        return $this->Category_model->getparent($id);};
-        $this->load->view('category/view-tbl_category', $data);
-      }
-    /*
-    function for delete Tbl_brand    created by your name
-    created at 18-08-20.
-    */
-    public function deleteTbl_category($tbl_brand_category_id) {
-      $delete = $this->Category_model->delete($tbl_brand_category_id);
-      $this->session->set_flashdata('success', 'Category deleted');
-      redirect('Category/Category_Controller/ManageTbl_category');
-    }
-
-     public function textdeleteTbl_category($tbl_brand_category_id) {
-      $delete = $this->Category_model->textdelete($tbl_brand_category_id);
-      $this->session->set_flashdata('success', 'Category deleted');
-      redirect('Category/Category_Controller/ManageText_category');
-    }
-
-     public function textdeleteTbl_status($tbl_brand_category_id) {
-      $delete = $this->Category_model->textstatusdelete($tbl_brand_category_id);
-      $this->session->set_flashdata('success', 'Text status deleted');
-      redirect('Category/Category_Controller/ManageText_status');
-    }
-    /*
-    function for activation and deactivation of Tbl_brand.
-    created by your name
-    created at 18-08-20.
-    */
-    public function changeStatusTbl_category($tbl_brand_category_id) {
-      $edit = $this->Category_model->changeStatus($tbl_brand_category_id);
-      $this->session->set_flashdata('success', 'Category '.$edit.' Successfully');
-      redirect('Category/Category_Controller/ManageTbl_category');
-    }
-
-    public function changeStatusText_category($tbl_brand_category_id) {
-
-      $edit = $this->Category_model->TextchangeStatus($tbl_brand_category_id);
-      $this->session->set_flashdata('success', 'Category '.$edit.' Successfully');
-      redirect('Category/Category_Controller/ManageText_category');
-    }
-
-
-    public function changeStatusText_status($tbl_id) {
-
-      $edit = $this->Category_model->TextstatuschangeStatus($tbl_id);
-      $this->session->set_flashdata('success', 'Status '.$edit.' Successfully');
-      redirect('Category/Category_Controller/ManageText_status');
-    }
-    
-
-    public function addText_category() {
-      $id= $this->session->userdata('session_id');
-      $data['admin']=$this->Adminmodel->getadmin($id);
-      $data['menu_groups']=$this->Menu->getAllMenuGroup();
-      $data['menu_details']=$this->Menu->getAllMenu();
-      $data['admin_role']=$this->Menu->adminrole();
-      $this->load->view('Dashboard/header.php',$data);
-      $this->load->view('Dashboard/side.php');
-      $data['categorydropdown'] = $this->Category_model->parent_zero_category();
-      $this->load->view('category/add-text_category',$data);
+      $this->load->view('AdditionalInfo/infobannergallery',$data);
       $this->load->view('Dashboard/footer.php');
     }
 
 
-    public function addText_status()
-    {
-      $id= $this->session->userdata('session_id');
-      $data['admin']=$this->Adminmodel->getadmin($id);
-      $data['menu_groups']=$this->Menu->getAllMenuGroup();
-      $data['menu_details']=$this->Menu->getAllMenu();
-      $data['admin_role']=$this->Menu->adminrole();
-      $this->load->view('Dashboard/header.php',$data);
-      $this->load->view('Dashboard/side.php');
-      $data['categorydropdown'] = $this->Category_model->all_text_category();
-      $this->load->view('category/add-text_status',$data);
-      $this->load->view('Dashboard/footer.php');
-    }
+    public function infobannergallery($id){ 
+
+            $data = $galleryData = array(); 
+            
+        // Get gallery data 
+            $galleryData = $this->gallery->getRows($id); 
+
+        // If update request is submitted 
+            if($this->input->post('imgSubmit')){ 
+            // Form field validation rules 
+                $this->form_validation->set_rules('gallery_id', 'gallery title', 'required'); 
+                
+            // Prepare gallery data 
+                $galleryData = array( 
+                    'title' => $this->input->post('title') 
+                ); 
+                
+            // Validate submitted form data 
+                if($this->form_validation->run() == true){ 
+                // Update gallery data 
+                    $update = $this->gallery->update($galleryData, $id); 
+
+                    
+                    if($update){ 
+                        if(!empty($_FILES['images']['name'])){ 
+                            $filesCount = count($_FILES['images']['name']); 
+                            for($i = 0; $i < $filesCount; $i++){ 
+                                $_FILES['file']['name']     = $_FILES['images']['name'][$i]; 
+                                $_FILES['file']['type']     = $_FILES['images']['type'][$i]; 
+                                $_FILES['file']['tmp_name'] = $_FILES['images']['tmp_name'][$i]; 
+                                $_FILES['file']['error']    = $_FILES['images']['error'][$i]; 
+                                $_FILES['file']['size']     = $_FILES['images']['size'][$i]; 
+                                
+                            // File upload configuration 
+                                $uploadPath = './uploads/product_image'; 
+                                $config['upload_path'] = $uploadPath; 
+                                $config['allowed_types'] = 'jpg|jpeg|png|gif'; 
+                                
+                            // Load and initialize upload library 
+                                $this->load->library('upload', $config); 
+                                $this->upload->initialize($config); 
+                                
+                            // Upload file to server 
+                                if($this->upload->do_upload('file')){ 
+                                // Uploaded file data 
+                                    $fileData = $this->upload->data(); 
+                                    $uploadData[$i]['gallery_id'] = $id;
+                                    $uploadData[$i]['brand_id'] = $this->input->post('brand_id'); 
+                                    $uploadData[$i]['file_name'] = $fileData['file_name']; 
+                                    $uploadData[$i]['uploaded_on'] = date("Y-m-d H:i:s"); 
+                                }else{ 
+                                    $errorUpload .= $fileImages[$key].'('.$this->upload->display_errors('', '').') | ';  
+                                } 
+                            } 
+                            
+                        // File upload error message 
+                            $errorUpload = !empty($errorUpload)?'Upload Error: '.trim($errorUpload, ' | '):''; 
+                            
+                            if(!empty($uploadData)){ 
+                            // Insert files data into the database 
+                                $insert = $this->gallery->insertImage($uploadData); 
+                            } 
+                        } 
+                        
+                        $this->session->set_userdata('success_msg', 'Gallery has been updated successfully.'.$errorUpload); 
+                        redirect($this->controller); 
+                    }else{ 
+                        $data['error_msg'] = 'Some problems occurred, please try again.'; 
+                    } 
+                } 
+            } 
+            
+            
+            $data['gallery'] = $galleryData; 
+            $data['title'] = 'Update Product Gallery'; 
+            $data['action'] = 'Edit'; 
+            
+            $data["productdropdown"]=$this->Infomodel->getAllInfoBannerGallery();
+            $id= $this->session->userdata('session_id');
+            $data['admin']=$this->Adminmodel->getadmin($id);
+            $data['menu_groups']=$this->Menu->getAllMenuGroup();
+            $data['menu_details']=$this->Menu->getAllMenu();
+            $data['admin_role']=$this->Menu->adminrole();
+            $this->load->view('Dashboard/header', $data); 
+            $this->load->view('Dashboard/side.php');
+            $this->load->view('AdditionalInfo/infobannergallery',$data);
+            /*$this->load->view('gallery/add-edit', $data); */
+            $this->load->view('Dashboard/footer.php');
+        } 
     
   }

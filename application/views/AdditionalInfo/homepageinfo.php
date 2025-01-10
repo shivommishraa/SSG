@@ -50,10 +50,11 @@
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom03">Info Popup Image:</label>
-                                    <input type="file"  class="form-control" name="modelpopupimage" >
+                                    <button class="btn btn-sm btn-primary"  onClick="return redirect('<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery');"><i class="fa fa-list" aria-hidden="true"></i>Click Here</button>
+                                    <!-- <input type="file"  class="form-control" name="modelpopupimage" >
                                     <div class="valid-feedback">
                                         Looks good!
-                                    </div>
+                                    </div> -->
                                 </div>
                             <?php if(!empty($add_info[0]->modelpopupimage)){ ?>
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
