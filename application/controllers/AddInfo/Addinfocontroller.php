@@ -174,12 +174,12 @@ class Addinfocontroller extends CI_Controller {
                                 
                             // Upload file to server 
                                 if($this->upload->do_upload('file')){ 
-                                // Uploaded file data 
+                                
                                     $fileData = $this->upload->data(); 
                                     $uploadData[$i]['tbl_additional_info_id'] = $id;
-                                    /*$uploadData[$i]['brand_id'] = $this->input->post('brand_id'); */
+                                   
                                     $uploadData[$i]['infobannerimage'] = $fileData['file_name']; 
-                                    /*$uploadData[$i]['uploaded_on'] = date("Y-m-d H:i:s"); */
+                                   
                                 }else{ 
                                     $errorUpload .= $fileImages[$key].'('.$this->upload->display_errors('', '').') | ';  
                                 } 
@@ -215,6 +215,23 @@ class Addinfocontroller extends CI_Controller {
             $this->load->view('AdditionalInfo/infobannergallery',$data);
             $this->load->view('Dashboard/footer.php');
         } 
+
+        public function manageInfoGallery(){
+            $newid=1;
+            $data['gallery'] =  $this->Infomodel->getAllInfoBannerGalleryBy($newid); 
+            $data['title'] = 'Update Info Gallery'; 
+            $data['action'] = 'Edit'; 
+            $data["productdropdown"]=$this->Infomodel->getAllInfoBannerGallery();
+            $id= $this->session->userdata('session_id');
+            $data['admin']=$this->Adminmodel->getadmin($id);
+            $data['menu_groups']=$this->Menu->getAllMenuGroup();
+            $data['menu_details']=$this->Menu->getAllMenu();
+            $data['admin_role']=$this->Menu->adminrole();
+            $this->load->view('Dashboard/header', $data); 
+            $this->load->view('Dashboard/side.php');
+            $this->load->view('AdditionalInfo/infobannergallery',$data);
+            $this->load->view('Dashboard/footer.php');
+        }
 
 
         public function deleteImage(){ 

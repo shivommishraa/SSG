@@ -40,7 +40,7 @@
         
         
         <div class="card-body">  
-            <form method="post" action="" enctype="multipart/form-data">
+            <form method="post" action="<?php echo site_url()?>AddInfo/Addinfocontroller/infobannergallery" enctype="multipart/form-data">
                <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                  
