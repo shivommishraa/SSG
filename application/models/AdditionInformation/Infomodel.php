@@ -62,6 +62,22 @@ class Infomodel extends CI_Model {
     } 
 
 
+    public function getImgRow($id){ 
+        $this->db->select('*'); 
+        $this->db->from('info_banner_gallery'); 
+        $this->db->where('id', $id); 
+        $query  = $this->db->get(); 
+        return ($query->num_rows() > 0)?$query->row_array():false; 
+    } 
+
+     public function deleteImage($id){ 
+        // Delete image data 
+       
+        $delete = $this->db->delete('info_banner_gallery', $id); 
+        
+        // Return the status 
+        return $delete?true:false; 
+    } 
     
 /*===================================================================*/
    

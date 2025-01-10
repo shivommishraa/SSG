@@ -225,7 +225,7 @@ class Addinfocontroller extends CI_Controller {
             
             
             $data['gallery'] =  $this->Infomodel->getAllInfoBannerGalleryBy($id); 
-            $data['title'] = 'Update Product Gallery'; 
+            $data['title'] = 'Update Info Gallery'; 
             $data['action'] = 'Edit'; 
             $data["productdropdown"]=$this->Infomodel->getAllInfoBannerGallery();
             $id= $this->session->userdata('session_id');
@@ -239,5 +239,33 @@ class Addinfocontroller extends CI_Controller {
             /*$this->load->view('gallery/add-edit', $data); */
             $this->load->view('Dashboard/footer.php');
         } 
+
+
+        public function deleteImage(){ 
+        //$status  = 'err';  
+        // If post request is submitted via ajax 
+            if($this->input->post('id')){ 
+                $id = $this->input->post('id'); 
+
+                $imgData = $this->Infomodel->getImgRow($id); 
+                
+            // Delete image data 
+                $con = array('id' => $id); 
+
+                $delete = $this->Infomodel->deleteImage($con); 
+
+                
+                if($delete){ 
+                // Remove files from the server  
+                    @unlink('./ssgassests/infodetailsupload/'.$imgData['infobannerimage']);  
+                    echo $status = 'ok';  
+                } 
+                else{
+                  echo  $status  = ''; 
+              }
+          } 
+          
+
+      } 
     
   }

@@ -84,7 +84,7 @@
     function deleteImage(id){
         var result = confirm("Are you sure to delete?");
         if(result){
-            $.post( "<?php echo base_url('Image_gallery/manage_gallery/deleteImage'); ?>", {id:id}, function(resp) {
+            $.post( "<?php echo base_url('AddInfo/Addinfocontroller/deleteImage'); ?>", {id:id}, function(resp) {
                if(resp != ''){
                 $('#imgb_'+id).remove();
                 alert('The image has been removed from the gallery');
