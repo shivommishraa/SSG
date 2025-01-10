@@ -61,9 +61,9 @@
                 <h2 class="text-center mt-3 card-header"><u></u></h2>
                 <div class="row">
                     
-                    <?php if(!empty($gallery['infobannerimage'])){ ?>
+                    <?php if(!empty($gallery)){ ?>
                      
-                        <?php foreach($gallery['infobannerimage'] as $imgRow){ ?>
+                        <?php foreach($gallery as $imgRow){ ?>
                             <div class="col-md-4" id="imgb_<?php echo $imgRow['id']; ?>">
                                 <img src="<?php echo base_url('./ssgassests/infodetailsupload/'.$imgRow['file_name']); ?>"  height="80%" width="70%"/>
                                 <a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow['id']; ?>')">delete</a>
