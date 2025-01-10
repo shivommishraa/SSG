@@ -167,7 +167,7 @@ class Addinfocontroller extends CI_Controller {
             // Validate submitted form data 
                 //if($this->form_validation->run() == true){ 
                 // Update gallery data 
-                    $update = $this->Infomodel->updateInfoGallery($galleryData, $id); 
+                    //$update = $this->Infomodel->updateInfoGallery($galleryData, $id); 
 
                     
                    // if($update){ 
@@ -227,7 +227,8 @@ class Addinfocontroller extends CI_Controller {
             $data['gallery'] = $galleryData; 
             $data['title'] = 'Update Product Gallery'; 
             $data['action'] = 'Edit'; 
-            
+            $galleryData = $this->Infomodel->getAllInfoBannerGalleryBy($id); 
+            print_r($galleryData->getData()); exit;
             $data["productdropdown"]=$this->Infomodel->getAllInfoBannerGallery();
             $id= $this->session->userdata('session_id');
             $data['admin']=$this->Adminmodel->getadmin($id);
