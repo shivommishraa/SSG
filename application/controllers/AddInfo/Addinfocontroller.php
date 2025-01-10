@@ -148,7 +148,7 @@ class Addinfocontroller extends CI_Controller {
 
 
     public function infobannergallery($id){ 
-
+            $id=1;
             $data = $galleryData = array(); 
             
         // Get gallery data 
@@ -157,17 +157,17 @@ class Addinfocontroller extends CI_Controller {
         // If update request is submitted 
             if($this->input->post('imgSubmit')){ 
             // Form field validation rules 
-                $this->form_validation->set_rules('gallery_id', 'gallery title', 'required'); 
+               /* $this->form_validation->set_rules('tbl_additional_info_id', 'tbl_additional_info_id', 'required'); */
                 
             // Prepare gallery data 
-                $galleryData = array( 
+               /* $galleryData = array( 
                     'title' => $this->input->post('title') 
-                ); 
+                );*/ 
                 
             // Validate submitted form data 
                 if($this->form_validation->run() == true){ 
                 // Update gallery data 
-                    $update = $this->gallery->update($galleryData, $id); 
+                    $update = $this->gallery->updateInfoGallery($galleryData, $id); 
 
                     
                     if($update){ 
@@ -181,7 +181,7 @@ class Addinfocontroller extends CI_Controller {
                                 $_FILES['file']['size']     = $_FILES['images']['size'][$i]; 
                                 
                             // File upload configuration 
-                                $uploadPath = './uploads/product_image'; 
+                                $uploadPath = './ssgassests/infodetailsupload'; 
                                 $config['upload_path'] = $uploadPath; 
                                 $config['allowed_types'] = 'jpg|jpeg|png|gif'; 
                                 
@@ -193,10 +193,10 @@ class Addinfocontroller extends CI_Controller {
                                 if($this->upload->do_upload('file')){ 
                                 // Uploaded file data 
                                     $fileData = $this->upload->data(); 
-                                    $uploadData[$i]['gallery_id'] = $id;
-                                    $uploadData[$i]['brand_id'] = $this->input->post('brand_id'); 
-                                    $uploadData[$i]['file_name'] = $fileData['file_name']; 
-                                    $uploadData[$i]['uploaded_on'] = date("Y-m-d H:i:s"); 
+                                    $uploadData[$i]['tbl_additional_info_id'] = $id;
+                                    /*$uploadData[$i]['brand_id'] = $this->input->post('brand_id'); */
+                                    $uploadData[$i]['infobannerimage'] = $fileData['file_name']; 
+                                    /*$uploadData[$i]['uploaded_on'] = date("Y-m-d H:i:s"); */
                                 }else{ 
                                     $errorUpload .= $fileImages[$key].'('.$this->upload->display_errors('', '').') | ';  
                                 } 
@@ -207,7 +207,7 @@ class Addinfocontroller extends CI_Controller {
                             
                             if(!empty($uploadData)){ 
                             // Insert files data into the database 
-                                $insert = $this->gallery->insertImage($uploadData); 
+                                $insert = $this->gallery->insertImagesImage($uploadData); 
                             } 
                         } 
                         

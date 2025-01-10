@@ -9,8 +9,8 @@
                          <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?php echo site_url(); ?>Dashboard" class="breadcrumb-link">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="">Product</a></li>
-                                <li class="breadcrumb-item "><a href=""><?php echo $title; ?></a></li>
+                                <li class="breadcrumb-item"><a href="">Manage Additional Info</a></li>
+                                <li class="breadcrumb-item "><a href="">Info Banner Gallery</a></li>
                                 
                             </ol>
                         </nav>
@@ -27,7 +27,7 @@
                  <div class="col-md-4"></div>
                  <div class="col-md-4 "></div>
                  <div class="col-md-4 text-right">
-                     <button class="btn btn-sm btn-primary"  onClick="return redirect('<?php echo site_url(); ?>Image_gallery/manage_gallery');"><i class="fa fa-list" aria-hidden="true"></i> List Gallary</button>
+                     <button class="btn btn-sm btn-primary"  onClick="return redirect('<?php echo site_url(); ?>AddInfo/Addinfocontroller/manageInfo');"><i class="fa fa-list" aria-hidden="true"></i> Go To Info Details List</button>
                  </div>
              </div>
          </h5>
@@ -45,12 +45,11 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                  
                     <label for="validationCustom01">Name:</label>
-                    <input type="text" name="gallery_id" class="form-control"required id="validationCustom01"readonly placeholder="Enter title" value="<?php echo !empty($gallery['product_name'])?$gallery['product_name']:''; ?>" >
-                    <input type="hidden" name="brand_id" value="<?php echo !empty($gallery['product_brand'])?$gallery['product_brand']:''; ?>">
-                    <?php echo form_error('product_name','<p class="help-block text-danger">','</p>'); ?>
-                    <div class="valid-feedback">
+                    <input type="hidden" name="tbl_additional_info_id" value="1">
+                    <?php //echo form_error('product_name','<p class="help-block text-danger">','</p>'); ?>
+                   <!--  <div class="valid-feedback">
                      Looks good!
-                 </div>
+                 </div> -->
              </div>
              
              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
@@ -66,7 +65,7 @@
                      
                         <?php foreach($gallery['images'] as $imgRow){ ?>
                             <div class="col-md-4" id="imgb_<?php echo $imgRow['id']; ?>">
-                                <img src="<?php echo base_url('./uploads/product_image/'.$imgRow['file_name']); ?>"  height="80%" width="70%"/>
+                                <img src="<?php echo base_url('./ssgassests/infodetailsupload/'.$imgRow['file_name']); ?>"  height="80%" width="70%"/>
                                 <a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow['id']; ?>')">delete</a>
                             </div>
                         <?php } ?>

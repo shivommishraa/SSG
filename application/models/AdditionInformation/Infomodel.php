@@ -25,8 +25,39 @@ class Infomodel extends CI_Model {
 
     /*======== Start Code for Info Model Gallery ===========*/
     public function getAllInfoBannerGallery() {
-        return $this->db->get('info_banner_gallery')->result();
+        return $this->db->get('tbl_additional_info')->result();
     }
+
+    public function updateInfoGallery($data, $id) { 
+        if(!empty($data) && !empty($id)){ 
+            // Add modified date if not included 
+            /*if(!array_key_exists("modified", $data)){ 
+                $data['modified'] = date("Y-m-d H:i:s"); 
+            }*/ 
+            
+            // Update gallery data 
+            $update = $this->db->update('tbl_additional_info', $data, array('id' => $id)); 
+            
+            // Return the status 
+            return $update?true:false; 
+        } 
+        return false; 
+    }
+
+    public function insertImagesImage($data = array()) { 
+        if(!empty($data)){ 
+           
+            // Insert gallery data 
+            $insert = $this->db->insert_batch('tbl_additional_info', $data); 
+            
+            // Return the status 
+            return $insert?$this->db->insert_id():false; 
+        } 
+        return false; 
+    } 
+
+
+    
 /*===================================================================*/
    
 
