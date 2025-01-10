@@ -167,7 +167,7 @@ class Addinfocontroller extends CI_Controller {
             // Validate submitted form data 
                 //if($this->form_validation->run() == true){ 
                 // Update gallery data 
-                    $update = $this->gallery->updateInfoGallery($galleryData, $id); 
+                    $update = $this->Infomodel->updateInfoGallery($galleryData, $id); 
 
                     
                     if($update){ 
@@ -207,7 +207,7 @@ class Addinfocontroller extends CI_Controller {
                             
                             if(!empty($uploadData)){ 
                             // Insert files data into the database 
-                                $insert = $this->gallery->insertImagesImage($uploadData); 
+                                $insert = $this->Infomodel->insertImagesImage($uploadData); 
                             } 
                         } 
                         
