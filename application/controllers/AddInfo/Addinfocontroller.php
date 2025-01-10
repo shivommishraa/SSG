@@ -170,7 +170,7 @@ class Addinfocontroller extends CI_Controller {
                     $update = $this->Infomodel->updateInfoGallery($galleryData, $id); 
 
                     
-                    if($update){ 
+                   // if($update){ 
                         if(!empty($_FILES['images']['name'])){ 
                             $filesCount = count($_FILES['images']['name']); 
                             for($i = 0; $i < $filesCount; $i++){ 
@@ -213,9 +213,9 @@ class Addinfocontroller extends CI_Controller {
                         
                         $this->session->set_userdata('success_msg', 'Gallery has been updated successfully.'.$errorUpload); 
                         redirect($this->controller); 
-                    }else{ 
+                    /*}else{ 
                         $data['error_msg'] = 'Some problems occurred, please try again.'; 
-                    } 
+                    } */
                 //} 
             } 
             
