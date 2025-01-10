@@ -153,7 +153,7 @@ class Addinfocontroller extends CI_Controller {
             
         // Get gallery data 
             //$galleryData = $this->gallery->getRows($id); 
-
+            $galleryData = $this->Infomodel->getAllInfoBannerGalleryBy($id); 
         // If update request is submitted 
             if($this->input->post('imgSubmit')){ 
             // Form field validation rules 

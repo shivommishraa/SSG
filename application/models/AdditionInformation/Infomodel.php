@@ -28,6 +28,11 @@ class Infomodel extends CI_Model {
         return $this->db->get('info_banner_gallery')->result();
     }
 
+    public function getAllInfoBannerGalleryBy($id) {
+        $this->db->where('tbl_additional_info_id', $id);
+        return $this->db->get('info_banner_gallery')->result();
+    }
+
     public function updateInfoGallery($data, $id) { 
         if(!empty($data) && !empty($id)){ 
             // Add modified date if not included 
