@@ -44,7 +44,7 @@
                <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                  
-                    <label for="validationCustom01">Name:</label>
+                   <!--  <label for="validationCustom01">Name:</label> -->
                     <input type="hidden" name="tbl_additional_info_id" value="1">
                     <?php //echo form_error('product_name','<p class="help-block text-danger">','</p>'); ?>
                    <!--  <div class="valid-feedback">
@@ -55,7 +55,7 @@
              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                 <label>Images:</label>
                 <input type="file" name="images[]" class="form-control" multiple>
-                <input type="hidden" name="id" value="<?php echo !empty($gallery['id'])?$gallery['id']:''; ?>">
+                <input type="hidden" name="id" value="<?php //echo !empty($gallery['id'])?$gallery['id']:''; ?>">
 
                 <input type="submit" name="imgSubmit" class="btn btn-success mt-3" value="SUBMIT">
                 <h2 class="text-center mt-3 card-header"><u></u></h2>
@@ -64,9 +64,9 @@
                     <?php if(!empty($gallery)){ ?>
                      
                         <?php foreach($gallery as $imgRow){ ?>
-                            <div class="col-md-4" id="imgb_<?php echo $imgRow['id']; ?>">
-                                <img src="<?php echo base_url('./ssgassests/infodetailsupload/'.$imgRow['infobannerimage']); ?>"  height="80%" width="70%"/>
-                                <a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow['id']; ?>')">delete</a>
+                            <div class="col-md-4" id="imgb_<?php echo $imgRow->id; ?>">
+                                <img src="<?php echo base_url('./ssgassests/infodetailsupload/'.$imgRow->infobannerimage); ?>"  height="80%" width="70%"/>
+                                <a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow->id; ?>')">Delete</a>
                             </div>
                         <?php } ?>
                         
