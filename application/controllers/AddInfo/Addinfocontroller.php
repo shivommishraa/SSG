@@ -143,7 +143,7 @@ class Addinfocontroller extends CI_Controller {
       }
     }
 
-    /* ============================Start code for info banner gallery===============================*/
+    /* ================Start code for info banner gallery=========*/
    
 
 
@@ -151,26 +151,9 @@ class Addinfocontroller extends CI_Controller {
             $id=1;
             $data = $galleryData = array(); 
             
-        // Get gallery data 
-            //$galleryData = $this->gallery->getRows($id); 
             $galleryData = $this->Infomodel->getAllInfoBannerGalleryBy($id); 
-        // If update request is submitted 
             if($this->input->post('imgSubmit')){ 
-            // Form field validation rules 
-               /* $this->form_validation->set_rules('tbl_additional_info_id', 'tbl_additional_info_id', 'required'); */
-                
-            // Prepare gallery data 
-               /* $galleryData = array( 
-                    'title' => $this->input->post('title') 
-                );*/ 
-                
-            // Validate submitted form data 
-                //if($this->form_validation->run() == true){ 
-                // Update gallery data 
-                    //$update = $this->Infomodel->updateInfoGallery($galleryData, $id); 
-
-                    
-                   // if($update){ 
+           
                         if(!empty($_FILES['images']['name'])){ 
                             $filesCount = count($_FILES['images']['name']); 
                             for($i = 0; $i < $filesCount; $i++){ 
@@ -209,18 +192,12 @@ class Addinfocontroller extends CI_Controller {
                         // File upload error message 
                             $errorUpload = !empty($errorUpload)?'Upload Error: '.trim($errorUpload, ' | '):''; 
                             
-                            /*if(!empty($uploadData)){ 
-                            // Insert files data into the database 
-                                $insert = $this->Infomodel->insertImagesImage($uploadData); 
-                            } */
+                            
                         } 
                         
                         $this->session->set_userdata('success_msg', 'Gallery has been updated successfully.'.$errorUpload); 
                         redirect($this->controller); 
-                    /*}else{ 
-                        $data['error_msg'] = 'Some problems occurred, please try again.'; 
-                    } */
-                //} 
+                    
             } 
             
             
@@ -236,14 +213,12 @@ class Addinfocontroller extends CI_Controller {
             $this->load->view('Dashboard/header', $data); 
             $this->load->view('Dashboard/side.php');
             $this->load->view('AdditionalInfo/infobannergallery',$data);
-            /*$this->load->view('gallery/add-edit', $data); */
             $this->load->view('Dashboard/footer.php');
         } 
 
 
         public function deleteImage(){ 
-        //$status  = 'err';  
-        // If post request is submitted via ajax 
+        
             if($this->input->post('id')){ 
                 $id = $this->input->post('id'); 
 
