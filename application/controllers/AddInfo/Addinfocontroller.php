@@ -200,15 +200,19 @@ class Addinfocontroller extends CI_Controller {
                                 }else{ 
                                     $errorUpload .= $fileImages[$key].'('.$this->upload->display_errors('', '').') | ';  
                                 } 
+                                if(!empty($uploadData)){ 
+                                // Insert files data into the database 
+                                    $insert = $this->Infomodel->insertImagesImage($uploadData); 
+                                } 
                             } 
                             
                         // File upload error message 
                             $errorUpload = !empty($errorUpload)?'Upload Error: '.trim($errorUpload, ' | '):''; 
                             
-                            if(!empty($uploadData)){ 
+                            /*if(!empty($uploadData)){ 
                             // Insert files data into the database 
                                 $insert = $this->Infomodel->insertImagesImage($uploadData); 
-                            } 
+                            } */
                         } 
                         
                         $this->session->set_userdata('success_msg', 'Gallery has been updated successfully.'.$errorUpload); 
