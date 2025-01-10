@@ -65,7 +65,7 @@
                      
                         <?php foreach($gallery as $imgRow){ ?>
                             <div class="col-md-4" id="imgb_<?php echo $imgRow['id']; ?>">
-                                <img src="<?php echo base_url('./ssgassests/infodetailsupload/'.$imgRow['file_name']); ?>"  height="80%" width="70%"/>
+                                <img src="<?php echo base_url('./ssgassests/infodetailsupload/'.$imgRow['infobannerimage']); ?>"  height="80%" width="70%"/>
                                 <a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow['id']; ?>')">delete</a>
                             </div>
                         <?php } ?>
