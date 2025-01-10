@@ -143,18 +143,8 @@ class Addinfocontroller extends CI_Controller {
       }
     }
 
-    /* ===========================================================*/
-    public function infobannergallery(){
-      $id= $this->session->userdata('session_id');
-      $data['admin']=$this->Adminmodel->getadmin($id);
-      $data['menu_groups']=$this->Menu->getAllMenuGroup();
-      $data['menu_details']=$this->Menu->getAllMenu();
-      $data['admin_role']=$this->Menu->adminrole();
-      $this->load->view('Dashboard/header.php',$data);
-      $this->load->view('Dashboard/side.php');
-      $this->load->view('AdditionalInfo/infobannergallery',$data);
-      $this->load->view('Dashboard/footer.php');
-    }
+    /* ============================Start code for info banner gallery===============================*/
+   
 
 
     public function infobannergallery($id){ 
