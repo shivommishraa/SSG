@@ -165,7 +165,7 @@ class Addinfocontroller extends CI_Controller {
                 );*/ 
                 
             // Validate submitted form data 
-                if($this->form_validation->run() == true){ 
+                //if($this->form_validation->run() == true){ 
                 // Update gallery data 
                     $update = $this->gallery->updateInfoGallery($galleryData, $id); 
 
@@ -216,7 +216,7 @@ class Addinfocontroller extends CI_Controller {
                     }else{ 
                         $data['error_msg'] = 'Some problems occurred, please try again.'; 
                     } 
-                } 
+                //} 
             } 
             
             
