@@ -101,18 +101,19 @@
         }
     }
 
-    function setImage(image){
+   function setImage(image) {
         var result = confirm("Are you sure to set this as an info banner?");
-        if(result){
-            $.post( "<?php echo base_url('AddInfo/Addinfocontroller/setImageAsModelPopup'); ?>", {image:image}, function(resp) {
-               if(resp != ''){
-                //$('#imgb_'+id).remove();
-                alert('The image has been set as a Info Banner.');
-            }else{
-                alert('Some problem occurred, please try again.');
-            }
-        });
+        if (result) {
+            $.post("<?php echo base_url('AddInfo/Addinfocontroller/setImageAsModelPopup'); ?>", { image: image }, function(resp) {
+                if (resp != '') {
+                    alert('The image has been set as an Info Banner.');
+                    location.reload(); // Reload the page after success
+                } else {
+                    alert('Some problem occurred, please try again.');
+                }
+            });
         }
     }
+
 </script>
 <script src="<?php echo base_url('assets/js/jquery.min.js'); ?>"></script>
