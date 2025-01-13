@@ -66,7 +66,8 @@
                         <?php foreach($gallery as $imgRow){ ?>
                             <div class="col-md-4" id="imgb_<?php echo $imgRow->id; ?>">
                                 <img src="<?php echo base_url('./ssgassests/infodetailsupload/'.$imgRow->infobannerimage); ?>"  height="80%" width="70%"/>
-                                <a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow->id; ?>')">Delete</a>
+                                <a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow->id; ?>')">Delete</a> 
+                                <a href="javascript:void(0);" class="badge badge-primary" onclick="setImage('<?php echo $imgRow->infobannerimage; ?>')">Set As Model Popup</a>
                             </div>
                         <?php } ?>
                         
@@ -88,6 +89,20 @@
                if(resp != ''){
                 $('#imgb_'+id).remove();
                 alert('The image has been removed from the gallery');
+            }else{
+                alert('Some problem occurred, please try again.');
+            }
+        });
+        }
+    }
+
+    function setImage(image){
+        var result = confirm("Are you sure to set this as an info banner?");
+        if(result){
+            $.post( "<?php echo base_url('AddInfo/Addinfocontroller/setImageAsModelPopup'); ?>", {image:image}, function(resp) {
+               if(resp != ''){
+                //$('#imgb_'+id).remove();
+                alert('The image has been set as a Info Banner.');
             }else{
                 alert('Some problem occurred, please try again.');
             }

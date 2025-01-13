@@ -78,6 +78,14 @@ class Infomodel extends CI_Model {
         // Return the status 
         return $delete?true:false; 
     } 
+
+
+
+    public function updateforModelPopup($id,$data){ 
+        $this->db->where('id', $id);
+        $datas=$this->db->update('tbl_additional_info', $data);
+        return $datas?true:false; 
+    } 
     
 /*===================================================================*/
    

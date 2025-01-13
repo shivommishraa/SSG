@@ -242,5 +242,24 @@ class Addinfocontroller extends CI_Controller {
           
 
       } 
+
+
+
+       public function setImageAsModelPopup(){ 
+        
+            if($this->input->post('image')){ 
+                $data['modelpopupimage'] = $this->input->post('image'); 
+                $tbl_info_id=1;
+                $edit = $this->Infomodel->updateforModelPopup($tbl_info_id,$data);
+                if($edit){  
+                    echo $status = 'ok';  
+                } 
+                else{
+                  echo  $status  = ''; 
+              }
+          } 
+          
+
+      } 
     
   }
