@@ -196,7 +196,7 @@ class Addinfocontroller extends CI_Controller {
                         } 
                         
                         $this->session->set_userdata('success_msg', 'Gallery has been updated successfully.'.$errorUpload); 
-                        redirect($this->controller); 
+                        redirect('AddInfo/Addinfocontroller/infobannergallery/1');
                     
             } 
             
