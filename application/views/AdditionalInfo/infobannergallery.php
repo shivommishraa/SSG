@@ -68,7 +68,7 @@
                                 <img src="<?php echo base_url('./ssgassests/infodetailsupload/'.$imgRow->infobannerimage); ?>"  height="80%" width="70%"/>
                                 <?php if(($infomodeldata[0]->modelpopupimage) == $imgRow->infobannerimage){ ?>
                                     <span class="badge badge-info">Seleted As Model Popup</span> 
-                                <?php else  { ?>
+                                <?php }else  { ?>
                                    <a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow->id; ?>')">Delete</a> 
                                 <a href="javascript:void(0);" class="badge badge-primary" onclick="setImage('<?php echo $imgRow->infobannerimage; ?>')">Set As Model Popup</a>
                                 <?php } ?>
