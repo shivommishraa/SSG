@@ -90,6 +90,13 @@
                                             Set As Model Popup
                                         </a>
                                     <?php } ?>
+                                     <a 
+                                            href="javascript:void(0);" 
+                                            class="badge badge-success sendimagetowhatsapp" 
+                                            onclick="sendimagetowhatsapp('<?php echo base_url('./ssgassests/infodetailsupload/' . $imgRow->infobannerimage); ?>')"
+                                        >
+                                            Share on WhatsApp
+                                        </a>
                                 </div>
                             </div>
 
@@ -132,6 +139,13 @@
                 }
             });
         }
+    }
+
+
+    function sendimagetowhatsapp(imageUrl) {
+        // Open WhatsApp share window with the image URL
+        const whatsappUrl = "https://wa.me/?text=" + encodeURIComponent("Check out this image: " + imageUrl);
+        window.open(whatsappUrl, '_blank');
     }
 
 </script>
