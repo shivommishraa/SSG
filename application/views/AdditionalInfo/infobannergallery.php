@@ -89,13 +89,7 @@
                                         >
                                             Set As Model Popup
                                         </a>
-                                        <a 
-                                            href="javascript:void(0);" 
-                                            class="badge badge-success sendimagetowhatsapp" 
-                                            onclick="sendimagetowhatsapp('<?php echo base_url('./ssgassests/infodetailsupload/' . $imgRow->infobannerimage); ?>')"
-                                        >
-                                            Share on WhatsApp
-                                        </a>
+                                        
                                     <?php } ?>
                                      <a 
                                             href="javascript:void(0);" 
