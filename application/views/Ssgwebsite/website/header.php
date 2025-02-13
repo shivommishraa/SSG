@@ -124,13 +124,13 @@
         ?>
         <div class="humberger__menu__contact">
             <ul>
-                <li>
+                <!-- <li>
                     <button id="hmgAudioButton">
-                    <img id="hmgAudioIcon" src="<?php echo base_url(); ?>ssgassests/img/play.png" alt="Play Icon">
+                    <img id="hmgAudioIcon" src="<?php //echo base_url(); ?>ssgassests/img/play.png" alt="Play Icon">
                     <span id="hmgAudioText">Play</span>
                 </button>
-                <audio id="hmgAudioPlayer" src="<?php echo base_url(); ?>ssgassests/audiofiles/ssgmart_3_new.mp3"></audio>
-                </li>
+                <audio id="hmgAudioPlayer" src="<?php //echo base_url(); ?>ssgassests/audiofiles/ssgmart_3_new.mp3"></audio>
+                </li> -->
                 <li><div behavior="scroll" direction="left" style="font-weight: bold;color: blue; animation: blinkssg 1s infinite;"><?php echo $topheadingmsg; ?></div></li>
             </ul>
         </div>
@@ -147,13 +147,13 @@
                             <ul>
                                 <!-- <li><i class="fa fa-envelope"></i> ssgmart9@gmail.com</li> -->
                                 <li>
-                                    <div>
+                                   <!--  <div>
                                         <button id="audioButton">
-                                            <img id="audioIcon" src="<?php echo base_url(); ?>ssgassests/img/play.png" alt="Play Icon">
+                                            <img id="audioIcon" src="<?php //echo base_url(); ?>ssgassests/img/play.png" alt="Play Icon">
                                             <span id="audioText">Play</span>
                                         </button>
-                                        <audio id="audioPlayer" src="<?php echo base_url(); ?>ssgassests/audiofiles/ssgmart_3_new.mp3"></audio>
-                                    </div>
+                                        <audio id="audioPlayer" src="<?php //echo base_url(); ?>ssgassests/audiofiles/ssgmart_3_new.mp3"></audio>
+                                    </div> -->
                                 </li>
                                 <li>
                                     <div behavior="scroll" direction="left" style="font-weight: bold;  color: blue; animation: blinkssg 1s infinite;"><?php echo $topheadingmsg; ?></div>
