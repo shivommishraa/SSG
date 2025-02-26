@@ -3,7 +3,7 @@
     <div class="headerd">Thanks for visiting! Please click any box for order, offer, and mart location.</div>
     <div class="container">
         <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="box order">
-            <i class="fas fa-shopping-cart icon"></i>
+   
             Click for Order
             <div class="star tl"></div>
             <div class="star tr"></div>
@@ -11,7 +11,7 @@
             <div class="star br"></div>
         </a>
         <a href="<?php echo base_url(); ?>Website/Website_controller/newoffers" class="box offer">
-            <i class="fas fa-tag icon"></i>
+            
             Click for Offer
             <div class="star tl"></div>
             <div class="star tr"></div>
@@ -19,7 +19,6 @@
             <div class="star br"></div>
         </a>
         <a href="#" class="box location">
-            <i class="fas fa-map-marker-alt icon"></i>
             Click for Location
             <div class="star tl"></div>
             <div class="star tr"></div>
@@ -29,15 +28,7 @@
     </div>
 
 <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            margin: 0;
-        }
+        
         .headerd {
             font-size: 22px;
             font-weight: bold;
