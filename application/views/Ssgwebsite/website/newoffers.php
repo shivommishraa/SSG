@@ -1,6 +1,6 @@
 
 
-    <div class="header">Thanks for visiting! Please click any box for order, offer, and mart location.</div>
+    <div class="headerd">Thanks for visiting! Please click any box for order, offer, and mart location.</div>
     <div class="container">
         <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="box order">
             <i class="fas fa-shopping-cart icon"></i>
@@ -38,7 +38,7 @@
             background-color: #f4f4f4;
             margin: 0;
         }
-        .header {
+        .headerd {
             font-size: 22px;
             font-weight: bold;
             color: #ff4500;
