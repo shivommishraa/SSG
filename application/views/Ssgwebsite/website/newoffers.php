@@ -1,30 +1,30 @@
 
 
-    <div class="headerd">Thanks for visiting! Please click any box for order, offer, and mart location.</div>
+    <div class="headerd">Thanks for visiting! Please click any box for Offer,Order,& Mart Location.</div>
     <div class="containeroffer">
-        <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="boxoffer order">
-   
-            Click for Order
-            <div class="star tl"></div>
-            <div class="star tr"></div>
-            <div class="star bl"></div>
-            <div class="star br"></div>
-        </a>
+        
         <a href="<?php echo base_url(); ?>Website/Website_controller/newoffers" class="boxoffer offer">
-            
             Click for Offer
             <div class="star tl"></div>
             <div class="star tr"></div>
             <div class="star bl"></div>
             <div class="star br"></div>
         </a>
-        <a href="#" class="boxoffer location">
+         <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="boxoffer order">
+            Click for Order
+            <div class="star tl"></div>
+            <div class="star tr"></div>
+            <div class="star bl"></div>
+            <div class="star br"></div>
+        </a>
+        <a href="https://www.google.com/maps/dir//CH.CHIRANJI+SQUARE,+behind+ACE+CITY,+Sector+1,+Aimnabad,+Bisrakh+Jalalpur,+Greater+Noida,+Bisrakh+Jalalpur,+Uttar+Pradesh+201306/@28.5601833,77.3695097,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390cef00518183e7:0xcc0b7a3b94f4db4c!2m2!1d77.4519111!2d28.5602082?entry=ttu&g_ep=EgoyMDI1MDIyMy4xIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" class="boxoffer location">
             Click for Location
             <div class="star tl"></div>
             <div class="star tr"></div>
             <div class="star bl"></div>
             <div class="star br"></div>
         </a>
+       
     </div>
 
 <style>
