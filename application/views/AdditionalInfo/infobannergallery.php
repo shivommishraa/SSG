@@ -66,7 +66,7 @@
                         <?php foreach($gallery as $imgRow){ ?>
                             <div class="col-md-4" id="imgb_<?php echo $imgRow->id; ?>">
                                 <img 
-                                    class="mt-2"
+                                    class="mt-5"
                                     src="<?php echo base_url('./ssgassests/infodetailsupload/' . $imgRow->infobannerimage); ?>"  
                                     height="80%" 
                                     width="70%" 
