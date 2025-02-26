@@ -94,7 +94,7 @@
                                     <br>
                                     <?php if (($infomodeldata[0]->offerimage) == $imgRow->infobannerimage) { ?>
                                     <span class="badge badge-warning mt-1 mb-2">Selected For Offer Page</span>
-                                    ?php } else { ?>
+                                    <?php } else { ?>
 
                                         <a 
                                             href="javascript:void(0);" 
