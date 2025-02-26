@@ -390,7 +390,7 @@ public function customeraccount(){
 
   public function newoffers(){
     $this->load->view('Ssgwebsite/website/header');
-    $this->load->view('Ssgwebsite/website/newoffers');
+    $this->load->view('Ssgwebsite/website/offerspage');
     $this->load->view('Ssgwebsite/website/footer');
   }
 
