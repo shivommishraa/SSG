@@ -394,6 +394,12 @@ public function customeraccount(){
     $this->load->view('Ssgwebsite/website/footer');
   }
 
+  public function offers(){
+    $this->load->view('Ssgwebsite/website/header');
+    $this->load->view('Ssgwebsite/website/newoffers');
+    $this->load->view('Ssgwebsite/website/footer');
+  }
+
   public function customer_update(){
     $loggedincusomterid= $this->session->userdata('customer_session_id');
     if(!empty($loggedincusomterid)){
