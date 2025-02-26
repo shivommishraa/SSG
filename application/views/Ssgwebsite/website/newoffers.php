@@ -73,8 +73,7 @@
         }
     </style>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
+
     <div class="header">Thanks for visiting! Please click any box for order, offer, and mart location.</div>
     <div class="container">
         <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="box order">
