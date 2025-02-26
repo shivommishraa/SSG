@@ -92,16 +92,20 @@
                                         
                                     <?php } ?>
                                     <br>
-                                    <a 
+                                    <?php if (($infomodeldata[0]->offerimage) == $imgRow->infobannerimage) { ?>
+                                    <span class="badge badge-warning mt-1 mb-2">Selected For Offer Page</span>
+                                    ?php } else { ?>
+
+                                        <a 
                                             href="javascript:void(0);" 
-                                            class="badge badge-primary" 
-                                            onclick="setofferImage('<?php echo $imgRow->infobannerimage; ?>')"
-                                        >
+                                            class="badge badge-warning  mt-1 mb-2" 
+                                            onclick="setofferImage('<?php echo $imgRow->infobannerimage; ?>')">
                                             Set For Offer Page
                                         </a>
+                                    <?php } ?>
                                      <a 
                                             href="javascript:void(0);" 
-                                            class="badge badge-success sendimagetowhatsapp" 
+                                            class="badge badge-success sendimagetowhatsapp  mt-1 mb-2" 
                                             onclick="sendimagetowhatsapp('<?php echo base_url('./ssgassests/infodetailsupload/' . $imgRow->infobannerimage); ?>')"
                                         >
                                             Share on WhatsApp
