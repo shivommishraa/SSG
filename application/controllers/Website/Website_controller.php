@@ -389,8 +389,9 @@ public function customeraccount(){
 
 
   public function newoffers(){
+    $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
     $this->load->view('Ssgwebsite/website/header');
-    $this->load->view('Ssgwebsite/website/offerspage');
+    $this->load->view('Ssgwebsite/website/offerspage',$data);
     $this->load->view('Ssgwebsite/website/footer');
   }
 

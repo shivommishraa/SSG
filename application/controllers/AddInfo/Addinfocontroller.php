@@ -262,5 +262,23 @@ class Addinfocontroller extends CI_Controller {
           
 
       } 
+
+
+       public function setImageForOffer(){ 
+        
+            if($this->input->post('image')){ 
+                $data['offerimage'] = $this->input->post('image'); 
+                $tbl_info_id=1;
+                $edit = $this->Infomodel->setImageForOffer($tbl_info_id,$data);
+                if($edit){  
+                    echo $status = 'ok';  
+                } 
+                else{
+                  echo  $status  = ''; 
+              }
+          } 
+          
+
+      } 
     
   }

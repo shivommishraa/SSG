@@ -91,6 +91,14 @@
                                         </a>
                                         
                                     <?php } ?>
+                                    <br>
+                                    <a 
+                                            href="javascript:void(0);" 
+                                            class="badge badge-primary" 
+                                            onclick="setofferImage('<?php echo $imgRow->infobannerimage; ?>')"
+                                        >
+                                            Set For Offer Page
+                                        </a>
                                      <a 
                                             href="javascript:void(0);" 
                                             class="badge badge-success sendimagetowhatsapp" 
@@ -132,6 +140,20 @@
         var result = confirm("Are you sure to set this as an info banner?");
         if (result) {
             $.post("<?php echo base_url('AddInfo/Addinfocontroller/setImageAsModelPopup'); ?>", { image: image }, function(resp) {
+                if (resp != '') {
+                    alert('The image has been set as an Info Banner.');
+                    location.reload(); // Reload the page after success
+                } else {
+                    alert('Some problem occurred, please try again.');
+                }
+            });
+        }
+    }
+
+     function setofferImage(image) {
+        var result = confirm("Are you sure to set this as an info banner?");
+        if (result) {
+            $.post("<?php echo base_url('AddInfo/Addinfocontroller/setImageForOffer'); ?>", { image: image }, function(resp) {
                 if (resp != '') {
                     alert('The image has been set as an Info Banner.');
                     location.reload(); // Reload the page after success

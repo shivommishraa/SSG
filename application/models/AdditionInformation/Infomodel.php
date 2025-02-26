@@ -86,6 +86,12 @@ class Infomodel extends CI_Model {
         $datas=$this->db->update('tbl_additional_info', $data);
         return $datas?true:false; 
     } 
+
+    public function setImageForOffer($id,$data){ 
+        $this->db->where('id', $id);
+        $datas=$this->db->update('tbl_additional_info', $data);
+        return $datas?true:false; 
+    } 
     
 /*===================================================================*/
    
