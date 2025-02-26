@@ -1,8 +1,8 @@
 
 
     <div class="headerd">Thanks for visiting! Please click any box for order, offer, and mart location.</div>
-    <div class="container">
-        <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="box order">
+    <div class="containeroffer">
+        <a href="<?php echo base_url(); ?>Website/Website_controller/ordernow" class="boxoffer order">
    
             Click for Order
             <div class="star tl"></div>
@@ -10,7 +10,7 @@
             <div class="star bl"></div>
             <div class="star br"></div>
         </a>
-        <a href="<?php echo base_url(); ?>Website/Website_controller/newoffers" class="box offer">
+        <a href="<?php echo base_url(); ?>Website/Website_controller/newoffers" class="boxoffer offer">
             
             Click for Offer
             <div class="star tl"></div>
@@ -18,7 +18,7 @@
             <div class="star bl"></div>
             <div class="star br"></div>
         </a>
-        <a href="#" class="box location">
+        <a href="#" class="boxoffer location">
             Click for Location
             <div class="star tl"></div>
             <div class="star tr"></div>
@@ -41,13 +41,13 @@
             from { opacity: 1; }
             to { opacity: 0.5; }
         }
-        .container {
+        .containeroffer {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
-        .box {
+        .boxoffer {
             width: 200px;
             height: 200px;
             display: flex;
@@ -64,7 +64,7 @@
             text-decoration: none;
             border-radius: 10px;
         }
-        .box:hover {
+        .boxoffer:hover {
             transform: scale(1.1);
         }
         .order { background: linear-gradient(45deg, #ff4e50, #fc913a); }
