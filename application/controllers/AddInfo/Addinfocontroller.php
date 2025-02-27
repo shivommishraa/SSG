@@ -12,6 +12,7 @@ class Addinfocontroller extends CI_Controller {
     $this->load->library("pagination");
     $this->load->model('Admin_model/Adminmodel');
     $this->load->model('Menu_model/Menu');
+    $this->load->model('Bannercategory/Bannercategory');
     $this->load->model('Admin_model/Role_model');
     $this->load->library('session');
     $this->load->helper(array('url','form'));
@@ -150,7 +151,7 @@ class Addinfocontroller extends CI_Controller {
     public function infobannergallery($id){ 
             $id=1;
             $data = $galleryData = array(); 
-            
+            $bannercategory=$this->input->post('bannercategory')
             $galleryData = $this->Infomodel->getAllInfoBannerGalleryBy($id); 
             if($this->input->post('imgSubmit')){ 
            
@@ -179,6 +180,9 @@ class Addinfocontroller extends CI_Controller {
                                     $uploadData[$i]['tbl_additional_info_id'] = $id;
                                     /*$uploadData[$i]['brand_id'] = $this->input->post('brand_id'); */
                                     $uploadData[$i]['infobannerimage'] = $fileData['file_name']; 
+                                    if(!empty($bannercategory)){
+                                        $uploadData[$i]['bannercategory'] = $bannercategory;
+                                    }
                                     /*$uploadData[$i]['uploaded_on'] = date("Y-m-d H:i:s"); */
                                 }else{ 
                                     $errorUpload .= $fileImages[$key].'('.$this->upload->display_errors('', '').') | ';  
@@ -211,6 +215,7 @@ class Addinfocontroller extends CI_Controller {
             $data['menu_groups']=$this->Menu->getAllMenuGroup();
             $data['menu_details']=$this->Menu->getAllMenu();
             $data['admin_role']=$this->Menu->adminrole();
+            $data['bannercategory']=$this->Bannercategory->getAllBannercategory();
             $this->load->view('Dashboard/header', $data); 
             $this->load->view('Dashboard/side.php');
             $this->load->view('AdditionalInfo/infobannergallery',$data);

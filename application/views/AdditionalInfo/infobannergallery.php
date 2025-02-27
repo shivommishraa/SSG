@@ -39,7 +39,19 @@
                                 <input type="hidden" name="tbl_additional_info_id" value="1">
                                 
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6"> 
+                                        <label for="validationCustom05">Category:</label>
+                                       <select class="form-control" required="" id="validationCustom05"  name="bannercategory">
+                                           <option value="">Select Category</option>
+                                           <?php foreach($bannercategory as $row): ?>
+                                               <option value="<?php echo $row->id; ?>" ><?php echo $row->title; ?></option>
+                                           <?php endforeach; ?>
+                                       </select>
+                                       <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                        <div class="col-md-6">
                                         <label>Images:</label>
                                         <input type="file" name="images[]" class="form-control" multiple>
                                         <input type="hidden" name="id" value="<?php //echo !empty($gallery['id'])?$gallery['id']:''; ?>">
@@ -51,6 +63,7 @@
                                     <?php if (!empty($gallery)) { ?>
                                         <?php foreach ($gallery as $imgRow) { ?>
                                             <div class="col-md-4" id="imgb_<?php echo $imgRow->id; ?>">
+                                                <span class="badge badge-info"><?php echo $imgRow->bannercategory; ?></span>
                                                 <img src="<?php echo base_url('./ssgassests/infodetailsupload/' . $imgRow->infobannerimage); ?>" class="img-fluid mt-3" alt="Info Banner">
                                                 
                                                 <div class="mt-2">
