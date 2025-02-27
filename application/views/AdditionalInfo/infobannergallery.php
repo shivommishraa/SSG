@@ -70,10 +70,10 @@
                             
                             <form role="form" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery" method="post">
                                 <div class="row mt-3 align-items-center">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                        <h3>All Banner List</h3>
                                     </div>
-                                    <div class="col-md-6 text-right">
+                                    <div class="col-md-8 text-right">
                                          <select class="form-control" required name="bannercategory">
                                             <option value="">Search By Category</option>
                                             <?php foreach ($bannercategory as $row) : ?>
