@@ -97,8 +97,8 @@
                                             <div class="mt-2">
                                                 <a href="javascript:void(0);" class="badge badge-primary" onclick="setImage('<?php echo $imgRow->infobannerimage; ?>')">Set As Model Popup</a>
                                                 <a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow->id; ?>')">Delete</a>
-                                                <a href="javascript:void(0);" class="badge badge-warning mt-1 mb-2" onclick="setOfferImage('<?php echo $imgRow->infobannerimage; ?>')">Set For Offer Page</a>
-                                                <a href="javascript:void(0);" class="badge badge-success sendimagetowhatsapp mt-1 mb-2" onclick="sendImageToWhatsApp('<?php echo base_url('ssgassests/infodetailsupload/' . $imgRow->infobannerimage); ?>')">Share on WhatsApp</a>
+                                                <a href="javascript:void(0);" class="badge badge-warning mt-1 mb-2" onclick="setofferImage('<?php echo $imgRow->infobannerimage; ?>')">Set For Offer Page</a>
+                                                <a href="javascript:void(0);" class="badge badge-success sendimagetowhatsapp mt-1 mb-2" onclick="sendimagetowhatsapp('<?php echo base_url('ssgassests/infodetailsupload/' . $imgRow->infobannerimage); ?>')">Share on WhatsApp</a>
                                             </div>
                                         </div>
                                     <?php endforeach; ?>
