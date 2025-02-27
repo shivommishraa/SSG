@@ -62,11 +62,13 @@
                                         <label>Images:</label>
                                         <input type="file" name="images[]" class="form-control" multiple>
                                         <input type="hidden" name="id" value="<?php //echo !empty($gallery['id'])?$gallery['id']:''; ?>">
-                                        <div class="col-md-4">
+                                        
+                                    </div>
+                                    <div class="col-md-4">
                                         <input type="submit" name="imgSubmit" class="btn btn-success mt-3" value="SUBMIT">
                                     </div>
-                                    </div>
                                 </div>
+                            </form>
                                 <form  role="form" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery" method="post">
            <div class="row col-md-12">
              <!-- <div class="col-md-3 card-header"> </div> -->
@@ -135,7 +137,6 @@
 
        <div class="dataTables_paginate paging_simple_numbers pt-2 "><?php echo $links; ?></div>
                                 </div>
-                            </form>
                         </div>
                     </div>
                 </div>
