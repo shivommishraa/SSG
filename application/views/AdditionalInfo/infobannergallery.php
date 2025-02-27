@@ -143,4 +143,21 @@
             });
         }
     }
+
+    function setofferImage(image) {
+        if (confirm("Are you sure to set this as an offer banner?")) {
+            $.post("<?php echo base_url('AddInfo/Addinfocontroller/setImageForOffer'); ?>", { image: image }, function(resp) {
+                if (resp != '') {
+                    alert('The image has been set as an Offer Banner.');
+                    location.reload();
+                } else {
+                    alert('Some problem occurred, please try again.');
+                }
+            });
+        }
+    }
+
+    function sendimagetowhatsapp(imageUrl) {
+        window.open("https://wa.me/?text=" + encodeURIComponent("Check out this image: " + imageUrl), '_blank');
+    }
 </script>
