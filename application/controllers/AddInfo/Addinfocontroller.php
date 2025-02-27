@@ -151,7 +151,7 @@ class Addinfocontroller extends CI_Controller {
     public function infobannergallery($id){ 
             $id=1;
             $data = $galleryData = array(); 
-            $bannercategory=$this->input->post('bannercategory')
+            $bannercategory=$this->input->post('bannercategory');
             $galleryData = $this->Infomodel->getAllInfoBannerGalleryBy($id); 
             if($this->input->post('imgSubmit')){ 
            
