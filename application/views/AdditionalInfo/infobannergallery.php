@@ -70,10 +70,10 @@
                                 </div>
                             </form>
                             <div class="card-header d-flex justify-content-between align-items-center">
-                            <h5>All Banner List</h5>
+                            
                                 <form  role="form" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery" method="post">
            <div class="row col-md-12 mt-3">
-             <!-- <div class="col-md-3 card-header"> </div> -->
+             <div class="col-md-6 card-header"> <h5>All Banner List</h5></div>
              <div class="col-md-6 card-header">
              <select class="form-control" required="" id="validationCustom05"  name="bannercategory">
                                            <option value="">Search By Category</option>
