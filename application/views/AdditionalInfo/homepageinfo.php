@@ -143,6 +143,33 @@
                                         Looks good!
                                     </div>
                             </div>
+                              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pt-2">
+                                <h4>Offer Page (Details)</h4>
+                             </div>
+                           <!--  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Info Popup For Home Page:</label>
+                                    <select class="form-control"  name="modelpopupenable" id="validationCustom02"required>
+                                       <option value="0" <?php //if("0"==$add_info[0]->modelpopupenable) echo "selected"; ?>>No</option>
+                                       <option value="1" <?php //if("1"==$add_info[0]->modelpopupenable) echo "selected"; ?>>Yes</option>
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                            </div> -->
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Offer Page Image:</label>
+                                    <a class="btn btn-sm btn-primary"  href="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery/<?php echo $add_info[0]->id ?>">Click Here</a>
+                                    <!-- <input type="file"  class="form-control" name="modelpopupimage" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div> -->
+                                </div>
+                            <?php if(!empty($add_info[0]->offerimage)){ ?>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
+                                    <label for="validationCustom03">Uploaded Offer Page Image:</label>
+                                    <img height="150px" width="200px" src="<?php echo site_url(); ?>ssgassests/infodetailsupload/<?php echo $add_info[0]->offerimage; ?>"/>
+                                </div>
+                                <?php } ?>
                 </div>
             <div class="form-row pt-2">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
