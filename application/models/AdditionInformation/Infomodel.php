@@ -25,7 +25,7 @@ class Infomodel extends CI_Model {
             $this->db->where('bannercategory',$bannercategory);
             
         }
-        $this->db->from('tbl_additional_info');   
+        $this->db->from('info_banner_gallery');   
         $query=$this->db->get();
         return $query->result();
         
@@ -38,7 +38,7 @@ class Infomodel extends CI_Model {
             
         }
         
-        return $this->db->get('tbl_additional_info')->num_rows();
+        return $this->db->get('info_banner_gallery')->num_rows();
     }
 
     public function update($id,$data) {
