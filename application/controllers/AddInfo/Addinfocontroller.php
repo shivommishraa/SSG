@@ -216,8 +216,8 @@ class Addinfocontroller extends CI_Controller {
             $data['menu_details']=$this->Menu->getAllMenu();
             $data['admin_role']=$this->Menu->adminrole();
             $data['bannercategory']=$this->Bannercategory->getAllBannercategory();
-            $data['bannercategorybyid']=function($id){
-                return $this->Bannercategory->getBannercategoryById($id);
+            $data['bannercategorybyid']=function($bannercategory){
+                return $this->Bannercategory->getBannercategoryById($bannercategory);
             };
             $this->load->view('Dashboard/header', $data); 
             $this->load->view('Dashboard/side.php');
