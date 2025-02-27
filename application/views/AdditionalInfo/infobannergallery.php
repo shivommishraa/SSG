@@ -69,7 +69,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="card-header d-flex justify-content-between align-items-center">
+                            <div class="card-header d-flex">
                             
                                 <form  role="form" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery" method="post">
            <div class="row col-md-12 mt-3">
