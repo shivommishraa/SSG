@@ -62,10 +62,10 @@
                                                     <?php } ?>
 
 
-                                                     <?php if ((($infomodeldata[0]->modelpopupimage) != $imgRow->infobannerimage) || (($infomodeldata[0]->offerimage) != $imgRow->infobannerimage) ) { ?>
+                                                     <?php if ((($infomodeldata[0]->modelpopupimage) == $imgRow->infobannerimage) || (($infomodeldata[0]->offerimage) == $imgRow->infobannerimage) ) { ?>
+                                                    <?php }else{ ?>
                                                         <a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow->id; ?>')">Delete</a>
                                                     <?php } ?>
-
                                                     <br>
 
                                                     <?php if (($infomodeldata[0]->offerimage) == $imgRow->infobannerimage) { ?>
