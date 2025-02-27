@@ -67,7 +67,7 @@
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <!-- <h5>All Banner List</h5> -->
                             </div>
-                            <hr style="color:red;">
+                            <hr style="background-color:red;">
                             <form role="form" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery" method="post">
                                 <div class="row mt-3 align-items-center">
                                     <div class="col-md-4">
@@ -87,7 +87,7 @@
                                     </div>
                                 </div>
                             </form>
-                            
+                            <hr style="background-color:green;">
                             <div class="row mt-4">
                                 <?php if (!empty($gallery)) : ?>
                                     <?php foreach ($gallery as $imgRow) : ?>
