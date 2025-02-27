@@ -63,7 +63,13 @@
                                     <?php if (!empty($gallery)) { ?>
                                         <?php foreach ($gallery as $imgRow) { ?>
                                             <div class="col-md-4" id="imgb_<?php echo $imgRow->id; ?>">
-                                                <span class="badge badge-info"><?php echo $imgRow->bannercategory; ?></span>
+                                                <?php 
+                                                    $named=$bannercategorybyid($imgRow[0]->bannercategory);
+                                                    if(!empty($named[0]->title)){ ?>
+                                                        <span class="badge badge-info"><?php echo $named[0]->title;?></span>
+                                                        
+                                                <?php } ?>
+                                                
                                                 <img src="<?php echo base_url('./ssgassests/infodetailsupload/' . $imgRow->infobannerimage); ?>" class="img-fluid mt-3" alt="Info Banner">
                                                 
                                                 <div class="mt-2">
