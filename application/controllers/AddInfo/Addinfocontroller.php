@@ -148,7 +148,7 @@ class Addinfocontroller extends CI_Controller {
    
 
 
-    public function infobannergallery($id){ 
+    public function infobannergallery(){ 
             $id=1;
             $data = $galleryData = array(); 
             $bannercategory=$this->input->post('bannercategory');
@@ -205,16 +205,38 @@ class Addinfocontroller extends CI_Controller {
             } 
             
             
+             $id= $this->session->userdata('session_id');
+             $data['admin']=$this->Adminmodel->getadmin($id);
+             $data['menu_groups']=$this->Menu->getAllMenuGroup();
+             $data['menu_details']=$this->Menu->getAllMenu();
+             $data['admin_role']=$this->Menu->adminrole();
+                    //============================ Start Pager Code ==============================
+             $bannercategory=($this->input->post('bannercategory')) ? $this->input->post('bannercategory') :0;
+             $bannercategory=($this->uri->segment(4)) ?  $this->uri->segment(4) :$bannercategory;
+             $this->load->config('bootstrap_pagination');
+             $config = $this->config->item('pagination_config');;
+             $config['base_url'] = base_url() ."AddInfo/Addinfocontroller/infobannergallery"."/$bannercategory";
+             $config['total_rows'] = $this->Infomodel->get_count($bannercategory);
+             $config['per_page'] = 20;
+             $config['uri_segment'] = 5;
+             $this->pagination->initialize($config);
+             $page = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
+             $data['links'] = $this->pagination->create_links();
+          //============================ End Pager Code ==============================
+     
+
+
             $data['gallery'] =  $this->Infomodel->getAllInfoBannerGalleryBy($id); 
             $data['title'] = 'Update Info Gallery'; 
             $data['action'] = 'Edit'; 
             $data["productdropdown"]=$this->Infomodel->getAllInfoBannerGallery();
-            $data["infomodeldata"]=$this->Infomodel->getInfoDataById(1);
-            $id= $this->session->userdata('session_id');
+            /*$data["infomodeldata"]=$this->Infomodel->getInfoDataById(1);*/
+            $data["infomodeldata"]=$this->Infomodel->getInfoDataByIdNew($config['per_page'],$page,$bannercategory);
+            /*$id= $this->session->userdata('session_id');
             $data['admin']=$this->Adminmodel->getadmin($id);
             $data['menu_groups']=$this->Menu->getAllMenuGroup();
             $data['menu_details']=$this->Menu->getAllMenu();
-            $data['admin_role']=$this->Menu->adminrole();
+            $data['admin_role']=$this->Menu->adminrole();*/
             $data['bannercategory']=$this->Bannercategory->getAllBannercategory();
             $data['bannercategorybyid']=function($bannercategory){
                 return $this->Bannercategory->getBannercategoryById($bannercategory);

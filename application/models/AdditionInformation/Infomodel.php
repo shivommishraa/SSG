@@ -17,6 +17,30 @@ class Infomodel extends CI_Model {
         return $this->db->get('tbl_additional_info')->result();
     }
 
+    public function getInfoDataByIdNew($limit,$start,$bannercategory) {
+     
+           $this->db->select('*');
+           $this->db->limit($limit, $start);
+           if($bannercategory!=''){
+            $this->db->where('bannercategory',$bannercategory);
+            
+        }
+        $this->db->from('tbl_additional_info');   
+        $query=$this->db->get();
+        return $query->result();
+        
+    }
+
+    public function get_count($bannercategory='') 
+    {
+        if($bannercategory!=''){
+            $this->db->where('bannercategory',$bannercategory);
+            
+        }
+        
+        return $this->db->get('tbl_additional_info')->num_rows();
+    }
+
     public function update($id,$data) {
         $this->db->where('id', $id);
         $this->db->update('tbl_additional_info', $data);
