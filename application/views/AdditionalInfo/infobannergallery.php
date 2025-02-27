@@ -67,7 +67,7 @@
                                                 if(!empty($imgRow->bannercategory)){
                                                     $named=$bannercategorybyid($imgRow->bannercategory);
                                                     if(!empty($named[0]->title)){ ?>
-                                                        <span class="badge badge-info"><?php echo $named[0]->title;?></span>
+                                                        <span class="badge badge-dark"><?php echo $named[0]->title;?></span>
                                                         
                                                 <?php }} ?>
                                                 
