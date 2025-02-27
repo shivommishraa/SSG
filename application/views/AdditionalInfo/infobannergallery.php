@@ -161,3 +161,4 @@
         window.open("https://wa.me/?text=" + encodeURIComponent("Check out this image: " + imageUrl), '_blank');
     }
 </script>
+<script src="<?php echo base_url('assets/js/jquery.min.js'); ?>"></script>
