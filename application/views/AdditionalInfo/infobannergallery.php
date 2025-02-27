@@ -34,10 +34,43 @@
                             </div>
                         <?php } ?>
 
-          <form  role="form" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery" method="post">
+          
+          <?php if($this->session->flashdata('success')){ ?>
+           <div class="alert alert-success">
+            <strong><span class="glyphicon glyphicon-ok"></span>   <?php echo $this->session->flashdata('success'); ?></strong>
+          </div>
+        <?php } ?>
+
+                        <div class="card-body">
+                            <form method="post" action="" enctype="multipart/form-data">
+                                <input type="hidden" name="tbl_additional_info_id" value="1">
+                                
+                                <div class="row">
+                                    <div class="col-md-4"> 
+                                        <label for="validationCustom05">Category:</label>
+                                       <select class="form-control" required="" id="validationCustom05"  name="bannercategory">
+                                           <option value="">Select Category</option>
+                                           <?php foreach($bannercategory as $row): ?>
+                                               <option value="<?php echo $row->id; ?>" ><?php echo $row->title; ?></option>
+                                           <?php endforeach; ?>
+                                       </select>
+                                       <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                        <div class="col-md-4">
+                                        <label>Images:</label>
+                                        <input type="file" name="images[]" class="form-control" multiple>
+                                        <input type="hidden" name="id" value="<?php //echo !empty($gallery['id'])?$gallery['id']:''; ?>">
+                                        <div class="col-md-4">
+                                        <input type="submit" name="imgSubmit" class="btn btn-success mt-3" value="SUBMIT">
+                                    </div>
+                                    </div>
+                                </div>
+                                <form  role="form" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery" method="post">
            <div class="row col-md-12">
-             <div class="col-md-3 card-header"> </div>
-             <div class="col-md-4 card-header">
+             <!-- <div class="col-md-3 card-header"> </div> -->
+             <div class="col-md-6 card-header">
              <select class="form-control" required="" id="validationCustom05"  name="bannercategory">
                                            <option value="">Search By Category</option>
                                            <?php foreach($bannercategory as $row): ?>
@@ -53,36 +86,6 @@
               
             </div>
           </form>
-          <?php if($this->session->flashdata('success')){ ?>
-           <div class="alert alert-success">
-            <strong><span class="glyphicon glyphicon-ok"></span>   <?php echo $this->session->flashdata('success'); ?></strong>
-          </div>
-        <?php } ?>
-
-                        <div class="card-body">
-                            <form method="post" action="" enctype="multipart/form-data">
-                                <input type="hidden" name="tbl_additional_info_id" value="1">
-                                
-                                <div class="row">
-                                    <div class="col-md-6"> 
-                                        <label for="validationCustom05">Category:</label>
-                                       <select class="form-control" required="" id="validationCustom05"  name="bannercategory">
-                                           <option value="">Select Category</option>
-                                           <?php foreach($bannercategory as $row): ?>
-                                               <option value="<?php echo $row->id; ?>" ><?php echo $row->title; ?></option>
-                                           <?php endforeach; ?>
-                                       </select>
-                                       <div class="valid-feedback">
-                                            Looks good!
-                                        </div>
-                                    </div>
-                                        <div class="col-md-6">
-                                        <label>Images:</label>
-                                        <input type="file" name="images[]" class="form-control" multiple>
-                                        <input type="hidden" name="id" value="<?php //echo !empty($gallery['id'])?$gallery['id']:''; ?>">
-                                        <input type="submit" name="imgSubmit" class="btn btn-success mt-3" value="SUBMIT">
-                                    </div>
-                                </div>
 
                                 <div class="row mt-4">
                                     <?php if (!empty($gallery)) { ?>
