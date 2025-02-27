@@ -50,7 +50,7 @@
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom03">Info Popup Image:</label>
-                                    <a class="btn btn-sm btn-primary"  href="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery/<?php echo $add_info[0]->id ?>">Click Here</a>
+                                    <a class="btn btn-sm btn-primary"  href="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery">Click Here</a>
                                     <!-- <input type="file"  class="form-control" name="modelpopupimage" >
                                     <div class="valid-feedback">
                                         Looks good!
@@ -158,7 +158,7 @@
                             </div> -->
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pt-2">
                                     <label for="validationCustom03">Offer Page Image:</label>
-                                    <a class="btn btn-sm btn-primary"  href="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery/<?php echo $add_info[0]->id ?>">Click Here</a>
+                                    <a class="btn btn-sm btn-primary"  href="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery">Click Here</a>
                                     <!-- <input type="file"  class="form-control" name="modelpopupimage" >
                                     <div class="valid-feedback">
                                         Looks good!
