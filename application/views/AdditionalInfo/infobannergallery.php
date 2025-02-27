@@ -69,8 +69,9 @@
                                     </div>
                                 </div>
                             </form>
+                            <hr>
                                 <form  role="form" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery" method="post">
-           <div class="row col-md-12">
+           <div class=" col-md-12 mt-3">
              <!-- <div class="col-md-3 card-header"> </div> -->
              <div class="col-md-6 card-header">
              <select class="form-control" required="" id="validationCustom05"  name="bannercategory">
