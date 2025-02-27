@@ -67,13 +67,13 @@
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <!-- <h5>All Banner List</h5> -->
                             </div>
-                            
+                            <hr style="color:red;">
                             <form role="form" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery" method="post">
                                 <div class="row mt-3 align-items-center">
                                     <div class="col-md-4">
                                        <h3>All Banner List</h3>
                                     </div>
-                                    <div class="col-md-5 text-left">
+                                    <div class="col-md-4 text-right">
                                          <select class="form-control" required name="bannercategory">
                                             <option value="">Search By Category</option>
                                             <?php foreach ($bannercategory as $row) : ?>
@@ -81,7 +81,7 @@
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
-                                    <div class="col-md-3 text-right">
+                                    <div class="col-md-4 text-right">
                                         <button type="submit" class="btn btn-info">Search</button>
                                         <button type="button" class="btn btn-danger" onclick="redirect('<?php echo base_url();?>AddInfo/Addinfocontroller/infobannergallery');">Reset</button>
                                     </div>
