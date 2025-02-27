@@ -226,12 +226,12 @@ class Addinfocontroller extends CI_Controller {
      
 
 
-            $data['gallery'] =  $this->Infomodel->getAllInfoBannerGalleryBy($id); 
+            /*$data['gallery'] =  $this->Infomodel->getAllInfoBannerGalleryBy($id); */
             $data['title'] = 'Update Info Gallery'; 
             $data['action'] = 'Edit'; 
-            /*$data["productdropdown"]=$this->Infomodel->getAllInfoBannerGallery();*/
+            $data["productdropdown"]=$this->Infomodel->getAllInfoBannerGallery();
             $data["infomodeldata"]=$this->Infomodel->getInfoDataById(1);
-            $data["productdropdown"]=$this->Infomodel->getInfoDataByIdNew($config['per_page'],$page,$bannercategory);
+            $data["gallery"]=$this->Infomodel->getInfoDataByIdNew($config['per_page'],$page,$bannercategory);
             /*$id= $this->session->userdata('session_id');
             $data['admin']=$this->Adminmodel->getadmin($id);
             $data['menu_groups']=$this->Menu->getAllMenuGroup();

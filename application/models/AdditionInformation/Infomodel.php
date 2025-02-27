@@ -25,6 +25,8 @@ class Infomodel extends CI_Model {
             $this->db->where('bannercategory',$bannercategory);
             
         }
+        $id=1;
+        $this->db->where('tbl_additional_info_id', $id);
         $this->db->from('info_banner_gallery');   
         $query=$this->db->get();
         return $query->result();
