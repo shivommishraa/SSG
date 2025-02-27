@@ -24,7 +24,7 @@
                 if(!empty($user[0]->dept_id))
                 {
                   $department=$getdepartment($user[0]->dept_id);
-                 // echo $department[0]->dept_name;
+                  echo $department[0]->dept_name;
                 }
                 ?>
               </div>
