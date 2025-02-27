@@ -22,7 +22,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center">
-                            <h5>Info Banner Gallery</h5>
+                            <h5>Add Image For Banner/Offer</h5>
                             <button class="btn btn-sm btn-primary" onclick="redirect('<?php echo site_url(); ?>AddInfo/Addinfocontroller/manageInfo');">
                                 <i class="fa fa-list"></i> Go To Info Details List
                             </button>
@@ -71,7 +71,7 @@
                             <form role="form" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery" method="post">
                                 <div class="row mt-3 align-items-center">
                                     <div class="col-md-4">
-                                       <h3>All Banner List</h3>
+                                       <h3>ALL IMAGES</h3>
                                     </div>
                                     <div class="col-md-4 text-right">
                                          <select class="form-control" required name="bannercategory">
