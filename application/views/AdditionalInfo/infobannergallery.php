@@ -95,9 +95,20 @@
                                             <span class="badge badge-dark"><?php echo $bannercategorybyid($imgRow->bannercategory)[0]->title ?? ''; ?></span>
                                             <img src="<?php echo base_url('ssgassests/infodetailsupload/' . $imgRow->infobannerimage); ?>" class="img-fluid mt-3" alt="Info Banner">
                                             <div class="mt-2">
+                                                <?php if (($infomodeldata[0]->modelpopupimage) == $imgRow->infobannerimage) { ?>
+                                                <span class="badge badge-info">Selected As Model Popup</span>
+                                                <?php } else { ?>
                                                 <a href="javascript:void(0);" class="badge badge-primary" onclick="setImage('<?php echo $imgRow->infobannerimage; ?>')">Set As Model Popup</a>
+                                                <?php }  ?>
+                                                <?php if ((($infomodeldata[0]->modelpopupimage) == $imgRow->infobannerimage) || (($infomodeldata[0]->offerimage) == $imgRow->infobannerimage) ) { ?>
+                                                <?php }else{ ?>
                                                 <a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow->id; ?>')">Delete</a>
+                                                <?php } ?>
+                                                <?php if (($infomodeldata[0]->offerimage) == $imgRow->infobannerimage) { ?>
+                                                <span class="badge badge-warning mt-1 mb-2">Selected For Offer Page</span>
+                                                <?php } else { ?>
                                                 <a href="javascript:void(0);" class="badge badge-warning mt-1 mb-2" onclick="setofferImage('<?php echo $imgRow->infobannerimage; ?>')">Set For Offer Page</a>
+                                                <?php } ?>
                                                 <a href="javascript:void(0);" class="badge badge-success sendimagetowhatsapp mt-1 mb-2" onclick="sendimagetowhatsapp('<?php echo base_url('ssgassests/infodetailsupload/' . $imgRow->infobannerimage); ?>')">Share on WhatsApp</a>
                                             </div>
                                         </div>
