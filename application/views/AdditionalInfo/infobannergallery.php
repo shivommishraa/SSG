@@ -57,7 +57,9 @@
                                                     <?php if (($infomodeldata[0]->modelpopupimage) == $imgRow->infobannerimage) { ?>
                                                         <span class="badge badge-info">Selected As Model Popup</span>
                                                     <?php } else { ?>
+                                                     <?php if ((($infomodeldata[0]->modelpopupimage) != $imgRow->infobannerimage) || (($infomodeldata[0]->offerimage) != $imgRow->infobannerimage) ) { ?>
                                                         <a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow->id; ?>')">Delete</a>
+                                                    <?php } ?>
                                                         <a href="javascript:void(0);" class="badge badge-primary" onclick="setImage('<?php echo $imgRow->infobannerimage; ?>')">Set As Model Popup</a>
                                                     <?php } ?>
 
