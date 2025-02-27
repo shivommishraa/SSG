@@ -123,7 +123,14 @@
                                                 </div>
                                             </div>
                                         <?php } ?>
-                                    <?php } ?>
+                                    <?php //} ?>
+                                    <?php } else {?>
+          <div class="alert alert-info" role="alert">
+           <strong>No Record Found!</strong>
+         </div>
+       <?php } ?>
+
+       <div class="dataTables_paginate paging_simple_numbers pt-2 "><?php echo $links; ?></div>
                                 </div>
                             </form>
                         </div>
