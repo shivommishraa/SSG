@@ -217,7 +217,7 @@ class Addinfocontroller extends CI_Controller {
              $config = $this->config->item('pagination_config');;
              $config['base_url'] = base_url() ."AddInfo/Addinfocontroller/infobannergallery"."/$bannercategory";
              $config['total_rows'] = $this->Infomodel->get_count($bannercategory);
-             $config['per_page'] = 6;
+             $config['per_page'] = 15;
              $config['uri_segment'] = 5;
              $this->pagination->initialize($config);
              $page = ($this->uri->segment(5)) ? $this->uri->segment(5) : 0;
