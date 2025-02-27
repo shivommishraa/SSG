@@ -59,7 +59,7 @@
                                         <input type="file" name="images[]" class="form-control" multiple>
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="submit" name="imgSubmit" class="btn btn-success mt-3" value="SUBMIT">
+                                        <input type="submit" name="imgSubmit" class="btn btn-success " value="SUBMIT">
                                     </div>
                                 </div>
                             </form>
