@@ -73,13 +73,15 @@
                                     <div class="col-md-4">
                                        <h3>All Banner List</h3>
                                     </div>
-                                    <div class="col-md-8 text-right">
+                                    <div class="col-md-4 ">
                                          <select class="form-control" required name="bannercategory">
                                             <option value="">Search By Category</option>
                                             <?php foreach ($bannercategory as $row) : ?>
                                                 <option value="<?php echo $row->id; ?>"><?php echo $row->title; ?></option>
                                             <?php endforeach; ?>
                                         </select>
+                                    </div>
+                                    <div class="col-md-4 ">
                                         <button type="submit" class="btn btn-info">Search</button>
                                         <button type="button" class="btn btn-danger" onclick="redirect('<?php echo base_url();?>AddInfo/Addinfocontroller/infobannergallery');">Reset</button>
                                     </div>
