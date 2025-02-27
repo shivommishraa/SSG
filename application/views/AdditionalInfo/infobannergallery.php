@@ -107,9 +107,8 @@
                                         <strong>No Record Found!</strong>
                                     </div>
                                 <?php endif; ?>
-                                
-                                <div class="dataTables_paginate paging_simple_numbers pt-2 "><?php echo $links; ?></div>
                             </div>
+                             <div class="dataTables_paginate paging_simple_numbers pt-2 "><?php echo $links; ?></div>
                         </div>
                     </div>
                 </div>
