@@ -65,24 +65,25 @@
                             </form>
                             
                             <div class="card-header d-flex justify-content-between align-items-center">
-                                <form role="form" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery" method="post">
-                                    <div class="row col-md-12 mt-3">
-                                        <div class="col-md-6 card-header"><h5>All Banner List</h5></div>
-                                        <div class="col-md-6 card-header">
-                                            <select class="form-control" required name="bannercategory">
-                                                <option value="">Search By Category</option>
-                                                <?php foreach ($bannercategory as $row) : ?>
-                                                    <option value="<?php echo $row->id; ?>"><?php echo $row->title; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-3 card-header">
-                                            <button type="submit" class="btn btn-sm btn-info" name="search">Search</button>
-                                            <button class="btn btn-sm btn-danger" onclick="redirect('<?php echo base_url();?>AddInfo/Addinfocontroller/infobannergallery');">Reset</button>
-                                        </div>
-                                    </div>
-                                </form>
+                                <h5>All Banner List</h5>
                             </div>
+                            
+                            <form role="form" action="<?php echo site_url(); ?>AddInfo/Addinfocontroller/infobannergallery" method="post">
+                                <div class="row mt-3 align-items-center">
+                                    <div class="col-md-6">
+                                        <select class="form-control" required name="bannercategory">
+                                            <option value="">Search By Category</option>
+                                            <?php foreach ($bannercategory as $row) : ?>
+                                                <option value="<?php echo $row->id; ?>"><?php echo $row->title; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <button type="submit" class="btn btn-info">Search</button>
+                                        <button type="button" class="btn btn-danger" onclick="redirect('<?php echo base_url();?>AddInfo/Addinfocontroller/infobannergallery');">Reset</button>
+                                    </div>
+                                </div>
+                            </form>
                             
                             <div class="row mt-4">
                                 <?php if (!empty($gallery)) : ?>
@@ -112,6 +113,7 @@
             </div>
         </div>
     </div>
+</div>
 
 <script>
     function deleteImage(id) {
