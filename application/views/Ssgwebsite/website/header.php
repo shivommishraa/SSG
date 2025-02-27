@@ -88,7 +88,7 @@
                 <li class="<?php if(!empty($page_active)){ if($page_active=='aboutus'){ ?> active <?php } } ?>"><a href="<?php echo base_url(); ?>Website/Website_controller/aboutus">About Us</a></li>
 
                 <li class="<?php if(!empty($page_active)){ if($page_active=='order'){ ?> active <?php } } ?>"><a href="<?php echo base_url(); ?>Website/Website_controller/ordernow">Order</a></li>
-                <li class="<?php if(!empty($page_active)){ if($page_active=='newoffers'){ ?> active <?php } } ?>"><a href="<?php echo base_url(); ?>Website/Website_controller/offers">Offers</a></li>
+                <li class="<?php if(!empty($page_active)){ if($page_active=='newoffers'){ ?> active <?php } } ?>"><a href="<?php echo base_url(); ?>Website/Website_controller/newoffers">Offers</a></li>
                 
                <!--  <li class="<?php //if(!empty($page_active)){ if($page_active=='pages'){ ?> active <?php //} } ?>"><a href="#">Pages</a>
                     <ul class="header__menu__dropdown"> -->
@@ -216,7 +216,7 @@
                             <li class="<?php if(!empty($page_active)){ if($page_active=='index_active'){ ?> active <?php } } ?>"><a href="<?php echo base_url(); ?>">Home</a></li>
                             <li class="<?php if(!empty($page_active)){ if($page_active=='aboutus'){ ?> active <?php } } ?>"><a href="<?php echo base_url(); ?>Website/Website_controller/aboutus">About Us</a></li>
                             <li class="<?php if(!empty($page_active)){ if($page_active=='order'){ ?> active <?php } } ?>"><a href="<?php echo base_url(); ?>Website/Website_controller/ordernow">Order</a></li>
-                            <li class="<?php if(!empty($page_active)){ if($page_active=='newoffers'){ ?> active <?php } } ?>"><a href="<?php echo base_url(); ?>Website/Website_controller/offers">Offers</a></li>
+                            <li class="<?php if(!empty($page_active)){ if($page_active=='newoffers'){ ?> active <?php } } ?>"><a href="<?php echo base_url(); ?>Website/Website_controller/newoffers">Offers</a></li>
                             <!-- <li class="<?php //if(!empty($page_active)){ if($page_active=='pages'){ ?> active <?php //} } ?>"><a href="#">Pages</a> -->
                                 <!-- <ul class="header__menu__dropdown">
                                     <li><a href="#">Shop Details</a></li> -->

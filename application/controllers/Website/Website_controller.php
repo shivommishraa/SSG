@@ -389,17 +389,18 @@ public function customeraccount(){
 
 
   public function newoffers(){
+    $data['page_active']='newoffers';
     $data["homepageInfo"] = $this->Infomodel->getInfoDataById(1);
-    $this->load->view('Ssgwebsite/website/header');
+    $this->load->view('Ssgwebsite/website/header',$data);
     $this->load->view('Ssgwebsite/website/offerspage',$data);
-    $this->load->view('Ssgwebsite/website/footer');
+    $this->load->view('Ssgwebsite/website/footer',$data);
   }
 
   public function offers(){
-   $data['page_active']='newoffers';
-    $this->load->view('Ssgwebsite/website/header');
-    $this->load->view('Ssgwebsite/website/newoffers');
-    $this->load->view('Ssgwebsite/website/footer');
+    $data['page_active']='newoffers';
+    $this->load->view('Ssgwebsite/website/header',$data);
+    $this->load->view('Ssgwebsite/website/newoffers',$data);
+    $this->load->view('Ssgwebsite/website/footer',$data);
   }
 
   public function customer_update(){
