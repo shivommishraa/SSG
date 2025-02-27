@@ -64,11 +64,12 @@
                                         <?php foreach ($gallery as $imgRow) { ?>
                                             <div class="col-md-4" id="imgb_<?php echo $imgRow->id; ?>">
                                                 <?php 
+                                                if(!empty($imgRow[0]->bannercategory)){
                                                     $named=$bannercategorybyid($imgRow[0]->bannercategory);
                                                     if(!empty($named[0]->title)){ ?>
                                                         <span class="badge badge-info"><?php echo $named[0]->title;?></span>
                                                         
-                                                <?php } ?>
+                                                <?php }} ?>
                                                 
                                                 <img src="<?php echo base_url('./ssgassests/infodetailsupload/' . $imgRow->infobannerimage); ?>" class="img-fluid mt-3" alt="Info Banner">
                                                 
