@@ -396,6 +396,7 @@ public function customeraccount(){
   }
 
   public function offers(){
+   $data['page_active']='newoffers';
     $this->load->view('Ssgwebsite/website/header');
     $this->load->view('Ssgwebsite/website/newoffers');
     $this->load->view('Ssgwebsite/website/footer');
