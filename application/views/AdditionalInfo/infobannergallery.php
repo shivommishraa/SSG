@@ -168,8 +168,31 @@
         }
     }
 
-    function sendimagetowhatsapp(imageUrl) {
+    /*function sendimagetowhatsapp(imageUrl) {
         window.open("https://wa.me/?text=" + encodeURIComponent("Check out this image: " + imageUrl), '_blank');
+    }*/
+
+    function sendimagetowhatsapp(imageUrl) {
+        fetch(imageUrl)
+            .then(response => response.blob())
+            .then(blob => {
+                // Create a downloadable link for the image
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "shared-image.jpg";  // Image will be saved with this name
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+
+                // Notify user to manually share the image on WhatsApp
+                alert("Image downloaded. Now open WhatsApp and share it manually.");
+
+                // Open WhatsApp Web for user to manually upload the image
+                window.open("https://web.whatsapp.com/", "_blank");
+            })
+            .catch(error => console.error("Error fetching the image:", error));
     }
 </script>
 <script src="<?php echo base_url('assets/js/jquery.min.js'); ?>"></script>
