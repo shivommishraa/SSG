@@ -190,7 +190,16 @@
                 alert("Image downloaded. Now open WhatsApp and share it manually.");
 
                 // Open WhatsApp Web for user to manually upload the image
-                window.open("https://web.whatsapp.com/", "_blank");
+                /*window.open("https://web.whatsapp.com/", "_blank");*/
+                // Detect if the user is on mobile or desktop
+                var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+                // Open WhatsApp (mobile or web based on device)
+                if (isMobile) {
+                    window.location.href = "whatsapp://send?text=Please select the downloaded image and share it.";  
+                } else {
+                    window.open("https://web.whatsapp.com/", "_blank");
+                }
             })
             .catch(error => console.error("Error fetching the image:", error));
     }
