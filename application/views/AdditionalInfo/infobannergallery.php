@@ -109,7 +109,7 @@
                                                 <?php } else { ?>
                                                 <a href="javascript:void(0);" class="badge badge-warning mt-1 mb-2" onclick="setofferImage('<?php echo $imgRow->infobannerimage; ?>')">Set For Offer Page</a>
                                                 <?php } ?>
-                                                <a href="javascript:void(0);" class="badge badge-success sendimagetowhatsapp mt-1 mb-2" onclick="sendimagetowhatsapp('<?php echo base_url('ssgassests/infodetailsupload/' . $imgRow->infobannerimage); ?>')">Share on WhatsApp</a>
+                                                <a href="javascript:void(0);" class="badge badge-success sendimagetowhatsapp mt-1 mb-2" onclick="sendimagetowhatsapp('<?php echo base_url('ssgassests/infodetailsupload/' . $imgRow->infobannerimage); ?>')">Download</a>
                                             </div>
                                         </div>
                                     <?php endforeach; ?>
@@ -187,19 +187,17 @@
                 URL.revokeObjectURL(url);
 
                 // Notify user to manually share the image on WhatsApp
-                alert("Image downloaded. Now open WhatsApp and share it manually.");
+                alert("Image downloaded. Please open your image gallery to view and use it.");
 
                 // Open WhatsApp Web for user to manually upload the image
-                /*window.open("https://web.whatsapp.com/", "_blank");*/
-                // Detect if the user is on mobile or desktop
-                var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                //var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
                 // Open WhatsApp (mobile or web based on device)
-                if (isMobile) {
-                    window.location.href = "whatsapp://send?text=Please select the downloaded image and share it.";  
-                } else {
-                    window.open("https://web.whatsapp.com/", "_blank");
-                }
+                // if (isMobile) {
+                //     window.location.href = "whatsapp://send?text=Please select the downloaded image and share it.";  
+                // } else {
+                //     window.open("https://web.whatsapp.com/", "_blank");
+                // }
             })
             .catch(error => console.error("Error fetching the image:", error));
     }
